@@ -1,0 +1,716 @@
+schema_version: 1
+flags:
+  beta_blocker:
+    sides:
+    - A
+  systemic_absorption_high:
+    sides:
+    - A
+  cardiovascular_risk:
+    sides:
+    - A
+  beta1_selective:
+    sides:
+    - A
+  systemic_absorption_medium:
+    sides:
+    - A
+  isa_activity:
+    sides:
+    - A
+  prostaglandin_analog:
+    sides:
+    - A
+  systemic_absorption_low:
+    sides:
+    - A
+  no_donor:
+    sides:
+    - A
+    - B
+  alpha2_agonist:
+    sides:
+    - A
+  cns_depressant:
+    sides:
+    - A
+    - B
+  cai_topical:
+    sides:
+    - A
+  metabolic_acidosis_risk:
+    sides:
+    - A
+  rock_inhibitor:
+    sides:
+    - A
+  miotic:
+    sides:
+    - A
+  cholinergic:
+    sides:
+    - A
+  cholinergic_crisis_risk:
+    sides:
+    - A
+  cai:
+    sides:
+    - A
+  antibiotic:
+    sides:
+    - A
+  fluoroquinolone:
+    sides:
+    - A
+  aminoglycoside:
+    sides:
+    - A
+  macrolide:
+    sides:
+    - A
+  bone_marrow_suppression_risk:
+    sides:
+    - A
+  systemic_absorption_very_low:
+    sides:
+    - A
+  sulfonamide:
+    sides:
+    - A
+  antiviral:
+    sides:
+    - A
+  antifungal:
+    sides:
+    - A
+  polyene:
+    sides:
+    - A
+  azole:
+    sides:
+    - A
+  corticosteroid:
+    sides:
+    - A
+  iop_elevation_risk:
+    sides:
+    - A
+  site_activated:
+    sides:
+    - A
+  iop_elevation_lower_risk:
+    sides:
+    - A
+  nsaid:
+    sides:
+    - A
+  cox_inhibitor:
+    sides:
+    - A
+  prodrug:
+    sides:
+    - A
+    - B
+  immunosuppressant:
+    sides:
+    - A
+  calcineurin_inhibitor:
+    sides:
+    - A
+    - B
+  antihistamine:
+    sides:
+    - A
+  mast_cell_stabilizer:
+    sides:
+    - A
+  anticholinergic:
+    sides:
+    - A
+  mydriatic:
+    sides:
+    - A
+  sympathomimetic:
+    sides:
+    - A
+  hypertension_risk:
+    sides:
+    - A
+  anesthetic:
+    sides:
+    - A
+  antiarrhythmic:
+    sides:
+    - A
+  diagnostic:
+    sides:
+    - A
+  dye:
+    sides:
+    - A
+  anti_vegf:
+    sides:
+    - A
+  biologic:
+    sides:
+    - A
+  intravitreal:
+    sides:
+    - A
+  minimal_systemic_absorption:
+    sides:
+    - A
+  vasoconstrictor:
+    sides:
+    - A
+  anti_inflammatory:
+    sides:
+    - A
+  dry_eye:
+    sides:
+    - A
+  mucin_stimulant:
+    sides:
+    - A
+  artificial_tear_insert:
+    sides:
+    - A
+  systemic_absorption_none:
+    sides:
+    - A
+  artificial_tear:
+    sides:
+    - A
+  polypeptide:
+    sides:
+    - A
+  antiseptic:
+    sides:
+    - A
+  bactericidal_fungicidal_virucidal:
+    sides:
+    - A
+  bactericidal:
+    sides:
+    - A
+  hyperosmotic:
+    sides:
+    - A
+  corneal_edema:
+    sides:
+    - A
+  antimetabolite:
+    sides:
+    - A
+  antifibrotic:
+    sides:
+    - A
+  intraocular:
+    sides:
+    - A
+  viscoelastic:
+    sides:
+    - A
+  surgical_aid:
+    sides:
+    - A
+  beta1_selective_blocker:
+    sides:
+    - B
+  cyp2d6_substrate:
+    sides:
+    - B
+  non_selective_beta_blocker:
+    sides:
+    - B
+  cyp1a2_substrate:
+    sides:
+    - B
+  non_selective_beta_blocker_alpha1_blocker:
+    sides:
+    - B
+  cyp2c9_substrate:
+    sides:
+    - B
+  non_selective_beta_blocker_class_iii_antiarrhythmic:
+    sides:
+    - B
+  l_type_calcium_channel_blocker:
+    sides:
+    - B
+  cyp3a4_substrate:
+    sides:
+    - B
+  cyp3a4_inhibitor:
+    sides:
+    - B
+  p_gp_inhibitor:
+    sides:
+    - B
+  ace_inhibitor:
+    sides:
+    - B
+  angiotensin_ii_receptor_antagonist:
+    sides:
+    - B
+  ncc_inhibitor:
+    sides:
+    - B
+  nkcc2_inhibitor:
+    sides:
+    - B
+  mineralocorticoid_receptor_antagonist:
+    sides:
+    - B
+  vitamin_k_epoxide_reductase_inhibitor:
+    sides:
+    - B
+  narrow_therapeutic_index:
+    sides:
+    - B
+  factor_xa_inhibitor:
+    sides:
+    - B
+  p_gp_substrate:
+    sides:
+    - B
+  thrombin_inhibitor:
+    sides:
+    - B
+  cox1_inhibitor_irreversible:
+    sides:
+    - B
+  p2y12_inhibitor_prodrug:
+    sides:
+    - B
+  cyp2c19_substrate:
+    sides:
+    - B
+  p2y12_inhibitor:
+    sides:
+    - B
+  ampk_activator:
+    sides:
+    - B
+  atp_sensitive_k_channel_blocker:
+    sides:
+    - B
+  dpp4_inhibitor:
+    sides:
+    - B
+  sglt2_inhibitor:
+    sides:
+    - B
+  glp1_receptor_agonist:
+    sides:
+    - B
+  hmg_coa_reductase_inhibitor:
+    sides:
+    - B
+  hmg_coa_reductase_inhibitor_prodrug:
+    sides:
+    - B
+  k_channel_blocker:
+    sides:
+    - B
+  cyp2c9_inhibitor:
+    sides:
+    - B
+  cyp2d6_inhibitor:
+    sides:
+    - B
+  na_k_atpase_inhibitor:
+    sides:
+    - B
+  sert_inhibitor:
+    sides:
+    - B
+  na_channel_blocker:
+    sides:
+    - B
+  cyp3a4_inducer:
+    sides:
+    - B
+  cyp2c9_inducer:
+    sides:
+    - B
+  cyp1a2_inducer:
+    sides:
+    - B
+  gaba_ergic:
+    sides:
+    - B
+  cyp2c19_inhibitor:
+    sides:
+    - B
+  cox1_cox2_inhibitor:
+    sides:
+    - B
+  cox2_inhibitor:
+    sides:
+    - B
+  glucocorticoid_receptor_agonist:
+    sides:
+    - B
+  dhfr_inhibitor:
+    sides:
+    - B
+  50S_inhibitor:
+    sides:
+    - B
+  rna_polymerase_inhibitor:
+    sides:
+    - B
+  p_gp_inducer:
+    sides:
+    - B
+  cyp51_inhibitor:
+    sides:
+    - B
+  h_k_atpase_inhibitor:
+    sides:
+    - B
+  thyroid_hormone_receptor_agonist:
+    sides:
+    - B
+  beta2_adrenergic_agonist:
+    sides:
+    - B
+  h1_receptor_antagonist:
+    sides:
+    - B
+  mu_opioid_receptor_agonist:
+    sides:
+    - B
+  ugt2b7_substrate:
+    sides:
+    - B
+  tubulin_inhibitor:
+    sides:
+    - B
+  xanthine_oxidase_inhibitor:
+    sides:
+    - B
+  inositol_monophosphatase_inhibitor:
+    sides:
+    - B
+  dna_damaging:
+    sides:
+    - B
+  cell_wall_synthesis_inhibitor:
+    sides:
+    - B
+  30S_inhibitor:
+    sides:
+    - B
+  pde5_inhibitor:
+    sides:
+    - B
+  cox_inhibitor_central:
+    sides:
+    - B
+  cyp2e1_substrate:
+    sides:
+    - B
+  sv2a_modulator:
+    sides:
+    - B
+  d2_5ht2a_antagonist:
+    sides:
+    - B
+  d2_partial_agonist:
+    sides:
+    - B
+  gaba_a_positive_allosteric_modulator:
+    sides:
+    - B
+  calcium_channel_alpha2delta_ligand:
+    sides:
+    - B
+  sert_net_inhibitor:
+    sides:
+    - B
+  ppar_gamma_agonist:
+    sides:
+    - B
+  cyp2c8_substrate:
+    sides:
+    - B
+  alpha1_adrenergic_antagonist:
+    sides:
+    - B
+  alpha1a_adrenergic_antagonist:
+    sides:
+    - B
+  multichannel_blocker:
+    sides:
+    - B
+  na_channel_blocker_beta_blocker:
+    sides:
+    - B
+  plasmin_inhibitor:
+    sides:
+    - B
+  farnesyl_pyrophosphate_synthase_inhibitor:
+    sides:
+    - B
+  gaba_b_receptor_agonist:
+    sides:
+    - B
+  dat_net_inhibitor:
+    sides:
+    - B
+  5ht3_receptor_antagonist:
+    sides:
+    - B
+  viral_dna_polymerase_inhibitor:
+    sides:
+    - B
+  insulin_receptor_agonist:
+    sides:
+    - B
+  vasopressin_v2_receptor_agonist:
+    sides:
+    - B
+  tlr_inhibitor:
+    sides:
+    - B
+  imdh_inhibitor:
+    sides:
+    - B
+  purine_analog:
+    sides:
+    - B
+  antiinflammatory:
+    sides:
+    - B
+  dhodh_inhibitor:
+    sides:
+    - B
+  5alpha_reductase_inhibitor:
+    sides:
+    - B
+  d2_antagonist_5ht4_agonist:
+    sides:
+    - B
+  5ht1a_partial_agonist:
+    sides:
+    - B
+  dna_gyrase_inhibitor:
+    sides:
+    - B
+  cyp1a2_inhibitor:
+    sides:
+    - B
+  muscarinic_receptor_antagonist:
+    sides:
+    - B
+  d2_antagonist:
+    sides:
+    - B
+  net_inhibitor:
+    sides:
+    - B
+  na_channel_blocker_gaba_ergic:
+    sides:
+    - B
+  estrogen_receptor_modulator:
+    sides:
+    - B
+  bcr_abl_inhibitor:
+    sides:
+    - B
+  dna_crosslinker:
+    sides:
+    - B
+  cyp2b6_substrate:
+    sides:
+    - B
+  thymidylate_synthase_inhibitor_prodrug:
+    sides:
+    - B
+  maoi:
+    sides:
+    - B
+  k_atp_channel_blocker:
+    sides:
+    - B
+  phosphodiesterase_inhibitor:
+    sides:
+    - B
+  pde3_inhibitor:
+    sides:
+    - B
+  antithrombin_iii_activator:
+    sides:
+    - B
+  factor_xa_inhibitor_indirect:
+    sides:
+    - B
+  beta_lactam_cell_wall_inhibitor:
+    sides:
+    - B
+  if_channel_inhibitor:
+    sides:
+    - B
+  late_na_channel_inhibitor:
+    sides:
+    - B
+  alpha2_adrenergic_agonist:
+    sides:
+    - B
+  alpha_beta_adrenergic_agonist:
+    sides:
+    - B
+  alpha1_beta1_adrenergic_agonist:
+    sides:
+    - B
+  v1_v2_receptor_agonist:
+    sides:
+    - B
+  neuraminidase_inhibitor:
+    sides:
+    - B
+  reverse_transcriptase_inhibitor:
+    sides:
+    - B
+  hiv_protease_inhibitor:
+    sides:
+    - B
+  aromatase_inhibitor:
+    sides:
+    - B
+  cyp2a6_inhibitor:
+    sides:
+    - B
+  nk1_receptor_antagonist:
+    sides:
+    - B
+  dopamine_precursor_ddc_inhibitor:
+    sides:
+    - B
+  d2_d3_receptor_agonist:
+    sides:
+    - B
+  somatostatin_receptor_agonist:
+    sides:
+    - B
+  thyroid_peroxidase_inhibitor:
+    sides:
+    - B
+  cyslt1_receptor_antagonist:
+    sides:
+    - B
+  adenosine_receptor_antagonist_pde_inhibitor:
+    sides:
+    - B
+  alpha_glucosidase_inhibitor:
+    sides:
+    - B
+  npc1l1_inhibitor:
+    sides:
+    - B
+  ppar_alpha_agonist:
+    sides:
+    - B
+  cyp2c8_inhibitor:
+    sides:
+    - B
+  ache_inhibitor:
+    sides:
+    - B
+  ache_buche_inhibitor:
+    sides:
+    - B
+  nmda_receptor_antagonist:
+    sides:
+    - B
+  mu_opioid_receptor_agonist_nri:
+    sides:
+    - B
+  unknown_anti_inflammatory:
+    sides:
+    - B
+  bile_acid_replacement:
+    sides:
+    - B
+  osmotic_laxative:
+    sides:
+    - B
+  bacterial_enzyme_inhibitor:
+    sides:
+    - B
+  estrogen_receptor_agonist:
+    sides:
+    - B
+  androgen_receptor_agonist:
+    sides:
+    - B
+  d2_receptor_antagonist:
+    sides:
+    - B
+  urat1_inhibitor:
+    sides:
+    - B
+  gpiibiiia_inhibitor:
+    sides:
+    - B
+  beta_blocker_systemic:
+    sides:
+    - B
+  anticholinergic_systemic:
+    sides:
+    - B
+  corticosteroid_systemic:
+    sides:
+    - B
+  anticoagulant:
+    sides:
+    - B
+  antiplatelet:
+    sides:
+    - B
+  antihypertensive:
+    sides:
+    - B
+  qt_prolonging:
+    sides:
+    - B
+  diuretic:
+    sides:
+    - B
+  cai_systemic:
+    sides:
+    - B
+derived_flags:
+  beta_blocker_systemic:
+  - drug_class:beta_blocker_systemic
+  anticoagulant:
+  - drug_class:anticoagulant_*
+  antiplatelet:
+  - drug_class:antiplatelet*
+  antihypertensive:
+  - drug_class:beta_blocker_systemic
+  - drug_class:ccb_
+  - drug_class:ace_inhibitor
+  - drug_class:arb
+  diuretic:
+  - drug_class:*diuretic
+  cai_systemic:
+  - canonical_name:Topiramate
+  cns_depressant:
+  - drug_class:opioid
+  - drug_class:benzodiazepine
+  - drug_class:non_benzodiazepine_hypnotic
+  anticholinergic_systemic:
+  - drug_class:respiratory_anticholinergic
+  qt_prolonging:
+  - canonical_name:Amiodarone
+  - canonical_name:Sotalol
+  - canonical_name:Haloperidol
+  - canonical_name:Ondansetron
+  p_gp_inhibitor:
+  - flags:p_gp_inhibitor
+  corticosteroid_systemic:
+  - drug_class:corticosteroid_systemic
+  - drug_class:respiratory_corticosteroid

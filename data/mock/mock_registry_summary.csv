@@ -1,0 +1,3 @@
+registry,n_agents,source_file
+ophthalmic_agents,113,data/seed/entities_a.csv
+systemic_agents,232,data/seed/entities_b.csv

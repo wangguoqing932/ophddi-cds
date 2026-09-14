@@ -1,0 +1,597 @@
+schema_version: 2
+absorption_scale:
+  systemic_absorption_high: keep
+  systemic_absorption_medium: keep
+  systemic_absorption_low: force_low
+  systemic_absorption_very_low: force_low
+  minimal_systemic_absorption: force_low
+  systemic_absorption_none: force_low
+  none: force_low
+upgrades:
+  beta_blocker_non_selective_high_abs:
+    to: high
+    b_classes:
+    - ccb
+    - beta_blocker
+    - cardiac_glycoside
+    requires_flags:
+    - non_selective
+    - systemic_absorption_high
+    a_class: beta_blocker
+  anticholinergic_high_abs:
+    to: high
+    b_classes:
+    - anticholinergic
+    - opioid
+    - antidepressant
+    - antipsychotic
+    - benzodiazepine
+    - cns_depressant
+    requires_flags:
+    - systemic_absorption_high
+    a_class: anticholinergic
+  nsaid_high_abs:
+    to: high
+    b_classes:
+    - anticoagulant
+    - antiplatelet
+    requires_flags:
+    - systemic_absorption_high
+    a_class: nsaid
+  alpha2_high_abs:
+    to: high
+    b_classes:
+    - opioid
+    - cns_depressant
+    requires_flags:
+    - systemic_absorption_high
+    a_class: alpha2_agonist
+matrix:
+  beta_blocker:
+    beta_blocker:
+      level: medium
+      mechanism: additive_bradycardia
+      advice: monitor HR/ECG
+      evidence: rule_additive_beta_blockade
+    ccb:
+      level: medium
+      mechanism: additive_negative_chronotropy
+      advice: monitor HR/ECG; avoid with verapamil/diltiazem
+      evidence: rule_beta_blocker_ccb
+    antiarrhythmic:
+      level: medium
+      mechanism: additive_negative_dromotropy_qt
+      advice: monitor HR/ECG/QT
+      evidence: class_extrapolated
+    cardiac_glycoside:
+      level: medium
+      mechanism: additive_av_suppression
+      advice: monitor HR/digoxin levels
+      evidence: rule_beta_blocker_digoxin
+    antidiabetic:
+      level: medium
+      mechanism: masks_hypoglycemia_symptoms
+      advice: educate on hypoglycemia monitoring
+      evidence: textbook
+    thyroid_hormone:
+      level: medium
+      mechanism: enhanced_beta_sensitivity
+      advice: monitor HR
+      evidence: class_extrapolated
+    beta2_agonist:
+      level: high
+      mechanism: pharmacologic_antagonism
+      advice: monitor bronchospasm/HR
+      evidence: rule_beta_blocker_beta2
+    sympathomimetic:
+      level: medium
+      mechanism: pressor_imbalance
+      advice: monitor BP
+      evidence: class_extrapolated
+    diuretic:
+      level: low
+      mechanism: none_clinically_significant
+      advice: none
+      evidence: consensus
+    antihistamine:
+      level: low
+      mechanism: none_clinically_significant
+      advice: none
+      evidence: consensus
+    nsaid:
+      level: low
+      mechanism: weak_antihypertensive_antagonism
+      advice: monitor BP
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    macrolide:
+      level: low
+      mechanism: none_clinically_significant
+      advice: none
+      evidence: consensus
+    antidepressant_tca:
+      level: medium
+      mechanism: weak_additive_bradycardia
+      advice: monitor HR
+      evidence: class_extrapolated
+    antidepressant_ssri:
+      level: medium
+      mechanism: cyp2d6_inhibition_raises_beta_blocker_plus_weak_additive
+      advice: monitor HR; caution with paroxetine/fluoxetine
+      evidence: class_extrapolated
+    xanthine:
+      level: medium
+      mechanism: beta_blockade_antagonizes_theophylline_plus_rate_effects
+      advice: monitor HR/theophylline levels
+      evidence: ddinter_class_aggregation
+    xanthine_other: null
+    arb:
+      level: medium
+      mechanism: additive_hypotension
+      advice: monitor BP
+      evidence: pharmacology_additive_antihypertensive
+    acei:
+      level: medium
+      mechanism: additive_hypotension
+      advice: monitor BP
+      evidence: pharmacology_additive_antihypertensive
+  alpha2_agonist:
+    opioid:
+      level: high
+      mechanism: cns_depression_additive
+      advice: monitor sedation/BP
+      evidence: expert_consensus
+    cns_depressant:
+      level: high
+      mechanism: cns_depression_additive
+      advice: monitor sedation
+      evidence: expert_consensus
+    benzodiazepine:
+      level: medium
+      mechanism: cns_depression_additive
+      advice: monitor sedation
+      evidence: class_extrapolated
+    antipsychotic:
+      level: medium
+      mechanism: alpha_receptor_blockade
+      advice: monitor BP
+      evidence: class_extrapolated
+    beta_blocker:
+      level: medium
+      mechanism: paradoxical_pressor_response
+      advice: monitor BP
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    antidepressant_tca:
+      level: high
+      mechanism: alpha2_antagonism_plus_cns
+      advice: avoid/monitor BP and sedation
+      evidence: expert_consensus
+    antidepressant_ssri:
+      level: low
+      mechanism: no_alpha2_antagonism_ssri
+      advice: none_routine
+      evidence: pharmacology
+  carbonic_anhydrase_inhibitor:
+    diuretic:
+      level: medium
+      mechanism: metabolic_acidosis_electrolyte
+      advice: monitor electrolytes
+      evidence: rule_cai_diuretic
+    carbonic_anhydrase_inhibitor:
+      level: medium
+      mechanism: additive_acidosis
+      advice: monitor electrolytes
+      evidence: rule_cai_topiramate
+    lithium:
+      level: medium
+      mechanism: acidosis_raises_lithium
+      advice: monitor lithium levels
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  cholinergic:
+    anticholinergic:
+      level: medium
+      mechanism: pharmacologic_antagonism
+      advice: monitor IOP response
+      evidence: textbook
+    cholinergic:
+      level: medium
+      mechanism: additive_cholinergic
+      advice: monitor for cholinergic excess
+      evidence: class_extrapolated
+    beta_blocker:
+      level: low
+      mechanism: weak_bradycardia
+      advice: monitor HR
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  prostaglandin_analog:
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  anticholinergic:
+    anticholinergic:
+      level: medium
+      mechanism: additive_anticholinergic
+      advice: monitor urinary/CNS anticholinergic effects
+      evidence: rule_additive_anticholinergic
+    opioid:
+      level: medium
+      mechanism: cns_anticholinergic_syndrome
+      advice: monitor delirium
+      evidence: expert_consensus
+    antipsychotic:
+      level: medium
+      mechanism: additive_anticholinergic
+      advice: monitor
+      evidence: class_extrapolated
+    benzodiazepine:
+      level: medium
+      mechanism: cns_depression_additive
+      advice: monitor sedation
+      evidence: class_extrapolated
+    cns_depressant:
+      level: medium
+      mechanism: cns_depression_additive
+      advice: monitor sedation/delirium
+      evidence: class_extrapolated
+    antihistamine:
+      level: medium
+      mechanism: weak_anticholinergic_additive
+      advice: monitor
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    antidepressant_tca:
+      level: high
+      mechanism: additive_anticholinergic_strong
+      advice: avoid/monitor (urinary retention
+      delirium): null
+      evidence: expert_consensus
+    antidepressant_ssri:
+      level: low
+      mechanism: no_anticholinergic_activity
+      advice: none_routine
+      evidence: pharmacology
+    cholinergic:
+      level: medium
+      mechanism: pharmacologic_antagonism
+      advice: monitor therapeutic response
+      evidence: ddinter_class_aggregation
+  sympathomimetic:
+    beta_blocker:
+      level: medium
+      mechanism: unopposed_alpha_pressor
+      advice: monitor BP
+      evidence: class_extrapolated
+    antipsychotic:
+      level: medium
+      mechanism: alpha_blockade_imbalance
+      advice: monitor BP
+      evidence: class_extrapolated
+    antiarrhythmic:
+      level: medium
+      mechanism: adrenergic_imbalance
+      advice: monitor HR/BP
+      evidence: class_extrapolated
+    nitrate:
+      level: medium
+      mechanism: pressor_vs_vasodilator
+      advice: monitor BP
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    antidepressant_tca:
+      level: high
+      mechanism: hypertensive_crisis_risk
+      advice: avoid combination
+      evidence: expert_consensus
+    antidepressant_ssri:
+      level: low
+      mechanism: no_known_interaction
+      advice: none_routine
+      evidence: pharmacology
+    opioid:
+      level: medium
+      mechanism: pressor_cns_imbalance
+      advice: monitor BP/sedation
+      evidence: class_extrapolated
+  nsaid:
+    anticoagulant:
+      level: medium
+      mechanism: bleeding_additive
+      advice: monitor INR/bleeding; avoid in high-risk
+      evidence: rule_additive_nsaid_bleeding
+    antiplatelet:
+      level: medium
+      mechanism: bleeding_additive
+      advice: monitor bleeding
+      evidence: rule_additive_nsaid_bleeding
+    corticosteroid:
+      level: medium
+      mechanism: gi_bleeding_hypertension
+      advice: monitor GI
+      evidence: rule_nsaid_corticosteroid
+    diuretic:
+      level: medium
+      mechanism: diuretic_antagonism
+      advice: monitor renal/BP
+      evidence: rule_nsaid_diuretic
+    acei:
+      level: medium
+      mechanism: renal_pressure_antagonism
+      advice: monitor renal/BP
+      evidence: rule_nsaid_acei_arb
+    arb:
+      level: medium
+      mechanism: renal_pressure_antagonism
+      advice: monitor renal/BP
+      evidence: rule_nsaid_acei_arb
+    beta_blocker:
+      level: medium
+      mechanism: antihypertensive_antagonism
+      advice: monitor BP
+      evidence: rule_nsaid_antihypertensive
+    lithium:
+      level: medium
+      mechanism: reduced_lithium_clearance
+      advice: monitor lithium levels
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    immunosuppressant:
+      level: medium
+      mechanism: reduced_methotrexate_clearance
+      advice: monitor MTX levels/renal function
+      evidence: ddinter_class_aggregation
+  corticosteroid:
+    corticosteroid:
+      level: medium
+      mechanism: additive_iop_systemic
+      advice: monitor IOP/glucose
+      evidence: rule_additive_corticosteroid_iop
+    antidiabetic:
+      level: medium
+      mechanism: glycemic_antagonism
+      advice: monitor glucose
+      evidence: expert_consensus
+    immunosuppressant:
+      level: medium
+      mechanism: additive_immunosuppression
+      advice: monitor infection
+      evidence: class_extrapolated
+    anticoagulant:
+      level: medium
+      mechanism: inr_fluctuation
+      advice: monitor INR
+      evidence: class_extrapolated
+    antifungal:
+      level: medium
+      mechanism: cyp3a4_inhib_raises_steroid
+      advice: monitor steroid effects
+      evidence: class_extrapolated
+    antimycobacterial:
+      level: medium
+      mechanism: cyp3a4_induction_lowers_steroid
+      advice: monitor efficacy
+      evidence: class_extrapolated
+    diuretic:
+      level: medium
+      mechanism: hypokalemia_additive
+      advice: monitor potassium
+      evidence: class_extrapolated
+    nsaid:
+      level: medium
+      mechanism: gi_bleeding_additive
+      advice: monitor GI
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+    macrolide:
+      level: medium
+      mechanism: cyp3a4_inhibition_raises_steroid
+      advice: monitor steroid effects
+      evidence: class_extrapolated
+  fluoroquinolone:
+    anticoagulant:
+      level: low
+      mechanism: weak_inr_effect_low_abs
+      advice: monitor INR
+      evidence: low_abs_anticoagulant
+    antiarrhythmic:
+      level: low
+      mechanism: qt_mechanism_low_abs
+      advice: none routine
+      evidence: low_abs_qt
+    corticosteroid:
+      level: low
+      mechanism: tendon_mechanism_low_abs
+      advice: none routine
+      evidence: low_abs_tendon
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  aminoglycoside:
+    anticoagulant:
+      level: low
+      mechanism: theoretical_flora
+      advice: none routine
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  macrolide:
+    anticoagulant:
+      level: low
+      mechanism: theoretical_flora
+      advice: none routine
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  antibiotic:
+    anticoagulant:
+      level: low
+      mechanism: theoretical_flora
+      advice: none routine
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  antihistamine:
+    anticholinergic:
+      level: low
+      mechanism: weak_additive
+      advice: none routine
+      evidence: consensus
+    cns_depressant:
+      level: low
+      mechanism: weak_sedation
+      advice: none routine
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  mast_cell_stabilizer:
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  local_anesthetic:
+    antiarrhythmic:
+      level: medium
+      mechanism: additive_class1b
+      advice: monitor cardiac
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  antiviral:
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  antifungal_azole:
+    anticoagulant:
+      level: low
+      mechanism: weak_cyp_effect_low_abs
+      advice: none routine
+      evidence: consensus
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  immunosuppressant:
+    immunosuppressant:
+      level: medium
+      mechanism: additive_immunosuppression
+      advice: monitor infection
+      evidence: class_extrapolated
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  other:
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+  corticosteroid_weak:
+    corticosteroid:
+      level: low
+      mechanism: weak_iop_systemic_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    antidiabetic:
+      level: low
+      mechanism: glycemic_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    immunosuppressant:
+      level: low
+      mechanism: immunosuppression_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    anticoagulant:
+      level: low
+      mechanism: inr_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    antifungal:
+      level: low
+      mechanism: exposure_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    antimycobacterial:
+      level: low
+      mechanism: exposure_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    diuretic:
+      level: low
+      mechanism: electrolyte_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    nsaid:
+      level: low
+      mechanism: gi_effect_negligible
+      advice: none_routine
+      evidence: pharmacology_weak_potency
+    other:
+      level: none
+      mechanism: not_established
+      advice: manual_review
+      evidence: none
+default_cell:
+  level: low
+  mechanism: no_known_class_interaction
+  advice: no_interaction_specific_monitoring
+  evidence: assumed_by_default

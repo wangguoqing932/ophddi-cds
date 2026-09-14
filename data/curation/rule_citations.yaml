@@ -1,0 +1,127 @@
+schema_version: 1
+items:
+- id: additive_beta_blockade
+  route: literature
+  doi: 10.1016/S0161-6420(00)00081-6
+  pmid: '10857839'
+  claim: Topical timolol safety is affected by concurrent systemic beta-blocker therapy.
+  required_terms:
+  - timolol
+  - topical
+  - systemic
+  - beta-blocker
+  supports:
+    rule_id: additive_beta_blockade
+    support_tier: direct_clinical
+    direct_pairwise: true
+    claim_scope: topical timolol with concurrent systemic beta-blocker therapy
+- id: additive_alpha2_cns_depression
+  route: literature
+  doi: 10.1111/pde.12868
+  pmid: '27282306'
+  claim: Topical brimonidine can cause systemic toxicity.
+  required_terms:
+  - brimonidine
+  - topical
+  - toxicity
+  supports:
+    rule_id: additive_alpha2_cns_depression
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: Topical brimonidine can cause systemic toxicity.
+- id: cai_diuretic_metabolic_acidosis
+  route: literature
+  doi: 10.1111/bcp.13499
+  pmid: '29333622'
+  claim: Topical dorzolamide can cause metabolic acidosis in impaired renal function.
+  required_terms:
+  - dorzolamide
+  - metabolic
+  - acidosis
+  - renal
+  supports:
+    rule_id: cai_diuretic_metabolic_acidosis
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: Topical dorzolamide can cause metabolic acidosis in impaired renal
+      function.
+- id: systemic_absorption_high_risk
+  route: literature
+  doi: 10.7759/cureus.20945
+  pmid: '35154926'
+  claim: Ophthalmic drops can produce systemic effects.
+  required_terms:
+  - ophthalmic
+  - systemic
+  - drops
+  supports:
+    rule_id: systemic_absorption_high_risk
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: Ophthalmic drops can produce systemic effects.
+- id: patient_factor:elderly
+  route: literature
+  doi: 10.7759/cureus.25815
+  pmid: '35822138'
+  claim: Ophthalmic timolol can cause bradycardia in patients with cardiovascular
+    comorbidities.
+  required_terms:
+  - timolol
+  - bradycardia
+  - glaucoma
+  supports:
+    rule_id: patient_factor:elderly
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: Ophthalmic timolol can cause bradycardia in patients with cardiovascular
+      comorbidities.
+- id: patient_factor:polypharmacy
+  route: literature
+  doi: 10.53738/REVMED.2025.21.931.47723
+  pmid: '40963314'
+  claim: Topical timolol case highlights medication reconciliation in elderly polymorbid
+    patients.
+  required_terms:
+  - timolol
+  - medication
+  - reconciliation
+  - polymorbid
+  supports:
+    rule_id: patient_factor:polypharmacy
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: Topical timolol case highlights medication reconciliation in elderly
+      polymorbid patients.
+- id: patient_factor:renal_impairment
+  route: literature
+  doi: 10.1111/bcp.13499
+  pmid: '29333622'
+  claim: Dorzolamide-associated metabolic acidosis occurred with impaired renal function.
+  required_terms:
+  - dorzolamide
+  - metabolic
+  - acidosis
+  - renal
+  supports:
+    rule_id: patient_factor:renal_impairment
+    support_tier: contextual_clinical
+    direct_pairwise: false
+    claim_scope: topical dorzolamide and renal-function/metabolic-acidosis context
+- id: beta_blocker_ccb_bradycardia
+  doi: 10.1136/bmj.294.6565.155-a
+  required_terms:
+  - timolol
+  - verapamil
+  - bradycardia
+  note: 'BMJ 1987 case report: severe bradycardia from interaction of timolol eye
+    drops and verapamil'
+  route: literature
+  pmid: '3109547'
+  claim: Severe bradycardia caused by interaction of topical timolol eye drops and
+    verapamil.
+  supports:
+    rule_id: beta_blocker_ccb_additive
+    support_tier: direct_clinical
+    direct_pairwise: true
+    claim_scope: topical timolol (high systemic absorption) with systemic non-dihydropyridine
+      CCB

@@ -1,0 +1,265 @@
+schema_version: 1
+pubmed_queries:
+- id: beta_blockade
+  query: (timolol OR betaxolol OR levobunolol) AND (ophthalmic OR topical) AND (systemic
+    absorption OR bradycardia OR drug interaction)
+  rule_ids:
+  - additive_beta_blockade
+  - systemic_absorption_high_risk
+  entity_a_names:
+  - Timolol
+  - Betaxolol
+  - Levobunolol
+  entity_b_names:
+  - Atenolol
+  - Metoprolol
+  - Propranolol
+  - Bisoprolol
+  - Carvedilol
+  - Nebivolol
+  - Sotalol
+  - Labetalol
+- id: alpha2_cns
+  query: (brimonidine OR apraclonidine) AND ophthalmic AND (sedation OR central nervous
+    system OR interaction)
+  rule_ids:
+  - additive_alpha2_cns_depression
+  - systemic_absorption_moderate_risk
+  entity_a_names:
+  - Brimonidine
+  - Apraclonidine
+  entity_b_names:
+  - Fentanyl
+  - Morphine
+  - Oxycodone
+  - Midazolam
+  - Diazepam
+  - Clonazepam
+- id: anticholinergic
+  query: (atropine OR cyclopentolate OR tropicamide) AND ophthalmic AND (systemic
+    OR anticholinergic OR adverse)
+  rule_ids:
+  - additive_anticholinergic_effects
+  entity_a_names:
+  - Atropine
+  - Cyclopentolate
+  - Homatropine
+  - Scopolamine
+  - Tropicamide
+  entity_b_names:
+  - Diphenhydramine
+  - Tiotropium
+  - Amitriptyline
+- id: corticosteroid_iop
+  query: (ophthalmic corticosteroid OR prednisolone eye OR dexamethasone eye) AND
+    (intraocular pressure OR systemic corticosteroid)
+  rule_ids:
+  - additive_corticosteroid_iop
+  - topical_corticosteroid_cyp3a4_induction
+  entity_a_names:
+  - Prednisolone
+  - Dexamethasone
+  - Fluorometholone
+  - Loteprednol
+  - Rimexolone
+  entity_b_names:
+  - Prednisone
+  - Methylprednisolone
+  - Dexamethasone systemic
+- id: nsaid_bleeding
+  query: (ophthalmic NSAID OR ketorolac eye OR diclofenac eye) AND (bleeding OR anticoagulant
+    OR antiplatelet)
+  rule_ids:
+  - additive_nsaid_bleeding
+  entity_a_names:
+  - Ketorolac
+  - Flurbiprofen
+  - Diclofenac
+  - Bromfenac
+  - Nepafenac
+  entity_b_names:
+  - Warfarin
+  - Apixaban
+  - Rivaroxaban
+  - Dabigatran
+  - Aspirin
+  - Clopidogrel
+  - Ticagrelor
+- id: sympathomimetic
+  query: (phenylephrine OR dipivefrin) AND ophthalmic AND (hypertension OR cardiovascular
+    OR interaction)
+  rule_ids:
+  - sympathomimetic_alpha_interaction
+  entity_a_names:
+  - Phenylephrine
+  - Dipivefrin
+  entity_b_names:
+  - Amlodipine
+  - Metoprolol
+  - Propranolol
+- id: fluoroquinolone_qt
+  query: (ophthalmic fluoroquinolone OR moxifloxacin eye OR ciprofloxacin eye) AND
+    (QT OR cardiac OR systemic)
+  rule_ids:
+  - qt_prolongation_risk
+  entity_a_names:
+  - Ofloxacin
+  - Levofloxacin
+  - Moxifloxacin
+  - Gatifloxacin
+  - Ciprofloxacin
+  - Besifloxacin
+  entity_b_names:
+  - Amiodarone
+  - Sotalol
+  - Haloperidol
+  - Ondansetron
+- id: cai_acidosis
+  query: (dorzolamide OR brinzolamide) AND ophthalmic AND (metabolic acidosis OR topiramate
+    OR diuretic OR systemic absorption)
+  rule_ids:
+  - cai_diuretic_metabolic_acidosis
+  - cai_topiramate_acidosis
+  entity_a_names:
+  - Dorzolamide
+  - Brinzolamide
+  entity_b_names:
+  - Hydrochlorothiazide
+  - Furosemide
+  - Bumetanide
+  - Indapamide
+  - Topiramate
+- id: pga_antiplatelet
+  query: (latanoprost OR travoprost OR bimatoprost) AND ophthalmic AND (bleeding OR
+    antiplatelet OR anticoagulant OR adverse event)
+  rule_ids:
+  - pga_antiplatelet_bleeding
+  entity_a_names:
+  - Latanoprost
+  - Travoprost
+  - Bimatoprost
+  - Tafluprost
+  - Unoprostone
+  entity_b_names:
+  - Aspirin
+  - Clopidogrel
+  - Ticagrelor
+  - Warfarin
+  - Apixaban
+- id: p_gp
+  query: (ophthalmic drug) AND (P-glycoprotein OR P-gp) AND (ocular penetration OR
+    transporter)
+  rule_ids:
+  - p_gp_mediated_absorption
+  entity_a_names:
+  - Timolol
+  - Brimonidine
+  entity_b_names:
+  - Verapamil
+  - Clarithromycin
+  - Itraconazole
+  - Ketoconazole
+- id: anti_vegf
+  query: (intravitreal anti-VEGF) AND (systemic adverse event OR cardiovascular OR
+    pharmacokinetics)
+  rule_ids:
+  - systemic_absorption_moderate_risk
+  entity_a_names:
+  - Ranibizumab
+  - Aflibercept
+  - Bevacizumab
+  - Brolucizumab
+  - Faricimab
+  entity_b_names:
+  - Warfarin
+  - Aspirin
+  - Clopidogrel
+- id: topical_absorption
+  query: (ophthalmic topical) AND (nasolacrimal OR systemic absorption OR punctal
+    occlusion)
+  rule_ids:
+  - systemic_absorption_high_risk
+  - systemic_absorption_moderate_risk
+  entity_a_names:
+  - Timolol
+  - Brimonidine
+  - Dorzolamide
+  - Atropine
+  - Scopolamine
+  entity_b_names:
+  - Metoprolol
+  - Warfarin
+  - Digoxin
+- id: meta_reviews
+  query: (ophthalmic OR topical OR intravitreal) AND (timolol OR brimonidine OR atropine
+    OR cyclopentolate OR dorzolamide OR brinzolamide OR latanoprost OR ketorolac OR
+    prednisolone OR moxifloxacin OR phenylephrine) AND (Meta-Analysis[pt] OR Systematic
+    Review[pt] OR Network Meta-Analysis[pt])
+  rule_ids:
+  - additive_beta_blockade
+  - additive_corticosteroid_iop
+  - additive_nsaid_bleeding
+  - pga_antiplatelet_bleeding
+  entity_a_names: &id001
+  - Timolol
+  - Brimonidine
+  - Atropine
+  - Dorzolamide
+  - Latanoprost
+  - Ketorolac
+  - Prednisolone
+  - Moxifloxacin
+  - Phenylephrine
+  entity_b_names: &id002
+  - Metoprolol
+  - Warfarin
+  - Aspirin
+  - Topiramate
+  - Furosemide
+  - Amiodarone
+  - Digoxin
+  max_results: 180
+- id: original_studies
+  query: (ophthalmic OR topical OR intravitreal) AND (timolol OR brimonidine OR atropine
+    OR cyclopentolate OR dorzolamide OR brinzolamide OR latanoprost OR ketorolac OR
+    prednisolone OR moxifloxacin OR phenylephrine) AND (Clinical Trial[pt] OR Randomized
+    Controlled Trial[pt] OR Observational Study[pt] OR Comparative Study[pt] OR Multicenter
+    Study[pt] OR Evaluation Study[pt] OR Equivalence Trial[pt])
+  rule_ids:
+  - additive_beta_blockade
+  - additive_alpha2_cns_depression
+  - additive_anticholinergic_effects
+  - additive_corticosteroid_iop
+  - additive_nsaid_bleeding
+  - qt_prolongation_risk
+  - cai_diuretic_metabolic_acidosis
+  entity_a_names: *id001
+  entity_b_names: *id002
+  max_results: 180
+- id: mechanism_pk
+  query: (ophthalmic OR topical OR intravitreal) AND (timolol OR brimonidine OR atropine
+    OR cyclopentolate OR dorzolamide OR brinzolamide OR latanoprost OR ketorolac OR
+    prednisolone OR moxifloxacin OR phenylephrine) AND (pharmacokinetic OR absorption
+    OR transporter OR P-glycoprotein OR CYP OR receptor OR "in vitro" OR "ex vivo"
+    OR animal OR mechanism)
+  rule_ids:
+  - systemic_absorption_high_risk
+  - systemic_absorption_moderate_risk
+  - cai_topiramate_acidosis
+  - p_gp_mediated_absorption
+  entity_a_names: *id001
+  entity_b_names: *id002
+  max_results: 180
+- id: case_reports
+  query: (ophthalmic OR topical OR intravitreal) AND (timolol OR brimonidine OR atropine
+    OR cyclopentolate OR dorzolamide OR brinzolamide OR latanoprost OR ketorolac OR
+    prednisolone OR moxifloxacin OR phenylephrine) AND Case Reports[pt]
+  rule_ids:
+  - additive_beta_blockade
+  - additive_alpha2_cns_depression
+  - additive_anticholinergic_effects
+  - cai_topiramate_acidosis
+  - systemic_absorption_high_risk
+  entity_a_names: *id001
+  entity_b_names: *id002
+  max_results: 180

@@ -1,0 +1,412 @@
+schema_version: 2
+side_a_classes:
+- alpha2_agonist
+- aminoglycoside
+- antibiotic
+- anticholinergic
+- antifungal_azole
+- antihistamine
+- antiviral
+- beta_blocker
+- carbonic_anhydrase_inhibitor
+- cholinergic
+- corticosteroid
+- corticosteroid_weak
+- fluoroquinolone
+- immunosuppressant
+- local_anesthetic
+- macrolide
+- mast_cell_stabilizer
+- nsaid
+- other
+- prostaglandin_analog
+- sympathomimetic
+side_b_classes:
+- acei
+- alpha1_blocker
+- antiarrhythmic
+- antibiotic
+- anticholinergic
+- anticoagulant
+- antidepressant_ssri
+- antidepressant_tca
+- antidiabetic
+- antiepileptic
+- antifungal
+- antihistamine
+- antimycobacterial
+- antiplatelet
+- antipsychotic
+- antiviral
+- arb
+- benzodiazepine
+- beta2_agonist
+- beta_blocker
+- carbonic_anhydrase_inhibitor
+- cardiac_glycoside
+- ccb
+- cholinergic
+- cns_depressant
+- corticosteroid
+- diuretic
+- fluoroquinolone
+- immunosuppressant
+- lithium
+- macrolide
+- nitrate
+- nsaid
+- opioid
+- other
+- statin
+- sympathomimetic
+- thyroid_hormone
+- urate_lowering
+- xanthine
+class_of:
+  entity_a:
+    Timolol: beta_blocker
+    Betaxolol: beta_blocker
+    Levobunolol: beta_blocker
+    Carteolol: beta_blocker
+    Metipranolol: beta_blocker
+    Latanoprost: prostaglandin_analog
+    Travoprost: prostaglandin_analog
+    Bimatoprost: prostaglandin_analog
+    Tafluprost: prostaglandin_analog
+    Latanoprostene bunod: prostaglandin_analog
+    Unoprostone: prostaglandin_analog
+    Brimonidine: alpha2_agonist
+    Apraclonidine: alpha2_agonist
+    Dorzolamide: carbonic_anhydrase_inhibitor
+    Brinzolamide: carbonic_anhydrase_inhibitor
+    Netarsudil: other
+    Ripasudil: other
+    Pilocarpine: cholinergic
+    Carbachol: cholinergic
+    Ecothiopate: cholinergic
+    Timolol/Latanoprost: beta_blocker
+    Timolol/Travoprost: beta_blocker
+    Timolol/Bimatoprost: beta_blocker
+    Timolol/Brimonidine: beta_blocker
+    Timolol/Dorzolamide: beta_blocker
+    Brimonidine/Brinzolamide: alpha2_agonist
+    Brimonidine/Dorzolamide: alpha2_agonist
+    Netarsudil/Latanoprost: prostaglandin_analog
+    Ofloxacin: fluoroquinolone
+    Levofloxacin: fluoroquinolone
+    Moxifloxacin: fluoroquinolone
+    Gatifloxacin: fluoroquinolone
+    Ciprofloxacin: fluoroquinolone
+    Besifloxacin: fluoroquinolone
+    Tobramycin: aminoglycoside
+    Gentamicin: aminoglycoside
+    Neomycin: aminoglycoside
+    Erythromycin: macrolide
+    Azithromycin: macrolide
+    Chloramphenicol: antibiotic
+    Fusidic acid: antibiotic
+    Bacitracin: antibiotic
+    Polymyxin B: antibiotic
+    Sulfacetamide: antibiotic
+    Acyclovir: antiviral
+    Ganciclovir: antiviral
+    Trifluridine: antiviral
+    Natamycin: antifungal_azole
+    Voriconazole: antifungal_azole
+    Fluconazole: antifungal_azole
+    Prednisolone: corticosteroid
+    Dexamethasone: corticosteroid
+    Fluorometholone: corticosteroid_weak
+    Loteprednol: corticosteroid_weak
+    Rimexolone: corticosteroid_weak
+    Ketorolac: nsaid
+    Flurbiprofen: nsaid
+    Diclofenac: nsaid
+    Bromfenac: nsaid
+    Nepafenac: nsaid
+    Cyclosporine: immunosuppressant
+    Tacrolimus: immunosuppressant
+    Olopatadine: antihistamine
+    Ketotifen: antihistamine
+    Epinastine: antihistamine
+    Azelastine: antihistamine
+    Emedastine: antihistamine
+    Bepotastine: antihistamine
+    Alcaftadine: antihistamine
+    Cromolyn sodium: mast_cell_stabilizer
+    Nedocromil: mast_cell_stabilizer
+    Lodoxamide: mast_cell_stabilizer
+    Atropine: anticholinergic
+    Cyclopentolate: anticholinergic
+    Homatropine: anticholinergic
+    Scopolamine: anticholinergic
+    Tropicamide: anticholinergic
+    Phenylephrine: sympathomimetic
+    Proparacaine: local_anesthetic
+    Tetracaine: local_anesthetic
+    Lidocaine: local_anesthetic
+    Benoxinate: local_anesthetic
+    Fluorescein: other
+    Indocyanine green: other
+    Rose bengal: other
+    Ranibizumab: other
+    Aflibercept: other
+    Bevacizumab: other
+    Brolucizumab: other
+    Faricimab: other
+    Naphazoline: sympathomimetic
+    Tetrahydrozoline: sympathomimetic
+    Dipivefrin: sympathomimetic
+    Lifitegrast: immunosuppressant
+    Diquafosol: other
+    Rebamipide: other
+    Hydroxypropyl cellulose: other
+    Sodium hyaluronate: other
+    Tobramycin/Dexamethasone: corticosteroid
+    Neomycin/Polymyxin B/Dexamethasone: corticosteroid
+    Bacitracin/Polymyxin B: antibiotic
+    Sulfacetamide/Prednisolone: corticosteroid
+    Povidone-iodine: other
+    Chlorhexidine: other
+    Sodium chloride 5%: other
+    Glycerin ophthalmic: other
+    Mitomycin C: other
+    5-Fluorouracil: other
+    Acetylcholine intraocular: cholinergic
+    Carboxymethylcellulose: other
+    Hydroxypropyl methylcellulose: other
+    Accelidine: cholinergic
+    Conbercept: other
+  entity_b:
+    Atenolol: beta_blocker
+    Metoprolol: beta_blocker
+    Propranolol: beta_blocker
+    Bisoprolol: beta_blocker
+    Carvedilol: beta_blocker
+    Nebivolol: beta_blocker
+    Sotalol: antiarrhythmic
+    Labetalol: beta_blocker
+    Amlodipine: ccb
+    Nifedipine: ccb
+    Felodipine: ccb
+    Diltiazem: ccb
+    Verapamil: ccb
+    Lisinopril: acei
+    Enalapril: acei
+    Ramipril: acei
+    Captopril: acei
+    Losartan: arb
+    Valsartan: arb
+    Irbesartan: arb
+    Candesartan: arb
+    Hydrochlorothiazide: diuretic
+    Furosemide: diuretic
+    Spironolactone: diuretic
+    Bumetanide: diuretic
+    Eplerenone: diuretic
+    Warfarin: anticoagulant
+    Apixaban: anticoagulant
+    Rivaroxaban: anticoagulant
+    Dabigatran: anticoagulant
+    Aspirin: antiplatelet
+    Clopidogrel: antiplatelet
+    Ticagrelor: antiplatelet
+    Metformin: antidiabetic
+    Gliclazide: antidiabetic
+    Glimepiride: antidiabetic
+    Sitagliptin: antidiabetic
+    Empagliflozin: antidiabetic
+    Dapagliflozin: antidiabetic
+    Semaglutide: antidiabetic
+    Atorvastatin: statin
+    Rosuvastatin: statin
+    Simvastatin: statin
+    Amiodarone: antiarrhythmic
+    Digoxin: cardiac_glycoside
+    Fluoxetine: antidepressant_ssri
+    Sertraline: antidepressant_ssri
+    Citalopram: antidepressant_ssri
+    Carbamazepine: antiepileptic
+    Valproic acid: antiepileptic
+    Phenytoin: antiepileptic
+    Ibuprofen: nsaid
+    Naproxen: nsaid
+    Celecoxib: nsaid
+    Prednisone: corticosteroid
+    Methylprednisolone: corticosteroid
+    Dexamethasone systemic: corticosteroid
+    Methotrexate: immunosuppressant
+    Cyclosporine systemic: immunosuppressant
+    Tacrolimus systemic: immunosuppressant
+    Clarithromycin: macrolide
+    Rifampicin: antimycobacterial
+    Fluconazole systemic: antifungal
+    Itraconazole: antifungal
+    Omeprazole: other
+    Levothyroxine: thyroid_hormone
+    Salbutamol: beta2_agonist
+    Fluticasone: corticosteroid
+    Diphenhydramine: antihistamine
+    Fentanyl: opioid
+    Morphine: opioid
+    Oxycodone: opioid
+    Colchicine: other
+    Allopurinol: urate_lowering
+    Lithium: lithium
+    Metronidazole: antibiotic
+    Vancomycin: antibiotic
+    Doxycycline: antibiotic
+    Sildenafil: other
+    Acetaminophen: other
+    Levetiracetam: antiepileptic
+    Lamotrigine: antiepileptic
+    Olanzapine: antipsychotic
+    Risperidone: antipsychotic
+    Quetiapine: antipsychotic
+    Aripiprazole: antipsychotic
+    Loratadine: antihistamine
+    Cetirizine: antihistamine
+    Midazolam: cns_depressant
+    Diazepam: benzodiazepine
+    Clonazepam: cns_depressant
+    Pregabalin: antiepileptic
+    Amitriptyline: antidepressant_tca
+    Venlafaxine: antidepressant_ssri
+    Duloxetine: antidepressant_ssri
+    Pioglitazone: antidiabetic
+    Linagliptin: antidiabetic
+    Canagliflozin: antidiabetic
+    Liraglutide: antidiabetic
+    Pravastatin: statin
+    Pitavastatin: statin
+    Doxazosin: alpha1_blocker
+    Tamsulosin: alpha1_blocker
+    Dronedarone: antiarrhythmic
+    Lidocaine IV: antiarrhythmic
+    Flecainide: antiarrhythmic
+    Propafenone: antiarrhythmic
+    Tranexamic acid: other
+    Alendronic acid: other
+    Baclofen: other
+    Zolpidem: other
+    Methylphenidate: other
+    Ondansetron: other
+    Acyclovir systemic: antiviral
+    Insulin glargine: antidiabetic
+    Edoxaban: anticoagulant
+    Prasugrel: antiplatelet
+    Nitroglycerin: nitrate
+    Desmopressin: other
+    Hydroxychloroquine: other
+    Mycophenolate: immunosuppressant
+    Azathioprine: immunosuppressant
+    Sulfasalazine: immunosuppressant
+    Leflunomide: immunosuppressant
+    Tadalafil: other
+    Finasteride: other
+    Loperamide: opioid
+    Metoclopramide: other
+    Buspirone: cns_depressant
+    Azithromycin systemic: antibiotic
+    Ciprofloxacin systemic: fluoroquinolone
+    Levofloxacin systemic: fluoroquinolone
+    Diclofenac systemic: nsaid
+    Indomethacin systemic: nsaid
+    Tiotropium: anticholinergic
+    Salmeterol: beta2_agonist
+    Budesonide: corticosteroid
+    Haloperidol: antipsychotic
+    Clozapine: antipsychotic
+    Nortriptyline: antidepressant_tca
+    Paroxetine: antidepressant_ssri
+    Escitalopram: antidepressant_ssri
+    Fluvoxamine: antidepressant_ssri
+    Gabapentin: antiepileptic
+    Topiramate: antiepileptic
+    Pantoprazole: other
+    Esomeprazole: other
+    Lansoprazole: other
+    Erythromycin systemic: macrolide
+    Voriconazole systemic: antifungal
+    Ketoconazole: antifungal
+    Tamoxifen: other
+    Imatinib: other
+    Methotrexate systemic: immunosuppressant
+    Cyclophosphamide: other
+    Capecitabine: other
+    Clindamycin: antibiotic
+    Linezolid: antibiotic
+    Tramadol: opioid
+    Rosiglitazone: antidiabetic
+    Vildagliptin: antidiabetic
+    Saxagliptin: antidiabetic
+    Glibenclamide: antidiabetic
+    Insulin aspart: antidiabetic
+    Dulaglutide: antidiabetic
+    Clomipramine: antidepressant_tca
+    Desvenlafaxine: antidepressant_ssri
+    Zoledronic acid: other
+    Febuxostat: urate_lowering
+    Dipyridamole: antiplatelet
+    Cilostazol: antiplatelet
+    Heparin: anticoagulant
+    Enoxaparin: anticoagulant
+    Fondaparinux: anticoagulant
+    Amoxicillin: antibiotic
+    Hydrocortisone: corticosteroid
+    Perindopril: acei
+    Telmisartan: arb
+    Indapamide: diuretic
+    Ivabradine: antiarrhythmic
+    Ranolazine: antiarrhythmic
+    Isosorbide mononitrate: nitrate
+    Fluvastatin: statin
+    Propofol: other
+    Dexmedetomidine: other
+    Epinephrine: sympathomimetic
+    Norepinephrine: sympathomimetic
+    Vasopressin: other
+    Oseltamivir: antiviral
+    Remdesivir: antiviral
+    Tenofovir: antiviral
+    Ritonavir: antiviral
+    Letrozole: other
+    Aprepitant: other
+    Terazosin: alpha1_blocker
+    Dutasteride: other
+    Levodopa/Carbidopa: other
+    Pramipexole: other
+    Octreotide: other
+    Methimazole: other
+    Montelukast: other
+    Theophylline: xanthine
+    Acarbose: antidiabetic
+    Repaglinide: antidiabetic
+    Nateglinide: antidiabetic
+    Ezetimibe: other
+    Fenofibrate: other
+    Gemfibrozil: other
+    Donepezil: cholinergic
+    Rivastigmine: cholinergic
+    Memantine: other
+    Ropinirole: other
+    Codeine: opioid
+    Tapentadol: cns_depressant
+    Mesalamine: other
+    Ursodeoxycholic acid: other
+    Lactulose: other
+    Cefalexin: antibiotic
+    Ceftriaxone: antibiotic
+    Cefixime: antibiotic
+    Nitrofurantoin: antibiotic
+    Estradiol: other
+    Testosterone: other
+    Raloxifene: other
+    Domperidone: other
+    Probenecid: other
+    Abciximab: antiplatelet
+    Tirofiban: antiplatelet
+    Alfuzosin: alpha1_blocker
+    Clonidine: cns_depressant
+    Oxybutynin: anticholinergic
+    Acetazolamide: carbonic_anhydrase_inhibitor

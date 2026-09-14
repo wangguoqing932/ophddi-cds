@@ -1,0 +1,891 @@
+risk_levels:
+  high: 3
+  medium: 2
+  low: 1
+  unknown: 0
+rules:
+- id: additive_beta_blockade
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - beta_blocker
+  - systemic_absorption_high
+  entity_b_flags:
+  - beta_blocker_systemic
+  match: all
+  rationale: 'High-absorption topical beta-blockers (e.g., timolol >50% systemic bioavailability)
+    plus systemic beta-blockers cause additive beta-adrenergic blockade: bradycardia,
+    heart block. Low/medium-absorption agents (betaxolol) handled by moderate_abs_beta_blocker.
+    (Khan & Frishman 2024 PMID:39724552; Schuman 2000 PMID:10857839)'
+  recommendation: Monitor HR/BP. Use beta1-selective (betaxolol) with punctal occlusion.
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: clinical_ddi
+    support_tier: direct_clinical
+    action_behavior: scoped_clinical_review
+    verified_citation_ids:
+    - additive_beta_blockade
+    claim_scope: 'direct_ophthalmic: high-absorption topical beta-blocker + systemic
+      beta-blocker'
+    tier: 0A
+- id: beta_blocker_ccb_additive
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - beta_blocker
+  - systemic_absorption_high
+  entity_b_flags:
+  - l_type_calcium_channel_blocker
+  match: all
+  rationale: 'High-absorption topical beta-blockers (timolol) with systemic CCBs produce
+    additive negative chronotropy/dromotropy: severe bradycardia and AV block reported
+    in case series (BMJ 1987: severe bradycardia from timolol eye drops + verapamil
+    PMID:3109547; Med J Aust 1983 PMID:6343813). DDInter 2.0 rates timolol-verapamil
+    Major.'
+  recommendation: Avoid or monitor HR/ECG closely when high-absorption topical beta-blockers
+    are used with CCBs (verapamil/diltiazem highest risk).
+  citations:
+  - BMJ 1987;294:155-a https://doi.org/10.1136/bmj.294.6565.155-a (PMID:3109547)
+  - Med J Aust 1983;138:467-8 https://doi.org/10.5694/j.1326-5377.1983.tb136208.x
+    (PMID:6343813)
+  - 'DDInter 2.0: timolol-verapamil Major'
+  evidence_policy:
+    output_class: clinical_ddi
+    support_tier: direct_clinical
+    action_behavior: scoped_clinical_review
+    verified_citation_ids:
+    - beta_blocker_ccb_bradycardia
+    claim_scope: 'direct_ophthalmic: high-absorption topical beta-blocker + systemic
+      CCB (case reports)'
+    tier: 0A
+- id: beta_blocker_digoxin_additive
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - beta_blocker
+  - systemic_absorption_high
+  entity_b_flags:
+  - na_k_atpase_inhibitor
+  match: all
+  rationale: High-absorption topical beta-blockers (timolol) with digoxin cause additive
+    AV-node suppression and bradycardia; digoxin is narrow-therapeutic-index so toxicity
+    consequences are severe. DDInter 2.0 rates timolol-digoxin Moderate; systemic
+    beta-blocker+digoxin additive effects are established (see additive_beta_blockade
+    evidence).
+  recommendation: Monitor HR/ECG and digoxin levels; educate on bradycardia symptoms.
+  citations:
+  - 'DDInter 2.0: timolol-digoxin Moderate'
+  - Schuman 2000 PMID:10857839 (topical+systemic beta-blocker additive effects)
+  evidence_policy:
+    output_class: clinical_ddi
+    support_tier: direct_clinical
+    action_behavior: scoped_clinical_review
+    verified_citation_ids:
+    - additive_beta_blockade
+    claim_scope: 'class_extrapolated (direct_clinical base): high-absorption topical
+      beta-blocker + digoxin (NTI) additive AV-node suppression'
+    tier: 0A
+- id: additive_alpha2_cns_depression
+  severity: high
+  risk_type: pharmacodynamic_cns
+  entity_a_flags:
+  - alpha2_agonist
+  entity_b_flags:
+  - cns_depressant
+  rationale: Brimonidine (alpha2-agonist) causes CNS depression. Additive sedation
+    with opioids/benzos. Contraindicated <2y. (FDA Label; DrugBank DB00484)
+  recommendation: Caution with CNS depressants. Contraindicated in children <2y.
+  citations:
+  - FDA Label Brimonidine https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020490s010lbl.pdf
+    accessed 2026-07-26
+  - DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic_for_pediatric_toxicity: '
+    tier: 0B
+- id: additive_anticholinergic_effects
+  severity: medium
+  risk_type: pharmacodynamic_anticholinergic
+  entity_a_flags:
+  - anticholinergic
+  entity_b_flags:
+  - anticholinergic_systemic
+  rationale: 'Ophthalmic anticholinergics (atropine, cyclopentolate) systemically
+    absorbed. Additive effects: delirium, hyperthermia. (DrugBank DB00572, DB00979)'
+  recommendation: Use lowest concentration. Consider tropicamide.
+  citations:
+  - DrugBank:DB00572 https://go.drugbank.com/drugs/DB00572
+  - DrugBank:DB00979 https://go.drugbank.com/drugs/DB00979
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: additive_corticosteroid_iop
+  severity: medium
+  risk_type: pharmacodynamic_ocular_hypertension
+  entity_a_flags:
+  - corticosteroid
+  entity_b_flags:
+  - corticosteroid_systemic
+  rationale: Topical and systemic corticosteroids both elevate IOP. Loteprednol has
+    lower risk. (DrugBank DB00860, DB01234)
+  recommendation: Monitor IOP. Prefer loteprednol.
+  citations:
+  - DrugBank:DB00860 https://go.drugbank.com/drugs/DB00860
+  - DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+  a_class: corticosteroid
+- id: additive_nsaid_bleeding
+  severity: medium
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - nsaid
+  entity_b_flags:
+  - anticoagulant
+  rationale: Topical NSAIDs prolong bleeding time. Concurrent anticoagulants increase
+    ocular surface bleeding risk. (DrugBank DB00465)
+  recommendation: Caution with anticoagulants before surgery.
+  citations:
+  - DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465
+  - FDA Ketorolac https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=ketorolac+ophthalmic
+    accessed 2026-07-26
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: sympathomimetic_alpha_interaction
+  severity: medium
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - sympathomimetic
+  entity_b_flags:
+  - antihypertensive
+  rationale: Ophthalmic sympathomimetics reduce antihypertensive efficacy. Hypertensive
+    crisis with non-selective beta-blockers. (DrugBank DB00388)
+  recommendation: Monitor BP. Use beta1-selective when possible.
+  citations:
+  - DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: qt_prolongation_risk
+  severity: low
+  risk_type: pharmacodynamic_cardiotoxic
+  entity_a_flags:
+  - fluoroquinolone
+  entity_b_flags:
+  - qt_prolonging
+  rationale: Fluoroquinolones prolong QT via hERG blockade. Low systemic absorption
+    from ophthalmic route. (FDA; DrugBank DB00218)
+  recommendation: Caution with antiarrhythmics. Consider alternatives if QTc prolonged.
+  citations:
+  - FDA Fluoroquinolone https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-updates-warnings-oral-and-injectable-fluoroquinolone-antibiotics
+    accessed 2026-07-26
+  - DrugBank:DB00218 https://go.drugbank.com/drugs/DB00218
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: pga_antiplatelet_bleeding
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - prostaglandin_analog
+  entity_b_flags:
+  - antiplatelet
+  rationale: 'Prostaglandin analogs: low clinical significance from minimal systemic
+    absorption. (DrugBank DB00654)'
+  recommendation: Generally safe. No dose adjustment.
+  citations:
+  - DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654
+  - FDA Latanoprost https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=latanoprost
+    accessed 2026-07-26
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: cai_diuretic_metabolic_acidosis
+  severity: medium
+  risk_type: pharmacokinetic_metabolic
+  entity_a_flags:
+  - cai_topical
+  entity_b_flags:
+  - diuretic
+  rationale: Topical CAIs + diuretics produce additive metabolic acidosis risk. (DrugBank
+    DB00869, DB01194)
+  recommendation: Monitor electrolytes and bicarbonate.
+  citations:
+  - DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869
+  - DrugBank:DB01194 https://go.drugbank.com/drugs/DB01194
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic_for_cai_monotherapy: '
+    tier: 0B
+- id: cai_topiramate_acidosis
+  severity: medium
+  risk_type: pharmacokinetic_metabolic
+  entity_a_flags:
+  - cai_topical
+  entity_b_flags:
+  - cai_systemic
+  rationale: Both topical CAIs and topiramate inhibit carbonic anhydrase. Additive
+    metabolic acidosis. (DrugBank DB00273)
+  recommendation: Caution advised. Monitor bicarbonate levels.
+  citations:
+  - DrugBank:DB00273 https://go.drugbank.com/drugs/DB00273
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: dexamethasone_cyp3a4_induction
+  severity: medium
+  risk_type: pharmacokinetic_cyp3a4
+  entity_a_flags:
+  - corticosteroid
+  - systemic_absorption_high
+  entity_b_flags:
+  - cyp3a4_substrate
+  rationale: Dexamethasone 50-100% systemic bioavailability from eye drops (FDA label).
+    CYP3A4 induction clinically relevant at ophthalmic doses. (DrugBank DB01234)
+  recommendation: Monitor CYP3A4 substrate drug levels with prolonged dexamethasone
+    ophthalmic use. Consider alternative corticosteroid (fluorometholone, loteprednol).
+  citations:
+  - DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234
+  - FDA Dexamethasone https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021562s000lbl.pdf
+    accessed 2026-07-30
+  evidence_policy:
+    output_class: clinical_ddi
+    support_tier: direct_clinical
+    action_behavior: scoped_clinical_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic: Dexamethasone (high systemic absorption) + CYP3A4
+      substrates'
+    tier: 0B
+  match: all
+- id: topical_corticosteroid_cyp3a4_induction
+  severity: low
+  risk_type: pharmacokinetic_cyp3a4
+  entity_a_flags:
+  - corticosteroid
+  entity_b_flags:
+  - cyp3a4_substrate
+  rationale: Dexamethasone is weak CYP3A4 inducer. Minimal significance from ophthalmic
+    dose. (DrugBank DB01234)
+  recommendation: No dose adjustment for short-term use.
+  citations:
+  - DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: systemic_absorption_high_risk
+  severity: low
+  risk_type: systemic_absorption
+  entity_a_flags:
+  - systemic_absorption_high
+  entity_b_flags:
+  - beta_blocker_systemic
+  rationale: High-absorption ophthalmic drugs carry general systemic exposure risk;
+    no direct ophthalmic DDI evidence (tier excluded). Class-level precaution only.
+  recommendation: Use punctal occlusion. Monitor systemic effects.
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: systemic_absorption_moderate_risk
+  severity: low
+  risk_type: systemic_absorption
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - narrow_therapeutic_index
+  rationale: Moderate absorption drugs (brimonidine, CAIs) may alter NTI drug outcomes.
+    (DrugBank; FDA)
+  recommendation: Monitor NTI drug levels.
+  citations:
+  - DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484
+  - DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: p_gp_mediated_absorption
+  severity: low
+  risk_type: pharmacokinetic_transporter
+  entity_a_flags:
+  - p_gp_substrate
+  entity_b_flags:
+  - p_gp_inhibitor
+  rationale: P-gp substrates with inhibitors may alter ocular penetration. Clinical
+    significance not established. (DrugBank)
+  recommendation: No specific monitoring.
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: calcineurin_inhibitor_cyp3a4
+  severity: low
+  risk_type: pharmacokinetic_cyp3a4
+  entity_a_flags:
+  - calcineurin_inhibitor
+  entity_b_flags:
+  - cyp3a4_inhibitor
+  rationale: Cyclosporine/tacrolimus are CYP3A4 substrates; systemic CYP3A4 inhibitors
+    raise levels. Ophthalmic cyclosporine has very low systemic absorption, so this
+    systemic-route interaction has no clinical significance at ophthalmic doses. (DrugBank
+    DB00091; DDInter Major)
+  recommendation: 'Clinical DDI: co-administer with medication review. Monitor for
+    toxicity.'
+  citations:
+  - DrugBank:DB00091 https://go.drugbank.com/drugs/DB00091
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: macrolide_cyp3a4_inhibition
+  severity: low
+  risk_type: pharmacokinetic_cyp3a4
+  entity_a_flags:
+  - macrolide
+  entity_b_flags:
+  - cyp3a4_substrate
+  rationale: Topical macrolides inhibit CYP3A4. Low absorption limits significance.
+    (DDInter; DrugBank DB00199)
+  recommendation: Not an established DDI for ophthalmic route.
+  citations:
+  - DrugBank:DB00199 https://go.drugbank.com/drugs/DB00199
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: azole_cyp3a4_inhibition
+  severity: low
+  risk_type: pharmacokinetic_cyp3a4
+  entity_a_flags:
+  - azole
+  entity_b_flags:
+  - cyp3a4_substrate
+  rationale: Topical azoles inhibit CYP enzymes. Low systemic absorption. (DDInter;
+    DrugBank DB00196)
+  recommendation: Theoretical signal only for ophthalmic route.
+  citations:
+  - DrugBank:DB00196 https://go.drugbank.com/drugs/DB00196
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: sympathomimetic_maoi_hypertension
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - sympathomimetic
+  entity_b_flags:
+  - maoi
+  rationale: Phenylephrine + MAOIs cause hypertensive crisis. (DDInter Major; DrugBank
+    DB00388)
+  recommendation: Clinical review advised. Monitor BP.
+  citations:
+  - DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: beta_blocker_beta2_agonist_antagonism
+  severity: high
+  risk_type: pharmacodynamic_respiratory
+  entity_a_flags:
+  - beta_blocker
+  entity_b_flags:
+  - beta2_adrenergic_agonist
+  rationale: Topical beta-blockers antagonize beta2-receptors causing bronchospasm
+    in asthma/COPD. (DDInter Major; Khan 2024)
+  recommendation: Clinical review advised. Prefer beta1-selective. Use punctal occlusion.
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic_for_monotherapy_contraindication: '
+    tier: 0B
+- id: immunosuppressant_nsaid_nephrotoxicity
+  severity: medium
+  risk_type: pharmacodynamic_renal
+  entity_a_flags:
+  - calcineurin_inhibitor
+  entity_b_flags:
+  - cox1_cox2_inhibitor
+  rationale: 'Calcineurin inhibitors + NSAIDs: additive renal vasoconstriction. (DDInter;
+    DrugBank DB00091)'
+  recommendation: Monitor renal function.
+  citations:
+  - DrugBank:DB00091 https://go.drugbank.com/drugs/DB00091
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: fluoroquinolone_corticosteroid_tendon
+  severity: low
+  risk_type: pharmacodynamic_musculoskeletal
+  entity_a_flags:
+  - fluoroquinolone
+  entity_b_flags:
+  - corticosteroid_systemic
+  rationale: Fluoroquinolones + corticosteroids increase tendon rupture risk (FDA
+    class warning). Ophthalmic fluoroquinolones have <5% systemic absorption, so the
+    systemic-route tendon risk is not clinically significant at ophthalmic doses.
+  recommendation: Theoretical signal. Not established for ophthalmic route.
+  citations:
+  - FDA Safety Communication https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-updates-warnings-oral-and-injectable-fluoroquinolone-antibiotics
+    accessed 2026-07-27
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: nsaid_antihypertensive_antagonism
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - nsaid
+  entity_b_flags:
+  - antihypertensive
+  rationale: Topical NSAIDs can be systemically absorbed and may reduce antihypertensive
+    efficacy by inhibiting renal prostaglandin synthesis. DDInter Major for systemic
+    NSAIDs+antihypertensives.
+  recommendation: 'Clinical DDI: monitor blood pressure when using topical NSAIDs
+    in hypertensive patients.'
+  citations:
+  - DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: nsaid_diuretic_antagonism
+  severity: medium
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - nsaid
+  entity_b_flags:
+  - ncc_inhibitor
+  - nkcc2_inhibitor
+  rationale: NSAIDs reduce efficacy of diuretics (HCTZ, furosemide) by inhibiting
+    renal prostaglandins. May worsen heart failure control in susceptible patients.
+  recommendation: 'Contextual precaution: monitor fluid status and BP.'
+  citations:
+  - DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: antibiotic_warfarin_enhancement
+  severity: low
+  risk_type: pharmacokinetic_anticoagulation
+  entity_a_flags:
+  - antibiotic
+  entity_b_flags:
+  - narrow_therapeutic_index
+  - vitamin_k_epoxide_reductase_inhibitor
+  rationale: Many antibiotics alter gut flora vitamin K production, enhancing warfarin
+    effect. DDInter Major for multiple antibiotic-warfarin pairs. Low systemic absorption
+    from topical ophthalmic route limits clinical significance.
+  recommendation: 'Clinical DDI: monitor INR when starting/stopping topical ophthalmic
+    antibiotics in patients on warfarin.'
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+  match: all
+- id: beta_blocker_cyp2d6_metabolism
+  severity: medium
+  risk_type: pharmacokinetic_cyp2d6
+  entity_a_flags:
+  - beta_blocker
+  entity_b_flags:
+  - cyp2d6_inhibitor
+  rationale: Timolol is metabolized by CYP2D6. CYP2D6 inhibitors (fluoxetine, paroxetine,
+    quinidine) significantly increase plasma timolol levels and beta-blockade. DDInter
+    Major. (Edeki 1995 JAMA)
+  recommendation: 'Contextual precaution: CYP2D6 poor metabolizers at higher risk.
+    Monitor for excessive beta-blockade.'
+  citations:
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  evidence_policy:
+    output_class: clinical_ddi
+    support_tier: direct_clinical
+    action_behavior: scoped_clinical_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic: Timolol (ophthalmic) + paroxetine/fluoxetine
+      (strong CYP2D6 inhibitors)'
+    tier: 0A
+- id: nsaid_acei_arb_antagonism
+  severity: medium
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - nsaid
+  entity_b_flags:
+  - ace_inhibitor
+  - angiotensin_ii_receptor_antagonist
+  rationale: NSAIDs blunt the antihypertensive effect of ACEi/ARBs and may worsen
+    renal function, especially in heart failure or CKD. DDInter Major.
+  recommendation: 'Contextual precaution: monitor BP and renal function.'
+  citations:
+  - DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: corticosteroid_nti_interaction
+  severity: medium
+  risk_type: pharmacodynamic_endocrine
+  entity_a_flags:
+  - corticosteroid
+  entity_b_flags:
+  - narrow_therapeutic_index
+  rationale: Systemically absorbed corticosteroids may alter glucose control in diabetics
+    on insulin/sulfonylureas and may affect anticoagulant efficacy. Caution with chronic
+    ophthalmic steroid use.
+  recommendation: 'Contextual precaution: monitor glucose in diabetics. Monitor INR
+    in warfarin patients.'
+  citations:
+  - DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: sympathomimetic_tca_hypertension
+  severity: high
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - sympathomimetic
+  entity_b_flags:
+  - net_inhibitor
+  rationale: TCAs (nortriptyline) inhibit norepinephrine reuptake, potentiating sympathomimetic
+    effects of phenylephrine. DDInter Major for TCA-phenylephrine pairs.
+  recommendation: 'Clinical DDI: monitor BP. Avoid combination in patients with hypertension
+    or cardiac disease.'
+  citations:
+  - DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: anticholinergic_qt_prolongation
+  severity: medium
+  risk_type: pharmacodynamic_cardiotoxic
+  entity_a_flags:
+  - anticholinergic
+  entity_b_flags:
+  - qt_prolonging
+  rationale: Systemically absorbed anticholinergics (atropine, scopolamine) can cause
+    tachycardia, potentially exacerbating QT-prolonging effects of antiarrhythmics.
+    DDInter cautions.
+  recommendation: Theoretical mechanism signal. Monitor ECG if symptoms develop.
+  citations:
+  - DrugBank:DB00572 https://go.drugbank.com/drugs/DB00572
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: moderate_abs_antiplatelet
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - antiplatelet
+  rationale: Drugs with moderate systemic absorption (brimonidine, betaxolol, dorzolamide)
+    may marginally increase bleeding risk with antiplatelets.
+  recommendation: Low concern. Monitor for ocular surface bleeding post-surgery.
+  citations:
+  - DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: moderate_abs_beta_blocker
+  severity: medium
+  risk_type: pharmacodynamic_cardiovascular
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - beta_blocker_systemic
+  rationale: Betaxolol (moderate systemic absorption, beta1-selective) with systemic
+    beta-blockers may produce additive beta-blockade. Risk is lower than with non-selective
+    agents.
+  recommendation: 'Contextual precaution: monitor HR/BP. Betaxolol is safer than timolol
+    but still requires monitoring.'
+  citations:
+  - DrugBank:DB00195 https://go.drugbank.com/drugs/DB00195
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'direct_ophthalmic: '
+    tier: 0B
+- id: moderate_abs_anticoagulant
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - anticoagulant
+  rationale: Brimonidine/betaxolol/dorzolamide have moderate systemic absorption.
+    Theoretic increased bleeding risk with anticoagulants.
+  recommendation: Low concern. Precaution with ocular surgery.
+  citations:
+  - DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: moderate_abs_cyp2d6
+  severity: low
+  risk_type: pharmacokinetic_cyp2d6
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - cyp2d6_substrate
+  rationale: Betaxolol is metabolized by CYP2D6. Concurrent CYP2D6 substrates may
+    compete. Clinical significance low for ophthalmic dose.
+  recommendation: Theoretical. Not clinically significant for ophthalmic route.
+  citations:
+  - DrugBank:DB00195 https://go.drugbank.com/drugs/DB00195
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: moderate_abs_diuretic
+  severity: low
+  risk_type: pharmacokinetic_metabolic
+  entity_a_flags:
+  - systemic_absorption_medium
+  entity_b_flags:
+  - diuretic
+  rationale: Dorzolamide/brimonidine with diuretics may additively affect electrolyte
+    balance. Dorzolamide CAI activity is the primary concern.
+  recommendation: Theoretical for non-CAI drugs. Dorzolamide already covered by CAI-diuretic
+    rule.
+  citations:
+  - DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: alpha2_agonist_antiplatelet
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - alpha2_agonist
+  entity_b_flags:
+  - antiplatelet
+  rationale: Brimonidine (alpha2-agonist) with antiplatelets. No direct pharmacodynamic
+    interaction expected. Low systemic absorption.
+  recommendation: Generally safe. No dose adjustment needed.
+  citations:
+  - FDA Label Brimonidine https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020490s010lbl.pdf
+    [Drug Interactions] accessed 2026-07-27
+  evidence_policy:
+    output_class: precaution
+    support_tier: contextual_clinical
+    action_behavior: precautionary_review
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: '
+    tier: 0B
+- id: low_abs_antiplatelet
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - systemic_absorption_low
+  entity_b_flags:
+  - antiplatelet
+  rationale: Drugs with low systemic absorption (prostaglandin analogs, antihistamines,
+    fluoroquinolones) have minimal antiplatelet interaction risk.
+  recommendation: Generally safe. No special precautions needed.
+  citations:
+  - DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+- id: low_abs_anticoagulant
+  severity: low
+  risk_type: pharmacodynamic_hemorrhagic
+  entity_a_flags:
+  - systemic_absorption_low
+  entity_b_flags:
+  - anticoagulant
+  rationale: Prostaglandin analogs, antihistamines, fluoroquinolones have very low
+    systemic absorption with negligible anticoagulant interaction.
+  recommendation: Generally safe.
+  citations:
+  - DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654
+  evidence_policy:
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
+    verified_citation_ids: []
+    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    tier: exclude
+patient_factor_rules:
+  elderly:
+    severity: medium
+    matching_entity_b_flags:
+    - narrow_therapeutic_index
+    rationale: Elderly (>=65) reduced clearance, polypharmacy, increased sensitivity.
+    recommendation: Escalate monitoring for bradycardia, hypotension, falls risk.
+    citations:
+    - FDA Timolol https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=timolol+ophthalmic
+      accessed 2026-07-26
+    - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+    evidence_policy:
+      output_class: precaution
+      support_tier: contextual_clinical
+      action_behavior: precautionary_review
+      verified_citation_ids:
+      - patient_factor:elderly
+      claim_scope: contextual patient-vulnerability medication review
+      tier: 0B
+  renal_impairment:
+    severity: medium
+    matching_entity_a_flags:
+    - systemic_absorption_medium
+    matching_entity_b_flags:
+    - narrow_therapeutic_index
+    rationale: Renal impairment reduces drug clearance. Monitor for dose-related toxicity.
+    recommendation: Monitor drug levels of NTI drugs.
+    citations:
+    - FDA Dorzolamide https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=dorzolamide
+      accessed 2026-07-26
+    - DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869
+    evidence_policy:
+      output_class: precaution
+      support_tier: contextual_clinical
+      action_behavior: precautionary_review
+      verified_citation_ids:
+      - patient_factor:renal_impairment
+      claim_scope: contextual patient-vulnerability medication review
+      tier: 0B
+  polypharmacy:
+    severity: medium
+    matching_entity_b_flags:
+    - narrow_therapeutic_index
+    rationale: '>=5 systemic medications increase DDI risk. Include ocular drugs in
+      review.'
+    recommendation: Conduct comprehensive medication reconciliation.
+    citations:
+    - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+    evidence_policy:
+      output_class: precaution
+      support_tier: contextual_clinical
+      action_behavior: precautionary_review
+      verified_citation_ids:
+      - patient_factor:polypharmacy
+      claim_scope: contextual patient-vulnerability medication review
+      tier: 0B

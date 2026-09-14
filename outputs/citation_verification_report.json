@@ -1,0 +1,328 @@
+{
+  "overall": "pass",
+  "mode": "strict-policy-cache-replay",
+  "generated_at": "2026-09-14T10:52:38.390916+00:00",
+  "rules_yaml_sha256": "2afabaad81161c402472620841c733310ab3eb548b451b9c70b67f7ce18814b1",
+  "citation_manifest_count": 8,
+  "policy_count": 43,
+  "policy_errors": [],
+  "items": [
+    {
+      "id": "additive_beta_blockade",
+      "status": "verified",
+      "doi": "10.1016/s0161-6420(00)00081-6",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Effects of systemic β-blocker therapy on the efficacy and safety of topical brimonidine and timolol11None of the clinical investigators or authors have a proprietary interest in the products discussed in this manuscript; Pamela Barnett, Amy Batoosingh, Kuankuan Chen, Robert David, MD, Marsha Harrold, and Amanda VanDenburgh are employees of Allergan, Inc. Effects of systemic β-blocker therapy on the efficacy and safety of topical brimonidine and timolol11None of the clinical investigators or authors have a proprietary interest in the products discussed in this manuscript; Pamela Barnett, Amy Batoosingh, Kuankuan Chen, Robert David, MD, Marsha Harrold, and Amanda VanDenburgh are employees of Allergan, Inc. Effects of systemic beta-blocker therapy on the efficacy and safety of topical brimonidine and timolol. Brimonidine Study Groups 1 and 2.",
+      "required_terms": [
+        "timolol",
+        "topical",
+        "systemic",
+        "beta-blocker"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1016/S0161-6420%2800%2900081-6",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\757358d48669f62b6302e3b8c81657159cf2c62b904ce0423a15fd4c9663c5fa.json",
+          "sha256": "1cbf37f03c6a44200b7490ccb3c20ae6ebb5cab83d05238500868d48d14abee4",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1016/S0161-6420%2800%2900081-6",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\d28a20a659049472396682f6ba334590a6308148229ce1ee76b6b4b33bfd8bbe.json",
+          "sha256": "568059343f118340c8f402b7f7da8b3c2502aa27f0a7a1b76e9e850c0be63f1a",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=10857839&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\9847e85ccadfd72f137f9e7fce634a386d0cbe11ac3cc6989c2269034e98eccf.xml",
+          "sha256": "b9c5f42ceb4ecac88243dec25e3a3e24103b4f2792c92fd5b8f418404a1f4f20",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "additive_alpha2_cns_depression",
+      "status": "verified",
+      "doi": "10.1111/pde.12868",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Brimonidine Toxicity Secondary to Topical Use for an Ulcerated Hemangioma Brimonidine Toxicity Secondary to Topical Use for an Ulcerated Hemangioma Brimonidine Toxicity Secondary to Topical Use for an Ulcerated Hemangioma.",
+      "required_terms": [
+        "brimonidine",
+        "topical",
+        "toxicity"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1111/pde.12868",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\9a95fe68ec88431f0ef49523f661cfbea81cf91e3c4aa7a47147f08fb875835d.json",
+          "sha256": "84a200d11f0ed4ae694dd60a5ce835265e4823fb6d347518befde569bfec0bb6",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1111/pde.12868",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\927237aed69db8d5da5f9f7b03dc6a169e9ccedbf96f4a0afb045b831d981ad8.json",
+          "sha256": "be227c55faa5ab961cefab2ed4cabb97f823faac3f50bea2416cab1cc9304d68",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=27282306&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\88859ac80f7aeac3016e684c615457a4b6195ac5f6167d3e8b74de71565b8108.xml",
+          "sha256": "8635e5ecc2772becfbfd26c5f5c17f2e6ca9f933f177ee026167d7dfd1a65590",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "cai_diuretic_metabolic_acidosis",
+      "status": "verified",
+      "doi": "10.1111/bcp.13499",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function.",
+      "required_terms": [
+        "dorzolamide",
+        "metabolic",
+        "acidosis",
+        "renal"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1111/bcp.13499",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\c78e85377e9041896c3b6aaa0b20d6329939378f26bb8818832adec2fd05bed6.json",
+          "sha256": "50e882aeff94dcaea1f9648af86f0a4c92a8fa258ae7ac3eab84bb9f662a10df",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1111/bcp.13499",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\7c7e43910fbf350b3228df501999313a81f47ddcc828d584c417b737c14c9794.json",
+          "sha256": "052cc86ce5385a26d3cd65a00b06f1fd125a1bcdebbcd2b2d231da8abc46785e",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29333622&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\801fee8f075facdcaf49f2cadb6afe4cec9b54e54bcb0f781e86f7a885327a3a.xml",
+          "sha256": "cf7b6e2ae76909901a8045a824a9f069a9bb51be299fa6a0e34e569e9bc1623e",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "systemic_absorption_high_risk",
+      "status": "verified",
+      "doi": "10.7759/cureus.20945",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "There’s Danger in the Drops: Systemic Effects of Ophthalmic Drops Used to Treat Glaucoma There’s Danger in the Drops: Systemic Effects of Ophthalmic Drops Used to Treat Glaucoma There's Danger in the Drops: Systemic Effects of Ophthalmic Drops Used to Treat Glaucoma.",
+      "required_terms": [
+        "ophthalmic",
+        "systemic",
+        "drops"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.7759/cureus.20945",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\e7c73a900a8e34094601148efe99bc8e092ef6bf063983ccc1109a9c7b81ccb1.json",
+          "sha256": "fb6ce536d908aec267aa3b3c16b47f5bd16d4f7fa8fe311a2958ecd03100ade2",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.7759/cureus.20945",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\8ae2308a4ff5aec6ffc95059913f4bb75ccfac91bfb3f8e7aa0c7d96cf7ad737.json",
+          "sha256": "43441724a7eeb97da3d313c5f48a26fb8be774bf065c2479d9786abef3afff0b",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=35154926&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\8900a1bfb89090f030a76942b2a5365d83ab0703ff9d4cdf25375fcadcfa6c2a.xml",
+          "sha256": "eede5cbdebaf6daf1aa099ef002003b5fb5f5067aef51a07db6f0e24f463d353",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "patient_factor:elderly",
+      "status": "verified",
+      "doi": "10.7759/cureus.25815",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Bradycardia From a Non-selective Beta-Adrenergic Antagonist, Timolol, Applied Ophthalmologically for Glaucoma Bradycardia From a Non-selective Beta-Adrenergic Antagonist, Timolol, Applied Ophthalmologically for Glaucoma Bradycardia From a Non-selective Beta-Adrenergic Antagonist, Timolol, Applied Ophthalmologically for Glaucoma.",
+      "required_terms": [
+        "timolol",
+        "bradycardia",
+        "glaucoma"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.7759/cureus.25815",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\0d74eef7f75d619a57d1f5b03361fe03d7d4867bd662d6cd01ceda3a39bc747f.json",
+          "sha256": "ac41705c9c810a8774f8f71061510a70c203e17b855cff50590389036cbf5b2f",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.7759/cureus.25815",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\66c5913f556f445c844c483f0c6b5d9199e44ca994b2ad15a5728da9efb58642.json",
+          "sha256": "ff26358db6244a7738ff90f3ff8978a687cf67d76f0e51b70b79ca8d7d6dfc1a",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=35822138&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\1f88b3f411753e3cebfc86e08163d6c72d1f8d10c367113627d1009b97a858eb.xml",
+          "sha256": "66f380ce3d576599fa67cd36957fd1a23b7de43d76751f00ccfafa811f9751a2",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "patient_factor:polypharmacy",
+      "status": "verified",
+      "doi": "10.53738/revmed.2025.21.931.47723",
+      "agreement": true,
+      "title_identity": "alternate_title_same_doi",
+      "retracted": false,
+      "relevant": true,
+      "title": "5 minutes pour apprendre. Ne fermez pas les yeux sur les traitements topiques 5 minutes pour apprendre. Ne fermez pas les yeux sur les traitements topiques [Bradyarrhythmia and topical timolol : highlighting the need for medication reconciliation].",
+      "required_terms": [
+        "timolol",
+        "medication",
+        "reconciliation",
+        "polymorbid"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.53738/REVMED.2025.21.931.47723",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\c65107eeb067c257cd97226b74f683224c01935c23e681684c63a3d4c69e238a.json",
+          "sha256": "a702eb21ae9c7cc6aadebdb8285686ccd76eaab17a90f5030baeba2c25492314",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.53738/REVMED.2025.21.931.47723",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\f05794167b152eb8206ebe8551fc182dd4cb750760242a3732ccfffbef4a583f.json",
+          "sha256": "adf4f1d27ac86bdc0775e921393af70ebf16c859a853f73c328453a5b4893045",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40963314&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\dae47fecbb95a2ffcbf67120106717fe23b6f46fff6660defdbc0d74bee9fd0e.xml",
+          "sha256": "10d077957e790268ca3f13429d63d88403faf88dcd7437cd13ac30d8a664c9dd",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "patient_factor:renal_impairment",
+      "status": "verified",
+      "doi": "10.1111/bcp.13499",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function Metabolic acidosis and anaemia associated with dorzolamide in a patient with impaired renal function.",
+      "required_terms": [
+        "dorzolamide",
+        "metabolic",
+        "acidosis",
+        "renal"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1111/bcp.13499",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\c78e85377e9041896c3b6aaa0b20d6329939378f26bb8818832adec2fd05bed6.json",
+          "sha256": "50e882aeff94dcaea1f9648af86f0a4c92a8fa258ae7ac3eab84bb9f662a10df",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1111/bcp.13499",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\7c7e43910fbf350b3228df501999313a81f47ddcc828d584c417b737c14c9794.json",
+          "sha256": "052cc86ce5385a26d3cd65a00b06f1fd125a1bcdebbcd2b2d231da8abc46785e",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29333622&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\801fee8f075facdcaf49f2cadb6afe4cec9b54e54bcb0f781e86f7a885327a3a.xml",
+          "sha256": "cf7b6e2ae76909901a8045a824a9f069a9bb51be299fa6a0e34e569e9bc1623e",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    },
+    {
+      "id": "beta_blocker_ccb_bradycardia",
+      "status": "verified",
+      "doi": "10.1136/bmj.294.6565.155-a",
+      "agreement": true,
+      "title_identity": "title_agreement",
+      "retracted": false,
+      "relevant": true,
+      "title": "Severe bradycardia due to interaction of timolol eye drops and verapamil. Severe bradycardia due to interaction of timolol eye drops and verapamil. Severe bradycardia due to interaction of timolol eye drops and verapamil.",
+      "required_terms": [
+        "timolol",
+        "verapamil",
+        "bradycardia"
+      ],
+      "sources": [
+        {
+          "provider": "crossref",
+          "url": "https://api.crossref.org/works/10.1136/bmj.294.6565.155-a",
+          "cache_path": "data\\raw\\evidence\\citations\\crossref\\9b8248283c08419a798a6443d643edc395e1a274be5921c61ac25ca9985f1e18.json",
+          "sha256": "1fac80f2baaeb87017953ea0ddbcd7de1cceb73976df346c3d42950a80906d34",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "openalex",
+          "url": "https://api.openalex.org/works/https://doi.org/10.1136/bmj.294.6565.155-a",
+          "cache_path": "data\\raw\\evidence\\citations\\openalex\\362c9e906f5a7d90d0dc0b0cd5bc4a192a5c08b83799fc3deeed1fea3422451b.json",
+          "sha256": "384ff7e80a7b7e8f565fe9ecab5010d7712b0847facdcede0f4676765933d202",
+          "retrieved_at": "cached"
+        },
+        {
+          "provider": "pubmed_citation",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=3109547&retmode=xml",
+          "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\d5b090064d0c256b14de223b688a5e7dc7f0786e3b0f40f58659a9324102b4d9.xml",
+          "sha256": "6e745fad2bc2bea658324ebb0622bbc8ad370085c320606e78ef6e669f9030d3",
+          "retrieved_at": "cached"
+        }
+      ],
+      "reason": ""
+    }
+  ],
+  "parser_version": "phase3-citation-sources-v1"
+}

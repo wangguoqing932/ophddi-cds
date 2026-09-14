@@ -1,0 +1,3131 @@
+schema_version: 1
+entities:
+- entity_b_id: sys_med_0001
+  generic_name: Atenolol
+  aliases:
+  - atenolol
+  - tenormin
+  drug_class: beta_blocker_systemic
+  flags:
+  - beta1_selective_blocker
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00335
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0002
+  generic_name: Metoprolol
+  aliases:
+  - metoprolol tartrate
+  - metoprolol succinate
+  drug_class: beta_blocker_systemic
+  flags:
+  - beta1_selective_blocker
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00264
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0003
+  generic_name: Propranolol
+  aliases:
+  - propranolol hydrochloride
+  drug_class: beta_blocker_systemic
+  flags:
+  - non_selective_beta_blocker
+  - cyp1a2_substrate
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP1A2
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00571
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0004
+  generic_name: Bisoprolol
+  aliases:
+  - bisoprolol fumarate
+  drug_class: beta_blocker_systemic
+  flags:
+  - beta1_selective_blocker
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00612
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0005
+  generic_name: Carvedilol
+  aliases:
+  - carvedilol
+  drug_class: beta_blocker_systemic
+  flags:
+  - non_selective_beta_blocker_alpha1_blocker
+  - cyp2d6_substrate
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB01136
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0006
+  generic_name: Nebivolol
+  aliases:
+  - nebivolol hydrochloride
+  drug_class: beta_blocker_systemic
+  flags:
+  - beta1_selective_blocker
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB04861
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0007
+  generic_name: Sotalol
+  aliases:
+  - sotalol hydrochloride
+  drug_class: beta_blocker_systemic
+  flags:
+  - non_selective_beta_blocker_class_iii_antiarrhythmic
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00489
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0008
+  generic_name: Labetalol
+  aliases:
+  - labetalol hydrochloride
+  drug_class: beta_blocker_systemic
+  flags:
+  - non_selective_beta_blocker_alpha1_blocker
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00598
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0009
+  generic_name: Amlodipine
+  aliases:
+  - amlodipine besylate
+  drug_class: ccb_dihydropyridine
+  flags:
+  - l_type_calcium_channel_blocker
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00381
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0010
+  generic_name: Nifedipine
+  aliases:
+  - nifedipine
+  drug_class: ccb_dihydropyridine
+  flags:
+  - l_type_calcium_channel_blocker
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01115
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0011
+  generic_name: Felodipine
+  aliases:
+  - felodipine
+  drug_class: ccb_dihydropyridine
+  flags:
+  - l_type_calcium_channel_blocker
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01023
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0012
+  generic_name: Diltiazem
+  aliases:
+  - diltiazem hydrochloride
+  drug_class: ccb_non_dihydropyridine
+  flags:
+  - l_type_calcium_channel_blocker
+  - cyp3a4_inhibitor
+  - p_gp_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00343
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0013
+  generic_name: Verapamil
+  aliases:
+  - verapamil hydrochloride
+  drug_class: ccb_non_dihydropyridine
+  flags:
+  - l_type_calcium_channel_blocker
+  - cyp3a4_inhibitor
+  - p_gp_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00661
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0014
+  generic_name: Lisinopril
+  aliases:
+  - lisinopril
+  drug_class: ace_inhibitor
+  flags:
+  - ace_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00722
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0015
+  generic_name: Enalapril
+  aliases:
+  - enalapril maleate
+  drug_class: ace_inhibitor
+  flags:
+  - ace_inhibitor
+  - prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00584
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0016
+  generic_name: Ramipril
+  aliases:
+  - ramipril
+  drug_class: ace_inhibitor
+  flags:
+  - ace_inhibitor
+  - prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00178
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0017
+  generic_name: Captopril
+  aliases:
+  - captopril
+  drug_class: ace_inhibitor
+  flags:
+  - ace_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01197
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0018
+  generic_name: Losartan
+  aliases:
+  - losartan potassium
+  drug_class: arb
+  flags:
+  - angiotensin_ii_receptor_antagonist
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00678
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0019
+  generic_name: Valsartan
+  aliases:
+  - valsartan
+  drug_class: arb
+  flags:
+  - angiotensin_ii_receptor_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00177
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0020
+  generic_name: Irbesartan
+  aliases:
+  - irbesartan
+  drug_class: arb
+  flags:
+  - angiotensin_ii_receptor_antagonist
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB01029
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0021
+  generic_name: Candesartan
+  aliases:
+  - candesartan cilexetil
+  drug_class: arb
+  flags:
+  - angiotensin_ii_receptor_antagonist
+  - prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00796
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0022
+  generic_name: Hydrochlorothiazide
+  aliases:
+  - HCTZ
+  - HCT
+  drug_class: thiazide_diuretic
+  flags:
+  - ncc_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00999
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0023
+  generic_name: Furosemide
+  aliases:
+  - furosemide
+  drug_class: loop_diuretic
+  flags:
+  - nkcc2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00695
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0024
+  generic_name: Spironolactone
+  aliases:
+  - spironolactone
+  drug_class: potassium_sparing_diuretic
+  flags:
+  - mineralocorticoid_receptor_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00421
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0025
+  generic_name: Bumetanide
+  aliases:
+  - bumetanide
+  drug_class: loop_diuretic
+  flags:
+  - nkcc2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00887
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0026
+  generic_name: Eplerenone
+  aliases:
+  - eplerenone
+  drug_class: potassium_sparing_diuretic
+  flags:
+  - mineralocorticoid_receptor_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00700
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0027
+  generic_name: Warfarin
+  aliases:
+  - warfarin sodium
+  drug_class: anticoagulant_vitamin_k_antagonist
+  flags:
+  - vitamin_k_epoxide_reductase_inhibitor
+  - cyp2c9_substrate
+  - narrow_therapeutic_index
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00682
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0028
+  generic_name: Apixaban
+  aliases:
+  - apixaban
+  drug_class: anticoagulant_direct_xa_inhibitor
+  flags:
+  - factor_xa_inhibitor
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB06605
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0029
+  generic_name: Rivaroxaban
+  aliases:
+  - rivaroxaban
+  drug_class: anticoagulant_direct_xa_inhibitor
+  flags:
+  - factor_xa_inhibitor
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB06228
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0030
+  generic_name: Dabigatran
+  aliases:
+  - dabigatran etexilate
+  drug_class: anticoagulant_direct_thrombin_inhibitor
+  flags:
+  - thrombin_inhibitor
+  - p_gp_substrate
+  metabolic_pathways: []
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB06695
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0031
+  generic_name: Aspirin
+  aliases:
+  - acetylsalicylic acid
+  - ASA
+  drug_class: antiplatelet
+  flags:
+  - cox1_inhibitor_irreversible
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00945
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0032
+  generic_name: Clopidogrel
+  aliases:
+  - clopidogrel bisulfate
+  drug_class: antiplatelet
+  flags:
+  - p2y12_inhibitor_prodrug
+  - cyp2c19_substrate
+  metabolic_pathways:
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB00758
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0033
+  generic_name: Ticagrelor
+  aliases:
+  - ticagrelor
+  drug_class: antiplatelet
+  flags:
+  - p2y12_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB08816
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0034
+  generic_name: Metformin
+  aliases:
+  - metformin hydrochloride
+  drug_class: antidiabetic_biguanide
+  flags:
+  - ampk_activator
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00331
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0035
+  generic_name: Gliclazide
+  aliases:
+  - gliclazide
+  drug_class: antidiabetic_sulfonylurea
+  flags:
+  - atp_sensitive_k_channel_blocker
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB01120
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0036
+  generic_name: Glimepiride
+  aliases:
+  - glimepiride
+  drug_class: antidiabetic_sulfonylurea
+  flags:
+  - atp_sensitive_k_channel_blocker
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00222
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0037
+  generic_name: Sitagliptin
+  aliases:
+  - sitagliptin phosphate
+  drug_class: antidiabetic_dpp4_inhibitor
+  flags:
+  - dpp4_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01261
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0038
+  generic_name: Empagliflozin
+  aliases:
+  - empagliflozin
+  drug_class: antidiabetic_sglt2_inhibitor
+  flags:
+  - sglt2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB09038
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0039
+  generic_name: Dapagliflozin
+  aliases:
+  - dapagliflozin propanediol
+  drug_class: antidiabetic_sglt2_inhibitor
+  flags:
+  - sglt2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB06292
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0040
+  generic_name: Semaglutide
+  aliases:
+  - semaglutide
+  drug_class: antidiabetic_glp1_ra
+  flags:
+  - glp1_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB13928
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0041
+  generic_name: Atorvastatin
+  aliases:
+  - atorvastatin calcium
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01076
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0042
+  generic_name: Rosuvastatin
+  aliases:
+  - rosuvastatin calcium
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01098
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0043
+  generic_name: Simvastatin
+  aliases:
+  - simvastatin
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor_prodrug
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00641
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0044
+  generic_name: Amiodarone
+  aliases:
+  - amiodarone hydrochloride
+  drug_class: antiarrhythmic_class_iii
+  flags:
+  - k_channel_blocker
+  - cyp3a4_inhibitor
+  - cyp2c9_inhibitor
+  - cyp2d6_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2C9
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB01118
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0045
+  generic_name: Digoxin
+  aliases:
+  - digoxin
+  drug_class: cardiac_glycoside
+  flags:
+  - na_k_atpase_inhibitor
+  - p_gp_substrate
+  - narrow_therapeutic_index
+  metabolic_pathways: []
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00390
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0046
+  generic_name: Fluoxetine
+  aliases:
+  - fluoxetine hydrochloride
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  - cyp2d6_inhibitor
+  - cyp2c9_inhibitor
+  metabolic_pathways:
+  - CYP2D6
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00472
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0047
+  generic_name: Sertraline
+  aliases:
+  - sertraline hydrochloride
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01104
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0048
+  generic_name: Citalopram
+  aliases:
+  - citalopram hydrobromide
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  - cyp2c19_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00215
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0049
+  generic_name: Carbamazepine
+  aliases:
+  - carbamazepine
+  drug_class: antiepileptic
+  flags:
+  - na_channel_blocker
+  - cyp3a4_inducer
+  - cyp2c9_inducer
+  - cyp1a2_inducer
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2C9
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00564
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0050
+  generic_name: Valproic acid
+  aliases:
+  - valproate
+  - sodium valproate
+  drug_class: antiepileptic
+  flags:
+  - gaba_ergic
+  - cyp2c9_inhibitor
+  - cyp2c19_inhibitor
+  metabolic_pathways:
+  - CYP2C9
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB00313
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0051
+  generic_name: Phenytoin
+  aliases:
+  - phenytoin sodium
+  drug_class: antiepileptic
+  flags:
+  - na_channel_blocker
+  - cyp2c9_substrate
+  - cyp3a4_inducer
+  - cyp2c9_inducer
+  metabolic_pathways:
+  - CYP2C9
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00252
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0052
+  generic_name: Ibuprofen
+  aliases:
+  - ibuprofen
+  drug_class: nsaid_systemic
+  flags:
+  - cox1_cox2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01050
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0053
+  generic_name: Naproxen
+  aliases:
+  - naproxen sodium
+  drug_class: nsaid_systemic
+  flags:
+  - cox1_cox2_inhibitor
+  - cyp1a2_substrate
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP1A2
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00788
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0054
+  generic_name: Celecoxib
+  aliases:
+  - celecoxib
+  drug_class: nsaid_systemic
+  flags:
+  - cox2_inhibitor
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00482
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0055
+  generic_name: Prednisone
+  aliases:
+  - prednisone systemic
+  drug_class: corticosteroid_systemic
+  flags:
+  - glucocorticoid_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00635
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0056
+  generic_name: Methylprednisolone
+  aliases:
+  - methylprednisolone systemic
+  drug_class: corticosteroid_systemic
+  flags:
+  - glucocorticoid_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00959
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0057
+  generic_name: Dexamethasone systemic
+  aliases:
+  - dexamethasone systemic
+  drug_class: corticosteroid_systemic
+  flags:
+  - glucocorticoid_receptor_agonist
+  - cyp3a4_substrate
+  - cyp3a4_inducer
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01234
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0058
+  generic_name: Methotrexate
+  aliases:
+  - methotrexate
+  drug_class: immunosuppressant_systemic
+  flags:
+  - dhfr_inhibitor
+  - narrow_therapeutic_index
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00563
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0059
+  generic_name: Cyclosporine systemic
+  aliases:
+  - cyclosporine A systemic
+  drug_class: immunosuppressant_systemic
+  flags:
+  - calcineurin_inhibitor
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00091
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0060
+  generic_name: Tacrolimus systemic
+  aliases:
+  - tacrolimus systemic
+  drug_class: immunosuppressant_systemic
+  flags:
+  - calcineurin_inhibitor
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00800
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0061
+  generic_name: Clarithromycin
+  aliases:
+  - clarithromycin
+  drug_class: antibiotic_macrolide_systemic
+  flags:
+  - 50S_inhibitor
+  - cyp3a4_inhibitor
+  - p_gp_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB01211
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0062
+  generic_name: Rifampicin
+  aliases:
+  - rifampin
+  - rifampicin
+  drug_class: antibiotic_ansamycin
+  flags:
+  - rna_polymerase_inhibitor
+  - cyp3a4_inducer
+  - p_gp_inducer
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB01045
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0063
+  generic_name: Fluconazole systemic
+  aliases:
+  - fluconazole systemic
+  drug_class: antifungal_azole_systemic
+  flags:
+  - cyp51_inhibitor
+  - cyp2c9_inhibitor
+  - cyp2c19_inhibitor
+  metabolic_pathways:
+  - CYP2C9
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB00196
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0064
+  generic_name: Itraconazole
+  aliases:
+  - itraconazole
+  drug_class: antifungal_azole_systemic
+  flags:
+  - cyp51_inhibitor
+  - cyp3a4_inhibitor
+  - p_gp_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB01167
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0065
+  generic_name: Omeprazole
+  aliases:
+  - omeprazole
+  drug_class: proton_pump_inhibitor
+  flags:
+  - h_k_atpase_inhibitor
+  - cyp2c19_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00338
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0066
+  generic_name: Levothyroxine
+  aliases:
+  - levothyroxine sodium
+  - T4
+  drug_class: thyroid_hormone
+  flags:
+  - thyroid_hormone_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00451
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0067
+  generic_name: Salbutamol
+  aliases:
+  - albuterol
+  - salbutamol
+  drug_class: respiratory_beta2_agonist
+  flags:
+  - beta2_adrenergic_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01001
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0068
+  generic_name: Fluticasone
+  aliases:
+  - fluticasone propionate
+  drug_class: respiratory_corticosteroid
+  flags:
+  - glucocorticoid_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00588
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0069
+  generic_name: Diphenhydramine
+  aliases:
+  - diphenhydramine hydrochloride
+  drug_class: antihistamine_systemic
+  flags:
+  - h1_receptor_antagonist
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB01075
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0070
+  generic_name: Fentanyl
+  aliases:
+  - fentanyl
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00813
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0071
+  generic_name: Morphine
+  aliases:
+  - morphine sulfate
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist
+  - ugt2b7_substrate
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00295
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0072
+  generic_name: Oxycodone
+  aliases:
+  - oxycodone hydrochloride
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00497
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0073
+  generic_name: Colchicine
+  aliases:
+  - colchicine
+  drug_class: anti_gout
+  flags:
+  - tubulin_inhibitor
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB01394
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0074
+  generic_name: Allopurinol
+  aliases:
+  - allopurinol
+  drug_class: anti_gout
+  flags:
+  - xanthine_oxidase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00437
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0075
+  generic_name: Lithium
+  aliases:
+  - lithium carbonate
+  drug_class: mood_stabilizer
+  flags:
+  - inositol_monophosphatase_inhibitor
+  - narrow_therapeutic_index
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01356
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0076
+  generic_name: Metronidazole
+  aliases:
+  - metronidazole
+  drug_class: antibiotic_nitroimidazole
+  flags:
+  - dna_damaging
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00916
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0077
+  generic_name: Vancomycin
+  aliases:
+  - vancomycin hydrochloride
+  drug_class: antibiotic_glycopeptide
+  flags:
+  - cell_wall_synthesis_inhibitor
+  - narrow_therapeutic_index
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00512
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0078
+  generic_name: Doxycycline
+  aliases:
+  - doxycycline hyclate
+  drug_class: antibiotic_tetracycline
+  flags:
+  - 30S_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00254
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0079
+  generic_name: Sildenafil
+  aliases:
+  - sildenafil citrate
+  drug_class: pde5_inhibitor
+  flags:
+  - pde5_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00203
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0080
+  generic_name: Acetaminophen
+  aliases:
+  - paracetamol
+  - APAP
+  drug_class: analgesic_antipyretic
+  flags:
+  - cox_inhibitor_central
+  - cyp1a2_substrate
+  - cyp2e1_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP1A2
+  - CYP2E1
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00316
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0081
+  generic_name: Levetiracetam
+  aliases:
+  - levetiracetam
+  drug_class: antiepileptic
+  flags:
+  - sv2a_modulator
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01202
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0082
+  generic_name: Lamotrigine
+  aliases:
+  - lamotrigine
+  drug_class: antiepileptic
+  flags:
+  - na_channel_blocker
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00555
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0083
+  generic_name: Olanzapine
+  aliases:
+  - olanzapine
+  drug_class: antipsychotic_atypical
+  flags:
+  - d2_5ht2a_antagonist
+  - cyp1a2_substrate
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00334
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0084
+  generic_name: Risperidone
+  aliases:
+  - risperidone
+  drug_class: antipsychotic_atypical
+  flags:
+  - d2_5ht2a_antagonist
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00734
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0085
+  generic_name: Quetiapine
+  aliases:
+  - quetiapine fumarate
+  drug_class: antipsychotic_atypical
+  flags:
+  - d2_5ht2a_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01224
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0086
+  generic_name: Aripiprazole
+  aliases:
+  - aripiprazole
+  drug_class: antipsychotic_atypical
+  flags:
+  - d2_partial_agonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01238
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0087
+  generic_name: Loratadine
+  aliases:
+  - loratadine
+  drug_class: antihistamine_systemic
+  flags:
+  - h1_receptor_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00455
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0088
+  generic_name: Cetirizine
+  aliases:
+  - cetirizine hydrochloride
+  drug_class: antihistamine_systemic
+  flags:
+  - h1_receptor_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00341
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0089
+  generic_name: Midazolam
+  aliases:
+  - midazolam hydrochloride
+  drug_class: benzodiazepine
+  flags:
+  - gaba_a_positive_allosteric_modulator
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00683
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0090
+  generic_name: Diazepam
+  aliases:
+  - diazepam
+  drug_class: benzodiazepine
+  flags:
+  - gaba_a_positive_allosteric_modulator
+  - cyp2c19_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00829
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0091
+  generic_name: Clonazepam
+  aliases:
+  - clonazepam
+  drug_class: benzodiazepine
+  flags:
+  - gaba_a_positive_allosteric_modulator
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01068
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0092
+  generic_name: Pregabalin
+  aliases:
+  - pregabalin
+  drug_class: antiepileptic
+  flags:
+  - calcium_channel_alpha2delta_ligand
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00230
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0093
+  generic_name: Amitriptyline
+  aliases:
+  - amitriptyline hydrochloride
+  drug_class: antidepressant_tca
+  flags:
+  - sert_net_inhibitor
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00321
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0094
+  generic_name: Venlafaxine
+  aliases:
+  - venlafaxine hydrochloride
+  drug_class: antidepressant_snri
+  flags:
+  - sert_net_inhibitor
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00285
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0095
+  generic_name: Duloxetine
+  aliases:
+  - duloxetine hydrochloride
+  drug_class: antidepressant_snri
+  flags:
+  - sert_net_inhibitor
+  - cyp1a2_substrate
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP1A2
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00476
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0096
+  generic_name: Pioglitazone
+  aliases:
+  - pioglitazone hydrochloride
+  drug_class: antidiabetic_tzd
+  flags:
+  - ppar_gamma_agonist
+  - cyp2c8_substrate
+  metabolic_pathways:
+  - CYP2C8
+  transporter_substrates: []
+  label_source: DrugBank DB01132
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0097
+  generic_name: Linagliptin
+  aliases:
+  - linagliptin
+  drug_class: antidiabetic_dpp4_inhibitor
+  flags:
+  - dpp4_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB09044
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0098
+  generic_name: Canagliflozin
+  aliases:
+  - canagliflozin
+  drug_class: antidiabetic_sglt2_inhibitor
+  flags:
+  - sglt2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB08907
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0099
+  generic_name: Liraglutide
+  aliases:
+  - liraglutide
+  drug_class: antidiabetic_glp1_ra
+  flags:
+  - glp1_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01290
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0100
+  generic_name: Pravastatin
+  aliases:
+  - pravastatin sodium
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00175
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0101
+  generic_name: Pitavastatin
+  aliases:
+  - pitavastatin calcium
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB08876
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0102
+  generic_name: Doxazosin
+  aliases:
+  - doxazosin mesylate
+  drug_class: alpha_blocker
+  flags:
+  - alpha1_adrenergic_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00590
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0103
+  generic_name: Tamsulosin
+  aliases:
+  - tamsulosin hydrochloride
+  drug_class: alpha_blocker
+  flags:
+  - alpha1a_adrenergic_antagonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00706
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0104
+  generic_name: Dronedarone
+  aliases:
+  - dronedarone
+  drug_class: antiarrhythmic_class_iii
+  flags:
+  - multichannel_blocker
+  - cyp3a4_inhibitor
+  - cyp2d6_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB11618
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0105
+  generic_name: Lidocaine IV
+  aliases:
+  - lidocaine intravenous
+  drug_class: antiarrhythmic_class_ib
+  flags:
+  - na_channel_blocker
+  - cyp1a2_substrate
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00281
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0106
+  generic_name: Flecainide
+  aliases:
+  - flecainide acetate
+  drug_class: antiarrhythmic_class_ic
+  flags:
+  - na_channel_blocker
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB01195
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0107
+  generic_name: Propafenone
+  aliases:
+  - propafenone hydrochloride
+  drug_class: antiarrhythmic_class_ic
+  flags:
+  - na_channel_blocker_beta_blocker
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB01182
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0108
+  generic_name: Tranexamic acid
+  aliases:
+  - tranexamic acid
+  drug_class: hemostatic
+  flags:
+  - plasmin_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00302
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0109
+  generic_name: Alendronic acid
+  aliases:
+  - alendronate sodium
+  drug_class: bisphosphonate
+  flags:
+  - farnesyl_pyrophosphate_synthase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00630
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0110
+  generic_name: Baclofen
+  aliases:
+  - baclofen
+  drug_class: muscle_relaxant
+  flags:
+  - gaba_b_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00181
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0111
+  generic_name: Zolpidem
+  aliases:
+  - zolpidem tartrate
+  drug_class: non_benzodiazepine_hypnotic
+  flags:
+  - gaba_a_positive_allosteric_modulator
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00425
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0112
+  generic_name: Methylphenidate
+  aliases:
+  - methylphenidate hydrochloride
+  drug_class: cns_stimulant
+  flags:
+  - dat_net_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00422
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0113
+  generic_name: Ondansetron
+  aliases:
+  - ondansetron hydrochloride
+  drug_class: antiemetic
+  flags:
+  - 5ht3_receptor_antagonist
+  - cyp1a2_substrate
+  - cyp3a4_substrate
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP1A2
+  - CYP3A4
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00904
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0114
+  generic_name: Acyclovir systemic
+  aliases:
+  - acyclovir systemic
+  drug_class: antiviral_systemic
+  flags:
+  - viral_dna_polymerase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00787
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0115
+  generic_name: Insulin glargine
+  aliases:
+  - insulin glargine
+  - Lantus
+  drug_class: antidiabetic_insulin
+  flags:
+  - insulin_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00047
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0116
+  generic_name: Edoxaban
+  aliases:
+  - edoxaban tosylate
+  drug_class: anticoagulant_direct_xa_inhibitor
+  flags:
+  - factor_xa_inhibitor
+  - p_gp_substrate
+  metabolic_pathways: []
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB09075
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0117
+  generic_name: Prasugrel
+  aliases:
+  - prasugrel hydrochloride
+  drug_class: antiplatelet
+  flags:
+  - p2y12_inhibitor_prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB06209
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0118
+  generic_name: Nitroglycerin
+  aliases:
+  - glyceryl trinitrate
+  drug_class: antianginal
+  flags:
+  - no_donor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00727
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0119
+  generic_name: Desmopressin
+  aliases:
+  - desmopressin acetate
+  drug_class: antidiuretic
+  flags:
+  - vasopressin_v2_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00035
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0120
+  generic_name: Hydroxychloroquine
+  aliases:
+  - hydroxychloroquine sulfate
+  drug_class: immunosuppressant_systemic
+  flags:
+  - tlr_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01611
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0121
+  generic_name: Mycophenolate
+  aliases:
+  - mycophenolate mofetil
+  drug_class: immunosuppressant_systemic
+  flags:
+  - imdh_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01024
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0122
+  generic_name: Azathioprine
+  aliases:
+  - azathioprine
+  drug_class: immunosuppressant_systemic
+  flags:
+  - purine_analog
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00993
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0123
+  generic_name: Sulfasalazine
+  aliases:
+  - sulfasalazine
+  drug_class: dmard
+  flags:
+  - antiinflammatory
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00764
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0124
+  generic_name: Leflunomide
+  aliases:
+  - leflunomide
+  drug_class: dmard
+  flags:
+  - dhodh_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01097
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0125
+  generic_name: Tadalafil
+  aliases:
+  - tadalafil
+  drug_class: pde5_inhibitor
+  flags:
+  - pde5_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00820
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0126
+  generic_name: Finasteride
+  aliases:
+  - finasteride
+  drug_class: 5ari
+  flags:
+  - 5alpha_reductase_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01216
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0127
+  generic_name: Loperamide
+  aliases:
+  - loperamide hydrochloride
+  drug_class: antidiarrheal
+  flags:
+  - mu_opioid_receptor_agonist
+  - cyp3a4_substrate
+  - p_gp_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB00836
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0128
+  generic_name: Metoclopramide
+  aliases:
+  - metoclopramide hydrochloride
+  drug_class: antiemetic
+  flags:
+  - d2_antagonist_5ht4_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01233
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0129
+  generic_name: Buspirone
+  aliases:
+  - buspirone hydrochloride
+  drug_class: anxiolytic
+  flags:
+  - 5ht1a_partial_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00490
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0130
+  generic_name: Azithromycin systemic
+  aliases:
+  - azithromycin systemic
+  drug_class: antibiotic_macrolide_systemic
+  flags:
+  - 50S_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00207
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0131
+  generic_name: Ciprofloxacin systemic
+  aliases:
+  - ciprofloxacin systemic
+  drug_class: antibiotic_fluoroquinolone_systemic
+  flags:
+  - dna_gyrase_inhibitor
+  - cyp1a2_inhibitor
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00537
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0132
+  generic_name: Levofloxacin systemic
+  aliases:
+  - levofloxacin systemic
+  drug_class: antibiotic_fluoroquinolone_systemic
+  flags:
+  - dna_gyrase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01137
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0133
+  generic_name: Diclofenac systemic
+  aliases:
+  - diclofenac sodium systemic
+  drug_class: nsaid_systemic
+  flags:
+  - cox1_cox2_inhibitor
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00586
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0134
+  generic_name: Indomethacin systemic
+  aliases:
+  - indomethacin systemic
+  drug_class: nsaid_systemic
+  flags:
+  - cox1_cox2_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00328
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0135
+  generic_name: Tiotropium
+  aliases:
+  - tiotropium bromide
+  drug_class: respiratory_anticholinergic
+  flags:
+  - muscarinic_receptor_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01409
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0136
+  generic_name: Salmeterol
+  aliases:
+  - salmeterol xinafoate
+  drug_class: respiratory_beta2_agonist
+  flags:
+  - beta2_adrenergic_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00938
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0137
+  generic_name: Budesonide
+  aliases:
+  - budesonide
+  drug_class: respiratory_corticosteroid
+  flags:
+  - glucocorticoid_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01222
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0138
+  generic_name: Haloperidol
+  aliases:
+  - haloperidol
+  drug_class: antipsychotic_typical
+  flags:
+  - d2_antagonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00502
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0139
+  generic_name: Clozapine
+  aliases:
+  - clozapine
+  drug_class: antipsychotic_atypical
+  flags:
+  - d2_5ht2a_antagonist
+  - cyp1a2_substrate
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00363
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0140
+  generic_name: Nortriptyline
+  aliases:
+  - nortriptyline hydrochloride
+  drug_class: antidepressant_tca
+  flags:
+  - net_inhibitor
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00540
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0141
+  generic_name: Paroxetine
+  aliases:
+  - paroxetine hydrochloride
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  - cyp2d6_inhibitor
+  metabolic_pathways:
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00715
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0142
+  generic_name: Escitalopram
+  aliases:
+  - escitalopram oxalate
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01175
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0143
+  generic_name: Fluvoxamine
+  aliases:
+  - fluvoxamine maleate
+  drug_class: antidepressant_ssri
+  flags:
+  - sert_inhibitor
+  - cyp1a2_inhibitor
+  - cyp2c19_inhibitor
+  - cyp3a4_inhibitor
+  metabolic_pathways:
+  - CYP1A2
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00176
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0144
+  generic_name: Gabapentin
+  aliases:
+  - gabapentin
+  drug_class: antiepileptic
+  flags:
+  - calcium_channel_alpha2delta_ligand
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00396
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0145
+  generic_name: Topiramate
+  aliases:
+  - topiramate
+  drug_class: antiepileptic
+  flags:
+  - na_channel_blocker_gaba_ergic
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00273
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0146
+  generic_name: Pantoprazole
+  aliases:
+  - pantoprazole sodium
+  drug_class: proton_pump_inhibitor
+  flags:
+  - h_k_atpase_inhibitor
+  - cyp2c19_substrate
+  metabolic_pathways:
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB00213
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0147
+  generic_name: Esomeprazole
+  aliases:
+  - esomeprazole magnesium
+  drug_class: proton_pump_inhibitor
+  flags:
+  - h_k_atpase_inhibitor
+  - cyp2c19_inhibitor
+  metabolic_pathways:
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB00736
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0148
+  generic_name: Lansoprazole
+  aliases:
+  - lansoprazole
+  drug_class: proton_pump_inhibitor
+  flags:
+  - h_k_atpase_inhibitor
+  - cyp2c19_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00448
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0149
+  generic_name: Erythromycin systemic
+  aliases:
+  - erythromycin systemic
+  drug_class: antibiotic_macrolide_systemic
+  flags:
+  - 50S_inhibitor
+  - cyp3a4_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00199
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0150
+  generic_name: Voriconazole systemic
+  aliases:
+  - voriconazole systemic
+  drug_class: antifungal_azole_systemic
+  flags:
+  - cyp51_inhibitor
+  - cyp2c9_inhibitor
+  - cyp2c19_inhibitor
+  - cyp3a4_inhibitor
+  metabolic_pathways:
+  - CYP2C9
+  - CYP2C19
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00582
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0151
+  generic_name: Ketoconazole
+  aliases:
+  - ketoconazole
+  drug_class: antifungal_azole_systemic
+  flags:
+  - cyp51_inhibitor
+  - cyp3a4_inhibitor
+  - p_gp_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates:
+  - P-glycoprotein
+  label_source: DrugBank DB01026
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0152
+  generic_name: Tamoxifen
+  aliases:
+  - tamoxifen citrate
+  drug_class: antineoplastic_hormonal
+  flags:
+  - estrogen_receptor_modulator
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00675
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0153
+  generic_name: Imatinib
+  aliases:
+  - imatinib mesylate
+  drug_class: antineoplastic_tyrosine_kinase_inhibitor
+  flags:
+  - bcr_abl_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00619
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0154
+  generic_name: Methotrexate systemic
+  aliases:
+  - methotrexate systemic
+  drug_class: antineoplastic_antimetabolite
+  flags:
+  - dhfr_inhibitor
+  - narrow_therapeutic_index
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00563
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0155
+  generic_name: Cyclophosphamide
+  aliases:
+  - cyclophosphamide
+  drug_class: antineoplastic_alkylating
+  flags:
+  - dna_crosslinker
+  - cyp2b6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2B6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00527
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0156
+  generic_name: Capecitabine
+  aliases:
+  - capecitabine
+  drug_class: antineoplastic_antimetabolite
+  flags:
+  - thymidylate_synthase_inhibitor_prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01101
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0157
+  generic_name: Clindamycin
+  aliases:
+  - clindamycin
+  drug_class: antibiotic_lincosamide
+  flags:
+  - 50S_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01190
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0158
+  generic_name: Linezolid
+  aliases:
+  - linezolid
+  drug_class: antibiotic_oxazolidinone
+  flags:
+  - 50S_inhibitor
+  - maoi
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00601
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0159
+  generic_name: Tramadol
+  aliases:
+  - tramadol hydrochloride
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00193
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0160
+  generic_name: Rosiglitazone
+  aliases:
+  - rosiglitazone maleate
+  drug_class: antidiabetic_tzd
+  flags:
+  - ppar_gamma_agonist
+  - cyp2c8_substrate
+  metabolic_pathways:
+  - CYP2C8
+  transporter_substrates: []
+  label_source: DrugBank DB00412
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0161
+  generic_name: Vildagliptin
+  aliases:
+  - vildagliptin
+  drug_class: antidiabetic_dpp4_inhibitor
+  flags:
+  - dpp4_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB04876
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0162
+  generic_name: Saxagliptin
+  aliases:
+  - saxagliptin hydrochloride
+  drug_class: antidiabetic_dpp4_inhibitor
+  flags:
+  - dpp4_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB06335
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0163
+  generic_name: Glibenclamide
+  aliases:
+  - glyburide
+  - glibenclamide
+  drug_class: antidiabetic_sulfonylurea
+  flags:
+  - k_atp_channel_blocker
+  - cyp2c9_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C9
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01016
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0164
+  generic_name: Insulin aspart
+  aliases:
+  - insulin aspart
+  - NovoRapid
+  drug_class: antidiabetic_insulin
+  flags:
+  - insulin_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01306
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0165
+  generic_name: Dulaglutide
+  aliases:
+  - dulaglutide
+  drug_class: antidiabetic_glp1_ra
+  flags:
+  - glp1_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB09045
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0166
+  generic_name: Clomipramine
+  aliases:
+  - clomipramine hydrochloride
+  drug_class: antidepressant_tca
+  flags:
+  - sert_inhibitor
+  - cyp2d6_substrate
+  - cyp1a2_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB01242
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0167
+  generic_name: Desvenlafaxine
+  aliases:
+  - desvenlafaxine succinate
+  drug_class: antidepressant_snri
+  flags:
+  - sert_net_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB06700
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0168
+  generic_name: Zoledronic acid
+  aliases:
+  - zoledronate
+  drug_class: bisphosphonate
+  flags:
+  - farnesyl_pyrophosphate_synthase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00399
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0169
+  generic_name: Febuxostat
+  aliases:
+  - febuxostat
+  drug_class: anti_gout
+  flags:
+  - xanthine_oxidase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB04854
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0170
+  generic_name: Dipyridamole
+  aliases:
+  - dipyridamole
+  drug_class: antiplatelet
+  flags:
+  - phosphodiesterase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00937
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0171
+  generic_name: Cilostazol
+  aliases:
+  - cilostazol
+  drug_class: antiplatelet
+  flags:
+  - pde3_inhibitor
+  - cyp3a4_substrate
+  - cyp2c19_substrate
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2C19
+  transporter_substrates: []
+  label_source: DrugBank DB01166
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0172
+  generic_name: Heparin
+  aliases:
+  - unfractionated heparin
+  drug_class: anticoagulant_parenteral
+  flags:
+  - antithrombin_iii_activator
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01309
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0173
+  generic_name: Enoxaparin
+  aliases:
+  - enoxaparin sodium
+  drug_class: anticoagulant_lmw_heparin
+  flags:
+  - antithrombin_iii_activator
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01225
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0174
+  generic_name: Fondaparinux
+  aliases:
+  - fondaparinux sodium
+  drug_class: anticoagulant_parenteral
+  flags:
+  - factor_xa_inhibitor_indirect
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01223
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0175
+  generic_name: Amoxicillin
+  aliases:
+  - amoxicillin
+  drug_class: antibiotic_penicillin
+  flags:
+  - beta_lactam_cell_wall_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01060
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0176
+  generic_name: Hydrocortisone
+  aliases:
+  - hydrocortisone systemic
+  drug_class: corticosteroid_systemic
+  flags:
+  - glucocorticoid_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00741
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0177
+  generic_name: Perindopril
+  aliases:
+  - perindopril
+  drug_class: ace_inhibitor
+  flags:
+  - ace_inhibitor
+  - prodrug
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00790
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0178
+  generic_name: Telmisartan
+  aliases:
+  - telmisartan
+  drug_class: arb
+  flags:
+  - angiotensin_ii_receptor_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00966
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0179
+  generic_name: Indapamide
+  aliases:
+  - indapamide
+  drug_class: thiazide_like_diuretic
+  flags:
+  - ncc_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00808
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0180
+  generic_name: Ivabradine
+  aliases:
+  - ivabradine hydrochloride
+  drug_class: antianginal
+  flags:
+  - if_channel_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB09042
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0181
+  generic_name: Ranolazine
+  aliases:
+  - ranolazine
+  drug_class: antianginal
+  flags:
+  - late_na_channel_inhibitor
+  - cyp3a4_substrate
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB01627
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0182
+  generic_name: Isosorbide mononitrate
+  aliases:
+  - isosorbide mononitrate
+  drug_class: antianginal
+  flags:
+  - no_donor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01020
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0183
+  generic_name: Fluvastatin
+  aliases:
+  - fluvastatin sodium
+  drug_class: statin
+  flags:
+  - hmg_coa_reductase_inhibitor
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB01095
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0184
+  generic_name: Propofol
+  aliases:
+  - propofol
+  drug_class: anesthetic_iv
+  flags:
+  - gaba_a_positive_allosteric_modulator
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00818
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0185
+  generic_name: Dexmedetomidine
+  aliases:
+  - dexmedetomidine hydrochloride
+  drug_class: sedative
+  flags:
+  - alpha2_adrenergic_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00633
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0186
+  generic_name: Epinephrine
+  aliases:
+  - adrenaline
+  drug_class: vasopressor_anaphylaxis
+  flags:
+  - alpha_beta_adrenergic_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00668
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0187
+  generic_name: Norepinephrine
+  aliases:
+  - noradrenaline
+  drug_class: vasopressor
+  flags:
+  - alpha1_beta1_adrenergic_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00368
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0188
+  generic_name: Vasopressin
+  aliases:
+  - arginine vasopressin
+  drug_class: vasopressor
+  flags:
+  - v1_v2_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00078
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0189
+  generic_name: Oseltamivir
+  aliases:
+  - oseltamivir phosphate
+  drug_class: antiviral_systemic
+  flags:
+  - neuraminidase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00198
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0190
+  generic_name: Remdesivir
+  aliases:
+  - remdesivir
+  drug_class: antiviral_systemic
+  flags:
+  - rna_polymerase_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB14761
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0191
+  generic_name: Tenofovir
+  aliases:
+  - tenofovir disoproxil fumarate
+  drug_class: antiviral_hiv
+  flags:
+  - reverse_transcriptase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00300
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0192
+  generic_name: Ritonavir
+  aliases:
+  - ritonavir
+  drug_class: antiviral_hiv_protease_inhibitor
+  flags:
+  - hiv_protease_inhibitor
+  - cyp3a4_inhibitor
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00503
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0193
+  generic_name: Letrozole
+  aliases:
+  - letrozole
+  drug_class: antineoplastic_aromatase_inhibitor
+  flags:
+  - aromatase_inhibitor
+  - cyp2a6_inhibitor
+  metabolic_pathways:
+  - CYP2A6
+  transporter_substrates: []
+  label_source: DrugBank DB01045
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0194
+  generic_name: Aprepitant
+  aliases:
+  - aprepitant
+  drug_class: antiemetic_nk1
+  flags:
+  - nk1_receptor_antagonist
+  - cyp3a4_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00373
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0195
+  generic_name: Terazosin
+  aliases:
+  - terazosin hydrochloride
+  drug_class: alpha_blocker
+  flags:
+  - alpha1_adrenergic_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01121
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0196
+  generic_name: Dutasteride
+  aliases:
+  - dutasteride
+  drug_class: 5ari
+  flags:
+  - 5alpha_reductase_inhibitor
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01126
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0197
+  generic_name: Levodopa/Carbidopa
+  aliases:
+  - co-careldopa
+  drug_class: antiparkinson
+  flags:
+  - dopamine_precursor_ddc_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01235
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0198
+  generic_name: Pramipexole
+  aliases:
+  - pramipexole dihydrochloride
+  drug_class: antiparkinson
+  flags:
+  - d2_d3_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00413
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0199
+  generic_name: Octreotide
+  aliases:
+  - octreotide acetate
+  drug_class: somatostatin_analog
+  flags:
+  - somatostatin_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00104
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0200
+  generic_name: Methimazole
+  aliases:
+  - methimazole
+  - thiamazole
+  drug_class: antithyroid
+  flags:
+  - thyroid_peroxidase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00763
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0201
+  generic_name: Montelukast
+  aliases:
+  - montelukast sodium
+  drug_class: respiratory_leukotriene_modifier
+  flags:
+  - cyslt1_receptor_antagonist
+  - cyp3a4_substrate
+  - cyp2c9_substrate
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2C9
+  transporter_substrates: []
+  label_source: DrugBank DB00471
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0202
+  generic_name: Theophylline
+  aliases:
+  - theophylline
+  drug_class: respiratory_xanthine
+  flags:
+  - adenosine_receptor_antagonist_pde_inhibitor
+  - cyp1a2_substrate
+  - narrow_therapeutic_index
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00277
+  therapeutic_index_tier: high
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0203
+  generic_name: Acarbose
+  aliases:
+  - acarbose
+  drug_class: antidiabetic_alpha_glucosidase_inhibitor
+  flags:
+  - alpha_glucosidase_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00284
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0204
+  generic_name: Repaglinide
+  aliases:
+  - repaglinide
+  drug_class: antidiabetic_glinide
+  flags:
+  - k_atp_channel_blocker
+  - cyp2c8_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C8
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00912
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0205
+  generic_name: Nateglinide
+  aliases:
+  - nateglinide
+  drug_class: antidiabetic_glinide
+  flags:
+  - k_atp_channel_blocker
+  - cyp2c9_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2C9
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00731
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0206
+  generic_name: Ezetimibe
+  aliases:
+  - ezetimibe
+  drug_class: lipid_lowering_cholesterol_absorption_inhibitor
+  flags:
+  - npc1l1_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00973
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0207
+  generic_name: Fenofibrate
+  aliases:
+  - fenofibrate
+  drug_class: lipid_lowering_fibrate
+  flags:
+  - ppar_alpha_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01039
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0208
+  generic_name: Gemfibrozil
+  aliases:
+  - gemfibrozil
+  drug_class: lipid_lowering_fibrate
+  flags:
+  - ppar_alpha_agonist
+  - cyp2c8_inhibitor
+  metabolic_pathways:
+  - CYP2C8
+  transporter_substrates: []
+  label_source: DrugBank DB01241
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0209
+  generic_name: Donepezil
+  aliases:
+  - donepezil hydrochloride
+  drug_class: alzheimers_cholinesterase_inhibitor
+  flags:
+  - ache_inhibitor
+  - cyp3a4_substrate
+  - cyp2d6_substrate
+  metabolic_pathways:
+  - CYP3A4
+  - CYP2D6
+  transporter_substrates: []
+  label_source: DrugBank DB00843
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0210
+  generic_name: Rivastigmine
+  aliases:
+  - rivastigmine tartrate
+  drug_class: alzheimers_cholinesterase_inhibitor
+  flags:
+  - ache_buche_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00989
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0211
+  generic_name: Memantine
+  aliases:
+  - memantine hydrochloride
+  drug_class: alzheimers_nmda_antagonist
+  flags:
+  - nmda_receptor_antagonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01043
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0212
+  generic_name: Ropinirole
+  aliases:
+  - ropinirole hydrochloride
+  drug_class: parkinsons_dopamine_agonist
+  flags:
+  - d2_d3_receptor_agonist
+  - cyp1a2_substrate
+  metabolic_pathways:
+  - CYP1A2
+  transporter_substrates: []
+  label_source: DrugBank DB00268
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0213
+  generic_name: Codeine
+  aliases:
+  - codeine phosphate
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist
+  - cyp2d6_substrate
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP2D6
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00318
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0214
+  generic_name: Tapentadol
+  aliases:
+  - tapentadol hydrochloride
+  drug_class: opioid
+  flags:
+  - mu_opioid_receptor_agonist_nri
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB06204
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0215
+  generic_name: Mesalamine
+  aliases:
+  - mesalazine
+  - 5-ASA
+  drug_class: anti_inflammatory_intestinal
+  flags:
+  - unknown_anti_inflammatory
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00244
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0216
+  generic_name: Ursodeoxycholic acid
+  aliases:
+  - ursodiol
+  - UDCA
+  drug_class: gallstone_dissolution
+  flags:
+  - bile_acid_replacement
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01586
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0217
+  generic_name: Lactulose
+  aliases:
+  - lactulose
+  drug_class: laxative_osmotic
+  flags:
+  - osmotic_laxative
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB04468
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0218
+  generic_name: Cefalexin
+  aliases:
+  - cephalexin
+  drug_class: antibiotic_cephalosporin_1g
+  flags:
+  - cell_wall_synthesis_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00567
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0219
+  generic_name: Ceftriaxone
+  aliases:
+  - ceftriaxone
+  drug_class: antibiotic_cephalosporin_3g
+  flags:
+  - cell_wall_synthesis_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01212
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0220
+  generic_name: Cefixime
+  aliases:
+  - cefixime
+  drug_class: antibiotic_cephalosporin_3g
+  flags:
+  - cell_wall_synthesis_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00671
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0221
+  generic_name: Nitrofurantoin
+  aliases:
+  - nitrofurantoin
+  drug_class: antibiotic_urinary
+  flags:
+  - bacterial_enzyme_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00698
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0222
+  generic_name: Estradiol
+  aliases:
+  - estradiol
+  - E2
+  drug_class: hormone_estrogen
+  flags:
+  - estrogen_receptor_agonist
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00783
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0223
+  generic_name: Testosterone
+  aliases:
+  - testosterone
+  drug_class: hormone_androgen
+  flags:
+  - androgen_receptor_agonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00624
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0224
+  generic_name: Raloxifene
+  aliases:
+  - raloxifene hydrochloride
+  drug_class: serm
+  flags:
+  - estrogen_receptor_modulator
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00481
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0225
+  generic_name: Domperidone
+  aliases:
+  - domperidone
+  drug_class: antiemetic_prokinetic
+  flags:
+  - d2_receptor_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB01184
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0227
+  generic_name: Probenecid
+  aliases:
+  - probenecid
+  drug_class: anti_gout_uricosuric
+  flags:
+  - urat1_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB01032
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0228
+  generic_name: Abciximab
+  aliases:
+  - abciximab
+  drug_class: antiplatelet_gpiibiiia
+  flags:
+  - gpiibiiia_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00091
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0229
+  generic_name: Tirofiban
+  aliases:
+  - tirofiban hydrochloride
+  drug_class: antiplatelet_gpiibiiia
+  flags:
+  - gpiibiiia_inhibitor
+  metabolic_pathways: []
+  transporter_substrates: []
+  label_source: DrugBank DB00777
+  therapeutic_index_tier: medium
+  dosage_form: unspecified_systemic
+- entity_b_id: sys_med_0230
+  generic_name: Alfuzosin
+  aliases:
+  - alfuzosin hydrochloride
+  drug_class: alpha_blocker_bph
+  flags:
+  - alpha1_adrenergic_antagonist
+  - cyp3a4_substrate
+  metabolic_pathways:
+  - CYP3A4
+  transporter_substrates: []
+  label_source: DrugBank DB00846
+  therapeutic_index_tier: low
+  dosage_form: unspecified_systemic
