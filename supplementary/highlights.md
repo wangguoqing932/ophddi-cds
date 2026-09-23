@@ -1,6 +1,6 @@
 # Highlights
 
-- A deterministic, zero-LLM three-layer cascade screens 113 ophthalmic against 232 systemic agents using 40 mechanism rules, each carrying at least one source record, an absorption-scaled 20 x 37 class matrix, and a hard-constraint layer that encodes ophthalmic systemic-absorption pharmacology.
+- A deterministic, zero-LLM three-layer cascade screens 113 ophthalmic against 232 systemic agents using 40 mechanism rules, each carrying at least one source record, an absorption-scaled 21 x 40 class matrix (34 columns in use, 104 cells), and a hard-constraint layer that encodes ophthalmic systemic-absorption pharmacology.
 - On 118 literature-derived cases the system reached 0.907 exact accuracy (kappa 0.857, high-risk sensitivity 0.964), outperforming three LLM baselines on exact accuracy and returning identical predictions under every evaluated condition (SD = 0.000).
 - A full audit of 1,933 registry-matched DDInter pairs showed 75.3% graded lower once ophthalmic absorption is modelled, with 80.5% of downgrades attributable to low systemic absorption and 352 pairs moving down from high - quantifying a gap that systemic-route databases leave unmodelled.
 - On the semi-independent audit set the system reached 0.674 exact accuracy, falling to 0.548 on the subset free of its own absorption assumption, and high-risk sensitivity was 0.320 (8 of 25) - the lowest of the four methods, reported as a primary limitation rather than a footnote.

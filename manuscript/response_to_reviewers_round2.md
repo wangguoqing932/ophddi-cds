@@ -59,6 +59,14 @@ now states in its first lines that it is an offline pipeline scaffold, **not** t
 reported evaluation, and that its synthetic mode hardcodes `full_system` at zero error
 and must never be used as a result.
 
+**Addendum (final check).** The phrase also appeared inside Figure 1 itself, and the
+figure's L2 label carried the superseded matrix dimensions. Both have been corrected in the
+figure image: the L1 caption now reads "40 mechanism rules", and the L2 caption reads
+"21 x 40 drug classes, absorption-scaled", matching `configs/class_matrix.yaml` and
+`configs/drug_classes.yaml` (21 ophthalmic row keys, 40 systemic column keys, 34 used,
+104 explicit cells) and the wording already used in the text and table captions. The
+originals are kept in `outputs/figures/_pristine/` so the edit is auditable.
+
 ### Comment 2 — "40 citation-verified mechanism rules" is not what the report shows
 
 **Accepted in full.** The verification report covers 8 manifest items over 7 distinct
