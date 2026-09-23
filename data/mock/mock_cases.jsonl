@@ -17,7 +17,7 @@
 {"case_id": "MOCK17", "ophthalmic_drug": "Levofloxacin", "systemic_drug": "Sotalol", "expected_level": "low", "expected_path": "rule", "note": "synthetic demonstration case; expected values frozen at release"}
 {"case_id": "MOCK18", "ophthalmic_drug": "Atropine", "systemic_drug": "Topiramate", "expected_level": "low", "expected_path": "matrix", "note": "synthetic demonstration case; expected values frozen at release"}
 {"case_id": "MOCK19", "ophthalmic_drug": "Scopolamine", "systemic_drug": "Topiramate", "expected_level": "low", "expected_path": "matrix", "note": "synthetic demonstration case; expected values frozen at release"}
-{"case_id": "MOCK20", "ophthalmic_drug": "Flurbiprofen", "systemic_drug": "Methotrexate", "expected_level": "medium", "expected_path": "matrix", "note": "synthetic demonstration case; expected values frozen at release"}
+{"case_id": "MOCK20", "ophthalmic_drug": "Flurbiprofen", "systemic_drug": "Methotrexate", "expected_level": "low", "expected_path": "matrix", "note": "synthetic demonstration case; expected values reflect the corrected flurbiprofen absorption tier (high -> low)"}
 {"case_id": "MOCK21", "ophthalmic_drug": "Dorzolamide", "systemic_drug": "Furosemide", "expected_level": "medium", "expected_path": "rule", "note": "synthetic demonstration case; expected values frozen at release"}
 {"case_id": "MOCK22", "ophthalmic_drug": "Brimonidine", "systemic_drug": "Amitriptyline", "expected_level": "high", "expected_path": "matrix", "note": "synthetic demonstration case; expected values frozen at release"}
 {"case_id": "MOCK23", "ophthalmic_drug": "Apraclonidine", "systemic_drug": "Midazolam", "expected_level": "high", "expected_path": "rule", "note": "synthetic demonstration case; expected values frozen at release"}

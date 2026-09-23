@@ -1,0 +1,61 @@
+{
+  "total_pairs_evaluated": 26216,
+  "paths": {
+    "rule": {
+      "n": 3138,
+      "pct": 11.97,
+      "levels": {
+        "high": 304,
+        "medium": 623,
+        "low": 2211
+      }
+    },
+    "matrix": {
+      "n": 18015,
+      "pct": 68.72,
+      "levels": {
+        "medium": 894,
+        "low": 17041,
+        "high": 80
+      }
+    },
+    "default_low": {
+      "n": 1869,
+      "pct": 7.13,
+      "levels": {
+        "low": 1869
+      }
+    },
+    "g19": {
+      "n": 3194,
+      "pct": 12.18,
+      "levels": {
+        "low": 3194
+      }
+    }
+  },
+  "low_tier_non_low_outcomes": {
+    "n": 202,
+    "by_level": {
+      "medium": 107,
+      "high": 95
+    },
+    "by_path": {
+      "rule": 202
+    },
+    "by_rule": {
+      "nsaid_antihypertensive_antagonism": 95,
+      "nsaid_acei_arb_antagonism": 50,
+      "low_abs_anticoagulant": 41,
+      "additive_nsaid_bleeding": 40,
+      "nsaid_diuretic_antagonism": 20,
+      "cai_diuretic_metabolic_acidosis": 14,
+      "additive_anticholinergic_effects": 11,
+      "corticosteroid_nti_interaction": 8,
+      "immunosuppressant_nsaid_nephrotoxicity": 8,
+      "anticholinergic_qt_prolongation": 4,
+      "cai_topiramate_acidosis": 2
+    }
+  },
+  "note": "final = max(ungated rule severity, absorption-scaled matrix level); the absorption forcing applies to the matrix branch only."
+}

@@ -1,7 +1,7 @@
 {
   "overall": "pass",
   "mode": "strict-policy-cache-replay",
-  "generated_at": "2026-09-23T18:52:47.980552+00:00",
+  "generated_at": "2026-09-23T18:57:50.379983+00:00",
   "rules_yaml_sha256": "2afabaad81161c402472620841c733310ab3eb548b451b9c70b67f7ce18814b1",
   "citation_manifest_count": 8,
   "policy_count": 43,
@@ -34,14 +34,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.1016/S0161-6420%2800%2900081-6",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\d28a20a659049472396682f6ba334590a6308148229ce1ee76b6b4b33bfd8bbe.json",
-          "sha256": "f0027ce76c1c3bf0760be6822f4488f58afb6ece1e87d446d2b01837b68150cd",
+          "sha256": "568059343f118340c8f402b7f7da8b3c2502aa27f0a7a1b76e9e850c0be63f1a",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=10857839&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\9847e85ccadfd72f137f9e7fce634a386d0cbe11ac3cc6989c2269034e98eccf.xml",
-          "sha256": "8c805a34b01cb5cb053a8fdc1fd76805840ddecf13bdcbc4041504ff7c000fd8",
+          "sha256": "b9c5f42ceb4ecac88243dec25e3a3e24103b4f2792c92fd5b8f418404a1f4f20",
           "retrieved_at": "cached"
         }
       ],
@@ -73,14 +73,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.1111/pde.12868",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\927237aed69db8d5da5f9f7b03dc6a169e9ccedbf96f4a0afb045b831d981ad8.json",
-          "sha256": "a9b0734acf1dbf4e3ea069d2b0f3c40d596e4cd71b77e7a72cc440dff802a8b3",
+          "sha256": "be227c55faa5ab961cefab2ed4cabb97f823faac3f50bea2416cab1cc9304d68",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=27282306&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\88859ac80f7aeac3016e684c615457a4b6195ac5f6167d3e8b74de71565b8108.xml",
-          "sha256": "e840793cf890b0198da6e8e304170bac7d1ad8d9233e85061e52172e61539810",
+          "sha256": "8635e5ecc2772becfbfd26c5f5c17f2e6ca9f933f177ee026167d7dfd1a65590",
           "retrieved_at": "cached"
         }
       ],
@@ -113,14 +113,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.1111/bcp.13499",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\7c7e43910fbf350b3228df501999313a81f47ddcc828d584c417b737c14c9794.json",
-          "sha256": "2c8b1865a6695c3d6c08247b9426bd96b75eb4860707e09abe9ae5af73945414",
+          "sha256": "052cc86ce5385a26d3cd65a00b06f1fd125a1bcdebbcd2b2d231da8abc46785e",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29333622&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\801fee8f075facdcaf49f2cadb6afe4cec9b54e54bcb0f781e86f7a885327a3a.xml",
-          "sha256": "77959852072ba29f010a49cd9ffe9976bd9dd2e8714290a2a251dc2641a97e4d",
+          "sha256": "cf7b6e2ae76909901a8045a824a9f069a9bb51be299fa6a0e34e569e9bc1623e",
           "retrieved_at": "cached"
         }
       ],
@@ -152,14 +152,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.7759/cureus.20945",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\8ae2308a4ff5aec6ffc95059913f4bb75ccfac91bfb3f8e7aa0c7d96cf7ad737.json",
-          "sha256": "3a988a67b2c92b09b2afb146916cad7454fae6d33874bcf91f6b82eee786d51f",
+          "sha256": "43441724a7eeb97da3d313c5f48a26fb8be774bf065c2479d9786abef3afff0b",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=35154926&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\8900a1bfb89090f030a76942b2a5365d83ab0703ff9d4cdf25375fcadcfa6c2a.xml",
-          "sha256": "beb35209230c5a6d0b3ea49e0a30c229824e9ba09b8d5a34def8360f891bdd12",
+          "sha256": "eede5cbdebaf6daf1aa099ef002003b5fb5f5067aef51a07db6f0e24f463d353",
           "retrieved_at": "cached"
         }
       ],
@@ -191,14 +191,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.7759/cureus.25815",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\66c5913f556f445c844c483f0c6b5d9199e44ca994b2ad15a5728da9efb58642.json",
-          "sha256": "d790711aefa66c12355baaade585e0af1ce2bbf4de08fdf9ff5f6320f4a8d119",
+          "sha256": "ff26358db6244a7738ff90f3ff8978a687cf67d76f0e51b70b79ca8d7d6dfc1a",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=35822138&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\1f88b3f411753e3cebfc86e08163d6c72d1f8d10c367113627d1009b97a858eb.xml",
-          "sha256": "e1d6984eb541a2bd18f40e1aa86afa44dfdc73f3572a3214234f598c6d8b7edb",
+          "sha256": "66f380ce3d576599fa67cd36957fd1a23b7de43d76751f00ccfafa811f9751a2",
           "retrieved_at": "cached"
         }
       ],
@@ -231,14 +231,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.53738/REVMED.2025.21.931.47723",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\f05794167b152eb8206ebe8551fc182dd4cb750760242a3732ccfffbef4a583f.json",
-          "sha256": "9314f12a1719ffbf5ecf31b26421662f92b45cee8ffc6693476b75557ee3ffac",
+          "sha256": "adf4f1d27ac86bdc0775e921393af70ebf16c859a853f73c328453a5b4893045",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40963314&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\dae47fecbb95a2ffcbf67120106717fe23b6f46fff6660defdbc0d74bee9fd0e.xml",
-          "sha256": "0aa48ced441c7a26498a1a96abcff34836d8c063161b90dbbfa7eba8f86e6de4",
+          "sha256": "10d077957e790268ca3f13429d63d88403faf88dcd7437cd13ac30d8a664c9dd",
           "retrieved_at": "cached"
         }
       ],
@@ -271,14 +271,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.1111/bcp.13499",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\7c7e43910fbf350b3228df501999313a81f47ddcc828d584c417b737c14c9794.json",
-          "sha256": "2c8b1865a6695c3d6c08247b9426bd96b75eb4860707e09abe9ae5af73945414",
+          "sha256": "052cc86ce5385a26d3cd65a00b06f1fd125a1bcdebbcd2b2d231da8abc46785e",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=29333622&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\801fee8f075facdcaf49f2cadb6afe4cec9b54e54bcb0f781e86f7a885327a3a.xml",
-          "sha256": "77959852072ba29f010a49cd9ffe9976bd9dd2e8714290a2a251dc2641a97e4d",
+          "sha256": "cf7b6e2ae76909901a8045a824a9f069a9bb51be299fa6a0e34e569e9bc1623e",
           "retrieved_at": "cached"
         }
       ],
@@ -310,14 +310,14 @@
           "provider": "openalex",
           "url": "https://api.openalex.org/works/https://doi.org/10.1136/bmj.294.6565.155-a",
           "cache_path": "data\\raw\\evidence\\citations\\openalex\\362c9e906f5a7d90d0dc0b0cd5bc4a192a5c08b83799fc3deeed1fea3422451b.json",
-          "sha256": "baceb21b98733e9329e47ea3552fc929b798c5021c946c611e7fde9b90ee0b38",
+          "sha256": "384ff7e80a7b7e8f565fe9ecab5010d7712b0847facdcede0f4676765933d202",
           "retrieved_at": "cached"
         },
         {
           "provider": "pubmed_citation",
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=3109547&retmode=xml",
           "cache_path": "data\\raw\\evidence\\citations\\pubmed_citation\\d5b090064d0c256b14de223b688a5e7dc7f0786e3b0f40f58659a9324102b4d9.xml",
-          "sha256": "586d66bdf868f052709df5f1229d7ae6b1e12271cabbe8ab79488716467ddb7f",
+          "sha256": "6e745fad2bc2bea658324ebb0622bbc8ad370085c320606e78ef6e669f9030d3",
           "retrieved_at": "cached"
         }
       ],
