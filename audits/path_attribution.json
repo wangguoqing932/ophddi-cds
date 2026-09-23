@@ -2,53 +2,53 @@
   "total_pairs_evaluated": 26216,
   "paths": {
     "rule": {
-      "n": 3122,
-      "pct": 11.91,
+      "n": 3138,
+      "pct": 11.97,
       "levels": {
         "high": 304,
-        "medium": 615,
-        "low": 2203
+        "medium": 623,
+        "low": 2211
       }
     },
     "matrix": {
-      "n": 18031,
-      "pct": 68.78,
+      "n": 18015,
+      "pct": 68.72,
       "levels": {
-        "medium": 911,
-        "low": 17024,
-        "high": 96
+        "medium": 894,
+        "low": 17041,
+        "high": 80
       }
     },
     "default_low": {
-      "n": 1916,
-      "pct": 7.31,
+      "n": 1869,
+      "pct": 7.13,
       "levels": {
-        "low": 1916
+        "low": 1869
       }
     },
     "g19": {
-      "n": 3147,
-      "pct": 12.0,
+      "n": 3194,
+      "pct": 12.18,
       "levels": {
-        "low": 3147
+        "low": 3194
       }
     }
   },
   "low_tier_non_low_outcomes": {
-    "n": 171,
+    "n": 202,
     "by_level": {
-      "medium": 95,
-      "high": 76
+      "medium": 107,
+      "high": 95
     },
     "by_path": {
-      "rule": 171
+      "rule": 202
     },
     "by_rule": {
-      "nsaid_antihypertensive_antagonism": 76,
-      "nsaid_acei_arb_antagonism": 40,
-      "low_abs_anticoagulant": 33,
-      "additive_nsaid_bleeding": 32,
-      "nsaid_diuretic_antagonism": 16,
+      "nsaid_antihypertensive_antagonism": 95,
+      "nsaid_acei_arb_antagonism": 50,
+      "low_abs_anticoagulant": 41,
+      "additive_nsaid_bleeding": 40,
+      "nsaid_diuretic_antagonism": 20,
       "cai_diuretic_metabolic_acidosis": 14,
       "additive_anticholinergic_effects": 11,
       "corticosteroid_nti_interaction": 8,
