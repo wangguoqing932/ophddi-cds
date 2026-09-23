@@ -96,10 +96,20 @@ def main() -> int:
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     # ── 意见 6：分歧按分级的交叉分布 ──
-    audit = ROOT / "outputs" / "blind_test" / "ddinter_disagreement_report.md"
     rows = []
+    # 预测文件在项目内位于 outputs/multiseed_per_dataset/，在公开仓库 deposit 中
+    # 位于 data/predictions/。两处都找，使脚本在两个布局下均可运行。
+    candidates = [
+        ROOT / "outputs" / "multiseed_per_dataset" / "blind_v3_ddinter__seed0.jsonl",
+        ROOT / "data" / "predictions" / "blind_v3_ddinter__seed0.jsonl",
+    ]
+    preds = next((p for p in candidates if p.exists()), None)
+    if preds is None:
+        print("跳过审计集分层：未找到 blind_v3_ddinter__seed0.jsonl")
+        print(f"  已尝试: {[str(p) for p in candidates]}")
+        print(f"\n写出 -> {outdir}")
+        return 0
     try:
-        preds = ROOT / "outputs" / "multiseed_per_dataset" / "blind_v3_ddinter__seed0.jsonl"
         seen = {}
         for line in preds.open(encoding="utf-8"):
             if not line.strip():
