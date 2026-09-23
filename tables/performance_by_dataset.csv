@@ -1,0 +1,17 @@
+dataset_id,dataset_role,method,n,sensitivity_high_mean,sensitivity_high_std,specificity_high_mean,specificity_high_std,f1_high_mean,f1_high_std,accuracy_4level_mean,accuracy_4level_std,cohen_kappa_mean,cohen_kappa_std
+dev-ddinter,development,pure_llm,200,0.3655,0.0352,0.6152,0.0346,0.2009,0.012,0.193,0.0452,-0.0032,0.0091
+dev-ddinter,development,naive_rag,200,0.9931,0.0138,0.4281,0.05,0.3713,0.0215,0.458,0.025,0.1532,0.0185
+dev-ddinter,development,lightrag,200,0.0759,0.0138,0.8678,0.0176,0.0813,0.0096,0.094,0.0092,0.0009,0.0019
+dev-ddinter,development,full_system,200,0.069,0.0,0.8947,0.0,0.0816,0.0,0.21,0.0,0.0146,0.0
+external_validation,external_validation,pure_llm,70,0.641,0.0459,0.6516,0.0801,0.6688,0.0506,0.6029,0.0437,0.3004,0.0727
+external_validation,external_validation,naive_rag,70,0.6359,0.0251,0.6258,0.0664,0.6582,0.0312,0.6143,0.03,0.2852,0.0541
+external_validation,external_validation,lightrag,70,0.1231,0.0299,0.9226,0.0158,0.2065,0.0427,0.4771,0.0146,0.1377,0.0158
+external_validation,external_validation,full_system,70,0.0769,0.0,0.9355,0.0,0.1364,0.0,0.4429,0.0,0.1391,0.0
+blind_l1,external_validation,pure_llm,118,0.7714,0.0286,0.5422,0.0441,0.4764,0.0192,0.4746,0.0239,0.2559,0.0255
+blind_l1,external_validation,naive_rag,118,0.7571,0.0571,0.4622,0.0453,0.4341,0.0128,0.4153,0.0142,0.1824,0.0249
+blind_l1,external_validation,lightrag,118,0.7928,0.0474,0.9356,0.031,0.7938,0.0339,0.7407,0.0175,0.609,0.026
+blind_l1,external_validation,full_system,118,1.0,0.0,0.9889,0.0,0.9825,0.0,0.9153,0.0,0.8703,0.0
+blind_v3_ddinter,external_validation,pure_llm,92,0.848,0.0299,0.7045,0.0112,0.6423,0.0139,0.6304,0.0228,0.3961,0.0285
+blind_v3_ddinter,external_validation,naive_rag,92,0.848,0.064,0.5791,0.029,0.5695,0.031,0.5348,0.0385,0.2902,0.0463
+blind_v3_ddinter,external_validation,lightrag,92,0.296,0.032,0.9492,0.0202,0.4128,0.0334,0.6,0.0081,0.2387,0.0166
+blind_v3_ddinter,external_validation,full_system,92,0.44,0.0,0.9552,0.0,0.5641,0.0,0.7065,0.0,0.4892,0.0

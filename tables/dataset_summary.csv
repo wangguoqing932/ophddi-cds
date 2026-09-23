@@ -1,0 +1,5 @@
+dataset_id,dataset_role,n_cases,n_high,n_medium,n_low,gold_source
+dev-ddinter,development,200,29,171,0,DDInter 2.0 original levels (not ophthalmic-adjusted)
+external_validation,external_validation,70,39,2,29,PubMed cases + guidelines (not ophthalmic-adjusted)
+blind_l1,external_validation,118,28,51,39,"literature-consensus 20 (FDA/Stockley's/BNF) + blind-frozen 40 (proposed, SHA-locked) + guideline 58; NO human expert yet"
+blind_v3_ddinter,external_validation,92,25,19,48,"DDInter stratified sample, absorption-corrected"

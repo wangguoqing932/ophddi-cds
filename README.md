@@ -129,3 +129,73 @@ performed.
 ## Licence
 
 Code: Apache-2.0 (see `LICENSE`). Data and configuration: CC BY 4.0.
+
+---
+
+## Complete deposit (added in response to peer review)
+
+This repository now contains the **full reproducibility deposit** for the manuscript,
+not only the condensed pipeline. A reviewer can locate every artefact referenced in
+the paper:
+
+| Path | Contents |
+|---|---|
+| `manuscript/` | Manuscript (docx/pdf/md), cover letter, round-1 response letter |
+| `figures/`, `tables/` | Figures 1-5 with source data; Tables 1-6 |
+| `supplementary/` | Supplementary material, ethics approval document |
+| `data/gold/` | All evaluation gold sets with case-level provenance: `blind_l1` (118), `blind_v3_ddinter` (92), `dev-ddinter` (200), `external_validation` (70), plus the two development-gate sets |
+| `data/predictions/` | The **9,600 prediction rows** (4 methods x 5 temperature conditions x 4 datasets), per-seed files, aggregate metrics, run log |
+| `data/expert_review/` | The 12-case two-expert ratings, the review instrument, and the scanned questionnaires |
+| `data/evidence/` | The 1,307-chunk evidence base and the citation-verification report |
+| `data/ddinter/` | DDInter severity tables used for the registry-scale audit |
+| `data/registry/` | Entity registries and the **per-agent absorption tier table with a source column** |
+| `audits/` | Path-attribution audit and tier cross-tabulation (see below) |
+
+### The exact evaluation prompts and retrieval code
+
+`configs/prompts.yaml` carries the system prompt, the BM25 settings (k1 = 1.5,
+b = 0.75, top-3, 400-character cap), the per-method user-prompt templates, the
+substring parse rule, the 10-token output cap and the temperature schedule.
+`src/ophthalmic_ddi_cds_agent/naive_rag.py` implements the BM25 retrieval.
+`scripts/run_multiseed_per_dataset.py` is the evaluation that produced the reported
+numbers.
+
+`scripts/run_baselines.py` is **an offline pipeline scaffold, not the reported
+evaluation**; its `--synthetic` mode fabricates predictions from a hardcoded error
+table and must not be used as a result. This is stated in its module docstring.
+
+### Audits of the cascade's own behaviour
+
+`audits/path_attribution.json` reports which layer produced each grade. Across the
+26,216 evaluable registry pairs: class matrix 68.8%, G19 hard constraint 12.0%,
+rule layer 11.9%, and an undocumented default-low path 7.3%. Notably, 171 pairs
+whose ophthalmic agent has a low-or-below absorption tier receive medium (95) or
+high (76), and all 171 arrive through the **rule** path — all 76 high grades from a
+single rule (`nsaid_antihypertensive_antagonism`) that requires no absorption flag.
+The absorption forcing therefore applies to the class-matrix branch only; the engine
+returns the maximum of an ungated rule layer and an absorption-scaled matrix layer.
+
+`audits/divergence_by_tier.csv` cross-tabulates the 1,933-pair audit by absorption
+tier, DDInter severity and system level.
+
+### Known limitations of this deposit
+
+- **Rule-citation coverage.** The verification report contains 8 manifest items over
+  7 distinct DOIs, of which three rules resolve to a verified literature citation.
+  Most rules cite DrugBank or label records, which were not independently re-verified.
+- **Absorption tiers are a study-team assignment**, not a measured quantity. Two of
+  the six tier values in the registry fall outside the G19 hard constraint's test.
+- **The LLM-baseline comparison used one non-reasoning model with a 10-token output
+  cap**, which precludes reasoning or justification.
+- **The audit-set headline (0.707)** mixes a third-party component with 30 cases
+  graded under the system's own absorption assumption; the third-party-only figure
+  is 37 of 62 (0.597).
+
+### Reproducing
+
+```bash
+pip install -e ".[dev]"
+pytest tests/ -q                            # 34 passed, 1 skipped
+python scripts/demo_pipeline.py             # 25 mock cases, no API key
+python scripts/path_attribution_audit.py    # regenerates audits/
+```

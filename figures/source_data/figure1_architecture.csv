@@ -1,0 +1,6 @@
+component,layer,inputs,outputs,source_code_file
+rule_engine,deterministic,40 rules + 105 matrix cells,risk level + matched rule ids,src/ophthalmic_ddi_cds_agent/kg_layer.py
+evidence_store,retrieval,1307 approved evidence chunks,BM25 context (naive_rag baseline),data/seed/evidence_chunks.jsonl
+lightrag_kg,retrieval,entities_a/b + evidence,full_kg_context (lightrag baseline),src/ophthalmic_ddi_cds_agent/kg_layer.py
+llm_arbiter,arbitration,prompt + context,"risk word (baselines only; full_system deterministic, 0 LLM)",deepseek-chat API
+normalize,deterministic,entity name lookup,canonical class mapping,configs/drug_classes.yaml

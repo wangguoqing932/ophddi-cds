@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-03",
+  "n_experts": 2,
+  "n_cases": 12,
+  "expert_1": [
+    "low",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "low",
+    "medium",
+    "low",
+    "low",
+    "low",
+    "low"
+  ],
+  "expert_2": [
+    "low",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "low",
+    "high",
+    "low",
+    "low",
+    "low",
+    "low"
+  ],
+  "system_v2": [
+    "medium",
+    "high",
+    "medium",
+    "high",
+    "high",
+    "high",
+    "low",
+    "medium",
+    "medium",
+    "low",
+    "low",
+    "medium"
+  ],
+  "majority": [
+    "low",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "medium",
+    "low",
+    "medium",
+    "low",
+    "low",
+    "low",
+    "low"
+  ],
+  "inter_rater": {
+    "agreement": 0.917,
+    "kappa": 0.846
+  },
+  "expert_vs_system": {
+    "expert1": {
+      "agreement": 0.417,
+      "kappa": 0.125
+    },
+    "expert2": {
+      "agreement": 0.333,
+      "kappa": 0.01
+    },
+    "majority": {
+      "agreement": 0.417,
+      "kappa": 0.125
+    }
+  },
+  "disagreement_pattern": "experts systematically rate 1 tier lower (4 high->medium, 6 medium->low in system terms); only R07 (levofloxacin x sotalol = low) fully agreed",
+  "expert_feedback": "clinical practice: eye drops have mild systemic impact; experts do not typically track ophthalmic-systemic DDI; judgment based on clinical prior, not per-case mechanism review",
+  "interpretation": "kappa negative reflects clinical-prior vs evidence-based judgment gap, NOT conclusive evidence of system miscalibration (experts did not perform mechanism-level assessment)",
+  "decision": "use these 2 experts; no system calibration applied; reported honestly as perspective gap",
+  "note": "expert1 verified against scanned PDF (vision, R03 低->中); expert2 identical to expert1 except R08=高 (per author)"
+}

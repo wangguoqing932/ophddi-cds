@@ -1,0 +1,13 @@
+编号,眼科药,全身药,gold(待确认),gold来源,系统v2,DDInter,问题,药理依据
+R01,Ketorolac,Enoxaparin,medium,勘误后(原high),medium,high,勘误确认：Ketorolac 眼用吸收为 LOW（非高吸收）→ 出血相加定 medium。你同意改为 medium 吗？,注册表 absorption flag=low；DDInter 全身评级 high 不适用眼科；与主流库 moderate 一致
+R02,Brimonidine,Tramadol,high,勘误后(原medium),high,无记录,勘误确认：α2激动×阿片 CNS 相加，与 T1 专家 G03（Brimonidine×Fentanyl=high）一致。你同意改为 high 吗？,溴莫尼定中吸收但 CNS 效应明确（嗜睡/低血压报道）；阿片相加
+R03,Dexamethasone,Rifampicin,medium,勘误后(原low),medium,medium,勘误确认：利福平强 CYP3A4 诱导→激素暴露显著降低，疗效损失有临床意义。你同意改为 medium 吗？,DDInter 亦为 medium；诱导方向交互常被低估
+R04,Atropine,Tramadol,high,药理标定,high,medium,升级争议：阿托品眼用高吸收(>50%)×阿片，中枢抗胆碱综合征风险。定 high 是否过强？,DDInter 全身评级 medium；高吸收+强 CNS 相加支持 high；也可主张 medium(监测)
+R05,Scopolamine,Amitriptyline,high,药理标定,high,medium,升级争议：东莨菪碱高吸收×TCA 强抗胆碱。high 是否过强？,与 R04 同机制；尿潴留/谵妄风险
+R06,Atropine,Oxycodone,high,药理标定,high,medium,升级争议：同 R04/R05 机制。high 是否过强？,三例高吸收抗胆碱×CNS 药，专家只需统一回答一次分级原则
+R07,Levofloxacin,Sotalol,low,药理标定(陷阱例),low,high,降级确认：喹诺酮 QT 机制存在但眼用吸收<5%。定 low 你同意吗？,DDInter high（全身 QT 相加）；眼科剂量无临床 QT 意义——系统核心主张
+R08,Betaxolol,Verapamil,medium,药理标定,medium,high,降级确认：中吸收 β1 选择性×CCB。medium 你同意吗？,DDInter high；吸收+选择性降级
+R09,Ketorolac,Rivaroxaban,medium,药理标定,medium,high,降级确认：同 R01（Ketorolac 低吸收）。medium 你同意吗？,DDInter high；眼科吸收修正
+R10,Fluorometholone,Prednisone,low,药理标定,low,无记录,粒度争议：弱效激素(氟米龙)×全身激素。系统判 medium（类级 IOP/全身相加），gold 标 low。你支持哪个？,氟米龙升眼压效应弱；类级 cell 保守倾向
+R11,Fluorometholone,Glimepiride,low,药理标定,low,无记录,粒度争议：弱效激素×磺脲。同 R10 问题。,类级升糖拮抗 vs 弱效低暴露
+R12,Ketorolac,Warfarin,medium,T1专家,medium,high,T1 代表：专家当初判 medium，DDInter high，系统 medium。确认专家判断仍成立？,T1 专家 gold 与 DDInter 分歧 5 例，系统全部与专家一致（G04/G05/G08/G16/G19）

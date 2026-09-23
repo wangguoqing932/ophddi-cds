@@ -1,0 +1,8 @@
+case_id,rule_id,rule_score,rule_severity,final_risk_level
+demo_001,additive_beta_blockade,3,high,high
+demo_001,systemic_absorption_high_risk,1,low,high
+demo_002,beta_blocker_ccb_additive,3,high,high
+demo_003,additive_anticholinergic_effects,2,medium,high
+demo_004,additive_nsaid_bleeding,2,medium,medium
+demo_004,low_abs_anticoagulant,1,low,medium
+demo_005,cai_diuretic_metabolic_acidosis,2,medium,medium

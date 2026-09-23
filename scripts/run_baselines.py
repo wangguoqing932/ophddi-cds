@@ -1,4 +1,19 @@
-"""Run reproducible baseline predictions.
+"""Run reproducible baseline predictions (PIPELINE SMOKE TEST ONLY).
+
+.. warning::
+
+   THIS SCRIPT IS NOT THE EVALUATION USED IN THE MANUSCRIPT. It is an offline
+   pipeline scaffold retained from early development. With ``--synthetic`` it
+   fabricates predictions from a hardcoded per-method error table in which
+   ``full_system`` is fixed at zero error, so its output must never be reported
+   as a result and must never be compared against the LLM baselines.
+
+   The reported evaluation is ``scripts/run_multiseed_per_dataset.py``: 4 methods
+   x 5 temperature conditions x 4 datasets = 9,600 real predictions. Its outputs
+   are deposited under ``05_data/predictions/`` in the deposit package. The
+   ``naive_rag`` baseline uses BM25 retrieval implemented in
+   ``src/ophthalmic_ddi_cds_agent/naive_rag.py``; the prompt is
+   ``configs/prompts.yaml``.
 
 This offline implementation requires ``--synthetic``. It never substitutes synthetic
 predictions for a real LLM/RAG/system evaluation without an explicit opt-in.

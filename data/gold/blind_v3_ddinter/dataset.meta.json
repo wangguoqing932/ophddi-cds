@@ -1,0 +1,6 @@
+{
+  "dataset_id": "blind_v3_ddinter",
+  "role": "external_validation",
+  "n_cases": 92,
+  "source": "independent blind validation (SHA-locked)"
+}

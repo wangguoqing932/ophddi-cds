@@ -1,0 +1,134 @@
+{
+  "title": "专家评审答卷存档（2026-08-03 回收）",
+  "n_experts": 2,
+  "n_cases": 12,
+  "expert_1_source": "扫描全能王 PDF (expert1_page1/2.png)",
+  "expert_2_source": "用户文字录入",
+  "judgment_scale": {
+    "低": "low",
+    "中": "medium",
+    "高": "high"
+  },
+  "responses": [
+    {
+      "case_id": "R01",
+      "ophthalmic": "Ketorolac",
+      "systemic": "Enoxaparin",
+      "gold_proposed": "medium",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "勘误确认：Ketorolac 眼用吸收为 LOW（非高吸收）→ 出血相加定 medium。你同意改为 medium 吗？"
+    },
+    {
+      "case_id": "R02",
+      "ophthalmic": "Brimonidine",
+      "systemic": "Tramadol",
+      "gold_proposed": "high",
+      "system_v2": "high",
+      "expert_1": "中",
+      "expert_2": "中",
+      "question": "勘误确认：α2激动×阿片 CNS 相加，与 T1 专家 G03（Brimonidine×Fentanyl=high）一致。你同意改为 high 吗？"
+    },
+    {
+      "case_id": "R03",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Rifampicin",
+      "gold_proposed": "medium",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "勘误确认：利福平强 CYP3A4 诱导→激素暴露显著降低，疗效损失有临床意义。你同意改为 medium 吗？"
+    },
+    {
+      "case_id": "R04",
+      "ophthalmic": "Atropine",
+      "systemic": "Tramadol",
+      "gold_proposed": "high",
+      "system_v2": "high",
+      "expert_1": "中",
+      "expert_2": "中",
+      "question": "升级争议：阿托品眼用高吸收(>50%)×阿片，中枢抗胆碱综合征风险。定 high 是否过强？"
+    },
+    {
+      "case_id": "R05",
+      "ophthalmic": "Scopolamine",
+      "systemic": "Amitriptyline",
+      "gold_proposed": "high",
+      "system_v2": "high",
+      "expert_1": "中",
+      "expert_2": "中",
+      "question": "升级争议：东莨菪碱高吸收×TCA 强抗胆碱。high 是否过强？"
+    },
+    {
+      "case_id": "R06",
+      "ophthalmic": "Atropine",
+      "systemic": "Oxycodone",
+      "gold_proposed": "high",
+      "system_v2": "high",
+      "expert_1": "中",
+      "expert_2": "中",
+      "question": "升级争议：同 R04/R05 机制。high 是否过强？"
+    },
+    {
+      "case_id": "R07",
+      "ophthalmic": "Levofloxacin",
+      "systemic": "Sotalol",
+      "gold_proposed": "low",
+      "system_v2": "low",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "降级确认：喹诺酮 QT 机制存在但眼用吸收<5%。定 low 你同意吗？"
+    },
+    {
+      "case_id": "R08",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Verapamil",
+      "gold_proposed": "medium",
+      "system_v2": "medium",
+      "expert_1": "中",
+      "expert_2": "高",
+      "question": "降级确认：中吸收 β1 选择性×CCB。medium 你同意吗？"
+    },
+    {
+      "case_id": "R09",
+      "ophthalmic": "Ketorolac",
+      "systemic": "Rivaroxaban",
+      "gold_proposed": "medium",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "降级确认：同 R01（Ketorolac 低吸收）。medium 你同意吗？"
+    },
+    {
+      "case_id": "R10",
+      "ophthalmic": "Fluorometholone",
+      "systemic": "Prednisone",
+      "gold_proposed": "low",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "粒度争议：弱效激素(氟米龙)×全身激素。系统判 medium（类级 IOP/全身相加），gold 标 low。你支持哪个？"
+    },
+    {
+      "case_id": "R11",
+      "ophthalmic": "Fluorometholone",
+      "systemic": "Glimepiride",
+      "gold_proposed": "low",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "粒度争议：弱效激素×磺脲。同 R10 问题。"
+    },
+    {
+      "case_id": "R12",
+      "ophthalmic": "Ketorolac",
+      "systemic": "Warfarin",
+      "gold_proposed": "medium",
+      "system_v2": "medium",
+      "expert_1": "低",
+      "expert_2": "低",
+      "question": "T1 代表：专家当初判 medium，DDInter high，系统 medium。确认专家判断仍成立？"
+    }
+  ]
+}

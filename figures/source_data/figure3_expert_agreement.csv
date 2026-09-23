@@ -1,0 +1,4 @@
+comparison,kappa,agreement,n
+inter_rater (E1 vs E2),0.846,0.917,12
+expert1 vs system,0.125,0.417,12
+expert2 vs system,0.01,0.333,12

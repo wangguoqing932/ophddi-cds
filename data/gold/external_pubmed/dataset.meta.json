@@ -1,0 +1,15 @@
+{
+  "dataset_id": "external_pubmed",
+  "role": "external_validation",
+  "n_cases": 13,
+  "source": "PubMed case reports and clinical studies",
+  "ground_truth_methods": [
+    "literature_case_report"
+  ],
+  "created": "2026-07-31",
+  "distribution": {
+    "medium": 8,
+    "high": 3,
+    "low": 2
+  }
+}

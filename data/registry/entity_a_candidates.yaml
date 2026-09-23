@@ -1,0 +1,1816 @@
+schema_version: 1
+entities:
+- primary_name: Timolol
+  aliases:
+  - timolol maleate
+  category: glaucoma_beta_blocker
+  active_mechanisms:
+  - beta_adrenergic_antagonist
+  flags:
+  - beta_blocker
+  - systemic_absorption_high
+  - cardiovascular_risk
+  evidence_sources:
+  - DrugBank DB00373
+  - PubMed
+  entity_a_id: topical_ophthalmic_0001
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Betaxolol
+  aliases:
+  - betaxolol hydrochloride
+  category: glaucoma_beta_blocker
+  active_mechanisms:
+  - beta1_selective_adrenergic_antagonist
+  flags:
+  - beta_blocker
+  - beta1_selective
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00195
+  - PubMed
+  entity_a_id: topical_ophthalmic_0002
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Levobunolol
+  aliases:
+  - levobunolol hydrochloride
+  category: glaucoma_beta_blocker
+  active_mechanisms:
+  - non_selective_beta_adrenergic_antagonist
+  flags:
+  - beta_blocker
+  - systemic_absorption_high
+  evidence_sources:
+  - DrugBank DB01210
+  - PubMed
+  entity_a_id: topical_ophthalmic_0003
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Carteolol
+  aliases:
+  - carteolol hydrochloride
+  category: glaucoma_beta_blocker
+  active_mechanisms:
+  - beta_adrenergic_antagonist
+  flags:
+  - beta_blocker
+  - isa_activity
+  - systemic_absorption_high
+  evidence_sources:
+  - DrugBank DB00521
+  - PubMed
+  entity_a_id: topical_ophthalmic_0004
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Metipranolol
+  aliases:
+  - metipranolol hydrochloride
+  category: glaucoma_beta_blocker
+  active_mechanisms:
+  - non_selective_beta_adrenergic_antagonist
+  flags:
+  - beta_blocker
+  - systemic_absorption_high
+  evidence_sources:
+  - DrugBank DB01214
+  - PubMed
+  entity_a_id: topical_ophthalmic_0005
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Latanoprost
+  aliases:
+  - latanoprost
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - FP_receptor_agonist
+  flags:
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00654
+  - PubMed
+  entity_a_id: topical_ophthalmic_0006
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Travoprost
+  aliases:
+  - travoprost
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - FP_receptor_agonist
+  flags:
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00387
+  - PubMed
+  entity_a_id: topical_ophthalmic_0007
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Bimatoprost
+  aliases:
+  - bimatoprost
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - prostamide_FP_receptor_agonist
+  flags:
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00905
+  - PubMed
+  entity_a_id: topical_ophthalmic_0008
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tafluprost
+  aliases:
+  - tafluprost
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - FP_receptor_agonist
+  flags:
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB08866
+  - PubMed
+  entity_a_id: topical_ophthalmic_0009
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Latanoprostene bunod
+  aliases:
+  - latanoprostene bunod
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - FP_receptor_agonist_nitric_oxide_donating
+  flags:
+  - prostaglandin_analog
+  - no_donor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB14882
+  - PubMed
+  entity_a_id: topical_ophthalmic_0010
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Unoprostone
+  aliases:
+  - unoprostone isopropyl
+  category: glaucoma_prostaglandin_analog
+  active_mechanisms:
+  - FP_receptor_agonist
+  flags:
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB06402
+  - PubMed
+  entity_a_id: topical_ophthalmic_0011
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Brimonidine
+  aliases:
+  - brimonidine tartrate
+  category: glaucoma_alpha2_agonist
+  active_mechanisms:
+  - alpha2_adrenergic_agonist
+  flags:
+  - alpha2_agonist
+  - systemic_absorption_medium
+  - cns_depressant
+  evidence_sources:
+  - DrugBank DB00484
+  - PubMed
+  entity_a_id: topical_ophthalmic_0012
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Apraclonidine
+  aliases:
+  - apraclonidine hydrochloride
+  category: glaucoma_alpha2_agonist
+  active_mechanisms:
+  - alpha2_adrenergic_agonist
+  flags:
+  - alpha2_agonist
+  - systemic_absorption_medium
+  - cns_depressant
+  evidence_sources:
+  - DrugBank DB00935
+  - PubMed
+  entity_a_id: topical_ophthalmic_0013
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Dorzolamide
+  aliases:
+  - dorzolamide hydrochloride
+  category: glaucoma_cai_topical
+  active_mechanisms:
+  - carbonic_anhydrase_inhibitor
+  flags:
+  - cai_topical
+  - systemic_absorption_medium
+  - metabolic_acidosis_risk
+  evidence_sources:
+  - DrugBank DB00869
+  - PubMed
+  entity_a_id: topical_ophthalmic_0014
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Brinzolamide
+  aliases:
+  - brinzolamide
+  category: glaucoma_cai_topical
+  active_mechanisms:
+  - carbonic_anhydrase_inhibitor
+  flags:
+  - cai_topical
+  - systemic_absorption_medium
+  - metabolic_acidosis_risk
+  evidence_sources:
+  - DrugBank DB01194
+  - PubMed
+  entity_a_id: topical_ophthalmic_0015
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Netarsudil
+  aliases:
+  - netarsudil dimesylate
+  category: glaucoma_rock_inhibitor
+  active_mechanisms:
+  - rho_associated_protein_kinase_inhibitor
+  flags:
+  - rock_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB13931
+  - PubMed
+  entity_a_id: topical_ophthalmic_0016
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ripasudil
+  aliases:
+  - ripasudil hydrochloride hydrate
+  category: glaucoma_rock_inhibitor
+  active_mechanisms:
+  - rho_associated_protein_kinase_inhibitor
+  flags:
+  - rock_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB16487
+  - PubMed
+  entity_a_id: topical_ophthalmic_0017
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Pilocarpine
+  aliases:
+  - pilocarpine hydrochloride
+  category: glaucoma_miotic
+  active_mechanisms:
+  - muscarinic_receptor_agonist
+  flags:
+  - miotic
+  - systemic_absorption_medium
+  - cholinergic
+  evidence_sources:
+  - DrugBank DB01085
+  - PubMed
+  entity_a_id: topical_ophthalmic_0018
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Carbachol
+  aliases:
+  - carbachol
+  category: glaucoma_miotic
+  active_mechanisms:
+  - cholinergic_agonist
+  flags:
+  - miotic
+  - systemic_absorption_medium
+  - cholinergic
+  evidence_sources:
+  - DrugBank DB00411
+  - PubMed
+  entity_a_id: topical_ophthalmic_0019
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ecothiopate
+  aliases:
+  - ecothiopate iodide
+  category: glaucoma_miotic
+  active_mechanisms:
+  - irreversible_acetylcholinesterase_inhibitor
+  flags:
+  - miotic
+  - systemic_absorption_high
+  - cholinergic_crisis_risk
+  evidence_sources:
+  - DrugBank DB01057
+  - PubMed
+  entity_a_id: topical_ophthalmic_0020
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Timolol/Latanoprost
+  aliases:
+  - Timolol+Latanoprost fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - beta_blocker
+  - FP_agonist
+  flags:
+  - beta_blocker
+  - prostaglandin_analog
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0021
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Timolol/Travoprost
+  aliases:
+  - Timolol+Travoprost fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - beta_blocker
+  - FP_agonist
+  flags:
+  - beta_blocker
+  - prostaglandin_analog
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0022
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Timolol/Bimatoprost
+  aliases:
+  - Timolol+Bimatoprost fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - beta_blocker
+  - prostamide_agonist
+  flags:
+  - beta_blocker
+  - prostaglandin_analog
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0023
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Timolol/Brimonidine
+  aliases:
+  - Timolol+Brimonidine fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - beta_blocker
+  - alpha2_agonist
+  flags:
+  - beta_blocker
+  - alpha2_agonist
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0024
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Timolol/Dorzolamide
+  aliases:
+  - Timolol+Dorzolamide fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - beta_blocker
+  - CAI
+  flags:
+  - beta_blocker
+  - cai
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0025
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Brimonidine/Brinzolamide
+  aliases:
+  - Brimonidine+Brinzolamide fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - alpha2_agonist
+  - CAI
+  flags:
+  - alpha2_agonist
+  - cai
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0026
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Brimonidine/Dorzolamide
+  aliases:
+  - Brimonidine+Dorzolamide fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - alpha2_agonist
+  - CAI
+  flags:
+  - alpha2_agonist
+  - cai
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0027
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Netarsudil/Latanoprost
+  aliases:
+  - Netarsudil+Latanoprost fixed combination
+  category: glaucoma_fixed_combination
+  active_mechanisms:
+  - ROCK_inhibitor
+  - FP_agonist
+  flags:
+  - rock_inhibitor
+  - prostaglandin_analog
+  - systemic_absorption_low
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0028
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ofloxacin
+  aliases:
+  - ofloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01165
+  - PubMed
+  entity_a_id: topical_ophthalmic_0029
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Levofloxacin
+  aliases:
+  - levofloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01137
+  - PubMed
+  entity_a_id: topical_ophthalmic_0030
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Moxifloxacin
+  aliases:
+  - moxifloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00218
+  - PubMed
+  entity_a_id: topical_ophthalmic_0031
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Gatifloxacin
+  aliases:
+  - gatifloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01044
+  - PubMed
+  entity_a_id: topical_ophthalmic_0032
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ciprofloxacin
+  aliases:
+  - ciprofloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00537
+  - PubMed
+  entity_a_id: topical_ophthalmic_0033
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Besifloxacin
+  aliases:
+  - besifloxacin ophthalmic
+  category: antibiotic_fluoroquinolone
+  active_mechanisms:
+  - DNA_gyrase_inhibitor_topoisomerase_IV_inhibitor
+  flags:
+  - antibiotic
+  - fluoroquinolone
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB06771
+  - PubMed
+  entity_a_id: topical_ophthalmic_0034
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tobramycin
+  aliases:
+  - tobramycin ophthalmic
+  category: antibiotic_aminoglycoside
+  active_mechanisms:
+  - 30S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - aminoglycoside
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00684
+  - PubMed
+  entity_a_id: topical_ophthalmic_0035
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Gentamicin
+  aliases:
+  - gentamicin sulfate ophthalmic
+  category: antibiotic_aminoglycoside
+  active_mechanisms:
+  - 30S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - aminoglycoside
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00798
+  - PubMed
+  entity_a_id: topical_ophthalmic_0036
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Neomycin
+  aliases:
+  - neomycin sulfate ophthalmic
+  category: antibiotic_aminoglycoside
+  active_mechanisms:
+  - 30S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - aminoglycoside
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00994
+  - PubMed
+  entity_a_id: topical_ophthalmic_0037
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Erythromycin
+  aliases:
+  - erythromycin ophthalmic
+  category: antibiotic_macrolide
+  active_mechanisms:
+  - 50S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - macrolide
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00199
+  - PubMed
+  entity_a_id: topical_ophthalmic_0038
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Azithromycin
+  aliases:
+  - azithromycin ophthalmic
+  category: antibiotic_macrolide
+  active_mechanisms:
+  - 50S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - macrolide
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00207
+  - PubMed
+  entity_a_id: topical_ophthalmic_0039
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Chloramphenicol
+  aliases:
+  - chloramphenicol ophthalmic
+  category: antibiotic_other
+  active_mechanisms:
+  - 50S_ribosomal_inhibitor
+  flags:
+  - antibiotic
+  - systemic_absorption_low
+  - bone_marrow_suppression_risk
+  evidence_sources:
+  - DrugBank DB00446
+  - PubMed
+  entity_a_id: topical_ophthalmic_0040
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Fusidic acid
+  aliases:
+  - fusidic acid ophthalmic
+  category: antibiotic_other
+  active_mechanisms:
+  - protein_synthesis_inhibitor
+  flags:
+  - antibiotic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB02703
+  - PubMed
+  entity_a_id: topical_ophthalmic_0041
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Bacitracin
+  aliases:
+  - bacitracin ophthalmic
+  category: antibiotic_polypeptide
+  active_mechanisms:
+  - cell_wall_synthesis_inhibitor
+  flags:
+  - antibiotic
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00626
+  - PubMed
+  entity_a_id: topical_ophthalmic_0042
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Polymyxin B
+  aliases:
+  - polymyxin B sulfate ophthalmic
+  category: antibiotic_polypeptide
+  active_mechanisms:
+  - cell_membrane_disruptor
+  flags:
+  - antibiotic
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00781
+  - PubMed
+  entity_a_id: topical_ophthalmic_0043
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Sulfacetamide
+  aliases:
+  - sulfacetamide sodium ophthalmic
+  category: antibiotic_sulfonamide
+  active_mechanisms:
+  - dihydropteroate_synthase_inhibitor
+  flags:
+  - antibiotic
+  - sulfonamide
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00634
+  - PubMed
+  entity_a_id: topical_ophthalmic_0044
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Acyclovir
+  aliases:
+  - acyclovir ophthalmic
+  category: antiviral
+  active_mechanisms:
+  - viral_DNA_polymerase_inhibitor
+  flags:
+  - antiviral
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00787
+  - PubMed
+  entity_a_id: topical_ophthalmic_0045
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ganciclovir
+  aliases:
+  - ganciclovir ophthalmic gel
+  category: antiviral
+  active_mechanisms:
+  - viral_DNA_polymerase_inhibitor
+  flags:
+  - antiviral
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01004
+  - PubMed
+  entity_a_id: topical_ophthalmic_0046
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Trifluridine
+  aliases:
+  - trifluridine ophthalmic
+  category: antiviral
+  active_mechanisms:
+  - viral_DNA_polymerase_inhibitor
+  flags:
+  - antiviral
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00432
+  - PubMed
+  entity_a_id: topical_ophthalmic_0047
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Natamycin
+  aliases:
+  - natamycin ophthalmic
+  category: antifungal
+  active_mechanisms:
+  - polyene_macrolide_fungicide
+  flags:
+  - antifungal
+  - polyene
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00826
+  - PubMed
+  entity_a_id: topical_ophthalmic_0048
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Voriconazole
+  aliases:
+  - voriconazole ophthalmic
+  category: antifungal
+  active_mechanisms:
+  - cyp51_inhibitor
+  flags:
+  - antifungal
+  - azole
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00582
+  - PubMed
+  entity_a_id: topical_ophthalmic_0049
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Fluconazole
+  aliases:
+  - fluconazole ophthalmic
+  category: antifungal
+  active_mechanisms:
+  - cyp51_inhibitor
+  flags:
+  - antifungal
+  - azole
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00196
+  - PubMed
+  entity_a_id: topical_ophthalmic_0050
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Prednisolone
+  aliases:
+  - prednisolone acetate ophthalmic
+  category: corticosteroid
+  active_mechanisms:
+  - glucocorticoid_receptor_agonist
+  flags:
+  - corticosteroid
+  - systemic_absorption_medium
+  - iop_elevation_risk
+  evidence_sources:
+  - DrugBank DB00860
+  - PubMed
+  entity_a_id: topical_ophthalmic_0051
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Dexamethasone
+  aliases:
+  - dexamethasone ophthalmic
+  category: corticosteroid
+  active_mechanisms:
+  - glucocorticoid_receptor_agonist
+  flags:
+  - corticosteroid
+  - systemic_absorption_medium
+  - iop_elevation_risk
+  evidence_sources:
+  - DrugBank DB01234
+  - PubMed
+  entity_a_id: topical_ophthalmic_0052
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Fluorometholone
+  aliases:
+  - fluorometholone ophthalmic
+  category: corticosteroid
+  active_mechanisms:
+  - glucocorticoid_receptor_agonist
+  flags:
+  - corticosteroid
+  - systemic_absorption_medium
+  - iop_elevation_risk
+  evidence_sources:
+  - DrugBank DB00324
+  - PubMed
+  entity_a_id: topical_ophthalmic_0053
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Loteprednol
+  aliases:
+  - loteprednol etabonate ophthalmic
+  category: corticosteroid
+  active_mechanisms:
+  - glucocorticoid_receptor_agonist
+  flags:
+  - corticosteroid
+  - site_activated
+  - systemic_absorption_low
+  - iop_elevation_lower_risk
+  evidence_sources:
+  - DrugBank DB01173
+  - PubMed
+  entity_a_id: topical_ophthalmic_0054
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Rimexolone
+  aliases:
+  - rimexolone ophthalmic
+  category: corticosteroid
+  active_mechanisms:
+  - glucocorticoid_receptor_agonist
+  flags:
+  - corticosteroid
+  - systemic_absorption_medium
+  - iop_elevation_risk
+  evidence_sources:
+  - DrugBank DB00886
+  - PubMed
+  entity_a_id: topical_ophthalmic_0055
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ketorolac
+  aliases:
+  - ketorolac tromethamine ophthalmic
+  category: nsaid_ophthalmic
+  active_mechanisms:
+  - cox1_cox2_inhibitor
+  flags:
+  - nsaid
+  - cox_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00465
+  - PubMed
+  entity_a_id: topical_ophthalmic_0056
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Flurbiprofen
+  aliases:
+  - flurbiprofen sodium ophthalmic
+  category: nsaid_ophthalmic
+  active_mechanisms:
+  - cox_inhibitor
+  flags:
+  - nsaid
+  - cox_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00712
+  - PubMed
+  entity_a_id: topical_ophthalmic_0057
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Diclofenac
+  aliases:
+  - diclofenac sodium ophthalmic
+  category: nsaid_ophthalmic
+  active_mechanisms:
+  - cox1_cox2_inhibitor
+  flags:
+  - nsaid
+  - cox_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00586
+  - PubMed
+  entity_a_id: topical_ophthalmic_0058
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Bromfenac
+  aliases:
+  - bromfenac sodium ophthalmic
+  category: nsaid_ophthalmic
+  active_mechanisms:
+  - cox_inhibitor
+  flags:
+  - nsaid
+  - cox_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00963
+  - PubMed
+  entity_a_id: topical_ophthalmic_0059
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Nepafenac
+  aliases:
+  - nepafenac ophthalmic
+  category: nsaid_ophthalmic
+  active_mechanisms:
+  - cox_inhibitor_prodrug
+  flags:
+  - nsaid
+  - cox_inhibitor
+  - prodrug
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01283
+  - PubMed
+  entity_a_id: topical_ophthalmic_0060
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Cyclosporine
+  aliases:
+  - cyclosporine A ophthalmic
+  category: immunosuppressant
+  active_mechanisms:
+  - calcineurin_inhibitor
+  flags:
+  - immunosuppressant
+  - calcineurin_inhibitor
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00091
+  - PubMed
+  entity_a_id: topical_ophthalmic_0061
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tacrolimus
+  aliases:
+  - tacrolimus ophthalmic
+  category: immunosuppressant
+  active_mechanisms:
+  - calcineurin_inhibitor
+  flags:
+  - immunosuppressant
+  - calcineurin_inhibitor
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00800
+  - PubMed
+  entity_a_id: topical_ophthalmic_0062
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Olopatadine
+  aliases:
+  - olopatadine hydrochloride ophthalmic
+  category: antihistamine_dual_action
+  active_mechanisms:
+  - h1_receptor_antagonist_mast_cell_stabilizer
+  flags:
+  - antihistamine
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00768
+  - PubMed
+  entity_a_id: topical_ophthalmic_0063
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ketotifen
+  aliases:
+  - ketotifen fumarate ophthalmic
+  category: antihistamine_mast_cell_stabilizer
+  active_mechanisms:
+  - h1_receptor_antagonist_mast_cell_stabilizer
+  flags:
+  - antihistamine
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00920
+  - PubMed
+  entity_a_id: topical_ophthalmic_0064
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Epinastine
+  aliases:
+  - epinastine hydrochloride ophthalmic
+  category: antihistamine_dual_action
+  active_mechanisms:
+  - h1_receptor_antagonist_mast_cell_stabilizer
+  flags:
+  - antihistamine
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00751
+  - PubMed
+  entity_a_id: topical_ophthalmic_0065
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Azelastine
+  aliases:
+  - azelastine hydrochloride ophthalmic
+  category: antihistamine
+  active_mechanisms:
+  - h1_receptor_antagonist
+  flags:
+  - antihistamine
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00972
+  - PubMed
+  entity_a_id: topical_ophthalmic_0066
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Emedastine
+  aliases:
+  - emedastine difumarate ophthalmic
+  category: antihistamine
+  active_mechanisms:
+  - h1_receptor_antagonist
+  flags:
+  - antihistamine
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01093
+  - PubMed
+  entity_a_id: topical_ophthalmic_0067
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Bepotastine
+  aliases:
+  - bepotastine besilate ophthalmic
+  category: antihistamine
+  active_mechanisms:
+  - h1_receptor_antagonist
+  flags:
+  - antihistamine
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB04935
+  - PubMed
+  entity_a_id: topical_ophthalmic_0068
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Alcaftadine
+  aliases:
+  - alcaftadine ophthalmic
+  category: antihistamine
+  active_mechanisms:
+  - h1_receptor_antagonist
+  flags:
+  - antihistamine
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB08883
+  - PubMed
+  entity_a_id: topical_ophthalmic_0069
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Cromolyn sodium
+  aliases:
+  - cromoglycate ophthalmic
+  category: mast_cell_stabilizer
+  active_mechanisms:
+  - mast_cell_stabilizer
+  flags:
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00186
+  - PubMed
+  entity_a_id: topical_ophthalmic_0070
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Nedocromil
+  aliases:
+  - nedocromil sodium ophthalmic
+  category: mast_cell_stabilizer
+  active_mechanisms:
+  - mast_cell_stabilizer
+  flags:
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00716
+  - PubMed
+  entity_a_id: topical_ophthalmic_0071
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Lodoxamide
+  aliases:
+  - lodoxamide tromethamine ophthalmic
+  category: mast_cell_stabilizer
+  active_mechanisms:
+  - mast_cell_stabilizer
+  flags:
+  - mast_cell_stabilizer
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00484
+  - PubMed
+  entity_a_id: topical_ophthalmic_0072
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Atropine
+  aliases:
+  - atropine sulfate ophthalmic
+  category: mydriatic_cycloplegic
+  active_mechanisms:
+  - muscarinic_receptor_antagonist
+  flags:
+  - anticholinergic
+  - mydriatic
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00572
+  - PubMed
+  entity_a_id: topical_ophthalmic_0073
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Cyclopentolate
+  aliases:
+  - cyclopentolate hydrochloride ophthalmic
+  category: mydriatic_cycloplegic
+  active_mechanisms:
+  - muscarinic_receptor_antagonist
+  flags:
+  - anticholinergic
+  - mydriatic
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00979
+  - PubMed
+  entity_a_id: topical_ophthalmic_0074
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Homatropine
+  aliases:
+  - homatropine hydrobromide ophthalmic
+  category: mydriatic_cycloplegic
+  active_mechanisms:
+  - muscarinic_receptor_antagonist
+  flags:
+  - anticholinergic
+  - mydriatic
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00725
+  - PubMed
+  entity_a_id: topical_ophthalmic_0075
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Scopolamine
+  aliases:
+  - scopolamine hydrobromide ophthalmic
+  category: mydriatic_cycloplegic
+  active_mechanisms:
+  - muscarinic_receptor_antagonist
+  flags:
+  - anticholinergic
+  - mydriatic
+  - systemic_absorption_high
+  evidence_sources:
+  - DrugBank DB00747
+  - PubMed
+  entity_a_id: topical_ophthalmic_0076
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tropicamide
+  aliases:
+  - tropicamide ophthalmic
+  category: mydriatic_cycloplegic
+  active_mechanisms:
+  - muscarinic_receptor_antagonist
+  flags:
+  - anticholinergic
+  - mydriatic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00809
+  - PubMed
+  entity_a_id: topical_ophthalmic_0077
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Phenylephrine
+  aliases:
+  - phenylephrine hydrochloride ophthalmic
+  category: mydriatic
+  active_mechanisms:
+  - alpha1_adrenergic_agonist
+  flags:
+  - sympathomimetic
+  - mydriatic
+  - systemic_absorption_medium
+  - hypertension_risk
+  evidence_sources:
+  - DrugBank DB00388
+  - PubMed
+  entity_a_id: topical_ophthalmic_0078
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Proparacaine
+  aliases:
+  - proparacaine hydrochloride ophthalmic
+  category: anesthetic_topical
+  active_mechanisms:
+  - sodium_channel_blocker
+  flags:
+  - anesthetic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB01227
+  - PubMed
+  entity_a_id: topical_ophthalmic_0079
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tetracaine
+  aliases:
+  - tetracaine hydrochloride ophthalmic
+  category: anesthetic_topical
+  active_mechanisms:
+  - sodium_channel_blocker
+  flags:
+  - anesthetic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00445
+  - PubMed
+  entity_a_id: topical_ophthalmic_0080
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Lidocaine
+  aliases:
+  - lidocaine ophthalmic gel
+  category: anesthetic_topical
+  active_mechanisms:
+  - sodium_channel_blocker
+  flags:
+  - anesthetic
+  - systemic_absorption_low
+  - antiarrhythmic
+  evidence_sources:
+  - DrugBank DB00281
+  - PubMed
+  entity_a_id: topical_ophthalmic_0081
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Benoxinate
+  aliases:
+  - benoxinate hydrochloride
+  category: anesthetic_topical
+  active_mechanisms:
+  - sodium_channel_blocker
+  flags:
+  - anesthetic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00807
+  - PubMed
+  entity_a_id: topical_ophthalmic_0082
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Fluorescein
+  aliases:
+  - fluorescein sodium ophthalmic
+  category: diagnostic_dye
+  active_mechanisms:
+  - diagnostic_contrast
+  flags:
+  - diagnostic
+  - dye
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00693
+  - PubMed
+  entity_a_id: topical_ophthalmic_0083
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Indocyanine green
+  aliases:
+  - ICG ophthalmic
+  category: diagnostic_dye
+  active_mechanisms:
+  - diagnostic_contrast
+  flags:
+  - diagnostic
+  - dye
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00354
+  - PubMed
+  entity_a_id: topical_ophthalmic_0084
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Rose bengal
+  aliases:
+  - rose bengal ophthalmic
+  category: diagnostic_dye
+  active_mechanisms:
+  - diagnostic_contrast
+  flags:
+  - diagnostic
+  - dye
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00762
+  - PubMed
+  entity_a_id: topical_ophthalmic_0085
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Ranibizumab
+  aliases:
+  - ranibizumab intravitreal
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_a_inhibitor
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB01276
+  - PubMed
+  entity_a_id: topical_ophthalmic_0086
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic
+- primary_name: Aflibercept
+  aliases:
+  - aflibercept intravitreal
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_plgf_inhibitor
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB01661
+  - PubMed
+  entity_a_id: topical_ophthalmic_0087
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic
+- primary_name: Bevacizumab
+  aliases:
+  - bevacizumab intravitreal
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_a_inhibitor
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB00112
+  - PubMed
+  entity_a_id: topical_ophthalmic_0088
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic
+- primary_name: Brolucizumab
+  aliases:
+  - brolucizumab intravitreal
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_a_inhibitor
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB16546
+  - PubMed
+  entity_a_id: topical_ophthalmic_0089
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic
+- primary_name: Faricimab
+  aliases:
+  - faricimab intravitreal
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_a_ang2_inhibitor
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB16647
+  - PubMed
+  entity_a_id: topical_ophthalmic_0090
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic
+- primary_name: Naphazoline
+  aliases:
+  - naphazoline ophthalmic
+  category: decongestant
+  active_mechanisms:
+  - alpha_adrenergic_agonist
+  flags:
+  - sympathomimetic
+  - vasoconstrictor
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00882
+  - PubMed
+  entity_a_id: topical_ophthalmic_0091
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tetrahydrozoline
+  aliases:
+  - tetrahydrozoline ophthalmic
+  category: decongestant
+  active_mechanisms:
+  - alpha_adrenergic_agonist
+  flags:
+  - sympathomimetic
+  - vasoconstrictor
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00714
+  - PubMed
+  entity_a_id: topical_ophthalmic_0092
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Dipivefrin
+  aliases:
+  - dipivefrin hydrochloride ophthalmic
+  category: glaucoma_other
+  active_mechanisms:
+  - prodrug_of_epinephrine_adrenergic_agonist
+  flags:
+  - sympathomimetic
+  - prodrug
+  - systemic_absorption_medium
+  evidence_sources:
+  - DrugBank DB00449
+  - PubMed
+  entity_a_id: topical_ophthalmic_0093
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Lifitegrast
+  aliases:
+  - lifitegrast ophthalmic
+  - Xiidra
+  category: dry_eye_anti_inflammatory
+  active_mechanisms:
+  - lfa1_icam1_inhibitor
+  flags:
+  - immunosuppressant
+  - anti_inflammatory
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB11674
+  - PubMed
+  entity_a_id: topical_ophthalmic_0094
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Diquafosol
+  aliases:
+  - diquafosol sodium ophthalmic
+  category: dry_eye_mucin_secretagogue
+  active_mechanisms:
+  - p2y2_receptor_agonist
+  flags:
+  - dry_eye
+  - mucin_stimulant
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB06217
+  - PubMed
+  entity_a_id: topical_ophthalmic_0095
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Rebamipide
+  aliases:
+  - rebamipide ophthalmic
+  category: dry_eye_mucin_secretagogue
+  active_mechanisms:
+  - mucin_production_stimulator
+  flags:
+  - dry_eye
+  - mucin_stimulant
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB11934
+  - PubMed
+  entity_a_id: topical_ophthalmic_0096
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Hydroxypropyl cellulose
+  aliases:
+  - hydroxypropyl cellulose ophthalmic insert
+  - Lacrisert
+  category: dry_eye_lubricant_insert
+  active_mechanisms:
+  - ocular_lubricant_insert
+  flags:
+  - dry_eye
+  - artificial_tear_insert
+  - systemic_absorption_none
+  evidence_sources:
+  - DrugBank DB09350
+  - PubMed
+  entity_a_id: topical_ophthalmic_0097
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Sodium hyaluronate
+  aliases:
+  - sodium hyaluronate ophthalmic
+  - hyaluronic acid
+  category: dry_eye_lubricant
+  active_mechanisms:
+  - viscosupplementation
+  flags:
+  - dry_eye
+  - artificial_tear
+  - systemic_absorption_none
+  evidence_sources:
+  - DrugBank DB08818
+  - PubMed
+  entity_a_id: topical_ophthalmic_0098
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Tobramycin/Dexamethasone
+  aliases:
+  - TobraDex
+  - tobramycin+dexamethasone ophthalmic
+  category: antibiotic_corticosteroid_combination
+  active_mechanisms:
+  - aminoglycoside
+  - glucocorticoid
+  flags:
+  - antibiotic
+  - aminoglycoside
+  - corticosteroid
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00684+DB01234
+  - PubMed
+  entity_a_id: topical_ophthalmic_0099
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Neomycin/Polymyxin B/Dexamethasone
+  aliases:
+  - Maxitrol
+  - neomycin+polymyxinB+dexamethasone
+  category: antibiotic_corticosteroid_combination
+  active_mechanisms:
+  - aminoglycoside
+  - polypeptide
+  - glucocorticoid
+  flags:
+  - antibiotic
+  - aminoglycoside
+  - polypeptide
+  - corticosteroid
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00994+DB00781+DB01234
+  - PubMed
+  entity_a_id: topical_ophthalmic_0100
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Bacitracin/Polymyxin B
+  aliases:
+  - bacitracin+polymyxin B ophthalmic
+  - Polysporin
+  category: antibiotic_combination
+  active_mechanisms:
+  - cell_wall_synthesis_inhibitor
+  - cell_membrane_disruptor
+  flags:
+  - antibiotic
+  - polypeptide
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00626+DB00781
+  - PubMed
+  entity_a_id: topical_ophthalmic_0101
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Sulfacetamide/Prednisolone
+  aliases:
+  - sulfacetamide+prednisolone ophthalmic
+  category: antibiotic_corticosteroid_combination
+  active_mechanisms:
+  - dihydropteroate_synthase_inhibitor
+  - glucocorticoid
+  flags:
+  - antibiotic
+  - sulfonamide
+  - corticosteroid
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00634+DB00860
+  - PubMed
+  entity_a_id: topical_ophthalmic_0102
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Povidone-iodine
+  aliases:
+  - povidone-iodine ophthalmic
+  - Betadine
+  category: antiseptic
+  active_mechanisms:
+  - iodine_oxidizing_agent_broad_spectrum
+  flags:
+  - antiseptic
+  - bactericidal_fungicidal_virucidal
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB14021
+  - PubMed
+  entity_a_id: topical_ophthalmic_0103
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Chlorhexidine
+  aliases:
+  - chlorhexidine gluconate ophthalmic
+  category: antiseptic
+  active_mechanisms:
+  - cell_membrane_disruptor_broad_spectrum
+  flags:
+  - antiseptic
+  - bactericidal
+  - systemic_absorption_very_low
+  evidence_sources:
+  - DrugBank DB00878
+  - PubMed
+  entity_a_id: topical_ophthalmic_0104
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Sodium chloride 5%
+  aliases:
+  - sodium chloride ophthalmic hypertonic
+  category: hyperosmotic
+  active_mechanisms:
+  - osmotic_dehydrating_agent
+  flags:
+  - hyperosmotic
+  - corneal_edema
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB14518
+  - PubMed
+  entity_a_id: topical_ophthalmic_0105
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Glycerin ophthalmic
+  aliases:
+  - glycerin ophthalmic
+  - glycerol
+  category: hyperosmotic
+  active_mechanisms:
+  - osmotic_dehydrating_agent
+  flags:
+  - hyperosmotic
+  - corneal_edema
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB02153
+  - PubMed
+  entity_a_id: topical_ophthalmic_0106
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Mitomycin C
+  aliases:
+  - mitomycin c ophthalmic
+  category: antimetabolite_ophthalmic
+  active_mechanisms:
+  - dna_crosslinking_alkylating_agent
+  flags:
+  - antimetabolite
+  - antifibrotic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00305
+  - PubMed
+  entity_a_id: topical_ophthalmic_0107
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: 5-Fluorouracil
+  aliases:
+  - 5-fluorouracil ophthalmic
+  category: antimetabolite_ophthalmic
+  active_mechanisms:
+  - thymidylate_synthase_inhibitor
+  flags:
+  - antimetabolite
+  - antifibrotic
+  - systemic_absorption_low
+  evidence_sources:
+  - DrugBank DB00544
+  - PubMed
+  entity_a_id: topical_ophthalmic_0108
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Acetylcholine intraocular
+  aliases:
+  - acetylcholine chloride intraocular
+  - Miochol
+  category: miotic_intraocular
+  active_mechanisms:
+  - cholinergic_agonist_intraocular
+  flags:
+  - cholinergic
+  - miotic
+  - intraocular
+  - minimal_systemic_absorption
+  evidence_sources:
+  - DrugBank DB03145
+  - PubMed
+  entity_a_id: topical_ophthalmic_0109
+  ophthalmic_administration: intraocular
+  dosage_form: ophthalmic
+- primary_name: Carboxymethylcellulose
+  aliases:
+  - carboxymethylcellulose sodium
+  - Viscoat
+  category: viscoelastic_surgical_aid
+  active_mechanisms:
+  - viscoelastic_protective_agent
+  flags:
+  - viscoelastic
+  - surgical_aid
+  - systemic_absorption_none
+  evidence_sources:
+  - DrugBank DB15897
+  - PubMed
+  entity_a_id: topical_ophthalmic_0110
+  ophthalmic_administration: intraocular
+  dosage_form: ophthalmic
+- primary_name: Hydroxypropyl methylcellulose
+  aliases:
+  - hypromellose ophthalmic
+  - Ocucoat
+  category: viscoelastic_surgical_aid
+  active_mechanisms:
+  - viscoelastic_protective_agent
+  flags:
+  - viscoelastic
+  - surgical_aid
+  - systemic_absorption_none
+  evidence_sources:
+  - DrugBank DB09345
+  - PubMed
+  entity_a_id: topical_ophthalmic_0111
+  ophthalmic_administration: intraocular
+  dosage_form: ophthalmic
+- primary_name: Accelidine
+  aliases:
+  - accelidine ophthalmic
+  category: glaucoma_miotic
+  active_mechanisms:
+  - muscarinic_receptor_agonist
+  flags:
+  - miotic
+  - cholinergic
+  - systemic_absorption_medium
+  evidence_sources:
+  - PubMed
+  entity_a_id: topical_ophthalmic_0112
+  ophthalmic_administration: topical
+  dosage_form: ophthalmic
+- primary_name: Conbercept
+  aliases:
+  - conbercept ophthalmic intravitreal
+  - 康柏西普
+  - Langmu
+  category: anti_vegf_intravitreal
+  active_mechanisms:
+  - vegf_plgf_inhibitor_fusion_protein
+  flags:
+  - anti_vegf
+  - biologic
+  - intravitreal
+  - minimal_systemic_absorption
+  evidence_sources:
+  - PubMed
+  - Chinese FDA
+  entity_a_id: topical_ophthalmic_0113
+  ophthalmic_administration: intravitreal
+  dosage_form: ophthalmic

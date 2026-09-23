@@ -1,0 +1,5 @@
+source_node,target_node,weight,path_type
+Timolol,beta_blocker,1.0,rule_match
+beta_blocker,additive_beta_blockade,1.0,rule_match
+additive_beta_blockade,high,1.0,rule_match
+Atenolol,beta_blocker,1.0,rule_match
