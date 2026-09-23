@@ -388,6 +388,12 @@ is what surfaced the problem, so we set the changes out explicitly.
 | Registry audit: low-absorption attributable | 1,117 (77.0%) | **1,171 (80.5%)** |
 | Rule path, low-tier pairs receiving medium/high | 171 (76 high) | **202 (95 high)** |
 
+Since the revision added substantial new material (the reasoning-model re-run, the
+absorption-gating analysis, and the corrections above), the Abstract had grown to 395
+words. *BMC Bioinformatics* caps the Abstract at 350 words, so it has been trimmed to 336
+words: every quantitative result listed above is retained, and what was removed is
+restatement rather than content.
+
 Two of these changes work against the paper and one works for it, and we state which is
 which. **Against:** the audit-set sensitivity falls from 0.440 to 0.320, and the L1
 sensitivity is no longer exactly 1.000; the "perfect" framing has been removed wherever
