@@ -2,13 +2,15 @@
 
 ## Authors
 
-Wang Guoqing, M.D.¹; Yi Xianglong, M.D., Ph.D.¹²*
+Wang Guoqing, M.D.¹; Hu Lumei, M.D.¹; Wang Shaocheng, M.D.³; Yi Xianglong, M.D., Ph.D.¹²*
 
 
 
 ¹ Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China
 
 ² Xinjiang Medical University, Urumqi, Xinjiang, China
+
+³ Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital, Xinjiang, China
 
 
 
@@ -17,6 +19,10 @@ Wang Guoqing, M.D.¹; Yi Xianglong, M.D., Ph.D.¹²*
 E-mail: yixianglong1010@163.com
 
 Wang Guoqing, M.D., Resident Physician; E-mail: 17690924120@163.com
+
+Hu Lumei, M.D., Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University; E-mail: 1301161825@qq.com
+
+Wang Shaocheng, M.D., Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital; E-mail: 13150407698@163.com
 
 ## Abstract
 
@@ -70,7 +76,7 @@ The evidence base (1,307 chunks) was embedded with a 2048-dimensional Doubao emb
 
 ### 2.3 Validation datasets and evaluation protocol
 
-L1 literature-derived gold (118 cases). Gold labels were constructed by the study team from authoritative sources, without reference to system outputs. **Selection criteria.** The set was assembled to span the dose-route correction the system models rather than to sample representatively: it combines every FDA-label mechanism annotation that met the inclusion rule, a procedurally frozen blind subset, and guideline-sourced cases chosen to cover classes where the systemic route and the ophthalmic route diverge most. Specifically, the 20 mechanism annotations are those FDA-label, Stockley's and BNF statements that specify a mechanism rather than only a severity; the 58 guideline-sourced cases were selected from FDA product labels, BNF interaction tables and Stockley's to include at least one pair per ophthalmic class in the registry, with case-level source references recorded in the gold file. **To be explicit about who constructed the gold:** the study team comprises the two named authors, both clinicians, so "no human expert participated in gold construction" means that no *independent* expert was involved, and none of the expert opinion used here was blinded to the system. **How the gold shares sources with the rules:** the sharing differs by subset — the 20 mechanism annotations and the 58 guideline-sourced cases were labelled from the same FDA/Stockley's/BNF statements that the rules cite, whereas the 40 frozen blind cases were labelled by the study team from the same literature without case-by-case reuse of a rule citation. **Contradictory evidence:** where sources disagreed we retained the more conservative (higher) grade and recorded the disagreement in the case file; the ten cases where our label still differs from the guideline are listed with their rationale in Supplementary Table S1. We further disclose that one of the two 20-case blind subsets (blind 2, cases C01–C20) entered the development loop through error attribution during class-matrix versions v2.1–v2.3; the other subset (blind 1, cases B01–B20) was never used in development. Gold-level distribution: 28 high, 51 medium, 39 low (Table 4).
+L1 literature-derived gold (118 cases). Gold labels were constructed by the study team from authoritative sources, without reference to system outputs. **Selection criteria.** The set was assembled to span the dose-route correction the system models rather than to sample representatively: it combines every FDA-label mechanism annotation that met the inclusion rule, a procedurally frozen blind subset, and guideline-sourced cases chosen to cover classes where the systemic route and the ophthalmic route diverge most. Specifically, the 20 mechanism annotations are those FDA-label, Stockley's and BNF statements that specify a mechanism rather than only a severity; the 58 guideline-sourced cases were selected from FDA product labels, BNF interaction tables and Stockley's to include at least one pair per ophthalmic class in the registry, with case-level source references recorded in the gold file. **To be explicit about who constructed the gold:** the gold was constructed by the study team, which comprises the named authors, so "no human expert participated in gold construction" means that no *independent* expert was involved, and none of the expert opinion used here was blinded to the system. **How the gold shares sources with the rules:** the sharing differs by subset — the 20 mechanism annotations and the 58 guideline-sourced cases were labelled from the same FDA/Stockley's/BNF statements that the rules cite, whereas the 40 frozen blind cases were labelled by the study team from the same literature without case-by-case reuse of a rule citation. **Contradictory evidence:** where sources disagreed we retained the more conservative (higher) grade and recorded the disagreement in the case file; the ten cases where our label still differs from the guideline are listed with their rationale in Supplementary Table S1. We further disclose that one of the two 20-case blind subsets (blind 2, cases C01–C20) entered the development loop through error attribution during class-matrix versions v2.1–v2.3; the other subset (blind 1, cases B01–B20) was never used in development. Gold-level distribution: 28 high, 51 medium, 39 low (Table 4).
 
 DDInter audit set (92 cases). A stratified random sample by absorption tier and DDInter severity. **Correction rule.** A case was corrected from the DDInter severity to low when the ophthalmic agent's registry absorption tier is low, very low, minimal or none, no citation-verified mechanism rule fires for the pair, and no class-matrix upgrade applies; under those three conditions the systemic-route severity cannot be reached at ophthalmic doses. Thirty of 92 cases met the rule; the remaining 62 were kept at the DDInter level. The audit is therefore semi-independent: the severity component is third-party, but the absorption correction shares the system's central assumption for 30 cases.
 
@@ -235,7 +241,7 @@ This study was supported by the Natural Science Foundation of Xinjiang Uygur Aut
 
 ### Authors' contributions
 
-Wang G: Conceptualization, Methodology, Software, Formal analysis, Data curation, Visualization, Writing - original draft. Yi X: Conceptualization, Supervision, Project administration, Funding acquisition, Resources, Writing - review & editing. All authors contributed to the article and approved the submitted version.
+Wang G: Conceptualization, Methodology, Software, Formal analysis, Data curation, Visualization, Writing - original draft. Hu L: Clinical input, Data interpretation, Writing - review & editing. Wang S: Clinical input, Data interpretation, Writing - review & editing. Yi X: Conceptualization, Supervision, Project administration, Funding acquisition, Resources, Writing - review & editing. All authors contributed to the article and approved the submitted version.
 
 ### Acknowledgements
 
