@@ -118,22 +118,36 @@ in this revision and identify the gating decision as future work.
 - **Six values, not four.** Section 2.2 now reports all six and their counts (16 high,
   17 medium, 60 low, 9 very-low, 7 minimal, 4 none) and notes that the L3 constraint
   tests four of them.
-- **flurbiprofen.** Confirmed: tiered high in `entities_a.csv` while the candidate file
-  records no tier flag, with identical evidence sources. Recorded as a defect in
-  Section 4.4.
+- **flurbiprofen.** Confirmed and **corrected in this revision**. The registry tiered it
+  high while the curation file recorded low, for the same two evidence sources (DrugBank
+  DB00712, PubMed). At 0.03% it is the lowest-concentration ophthalmic NSAID in the
+  registry and the other four ophthalmic NSAIDs are all tiered low, so the high tier was a
+  data-entry error with no pharmacokinetic basis. It is now tiered low, and every
+  downstream analysis has been re-run (see the item on the affected numbers below).
 - **Nine non-topical agents.** Confirmed: six intravitreal anti-VEGF agents (including
   aflibercept, which the manuscript itself uses as the example of a pair with no
   plausible topical pathway), intraocular acetylcholine and two surgical viscoelastics.
   Recorded in Section 4.4.
 
-*Open:* re-running the registry analysis after correcting the assignments. Because the
-tier drives both the class-matrix forcing and the L3 constraint, correcting it will move
-the 75.0% figure in Section 3.4 and other reported numbers. We have therefore not
-changed the assignments in this revision; instead we deposit the tier table with sources,
-report the defects, and make the correction the first item of future work (Section 4.5).
-Section 3.4 already carries the tier cross-tabulation the reviewer asked for
-(`audits/divergence_by_tier.csv`), so the magnitude can be judged against the tier
-distribution that produces it.
+**The correction moved several reported numbers, and all of them have been re-run rather
+than patched.** Correcting the flurbiprofen tier changes the cascade's output on every
+pair involving it, which propagates into both validation sets and the registry-scale
+audit; additionally, the registry-scale audit itself could not be reproduced from the
+deposited code (74.2% rather than the reported 75.0%), because the audit had been run
+nine minutes before the registry was last modified and the first commit captured the
+modified registry beside the stale audit result. We therefore treat the flurbiprofen
+correction and the reproducibility defect as one repair. Table 3, Figure 2, Sections 3.3
+to 3.6, the Abstract and the Conclusion have all been regenerated; the corrected values
+are listed in the "Change to the reported numbers" section below.
+
+*Open:* reassigning the nine non-topical agents. The tier drives both the class-matrix
+forcing and the L3 constraint, and the scenario analysis deposited with the manuscript
+(`audits/tier_alternative_scenarios.json`) quantifies how each candidate reassignment
+moves the registry-scale figures; adopting one is a scientific choice rather than an
+error correction, so we have not made it unilaterally and have made it the first item of
+future work (Section 4.5). Section 3.4 carries the tier cross-tabulation the reviewer
+asked for (`audits/divergence_by_tier.csv`), so the magnitude can be judged against the
+tier distribution that produces it.
 
 ### Comment 5 — the baseline comparison cannot support the claim made for it
 
@@ -222,9 +236,11 @@ unweighted kappa of 0.625 applies to one expert's marginals rather than both.
 
 ### Comment 8 — the audit set mixes a third-party component with one graded under our assumption
 
-**Accepted.** Section 3.5 now reports 37 of 62 (**0.597**) alongside 0.707 and identifies
-it as the figure free of the system's own assumption; the Abstract carries the same
-qualification. The stratified breakdown was already disclosed and remains.
+**Accepted.** Section 3.5 now reports 34 of 62 (**0.548**) alongside 0.674 and identifies
+it as the figure free of the system's own absorption assumption; the Abstract now carries
+the same qualification, as the reviewer asked. The stratified breakdown (30 corrected
+cases 28/30; 62 kept cases 34/62) is reported in the same subsection, and the
+tier x severity cross-tabulation is deposited as `audits/divergence_by_tier.csv`.
 
 ### Comment 9 — supplementary cross-references are systematically wrong
 
@@ -347,6 +363,43 @@ been updated accordingly (both new authors are credited with clinical input, dat
 interpretation and critical revision of the manuscript). We draw the editor's attention to this
 change explicitly because author-list changes after submission require editorial awareness; all
 four authors have approved the submission, and no other element of authorship has changed.
+
+---
+
+## Change to the reported numbers
+
+Correcting the flurbiprofen tier, and repairing the stale registry audit that the same
+investigation exposed, moved several reported values. All occurrences in the manuscript,
+tables, figures and supplement have been regenerated from the corrected data rather than
+edited by hand. The reviewer's request for an analysis under alternative tier assignments
+is what surfaced the problem, so we set the changes out explicitly.
+
+| Quantity | Previously reported | Corrected |
+|---|---|---|
+| L1 118 cases: exact accuracy | 0.915 (108/118) | **0.907 (107/118)** |
+| L1: Cohen's kappa | 0.870 | **0.857** |
+| L1: high-risk sensitivity | 1.000 (28/28) | **0.964 (27/28)** |
+| Frozen blind subset (n = 40) | 1.000 (40/40) | **0.975 (39/40)** |
+| Audit set: exact accuracy | 0.707 (65/92) | **0.674 (62/92)** |
+| Audit set: high-risk sensitivity | 0.440 (11/25) | **0.320 (8/25)** |
+| Audit set, third-party-only subset | 0.597 (37/62) | **0.548 (34/62)** |
+| Registry audit: pairs downgraded | 1,450 (75.0%) | **1,455 (75.3%)** |
+| Registry audit: downgraded from high | 346 (17.9%) | **352 (18.2%)** |
+| Registry audit: low-absorption attributable | 1,117 (77.0%) | **1,171 (80.5%)** |
+| Rule path, low-tier pairs receiving medium/high | 171 (76 high) | **202 (95 high)** |
+
+Two of these changes work against the paper and one works for it, and we state which is
+which. **Against:** the audit-set sensitivity falls from 0.440 to 0.320, and the L1
+sensitivity is no longer exactly 1.000; the "perfect" framing has been removed wherever
+it appeared. **For:** the registry-scale result strengthens, with low-absorption
+attribution rising from 77.0% to 80.5%, and the flurbiprofen pair — now correctly tiered
+low — becomes a clearer illustration of the paper's central point, since a 0.03%
+formulation cannot plausibly reach systemic exposure yet carries a systemic-route
+severity rating of high in the database.
+
+The recomputation is replayable: `scripts/rerun_lightrag_flurbiprofen.py` re-runs the
+affected LLM predictions, `scripts/rebuild_metrics_json.py` rebuilds the aggregate
+metrics, and `scripts/tier_reassignment_scenarios.py` reproduces the scenario table.
 
 ---
 
