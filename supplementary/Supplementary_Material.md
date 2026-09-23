@@ -76,7 +76,7 @@ Abbreviations: L1/L2/L3, cascade layers 1–3; G19, gate 19 hard constraint; DDI
 
 **Figure 2. Performance comparison across four methods and two validation sets.**
 
-Forest plots show high-risk sensitivity (mean ± SD over five temperature conditions) of the deterministic system (`full_system`) versus three LLM baselines — `pure_llm` (single LLM call with domain-general system prompt, no retrieved evidence), `naive_rag` (BM25 evidence retrieval), and `lightrag` (knowledge-graph context) — on the L1 literature-derived gold (118 cases; panel a) and the DDInter-derived audit set (92 cases; panel b). `full_system` achieves sensitivity 1.000 (28/28) on the L1 set versus 0.793 for lightrag and 0.771 for pure_llm, and 0.440 (11/25) on the audit set; exact three-level accuracy was 0.915 (108/118; Wilson 95% CI 0.851–0.953; Cohen's κ = 0.870, bootstrap CI 0.791–0.947) on L1 and 0.707 (65/92; CI 0.607–0.790; κ = 0.489) on the audit set. Error bars represent SD across temperature conditions; `full_system` shows zero variance (deterministic by construction).
+Grouped bars show four metrics — high-risk sensitivity, high-risk specificity, high-risk F1 and Cohen's kappa — for the deterministic system (`full_system`) versus three LLM baselines: `pure_llm` (single LLM call with domain-general system prompt, no retrieved evidence), `naive_rag` (BM25 evidence retrieval) and `lightrag` (knowledge-graph context), on the L1 literature-derived gold (118 cases; panel a) and the DDInter-derived audit set (92 cases; panel b). Values are means over five temperature conditions. `full_system` achieves sensitivity 0.964 (27/28) and exact accuracy 0.907 (107/118; Wilson 95% CI 0.841–0.947; Cohen's κ = 0.857) on L1, and sensitivity 0.320 (8/25) with accuracy 0.674 (62/92; CI 0.573–0.761; κ = 0.428) on the audit set. `full_system` shows zero variance across temperature conditions because it makes no model call (Section 3.6).
 
 Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; SD, standard deviation; κ, Cohen's kappa; CI, confidence interval.
 
@@ -160,17 +160,17 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 
 All ten disagreements occur in the guideline-sourced subset (n = 58); the procedurally frozen blind subset (n = 40) and the FDA/Stockley's/BNF mechanism subset (n = 20) were classified with perfect exact accuracy.
 
-**Supplementary Table S2. Audit-set disagreements between the system and the absorption-corrected gold, by direction (n = 92).**
+**Supplementary Table S2. Audit-set disagreements between the system and the absorption-corrected gold, by direction (n = 92; 30 disagreements after the flurbiprofen tier correction).**
 
 | disagreement direction | n |
 |---|---|
-| high -> low | 6 |
-| high -> medium | 8 |
+| high -> low | 8 |
+| high -> medium | 9 |
 | medium -> low | 9 |
 | medium -> high | 2 |
 | low -> medium | 1 |
 | low -> high | 1 |
-| **total disagreements** | **27** |
+| **total disagreements** | **30** |
 
 The four over-alerts (system grade higher than gold) are apraclonidine x midazolam, apraclonidine x loperamide, tacrolimus x ibuprofen and bromfenac x enalapril.
 
@@ -371,14 +371,14 @@ Tiers are a study-team assignment from the sources listed in the final column, n
 |---|---|---|---|---|---|---|---|
 | blind_l1 | pure_llm | 118 | 0.771 | 0.542 | 0.476 | 0.475 | 0.256 |
 | blind_l1 | naive_rag | 118 | 0.757 | 0.462 | 0.434 | 0.415 | 0.182 |
-| blind_l1 | lightrag | 118 | 0.793 | 0.936 | 0.794 | 0.741 | 0.609 |
-| blind_l1 | full_system | 118 | 1.0 | 0.989 | 0.983 | 0.915 | 0.87 |
-| blind_v3_ddinter | pure_llm | 92 | 0.848 | 0.705 | 0.642 | 0.63 | 0.396 |
-| blind_v3_ddinter | naive_rag | 92 | 0.848 | 0.579 | 0.57 | 0.535 | 0.29 |
-| blind_v3_ddinter | lightrag | 92 | 0.296 | 0.949 | 0.413 | 0.6 | 0.239 |
-| blind_v3_ddinter | full_system | 92 | 0.44 | 0.955 | 0.564 | 0.707 | 0.489 |
+| blind_l1 | lightrag | 118 | 0.779 | 0.936 | 0.785 | 0.737 | 0.603 |
+| blind_l1 | full_system | 118 | 0.964 | 0.989 | 0.964 | 0.907 | 0.857 |
+| blind_v3_ddinter | pure_llm | 92 | 0.848 | 0.704 | 0.642 | 0.630 | 0.396 |
+| blind_v3_ddinter | naive_rag | 92 | 0.848 | 0.579 | 0.570 | 0.535 | 0.290 |
+| blind_v3_ddinter | lightrag | 92 | 0.264 | 0.949 | 0.377 | 0.591 | 0.220 |
+| blind_v3_ddinter | full_system | 92 | 0.320 | 0.955 | 0.444 | 0.674 | 0.428 |
 
-Note: exact accuracy is on the three-level scale (high/medium/low); LLM outputs that failed parsing were scored as errors (none occurred). Mean over five temperature conditions; full_system SD = 0 (deterministic).
+Note: exact accuracy is on the three-level scale (high/medium/low); mean over five temperature conditions; `full_system` SD = 0 (deterministic). Figures reflect the corrected flurbiprofen absorption tier.
 
 **Supplementary Table S8. Gold-level distribution by dataset.**
 

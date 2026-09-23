@@ -1,0 +1,51 @@
+{
+  "baseline": {
+    "pairs": 1933,
+    "downgrade": 1435,
+    "downgrade_share": 0.7424,
+    "upgrade": 143,
+    "low_absorption_downgrades": 1122,
+    "share_of_downgrades": 0.7819,
+    "agree": 355
+  },
+  "A_flurbiprofen_low": {
+    "pairs": 1933,
+    "downgrade": 1455,
+    "downgrade_share": 0.7527,
+    "upgrade": 136,
+    "low_absorption_downgrades": 1174,
+    "share_of_downgrades": 0.8069,
+    "agree": 342
+  },
+  "B_exclude_non_topical": {
+    "pairs": 1930,
+    "downgrade": 1432,
+    "downgrade_share": 0.742,
+    "upgrade": 143,
+    "low_absorption_downgrades": 1119,
+    "share_of_downgrades": 0.7814,
+    "agree": 355
+  },
+  "C_both": {
+    "pairs": 1930,
+    "downgrade": 1452,
+    "downgrade_share": 0.7523,
+    "upgrade": 136,
+    "low_absorption_downgrades": 1171,
+    "share_of_downgrades": 0.8065,
+    "agree": 342
+  },
+  "flurbiprofen_current_tier": "systemic_absorption_high",
+  "non_topical_agents": {
+    "Ranibizumab": "minimal_systemic_absorption",
+    "Aflibercept": "minimal_systemic_absorption",
+    "Bevacizumab": "minimal_systemic_absorption",
+    "Brolucizumab": "minimal_systemic_absorption",
+    "Faricimab": "minimal_systemic_absorption",
+    "Conbercept": "minimal_systemic_absorption",
+    "Acetylcholine intraocular": "minimal_systemic_absorption",
+    "Carboxymethylcellulose": "systemic_absorption_none",
+    "Hydroxypropyl methylcellulose": "systemic_absorption_none"
+  },
+  "note": "同一次审计在不同分级下的结果；不修改任何数据文件。"
+}
