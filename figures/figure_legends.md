@@ -10,13 +10,11 @@ Abbreviations: L1/L2/L3, cascade layers 1–3; G19, gate 19 hard constraint; DDI
 
 ---
 
-**Figure 2. Performance comparison across four methods on the L1 literature-derived gold (118 cases).**
+**Figure 2. Performance comparison across four methods on the L1 literature-derived gold (118 cases), under two output budgets.**
 
-Grouped bars show four metrics — high-risk sensitivity, high-risk specificity, high-risk F1 and Cohen's kappa — for the deterministic system (`full_system`) versus three LLM baselines: `pure_llm` (single LLM call with a domain-general system prompt and no retrieved evidence), `naive_rag` (BM25 evidence retrieval) and `lightrag` (knowledge-graph context). Values are means over five temperature conditions. `full_system` reaches sensitivity 0.964, specificity 0.989, F1 0.964 and kappa 0.857, against 0.779 / 0.936 / 0.785 / 0.603 for `lightrag`, 0.771 / 0.542 / 0.476 / 0.256 for `pure_llm` and 0.757 / 0.462 / 0.434 / 0.182 for `naive_rag`. Exact three-level accuracy was 0.907 (107/118; Wilson 95% CI 0.841–0.947) for `full_system`. `full_system` shows zero variance across temperature conditions because it makes no model call (Section 3.6).
+Grouped bars show four metrics — high-risk sensitivity, specificity, high-risk F1 and Cohen's kappa — for the deterministic cascade (`full_system`) and three LLM baselines: `pure_llm` (no retrieved evidence), `naive_rag` (BM25 retrieval) and `lightrag` (knowledge-graph context). **Panel (a)** is the primary comparison: a non-reasoning model with a 10-token output cap, one call per case. **Panel (b)** repeats the three LLM baselines with a reasoning model (glm-5.3-flash), a 3000-token budget, a fixed temperature of 0.0 and the majority vote over five repeated samples; the cascade is unchanged because it makes no model call. In panel (a) the baselines reach sensitivities of 0.757–0.779; in panel (b) sensitivity falls to 0.214–0.536 while specificity rises to 1.000, because the baselines adopt a conservative rarely-high-risk policy that inflates exact accuracy on a gold set dominated by low and medium grades. The cascade returns 0.964 sensitivity, 0.989 specificity and 0.857 kappa in both panels. Exact three-level accuracy was 0.907 (107/118) for the cascade; baseline accuracy was 0.415–0.737 in panel (a) and 0.576–0.737 in panel (b).
 
 Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; F1, harmonic mean of precision and recall at the high-risk threshold; kappa, Cohen's kappa.
-
----
 
 **Figure 3. Expert–system agreement and inter-rater reliability (two clinical experts, 12 cases).**
 

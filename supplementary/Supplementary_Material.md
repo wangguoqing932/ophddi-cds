@@ -74,13 +74,11 @@ Abbreviations: L1/L2/L3, cascade layers 1–3; G19, gate 19 hard constraint; DDI
 
 ---
 
-**Figure 2. Performance comparison across four methods and two validation sets.**
+**Figure 2. Performance comparison across four methods on the L1 literature-derived gold (118 cases), under two output budgets.**
 
-Grouped bars show four metrics — high-risk sensitivity, high-risk specificity, high-risk F1 and Cohen's kappa — for the deterministic system (`full_system`) versus three LLM baselines: `pure_llm` (single LLM call with domain-general system prompt, no retrieved evidence), `naive_rag` (BM25 evidence retrieval) and `lightrag` (knowledge-graph context), on the L1 literature-derived gold (118 cases; panel a) and the DDInter-derived audit set (92 cases; panel b). Values are means over five temperature conditions. `full_system` achieves sensitivity 0.964 (27/28) and exact accuracy 0.907 (107/118; Wilson 95% CI 0.841–0.947; Cohen's κ = 0.857) on L1, and sensitivity 0.320 (8/25) with accuracy 0.674 (62/92; CI 0.573–0.761; κ = 0.428) on the audit set. `full_system` shows zero variance across temperature conditions because it makes no model call (Section 3.6).
+Grouped bars show four metrics — high-risk sensitivity, specificity, high-risk F1 and Cohen's kappa — for the deterministic cascade (`full_system`) and three LLM baselines: `pure_llm` (no retrieved evidence), `naive_rag` (BM25 retrieval) and `lightrag` (knowledge-graph context). **Panel (a)** is the primary comparison: a non-reasoning model with a 10-token output cap, one call per case. **Panel (b)** repeats the three LLM baselines with a reasoning model (glm-5.3-flash), a 3000-token budget, a fixed temperature of 0.0 and the majority vote over five repeated samples; the cascade is unchanged because it makes no model call. In panel (a) the baselines reach sensitivities of 0.757–0.779; in panel (b) sensitivity falls to 0.214–0.536 while specificity rises to 1.000, because the baselines adopt a conservative rarely-high-risk policy that inflates exact accuracy on a gold set dominated by low and medium grades. The cascade returns 0.964 sensitivity, 0.989 specificity and 0.857 kappa in both panels. Exact three-level accuracy was 0.907 (107/118) for the cascade; baseline accuracy was 0.415–0.737 in panel (a) and 0.576–0.737 in panel (b).
 
-Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; SD, standard deviation; κ, Cohen's kappa; CI, confidence interval.
-
----
+Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; F1, harmonic mean of precision and recall at the high-risk threshold; kappa, Cohen's kappa.
 
 **Figure 3. Expert–system agreement and inter-rater reliability (two clinical experts, 12 cases).**
 
@@ -365,20 +363,25 @@ Tiers are a study-team assignment from the sources listed in the final column, n
 | low_abs_antiplatelet | low | pharmacodynamic_hemorrhagic | systemic_absorption_low | antiplatelet | any |
 | low_abs_anticoagulant | low | pharmacodynamic_hemorrhagic | systemic_absorption_low | anticoagulant | any |
 
-**Supplementary Table S7. Four-method performance by dataset.**
+**Supplementary Table S7. Four-method performance by dataset and output budget.**
 
-| dataset_id | method | n | sensitivity_high | specificity_high | f1_high | accuracy_3level | cohens_kappa |
-|---|---|---|---|---|---|---|---|
-| blind_l1 | pure_llm | 118 | 0.771 | 0.542 | 0.476 | 0.475 | 0.256 |
-| blind_l1 | naive_rag | 118 | 0.757 | 0.462 | 0.434 | 0.415 | 0.182 |
-| blind_l1 | lightrag | 118 | 0.779 | 0.936 | 0.785 | 0.737 | 0.603 |
-| blind_l1 | full_system | 118 | 0.964 | 0.989 | 0.964 | 0.907 | 0.857 |
-| blind_v3_ddinter | pure_llm | 92 | 0.848 | 0.704 | 0.642 | 0.630 | 0.396 |
-| blind_v3_ddinter | naive_rag | 92 | 0.848 | 0.579 | 0.570 | 0.535 | 0.290 |
-| blind_v3_ddinter | lightrag | 92 | 0.264 | 0.949 | 0.377 | 0.591 | 0.220 |
-| blind_v3_ddinter | full_system | 92 | 0.320 | 0.955 | 0.444 | 0.674 | 0.428 |
-
-Note: exact accuracy is on the three-level scale (high/medium/low); mean over five temperature conditions; `full_system` SD = 0 (deterministic). Figures reflect the corrected flurbiprofen absorption tier.
+| dataset_id | setting | method | n | sensitivity_high | specificity_high | f1_high | accuracy_3level | cohens_kappa |
+|---|---|---|---|---|---|---|---|---|
+| blind_l1 | 10-token | pure_llm | 118 | 0.771 | 0.542 | 0.476 | 0.475 | 0.256 |
+| blind_l1 | 10-token | naive_rag | 118 | 0.757 | 0.462 | 0.434 | 0.415 | 0.182 |
+| blind_l1 | 10-token | lightrag | 118 | 0.779 | 0.936 | 0.785 | 0.737 | 0.603 |
+| blind_l1 | 10-token | full_system | 118 | 0.964 | 0.989 | 0.964 | 0.907 | 0.857 |
+| blind_l1 | 3000-token | pure_llm | 118 | 0.250 | 1.000 | 0.400 | 0.576 | 0.333 |
+| blind_l1 | 3000-token | naive_rag | 118 | 0.214 | 0.989 | 0.343 | 0.585 | 0.341 |
+| blind_l1 | 3000-token | lightrag | 118 | 0.536 | 1.000 | 0.698 | 0.737 | 0.587 |
+| blind_v3_ddinter | 10-token | pure_llm | 92 | 0.848 | 0.704 | 0.642 | 0.630 | 0.396 |
+| blind_v3_ddinter | 10-token | naive_rag | 92 | 0.848 | 0.579 | 0.570 | 0.535 | 0.290 |
+| blind_v3_ddinter | 10-token | lightrag | 92 | 0.264 | 0.949 | 0.377 | 0.591 | 0.220 |
+| blind_v3_ddinter | 10-token | full_system | 92 | 0.320 | 0.955 | 0.444 | 0.674 | 0.428 |
+| blind_v3_ddinter | 3000-token | pure_llm | 92 | 0.080 | 1.000 | 0.148 | 0.609 | 0.317 |
+| blind_v3_ddinter | 3000-token | naive_rag | 92 | 0.400 | 1.000 | 0.571 | 0.728 | 0.553 |
+| blind_v3_ddinter | 3000-token | lightrag | 92 | 0.240 | 1.000 | 0.387 | 0.674 | 0.428 |
+Note: exact accuracy is on the three-level scale; **10-token** denotes the primary comparison (non-reasoning model, 10-token cap, one call per case); **3000-token** denotes the re-run (reasoning model glm-5.3-flash, 3000-token budget, temperature 0.0, majority vote over five repeated samples). `full_system` is deterministic and therefore identical under both settings (SD = 0). Sensitivities are computed against each dataset's gold; the 3000-token baselines assign high risk far more rarely, which raises specificity to ~1.000 while depressing sensitivity.
 
 **Supplementary Table S8. Gold-level distribution by dataset.**
 
