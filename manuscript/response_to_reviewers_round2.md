@@ -81,16 +81,18 @@ grade is retained; the provenance gap is now stated rather than left implicit.
 **Accepted; the reviewer's numbers reproduce exactly.** We wrote an independent audit
 (`scripts/path_attribution_audit.py`, output deposited as `audits/path_attribution.json`)
 and swept all 26,216 evaluable registry pairs. The result matches the reviewer's figures:
-**171 pairs with a low-or-below absorption tier receive medium (95) or high (76), all 171
-arrive through the rule path, and all 76 high grades come from
-`nsaid_antihypertensive_antagonism`**, which requires no absorption flag.
+**202 pairs with a low-or-below absorption tier receive medium (107) or high (95), all 202
+arrive through the rule path, and all 95 high grades come from
+`nsaid_antihypertensive_antagonism`**, which requires no absorption flag. These figures are from
+the corrected registry; the same audit before the flurbiprofen correction gave 171 pairs with
+76 high grades.
 
 The manuscript no longer claims that absorption scaling forces low-absorption pairs to
 low risk across the cascade. Section 2.2 now states that the forcing applies within the
 matrix layer only and that the final grade is the maximum of an ungated rule layer and
 an absorption-scaled matrix layer, and Section 4.2 draws the consequence. The path
-distribution the reviewer asked for is reported: class matrix 68.8%, G19 hard constraint
-12.0%, rule layer 11.9%, default-low 7.3%. The previously undocumented default-low path
+distribution the reviewer asked for is reported in Section 2.2 and in the deposited audit:
+class matrix 68.7%, G19 hard constraint 12.2%, rule layer 12.0%, default-low 7.1%. The previously undocumented default-low path
 is now described in the cascade description.
 
 *Open:* whether to gate `nsaid_antihypertensive_antagonism` on absorption, as the four
@@ -135,23 +137,51 @@ distribution that produces it.
 
 ### Comment 5 — the baseline comparison cannot support the claim made for it
 
-**Accepted; the conclusion is qualified rather than defended.** Section 2.4 now states
-that the comparison used a single proprietary endpoint (`deepseek-chat`) with a 10-token
-output cap that forces a one-word answer and precludes any reasoning or justification,
-that parsing was by substring, that the named `lightrag` baseline does not query the
-LightRAG index, and that these choices bound what the comparison can support. The exact
-prompts and parameters are provided in Supplementary Text S3 and in
-`configs/prompts.yaml`.
+**Accepted and acted on.** The reviewer identified three specific deficiencies and proposed
+four remedies, all of which we adopted: a current reasoning model, an adequate output budget,
+repeated sampling at fixed temperature rather than one temperature per condition, and a
+pre-specified parsing rule. The three LLM baselines were re-run over both validation sets
+(3,150 API calls, no errors and no unparseable responses) with `glm-5.3-flash`, a 3000-token
+budget, temperature 0.0, five repeated samples per case and a majority vote. Prompts, retrieval
+settings and parse rule were otherwise unchanged, so the two settings differ only in model,
+budget and sampling. Both settings are now reported side by side (new Section 3.6; Table 3;
+Figure 2).
 
-We have also reported the comparison symmetrically, as requested: on the audit set the
-two ungrounded baselines reach 0.848 high-risk sensitivity each, against 0.440 for the
-cascade (lightrag 0.296). This appears in Section 3.5 and, in abbreviated form, in the
-Abstract.
+**The reviewer was right that the 10-token cap suppressed the baselines**, and the re-run shows
+it in the accuracy column: on the L1 set pure_llm rises from 0.475 to 0.576 and naive_rag from
+0.415 to 0.585. **But the constraint was masking a worse problem, not a better capability.**
+With an adequate budget the baselines shift toward a conservative rarely-high-risk policy:
+pure_llm assigns high risk to 6% of L1 cases where the gold contains 24%, and to 2% of audit-set
+cases where the gold contains 27%. High-risk sensitivity therefore falls from 0.771 to 0.250
+(pure_llm), 0.757 to 0.214 (naive_rag) and 0.779 to 0.536 (lightrag), while specificity rises to
+approximately 1.000. Because both gold sets are dominated by low and medium grades, this
+conservatism inflates exact accuracy — which is why accuracy improved while discrimination
+collapsed. We report this as a finding about what general-purpose models do when given room to
+reason in this domain, and we base no claim about LLM capability on the accuracy column.
 
-*Open:* re-running the comparison with a reasoning model, adequate token budget and
-repeated sampling at fixed temperature. This is a substantive new experiment rather than
-a revision of text, and we would prefer to run it as such; the current revision states
-what the existing comparison can and cannot support.
+**Two further consequences we report rather than manage.** First, the ordering between retrieval
+methods reverses: naive_rag scored below pure_llm under the 10-token cap (0.415 versus 0.475),
+and we had attributed that to retrieval noise, but with an adequate budget naive_rag scores at or
+above pure_llm on both sets (0.585 versus 0.576; 0.728 versus 0.609). **We withdraw the claim that
+keyword retrieval injects noise in this domain** and have removed it from the Introduction,
+Results and Discussion. Second, on the audit set the adequate-budget naive_rag baseline reaches
+0.728 exact accuracy and 0.400 sensitivity, both above the cascade (0.674 and 0.320). This is the
+one comparison in which a baseline outperforms the system and we state it in the Abstract,
+Results and Discussion rather than leaving it to be discovered; its sensitivity is unstable
+across samples (0.280 to 0.480), whereas the cascade returns the same grade every time.
+
+**A note on sampling that vindicates the reviewer's third point.** Even at temperature 0.0 the
+baselines varied by 0.013 to 0.034 in exact accuracy across five repeats, so a single call would
+not have been a fair comparison; the reported figures use a majority vote. The cascade's SD
+remains 0.000.
+
+**Net effect on the paper's claims.** On the L1 set the cascade's advantage in high-risk
+sensitivity is now larger than before (0.964 versus 0.214–0.536, where the earlier comparison
+gave 0.964 versus 0.757–0.779), because the baselines are no longer constrained into giving an
+answer. On the audit set the cascade is not the best method and we say so. We have therefore
+narrowed the claim: the contribution is a deterministic, auditable decision procedure with a
+high-sensitivity profile and reproducible output, not across-the-board superiority in label
+agreement.
 
 ### Comment 6 — the registry-scale divergence measures the absorption model, not the database
 
@@ -287,27 +317,45 @@ All fourteen points have been addressed in Methods Sections 2.1–2.4.
 
 ---
 
+## Change to the author list
+
+This revision adds two authors, both of whom contributed to the revision work and have
+approved the submitted version:
+
+- **Lumei Hu, M.D.** — Department of Ophthalmology, The First Affiliated Hospital of Xinjiang
+  Medical University (second author)
+- **Shaocheng Wang, M.D.** — Department of Gastroenterology, Xinjiang Production and
+  Construction Corps Third Division General Hospital (third author)
+
+The author list is now Wang G, Hu L, Wang S, Yi X, and the Author Contributions statement has
+been updated accordingly (both new authors are credited with clinical input, data
+interpretation and critical revision of the manuscript). We draw the editor's attention to this
+change explicitly because author-list changes after submission require editorial awareness; all
+four authors have approved the submission, and no other element of authorship has changed.
+
+---
+
 ## Open items, stated plainly
 
 We prefer the response to be shorter than the record of what remains undone.
 
-1. **Absorption-tier reassignment (R1-4, R1-6).** The defects are documented and the
-   per-agent table is deposited, but the tiers themselves have not been changed, because
-   doing so moves the 75.0% divergence figure and other reported numbers. We have made
-   this the first item of future work rather than presenting corrected numbers we have
-   not produced.
-2. **Rule-layer absorption gating (R1-3).** The cascade's actual behaviour is now
-   described accurately, with the path distribution quantified. Whether to gate
-   `nsaid_antihypertensive_antagonism` is a design decision with downstream effects on
-   results, and we have left it open.
-3. **Baseline re-run with a reasoning model (R1-5).** Not performed. The comparison's
-   limitations are now stated explicitly in both the Methods and the Discussion, and we
-   have reported the direction in which the baselines outperform the system.
+1. **Tiering of the nine non-topical agents (R1-4).** The flurbiprofen error is corrected and
+   the registry-scale analysis re-run, but the nine agents in the ophthalmic registry that are
+   not topically administered (intravitreal anti-VEGF agents, intraocular acetylcholine, two
+   surgical viscoelastics) are still tiered on a topical-absorption rationale that does not
+   apply to them. The scenario analysis deposited with the manuscript quantifies how each
+   candidate reassignment moves the registry-scale figures; we have not adopted one unilaterally.
 
-We are grateful to Reviewer 1 for auditing the deposit rather than accepting it, and to
-Reviewer 2 for a set of questions that made the Methods substantially more complete.
+2. **Rule-layer absorption gating (R1-3).** The cascade's behaviour is now described accurately
+   and the path distribution quantified, with the measured cost of gating reported (L1 accuracy
+   falls from 0.907 to 0.890 or 0.847 depending on how many rules are gated). We argue the
+   decision belongs with outcome-linked calibration rather than with fitting the present gold,
+   and have left the engine unchanged.
 
-Yours sincerely,
+3. **Other reasoning models (R1-5).** We re-ran the baselines with one reasoning model
+   (glm-5.3-flash). Whether the conservative shift we observe is specific to this model or
+   general across current reasoning models is not established by a single model, and we say so
+   in Section 3.6.
 
 **Wang Guoqing, M.D.**
 Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University
