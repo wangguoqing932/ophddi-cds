@@ -262,12 +262,27 @@ Section 4.2 it is explicitly recast as a design property rather than a robustnes
 
 ### Comment 13 — test suite requires forced UTF-8
 
-**Partially confirmed.** The skipped test is confirmed to be an empty placeholder
-(`test_integration.py`, marked "Fill in during Phase 4"). We have not been able to
-reproduce the cp1252 failure on a clean Windows clone: the repository contains no Greek
-beta in any file the tests read, and the suite reports 34 passed, 1 skipped under the
-default console encoding. We would be grateful for the traceback so we can fix the
-specific case rather than guessing.
+**Confirmed and fixed; the reviewer's diagnosis was exactly right.** The failure is in
+`scripts/verify_rule_citations.py`, which printed its JSON report to stdout with
+`ensure_ascii=False`. The report contains the full citation records, and those include
+Greek characters from drug names and pharmacological terms (`β`, `α`, `μ`). On a cp1252
+console the print raises `UnicodeEncodeError: 'charmap' codec can't encode character
+'β'`, which fails `tests/test_phase3_policy.py::test_policy_gate_replays_cached_sources`
+— the test that replays cached citations offline.
+
+We reproduced it under `PYTHONIOENCODING=cp1252` and fixed it by writing the report to
+file as UTF-8 (unchanged) while degrading only the terminal echo to ASCII escapes. The
+suite now passes under both encodings:
+
+```
+PYTHONIOENCODING=cp1252 pytest tests/   ->  34 passed, 1 skipped
+pytest tests/                            ->  34 passed, 1 skipped
+```
+
+This was a real portability defect and it sat oddly with the "platform independent"
+claim, as the reviewer notes; that claim is now accurate. The skipped test is confirmed
+to be an empty placeholder (`test_integration.py`, marked "Fill in during Phase 4"), and
+we have left it as such rather than presenting it as a passing test.
 
 ### Comment 14 — fingerprints depend on line endings
 

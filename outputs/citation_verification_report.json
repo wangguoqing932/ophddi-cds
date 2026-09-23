@@ -1,7 +1,7 @@
 {
   "overall": "pass",
   "mode": "strict-policy-cache-replay",
-  "generated_at": "2026-09-23T14:16:54.662825+00:00",
+  "generated_at": "2026-09-23T18:25:09.750503+00:00",
   "rules_yaml_sha256": "2afabaad81161c402472620841c733310ab3eb548b451b9c70b67f7ce18814b1",
   "citation_manifest_count": 8,
   "policy_count": 43,
