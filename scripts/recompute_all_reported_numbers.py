@@ -51,7 +51,7 @@ def load_gold(ds: str) -> dict:
 
 
 def load_pred(ds: str, method: str, seed: int = 0) -> dict:
-    """返回 case_id -> 预测。full_system 一律用当前引擎重算（确定性）。"""
+    """返回 case_id -> 预测（单个温度条件）。full_system 一律用当前引擎重算。"""
     out = {}
     for line in pred_path(ds, seed).open(encoding="utf-8"):
         if not line.strip():
@@ -63,6 +63,19 @@ def load_pred(ds: str, method: str, seed: int = 0) -> dict:
             out[r["case_id"]] = kg.deterministic_level_v2(r["a_name"], r["b_name"])[0]
         else:
             out[r["case_id"]] = r["predicted"]
+    return out
+
+
+def load_pred_multi(ds: str, method: str, seeds=range(5)) -> dict:
+    """返回 (case_id, seed) -> 预测，供跨温度条件的均值与 SD 使用。
+
+    注意：手稿 Table 3 报的是**五个温度条件的均值 ± 总体 SD**，不是温度 0 的
+    单次值。full_system 是确定性的，各条件相同；LLM 基线则必须取均值。
+    """
+    out = {}
+    for s in seeds:
+        for cid, p in load_pred(ds, method, s).items():
+            out[(cid, s)] = p
     return out
 
 
@@ -101,6 +114,31 @@ for m, p in preds1.items():
           f"spec={mt['spec']:.4f} exact3={mt['exact3']}")
 
 # Wilson / Clopper-Pearson / bootstrap kappa（full_system）
+# 五条件均值 ± 总体 SD（与 Table 3 口径一致）
+print("  五条件均值 ± SD:")
+for m in ["full_system", "pure_llm", "naive_rag", "lightrag"]:
+    multi = load_pred_multi("blind_l1", m)
+    accs, sens_, specs, ks = [], [], [], []
+    for s in range(5):
+        gs = {cid: g1[cid] for (cid, ss) in multi if ss == s and cid in g1}
+        ps = {cid: multi[(cid, s)] for cid in gs}
+        if not gs:
+            continue
+        mt = metrics(gs, ps)
+        accs.append(mt["acc3"]); sens_.append(mt["sens"]); specs.append(mt["spec"])
+        gl_ = [gs[k] for k in sorted(gs)]; pl_ = [ps[k] for k in sorted(gs)]
+        ks.append(cohens_kappa(gl_, pl_))
+    mean = lambda v: sum(v) / len(v) if v else 0.0
+    sd = lambda v: (sum((x - mean(v)) ** 2 for x in v) / len(v)) ** 0.5 if v else 0.0
+    R[f"l1.multi.{m}"] = {
+        "acc3": {"mean": mean(accs), "sd": sd(accs), "values": accs},
+        "sens": {"mean": mean(sens_), "sd": sd(sens_), "values": sens_},
+        "spec": {"mean": mean(specs), "sd": sd(specs), "values": specs},
+        "kappa": {"mean": mean(ks), "sd": sd(ks), "values": ks},
+    }
+    print(f"    {m:12s} acc3={mean(accs):.4f}±{sd(accs):.4f} "
+          f"sens={mean(sens_):.4f}±{sd(sens_):.4f} kappa={mean(ks):.4f}±{sd(ks):.4f}")
+
 fs1 = metrics(g1, preds1["full_system"])
 gl = [g1[k] for k in g1 if k in preds1["full_system"]]
 fs_pl = [preds1["full_system"][k] for k in g1 if k in preds1["full_system"]]
