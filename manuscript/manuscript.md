@@ -164,6 +164,22 @@ Full_system is deterministic: all five temperature conditions returned identical
 
 Two ophthalmology experts reviewed 12 cases under the grade-review protocol of Section 2.5, with the proposed gold and the system grade both visible (Table 6; Supplementary Table S3). Inter-rater agreement was 91.7% (11 of 12; kappa 0.840, 95% bootstrap CI 0.526–1.000; Figure 3). Expert–system agreement, computed against the grades the experts were shown, was 16.7% for expert 1 (2 of 12; kappa −0.176) and 8.3% for expert 2 (1 of 12; kappa −0.257). The disagreement was systematic and one-directional: expert 1 rated 10 of 12 cases one tier lower than the grade shown and none higher; expert 2 rated 10 lower and 1 higher. Neither expert rated any of the four system-high cases as high (0 of 4). One case was fully concordant between both experts, the grade shown and the gold (R07 levofloxacin × sotalol). The sole inter-expert disagreement was R08 (betaxolol × verapamil), graded medium by expert 1 and high by expert 2. The maximum achievable unweighted kappa given the marginal distributions is 0.294 for expert 1 and 0.314 for expert 2, so the low observed kappas partly reflect margin incompatibility; the quadratic-weighted kappas (−0.630 and −0.793) place the divergence at roughly one tier.
 
+**Three cases carried labels that had just been corrected, and we report what the experts saw.** The
+questionnaire showed the experts the corrected gold, not the pre-correction DDInter value, for R01-R03.
+The three cases, with both values, are:
+
+| case | DDInter original | shown to experts | expert 1 | expert 2 | gold retained |
+|---|---|---|---|---|---|
+| R01 | high | medium (corrected) | low | low | yes |
+| R02 | medium | high (corrected) | medium | medium | yes |
+| R03 | low | medium (corrected) | low | low | yes |
+
+For R02 and R03 both experts independently rated the *pre-correction* grade, and the gold was kept at the
+corrected value; that is, the corrections are not reflected in the experts' answers. The corrections were
+made before the review, and the procedural lock described in Section 2.3 applies to the 40-case frozen
+blind subset, which does not include these cases, so there is no conflict with the lock; but the sequencing
+is stated here rather than left for a reader to reconstruct from the deposited design file.
+
 The experts disagreed with the gold labels to the same degree as with the system: expert 1 versus gold kappa 0.020 (agreement 33.3%) and expert 2 versus gold kappa −0.091 (agreement 25.0%). The two comparisons are not independent evidence — the questionnaire showed both the proposed gold and the system grade, and the system reproduced its gold on all 12 cases, so the expert–gold and expert–system comparisons measure the same disagreement twice. What the exercise supports is only that the experts did not endorse the assigned grades, not that the system and its gold were separately validated. Consistent with this, the experts explicitly noted that they judged from clinical practice without mechanism-level assessment, and that ophthalmic drops are not routinely screened for systemic DDI in their practice. We interpret this as a perspective gap between clinical prior and evidence-based grading, reported transparently; with n = 12 and near-zero kappa, the gap cannot be statistically distinguished from chance-level agreement, and the small sample bounds all expert-based conclusions.
 
 ### 3.9 Limitations
