@@ -55,7 +55,7 @@ A new release contains everything the Availability statement lists. The previous
 |---|---|
 | Release tag | `v1.1-revision3` |
 | Commit | `ea7b679` |
-| DOI | *[to be inserted: Zenodo deposit of the release tarball]* |
+| DOI | [10.5281/zenodo.23143345](https://doi.org/10.5281/zenodo.23143345) |
 | Contents | full source, configurations, gold sets with case-level provenance, 9,600 prediction rows, 3,150 reasoning-model responses, all audit outputs, and the statistics module |
 
 `RELEASE_NOTES.md` states which manuscript version the tag corresponds to.
@@ -364,7 +364,7 @@ For convenience, the complete set of changes in this revision, with locations:
 - Figure 2 caption: majority-vote description
 
 **Deposit**
-- Release tag `v1.1-revision3` at commit `ea7b679`, with a DOI
+- Release tag `v1.1-revision3` at commit `ea7b679`, with DOI 10.5281/zenodo.23143345
 - `scripts/stats_tests.py` — all reported statistical procedures
 - `scripts/recompute_all_reported_numbers.py` — single regeneration entry point
 - `scripts/expert_review_analysis.py` — expert statistics from the transcriptions
