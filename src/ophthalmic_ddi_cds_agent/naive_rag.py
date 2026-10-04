@@ -13,7 +13,14 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from rank_bm25 import BM25Okapi
+try:
+    from rank_bm25 import BM25Okapi
+except ImportError as exc:  # pragma: no cover - dependency hint only
+    raise ImportError(
+        "naive_rag requires the 'rank-bm25' package (BM25Okapi). "
+        "Install the project dependencies with `pip install -e .` or "
+        "`pip install rank-bm25`."
+    ) from exc
 
 ROOT = Path(__file__).resolve().parents[2]
 

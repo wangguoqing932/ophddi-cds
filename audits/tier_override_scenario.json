@@ -1,0 +1,33 @@
+{
+ "schema_version": 2,
+ "pairs_with_ddinter": 1933,
+ "agree": {
+  "n": 352,
+  "share": 0.1821,
+  "by_level": {
+   "high": 12,
+   "medium": 230,
+   "low": 110
+  }
+ },
+ "downgrade": {
+  "n": 1463,
+  "share": 0.7569,
+  "attributable_to_low_absorption": 1171,
+  "share_of_downgrades": 0.8004,
+  "detail": {
+   "medium->high": 115,
+   "medium->low": 1111,
+   "low->medium": 3,
+   "high->medium": 34,
+   "high->low": 318
+  }
+ },
+ "upgrade": {
+  "n": 118,
+  "share": 0.061,
+  "attributable_to_high_absorption": 28
+ },
+ "generated_by": "scripts/audit_ddinter_disagreement.py",
+ "scenario": "Absorption tiers taken from data/curation/entity_a_candidates.yaml instead of the registry data/seed/entities_a.csv that the engine loads. 13 entities differ. Produced by: python scripts/audit_ddinter_disagreement.py --tier-override data/curation/entity_a_candidates.yaml"
+}

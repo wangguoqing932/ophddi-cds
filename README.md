@@ -15,7 +15,7 @@ The production path is a three-layer deterministic cascade that makes **zero LLM
 
 | Layer | Component | Size |
 |---|---|---|
-| L1 | Rule engine of citation-verified mechanism rules | 40 rules + 3 patient-factor policies |
+| L1 | Rule engine of mechanism rules, each carrying at least one source record | 40 rules + 3 patient-factor policies |
 | L2 | Absorption-scaled drug-class matrix | 20 × 37 classes (82 defined cells) |
 | L3 | Hard constraint encoding topical systemic absorption | G19 default-low rule |
 
@@ -128,7 +128,7 @@ performed.
 
 ## Licence
 
-Code: Apache-2.0 (see `LICENSE`). Data and configuration: CC BY 4.0.
+Code: Apache-2.0 (see `LICENSE`). Original data and configuration: CC BY 4.0. Bundled DDInter severity tables remain under DDInter's CC BY-NC-SA 4.0 terms — see the component-licensing section in LICENSE.
 
 ---
 
@@ -187,7 +187,7 @@ tier, DDInter severity and system level.
   the six tier values in the registry fall outside the G19 hard constraint's test.
 - **The LLM-baseline comparison used one non-reasoning model with a 10-token output
   cap**, which precludes reasoning or justification.
-- **The audit-set headline (0.707)** mixes a third-party component with 30 cases
+- **The audit-set headline (0.674; 0.548 on the third-party-only stratum)** mixes a third-party component with 30 cases
   graded under the system's own absorption assumption; the third-party-only figure
   is 37 of 62 (0.597).
 

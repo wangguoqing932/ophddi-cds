@@ -1,5 +1,7 @@
 # table3_performance
 
+Two output-budget settings are reported. **10-token**: non-reasoning model (`deepseek-chat`), one call per case, 10-token output cap, mean over five temperature conditions. **3000-token**: reasoning model (`glm-5.3-flash`, Zhipu coding-plan endpoint `open.bigmodel.cn/api/coding/paas/v4`), 3000-token budget, temperature 0.0, majority vote over five repeated samples, single run. `full_system` is deterministic and identical under both settings, so its rows differ only in which comparison they belong to.
+
 | dataset_id | setting | method | n | sensitivity_high | specificity_high | f1_high | accuracy_3level | cohens_kappa |
 |---|---|---|---|---|---|---|---|---|
 | blind_l1 | 10-token | pure_llm | 118 | 0.771 | 0.542 | 0.476 | 0.475 | 0.256 |

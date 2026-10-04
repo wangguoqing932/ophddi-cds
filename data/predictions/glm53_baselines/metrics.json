@@ -1,0 +1,168 @@
+{
+  "blind_l1": {
+    "pure_llm": {
+      "n_cases": 118,
+      "n_calls": 590,
+      "per_rep": {
+        "acc3": 0.5508,
+        "sens": 0.2286,
+        "spec": 0.9978,
+        "f1": 0.3683,
+        "kappa": 0.2916
+      },
+      "per_rep_sd": {
+        "acc3": 0.0294,
+        "sens": 0.0429,
+        "spec": 0.0044,
+        "f1": 0.0593,
+        "kappa": 0.0467
+      },
+      "majority_vote": {
+        "n": 118,
+        "acc3": 0.5763,
+        "sens": 0.25,
+        "spec": 1.0,
+        "f1": 0.4,
+        "kappa": 0.3331,
+        "unknown": 0
+      }
+    },
+    "naive_rag": {
+      "n_cases": 118,
+      "n_calls": 590,
+      "per_rep": {
+        "acc3": 0.5763,
+        "sens": 0.25,
+        "spec": 0.9911,
+        "f1": 0.3877,
+        "kappa": 0.3286
+      },
+      "per_rep_sd": {
+        "acc3": 0.0214,
+        "sens": 0.0598,
+        "spec": 0.0044,
+        "f1": 0.0797,
+        "kappa": 0.0351
+      },
+      "majority_vote": {
+        "n": 118,
+        "acc3": 0.5847,
+        "sens": 0.2143,
+        "spec": 0.9889,
+        "f1": 0.3429,
+        "kappa": 0.3411,
+        "unknown": 0
+      }
+    },
+    "lightrag": {
+      "n_cases": 118,
+      "n_calls": 590,
+      "per_rep": {
+        "acc3": 0.7288,
+        "sens": 0.5286,
+        "spec": 1.0,
+        "f1": 0.6915,
+        "kappa": 0.5744
+      },
+      "per_rep_sd": {
+        "acc3": 0.0152,
+        "sens": 0.0143,
+        "spec": 0.0,
+        "f1": 0.0124,
+        "kappa": 0.0231
+      },
+      "majority_vote": {
+        "n": 118,
+        "acc3": 0.7373,
+        "sens": 0.5357,
+        "spec": 1.0,
+        "f1": 0.6977,
+        "kappa": 0.5873,
+        "unknown": 0
+      }
+    }
+  },
+  "blind_v3_ddinter": {
+    "pure_llm": {
+      "n_cases": 92,
+      "n_calls": 460,
+      "per_rep": {
+        "acc3": 0.6261,
+        "sens": 0.128,
+        "spec": 1.0,
+        "f1": 0.224,
+        "kappa": 0.3538
+      },
+      "per_rep_sd": {
+        "acc3": 0.013,
+        "sens": 0.0466,
+        "spec": 0.0,
+        "f1": 0.0724,
+        "kappa": 0.0256
+      },
+      "majority_vote": {
+        "n": 92,
+        "acc3": 0.6087,
+        "sens": 0.08,
+        "spec": 1.0,
+        "f1": 0.1481,
+        "kappa": 0.3168,
+        "unknown": 0
+      }
+    },
+    "naive_rag": {
+      "n_cases": 92,
+      "n_calls": 460,
+      "per_rep": {
+        "acc3": 0.6978,
+        "sens": 0.384,
+        "spec": 1.0,
+        "f1": 0.5507,
+        "kappa": 0.5061
+      },
+      "per_rep_sd": {
+        "acc3": 0.034,
+        "sens": 0.0742,
+        "spec": 0.0,
+        "f1": 0.0785,
+        "kappa": 0.0516
+      },
+      "majority_vote": {
+        "n": 92,
+        "acc3": 0.7283,
+        "sens": 0.4,
+        "spec": 1.0,
+        "f1": 0.5714,
+        "kappa": 0.5532,
+        "unknown": 0
+      }
+    },
+    "lightrag": {
+      "n_cases": 92,
+      "n_calls": 460,
+      "per_rep": {
+        "acc3": 0.6652,
+        "sens": 0.248,
+        "spec": 0.994,
+        "f1": 0.3923,
+        "kappa": 0.4144
+      },
+      "per_rep_sd": {
+        "acc3": 0.0187,
+        "sens": 0.016,
+        "spec": 0.0073,
+        "f1": 0.0232,
+        "kappa": 0.0305
+      },
+      "majority_vote": {
+        "n": 92,
+        "acc3": 0.6739,
+        "sens": 0.24,
+        "spec": 1.0,
+        "f1": 0.3871,
+        "kappa": 0.4279,
+        "unknown": 0
+      }
+    }
+  }
+}

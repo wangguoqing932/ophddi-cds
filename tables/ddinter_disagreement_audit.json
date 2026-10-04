@@ -2,31 +2,31 @@
   "schema_version": 2,
   "pairs_with_ddinter": 1933,
   "agree": {
-    "n": 342,
-    "share": 0.1769,
+    "n": 352,
+    "share": 0.1821,
     "by_level": {
       "high": 12,
-      "medium": 223,
-      "low": 107
+      "medium": 230,
+      "low": 110
     }
   },
   "downgrade": {
-    "n": 1455,
-    "share": 0.7527,
+    "n": 1463,
+    "share": 0.7569,
     "attributable_to_low_absorption": 1171,
-    "share_of_downgrades": 0.8048,
+    "share_of_downgrades": 0.8004,
     "detail": {
-      "medium->high": 130,
-      "medium->low": 1103,
-      "low->medium": 6,
-      "high->medium": 37,
-      "high->low": 315
+      "medium->high": 115,
+      "medium->low": 1111,
+      "low->medium": 3,
+      "high->medium": 34,
+      "high->low": 318
     }
   },
   "upgrade": {
-    "n": 136,
-    "share": 0.0704,
-    "attributable_to_high_absorption": 49
+    "n": 118,
+    "share": 0.061,
+    "attributable_to_high_absorption": 28
   },
   "generated_by": "scripts/audit_ddinter_disagreement.py"
 }

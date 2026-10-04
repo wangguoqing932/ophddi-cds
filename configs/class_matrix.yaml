@@ -267,8 +267,7 @@ matrix:
     antidepressant_tca:
       level: high
       mechanism: additive_anticholinergic_strong
-      advice: avoid/monitor (urinary retention
-      delirium): null
+      advice: "avoid/monitor (urinary retention, delirium)"
       evidence: expert_consensus
     antidepressant_ssri:
       level: low

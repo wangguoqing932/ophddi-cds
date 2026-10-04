@@ -6,6 +6,7 @@ record where one exists, and attributes disagreements to absorption tiers.
 Reproducible; outputs a machine-readable JSON + human summary.
 """
 import csv
+import pathlib
 import json
 import sys
 from collections import Counter
@@ -38,8 +39,53 @@ def load_ddinter(root: Path) -> dict:
     return ddinter
 
 
+def load_tier_override(path: pathlib.Path | None) -> dict:
+    """从 curation YAML 读取分级覆盖表。
+
+    用于回答"若以 curation 文件为准，registry 结论会怎样变化"：引擎的分级来自
+    data/seed/entities_a.csv，这里在内存中把 flags 里的系统吸收分级替换为 curation
+    文件的值，不修改任何数据文件。
+    """
+    if path is None:
+        return {}
+    import yaml
+    d = yaml.safe_load(path.read_text(encoding="utf-8"))
+    out = {}
+    for e in d.get("entities", []):
+        for f in e.get("flags", []):
+            if "absorption" in f:
+                out[e["primary_name"].lower()] = f
+                break
+    return out
+
+
+def apply_tier_override(kg: PreciseKG, override: dict) -> int:
+    """把覆盖写进已载入的分级表，返回被改动的实体数。"""
+    changed = 0
+    for key, ent in kg.a_registry.items():
+        new = override.get(key)
+        if not new:
+            continue
+        flags = [f for f in ent.get("flags", []) if "absorption" not in f]
+        if new != next((f for f in ent.get("flags", []) if "absorption" in f), None):
+            changed += 1
+        ent["flags"] = flags + [new]
+    return changed
+
+
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tier-override", default=None,
+                    help="用该 YAML 文件的吸收分级替代 registry（情景分析用）")
+    args = ap.parse_args()
+
     kg = PreciseKG()
+    override = load_tier_override(pathlib.Path(args.tier_override)
+                                  if args.tier_override else None)
+    if override:
+        n = apply_tier_override(kg, override)
+        print(f"[情景分析] 已用 {args.tier_override} 覆盖 {n} 个实体的吸收分级")
     ddinter = load_ddinter(ROOT)
 
     stats = Counter()

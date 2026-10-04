@@ -141,7 +141,7 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 
 ## Supplementary Tables
 
-**Supplementary Table S1. L1 literature-derived gold: the ten exact-scale disagreements, with the pharmacological rationale for each.**
+**Supplementary Table S1. L1 literature-derived gold: the eleven exact-scale disagreements, with the pharmacological rationale for each.**
 
 | case | ophthalmic | systemic | gold | system | direction | documented rationale |
 |---|---|---|---|---|---|---|
@@ -156,7 +156,7 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 | G134 | Fluconazole | Loratadine | medium | low | downgrade | Azole CYP3A4 inhibition with low-absorption fluconazole vs guideline gold medium |
 | G139 | Sulfacetamide/Prednisolone | Warfarin | low | medium | upgrade | Combination corticosteroid x warfarin (INR fluctuation risk vs errata-corrected gold) |
 
-All ten disagreements occur in the guideline-sourced subset (n = 58); the procedurally frozen blind subset (n = 40) and the FDA/Stockley's/BNF mechanism subset (n = 20) were classified with perfect exact accuracy.
+All eleven disagreements occur in the guideline-sourced subset (n = 58); the procedurally frozen blind subset (n = 40) and the FDA/Stockley's/BNF mechanism subset (n = 20) were classified with perfect exact accuracy.
 
 **Supplementary Table S2. Audit-set disagreements between the system and the absorption-corrected gold, by direction (n = 92; 30 disagreements after the flurbiprofen tier correction).**
 

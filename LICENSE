@@ -1,6 +1,8 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
+Copyright 2026 Wang Guoqing, Yi Xianglong
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,13 +16,35 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Data files under data/ are licensed CC BY 4.0
-(https://creativecommons.org/licenses/by/4.0/).
+--------------------------------------------------------------------------------
+Component licensing
+--------------------------------------------------------------------------------
 
----
+1. Code (src/, scripts/, tests/, app/): Apache License 2.0, as above.
 
-## Data licence
+2. Original data and configuration authored by this project
+   (configs/, data/seed/, data/curation/, data/gold/, data/predictions/,
+   data/expert_review/, outputs/): Creative Commons Attribution 4.0
+   International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/
 
-Data files under `data/` (the entity registries, curation sources, and cached
-citation responses) are licensed under Creative Commons Attribution 4.0
-International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+3. Third-party data is NOT relicensed by this project and remains under its
+   own terms. In particular:
+
+   * DDInter severity tables (data/ddinter/, and any derived tables such as
+     data/evidence/*DDInter* entries) come from DDInter 2.0
+     (https://ddinter2.scbdd.com/) and are distributed under
+     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+     (CC BY-NC-SA 4.0), https://creativecommons.org/licenses/by-nc-sa/4.0/
+     They are included here for research reproducibility only; any reuse must
+     comply with the CC BY-NC-SA 4.0 terms, including the non-commercial and
+     share-alike conditions. Users who need a license for commercial use must
+     obtain it from the DDInter authors.
+
+   * DrugBank accessions and label excerpts are referenced, not redistributed;
+     DrugBank data carries its own terms.
+
+   * PubMed records are cited by PMID; abstracts and metadata remain subject to
+     the NCBI terms of use.
+
+If you redistribute this repository, keep this component-licensing section
+intact so that the DDInter terms travel with the files.

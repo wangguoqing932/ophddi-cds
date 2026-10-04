@@ -1,0 +1,246 @@
+{
+ "n_cases": 12,
+ "comparator": "system grade shown to the experts (questionnaire system_v2); not the current engine, which differs for R10 and R11",
+ "inter_rater": {
+  "n": 12,
+  "agreement_count": 11,
+  "agreement": 0.9166666666666666,
+  "kappa": 0.8400000000000001,
+  "kappa_weighted_quadratic": 0.4666666666666667,
+  "kappa_weighted_linear": 0.7,
+  "max_kappa": 0.84,
+  "bootstrap": {
+   "kappa": 0.8400000000000001,
+   "ci_low": 0.5263157894736841,
+   "ci_high": 1.0,
+   "n_resamples": 2000,
+   "seed": 20260803,
+   "percentile": "95%"
+  }
+ },
+ "e1_vs_system_shown": {
+  "n": 12,
+  "agreement_count": 2,
+  "agreement": 0.16666666666666666,
+  "kappa": -0.17647058823529393,
+  "kappa_weighted_quadratic": -0.6296296296296295,
+  "kappa_weighted_linear": -0.3770491803278686,
+  "max_kappa": 0.29411764705882354,
+  "bootstrap": {
+   "kappa": -0.17647058823529393,
+   "ci_low": -0.3211009174311925,
+   "ci_high": 0.08695652173913049,
+   "n_resamples": 2000,
+   "seed": 20260803,
+   "percentile": "95%"
+  }
+ },
+ "e2_vs_system_shown": {
+  "n": 12,
+  "agreement_count": 1,
+  "agreement": 0.08333333333333333,
+  "kappa": -0.2571428571428569,
+  "kappa_weighted_quadratic": -0.7931034482758621,
+  "kappa_weighted_linear": -0.49999999999999956,
+  "max_kappa": 0.3142857142857143,
+  "bootstrap": {
+   "kappa": -0.2571428571428569,
+   "ci_low": -0.5,
+   "ci_high": -0.04347826086956519,
+   "n_resamples": 2000,
+   "seed": 20260803,
+   "percentile": "95%"
+  }
+ },
+ "e1_vs_gold_shown": {
+  "n": 12,
+  "agreement_count": 4,
+  "agreement": 0.3333333333333333,
+  "kappa": 0.020408163265306034,
+  "kappa_weighted_quadratic": -0.5189873417721522,
+  "kappa_weighted_linear": -0.22033898305084776,
+  "max_kappa": 0.5102040816326531,
+  "bootstrap": {
+   "kappa": 0.020408163265306034,
+   "ci_low": -0.23364485981308425,
+   "ci_high": 0.3260299625468156,
+   "n_resamples": 2000,
+   "seed": 20260803,
+   "percentile": "95%"
+  }
+ },
+ "e2_vs_gold_shown": {
+  "n": 12,
+  "agreement_count": 3,
+  "agreement": 0.25,
+  "kappa": -0.09090909090909105,
+  "kappa_weighted_quadratic": -0.7777777777777779,
+  "kappa_weighted_linear": -0.40000000000000013,
+  "max_kappa": 0.5151515151515151,
+  "bootstrap": {
+   "kappa": -0.09090909090909105,
+   "ci_low": -0.3749999999999998,
+   "ci_high": 0.1578947368421052,
+   "n_resamples": 2000,
+   "seed": 20260803,
+   "percentile": "95%"
+  }
+ },
+ "graded_lower_than_shown": {
+  "expert_1": 10,
+  "expert_2": 10,
+  "expert_1_higher": 0,
+  "expert_2_higher": 1
+ },
+ "fully_concordant_cases": [
+  {
+   "case_id": "R07",
+   "ophthalmic": "Levofloxacin",
+   "systemic": "Sotalol"
+  }
+ ],
+ "system_high_rated_high_by_experts": {
+  "n_system_high": 4,
+  "e1": 0,
+  "e2": 0
+ },
+ "errata_cases": [
+  {
+   "case_id": "R01",
+   "ddinter_original": "high",
+   "shown_gold": "medium",
+   "expert_1": "low",
+   "expert_2": "low",
+   "current_gold": "medium",
+   "shown_system": "medium"
+  },
+  {
+   "case_id": "R02",
+   "ddinter_original": "medium",
+   "shown_gold": "high",
+   "expert_1": "medium",
+   "expert_2": "medium",
+   "current_gold": "high",
+   "shown_system": "high"
+  },
+  {
+   "case_id": "R03",
+   "ddinter_original": "low",
+   "shown_gold": "medium",
+   "expert_1": "low",
+   "expert_2": "low",
+   "current_gold": "medium",
+   "shown_system": "medium"
+  }
+ ],
+ "per_case": [
+  {
+   "case_id": "R01",
+   "ophthalmic": "Ketorolac",
+   "systemic": "Enoxaparin",
+   "gold_shown": "medium",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R02",
+   "ophthalmic": "Brimonidine",
+   "systemic": "Tramadol",
+   "gold_shown": "high",
+   "system_shown": "high",
+   "expert_1": "medium",
+   "expert_2": "medium"
+  },
+  {
+   "case_id": "R03",
+   "ophthalmic": "Dexamethasone",
+   "systemic": "Rifampicin",
+   "gold_shown": "medium",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R04",
+   "ophthalmic": "Atropine",
+   "systemic": "Tramadol",
+   "gold_shown": "high",
+   "system_shown": "high",
+   "expert_1": "medium",
+   "expert_2": "medium"
+  },
+  {
+   "case_id": "R05",
+   "ophthalmic": "Scopolamine",
+   "systemic": "Amitriptyline",
+   "gold_shown": "high",
+   "system_shown": "high",
+   "expert_1": "medium",
+   "expert_2": "medium"
+  },
+  {
+   "case_id": "R06",
+   "ophthalmic": "Atropine",
+   "systemic": "Oxycodone",
+   "gold_shown": "high",
+   "system_shown": "high",
+   "expert_1": "medium",
+   "expert_2": "medium"
+  },
+  {
+   "case_id": "R07",
+   "ophthalmic": "Levofloxacin",
+   "systemic": "Sotalol",
+   "gold_shown": "low",
+   "system_shown": "low",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R08",
+   "ophthalmic": "Betaxolol",
+   "systemic": "Verapamil",
+   "gold_shown": "medium",
+   "system_shown": "medium",
+   "expert_1": "medium",
+   "expert_2": "high"
+  },
+  {
+   "case_id": "R09",
+   "ophthalmic": "Ketorolac",
+   "systemic": "Rivaroxaban",
+   "gold_shown": "medium",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R10",
+   "ophthalmic": "Fluorometholone",
+   "systemic": "Prednisone",
+   "gold_shown": "low",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R11",
+   "ophthalmic": "Fluorometholone",
+   "systemic": "Glimepiride",
+   "gold_shown": "low",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  },
+  {
+   "case_id": "R12",
+   "ophthalmic": "Ketorolac",
+   "systemic": "Warfarin",
+   "gold_shown": "medium",
+   "system_shown": "medium",
+   "expert_1": "low",
+   "expert_2": "low"
+  }
+ ]
+}
