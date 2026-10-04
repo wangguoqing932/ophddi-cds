@@ -20,6 +20,31 @@ Everything below is verifiable against the deposited tree at the tag named in Se
 
 ---
 
+---
+
+## 0. Index: where each comment is answered
+
+| Source | Comment | Answered in |
+|---|---|---|
+| Editor | 1. Ethics approval mismatch | §10 |
+| Editor | 2. Response-letter claims not supported by the manuscript | §4 (tautology), §5 (values), §9 (class matrix, tests, missing scripts) |
+| Editor | 3. Missing code and data for the new analyses | §2 (reasoning-model re-run), §6 (statistical code), §1 (archive) |
+| Editor | Secondary 1. R03 expert rating | §3 |
+| Editor | Secondary 2. R10/R11 shown grade | §3 |
+| Editor | Secondary 3. Author addition not marked | **§10b** |
+| Editor | Secondary 4. DDInter licence | §9 |
+| Reviewer 1 | 1. The citable archive | §1 |
+| Reviewer 1 | 2. Reasoning-model re-run not reproducible | §2 |
+| Reviewer 1 | 3. The expert exercise (R03, R10/R11, errata, T1) | §3 |
+| Reviewer 1 | 4. The retained tautology | §4 |
+| Reviewer 1 | 5. Values not regenerated after the flurbiprofen correction | §5 |
+| Reviewer 1 | 6. Statistical code | §6 |
+| Reviewer 1 | 7. Absorption tiers | §7 |
+| Reviewer 1 | 8. Two mis-citations | §8 |
+| Reviewer 1 | 9. Smaller points (15 items) | §9 |
+| Reviewer 2 | No new points this round | §10c |
+| — | Findings from our own audit before submission | §13 |
+
 ## 1. The citable archive (R1-1)
 
 **Done, and the archive now exists as a permanent deposit.**
@@ -259,6 +284,54 @@ The statement is rewritten to state the position directly:
 **If the editor would prefer a formal exemption letter** from the First Affiliated Hospital of Xinjiang Medical University ethics committee, we will obtain and supply one. We have not requested it yet because the components here do not meet the threshold for review, and we would rather ask than submit a document that does not match, which is the error we are correcting.
 
 ---
+
+## 10b. Author addition not marked in the tracked-changes copy (editor, secondary finding 3)
+
+**Accepted; this was an omission on our part and it is fixed.**
+
+Two authors, Lumei Hu (2nd author) and Shaocheng Wang (3rd author), were added
+during the **round-2 revision**. That change was not reflected in the
+tracked-changes copy we supplied with round 2, which is a legitimate complaint:
+the marked copy is supposed to make every authorship change visible, and it did
+not. Two things are now done.
+
+**First, the author change is now marked.** The author block is generated at
+document-build time and therefore did not appear in the markdown source that the
+diff is computed from -- which is exactly why it was missed. The build now marks
+the author block explicitly, and the marked copy supplied with this revision
+shows the four-author byline and the three affiliations in red. We have also
+changed the build so that this class of omission cannot recur: any text injected
+at build time is registered for marking.
+
+**Second, the inconsistency with Section 2.3 is resolved.** The editor is right
+that the two statements did not sit together. Section 2.3 said the gold was
+"constructed by the study team, which comprises the named authors", while the
+Generative AI statement said no human expert took part in gold construction --
+and after the author addition, "the named authors" included two people who had
+joined during revision. The paragraph has been rewritten to name the roles
+explicitly:
+
+> the gold was constructed by the two authors of the original submission (GW and
+> YX), who performed the curation and annotation. The two authors added during
+> revision (HL and WS) contributed clinical input and interpretation of the
+> results and reviewed the manuscript, but did not construct the gold and did not
+> take part in the expert grade review.
+
+This now matches the Authors' Contributions statement (in which HL and WS are
+credited with clinical input, data interpretation and review and editing) and
+the Generative AI statement. The Ethics statement likewise describes the two
+expert reviewers as clinicians from the Department of Ophthalmology, one of whom
+was a member of the research team of the separately approved study K202509-29;
+neither of the added authors is one of the expert reviewers.
+
+## 10c. Reviewer 2
+
+Reviewer 2 offered no new points in this round, and we thank them for the
+acknowledgement. We note only that Reviewer 2's earlier comments are addressed
+in the round-2 letter (supplied with the previous revision) and that nothing in
+this round's changes reverses any of those responses; where this round changed a
+number or a claim, the affected item is listed in Section 5 and Section 11
+below.
 
 ## 11. Point-by-point summary of what changed
 
