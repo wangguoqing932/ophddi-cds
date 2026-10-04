@@ -32,22 +32,12 @@ from collections import defaultdict
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 # 手稿在两种布局下的位置
-MANUSCRIPT_CANDIDATES = [
-    ROOT / "outputs" / "paper" / "manuscript.en.md",
-    ROOT / "manuscript" / "manuscript.md",
-]
-SUPP_CANDIDATES = [
-    ROOT / "outputs" / "deliverables" / "supplementary_files" / "Supplementary_Material.md",
-    ROOT / "supplementary" / "Supplementary_Material.md",
-]
-LEGENDS_CANDIDATES = [
-    ROOT / "outputs" / "paper" / "figure_legends.md",
-    ROOT / "supplementary" / "figure_legends.md",
-]
-NUMBERS_CANDIDATES = [
-    ROOT / "outputs" / "recomputed" / "numbers.json",
-    ROOT / "audits" / "recomputed" / "numbers.json",
-]
+from deposit_paths import find, recomputed  # noqa: E402
+
+MANUSCRIPT_CANDIDATES = [find("manuscript")]
+SUPP_CANDIDATES = [find("supplementary")]
+LEGENDS_CANDIDATES = [find("figure_legends")]
+NUMBERS_CANDIDATES = [recomputed("numbers.json")]
 
 ABSTRACT_WORD_LIMIT = 350          # BMC Bioinformatics
 
@@ -265,15 +255,13 @@ def check_numbers(text: str, numbers: dict, a: Audit) -> None:
                     f"个关键数值与复算结果一致")
 
     # 附加数值（由专门实验产出）
-    recomputed = ROOT / "outputs" / "recomputed"
-    if not recomputed.exists():
-        recomputed = ROOT / "audits" / "recomputed"
+    recomputed_dir = find("recomputed_dir")
     extra_bad = []
     for pat, fname, field, desc in EXTRA_NUMBER_CHECKS:
         m = re.search(pat, text)
         if not m:
             continue
-        f = recomputed / fname
+        f = recomputed_dir / fname
         if not f.exists():
             extra_bad.append(f"{desc}: 缺少 {fname}（实验未沉积，审稿人无法复算）")
             continue

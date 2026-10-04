@@ -21,7 +21,9 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
+from deposit_paths import gold_cases, predictions, recomputed, find  # noqa: E402
 
 import yaml  # noqa: E402
 from ophthalmic_ddi_cds_agent.kg_layer import PreciseKG  # noqa: E402
@@ -40,21 +42,13 @@ LOW_FAMILY = {"systemic_absorption_low", "systemic_absorption_very_low",
 
 
 def load_gold() -> dict:
-    for c in (ROOT / "data" / "datasets" / "blind_l1" / "cases.jsonl",
-              ROOT / "data" / "gold" / "blind_l1" / "cases.jsonl"):
-        if c.exists():
-            rows = [json.loads(l) for l in c.open(encoding="utf-8") if l.strip()]
-            return {r["case_id"]: (r.get("gold_risk_level") or r.get("gold_risk")) for r in rows}
-    raise FileNotFoundError("blind_l1 cases.jsonl")
+    rows = [json.loads(l) for l in gold_cases("blind_l1").open(encoding="utf-8") if l.strip()]
+    return {r["case_id"]: (r.get("gold_risk_level") or r.get("gold_risk")) for r in rows}
 
 
 def load_cases() -> list:
-    for c in (ROOT / "outputs" / "multiseed_per_dataset" / "blind_l1__seed0.jsonl",
-              ROOT / "data" / "predictions" / "blind_l1__seed0.jsonl"):
-        if c.exists():
-            return [json.loads(l) for l in c.open(encoding="utf-8")
-                    if l.strip() and json.loads(l)["method"] == "full_system"]
-    raise FileNotFoundError("blind_l1 predictions")
+    return [json.loads(l) for l in predictions("blind_l1", 0).open(encoding="utf-8")
+            if l.strip() and json.loads(l)["method"] == "full_system"]
 
 
 def tier_of(kg, name: str) -> str | None:
@@ -94,7 +88,7 @@ def gate_rules(kg, rule_ids: list) -> int:
 def main() -> int:
     gold = load_gold()
     cases = load_cases()
-    raw_rules = yaml.safe_load((ROOT / "configs" / "rules.yaml").read_text(encoding="utf-8"))
+    raw_rules = yaml.safe_load(find("rules").read_text(encoding="utf-8"))
 
     results = {"n_cases": len(cases)}
 
@@ -134,7 +128,7 @@ def main() -> int:
     results["low_tier_rule_hits"] = {"by_level": dist, "by_rule": pairs_by_rule}
     print(f"\n低吸收药对经规则拿到 medium/high（L1 集）: {dist}")
 
-    out = ROOT / "outputs" / "recomputed" / "rule_gating_experiment.json"
+    out = recomputed("rule_gating_experiment.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n已写出 -> {out}")

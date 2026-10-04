@@ -1,0 +1,922 @@
+[
+  {
+    "case_id": "D3-000",
+    "ophthalmic_drug": "Dexamethasone",
+    "systemic_drug": "Leflunomide",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-001",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Theophylline",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-002",
+    "ophthalmic_drug": "Flurbiprofen",
+    "systemic_drug": "Methotrexate",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-003",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Verapamil",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-004",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Epinephrine",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-005",
+    "ophthalmic_drug": "Flurbiprofen",
+    "systemic_drug": "Rivaroxaban",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-006",
+    "ophthalmic_drug": "Scopolamine",
+    "systemic_drug": "Topiramate",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-007",
+    "ophthalmic_drug": "Carteolol",
+    "systemic_drug": "Diltiazem",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-008",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Diltiazem",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-009",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Salmeterol",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-010",
+    "ophthalmic_drug": "Flurbiprofen",
+    "systemic_drug": "Apixaban",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-011",
+    "ophthalmic_drug": "Flurbiprofen",
+    "systemic_drug": "Prasugrel",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-012",
+    "ophthalmic_drug": "Dexamethasone",
+    "systemic_drug": "Empagliflozin",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-013",
+    "ophthalmic_drug": "Dexamethasone",
+    "systemic_drug": "Perindopril",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-014",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Spironolactone",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-015",
+    "ophthalmic_drug": "Dexamethasone",
+    "systemic_drug": "Bumetanide",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-016",
+    "ophthalmic_drug": "Timolol",
+    "systemic_drug": "Valsartan",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-017",
+    "ophthalmic_drug": "Atropine",
+    "systemic_drug": "Donepezil",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-018",
+    "ophthalmic_drug": "Carteolol",
+    "systemic_drug": "Diazepam",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-019",
+    "ophthalmic_drug": "Dexamethasone",
+    "systemic_drug": "Fluvoxamine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-020",
+    "ophthalmic_drug": "Atropine",
+    "systemic_drug": "Nitrofurantoin",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-021",
+    "ophthalmic_drug": "Carteolol",
+    "systemic_drug": "Tadalafil",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_high",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_high",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-022",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Leflunomide",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-023",
+    "ophthalmic_drug": "Phenylephrine",
+    "systemic_drug": "Clomipramine",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-024",
+    "ophthalmic_drug": "Phenylephrine",
+    "systemic_drug": "Nortriptyline",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-025",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Verapamil",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-026",
+    "ophthalmic_drug": "Apraclonidine",
+    "systemic_drug": "Linezolid",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-027",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Diltiazem",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-028",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Desmopressin",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-029",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Clonidine",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-030",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Theophylline",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-031",
+    "ophthalmic_drug": "Phenylephrine",
+    "systemic_drug": "Amitriptyline",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-032",
+    "ophthalmic_drug": "Phenylephrine",
+    "systemic_drug": "Linezolid",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-033",
+    "ophthalmic_drug": "Homatropine",
+    "systemic_drug": "Topiramate",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-034",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Captopril",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-035",
+    "ophthalmic_drug": "Apraclonidine",
+    "systemic_drug": "Midazolam",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-036",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Amiodarone",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-037",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Doxazosin",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-038",
+    "ophthalmic_drug": "Apraclonidine",
+    "systemic_drug": "Loperamide",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-039",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Methotrexate",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-040",
+    "ophthalmic_drug": "Phenylephrine",
+    "systemic_drug": "Levothyroxine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-041",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Canagliflozin",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-042",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Telmisartan",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-043",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Norepinephrine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-044",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Midazolam",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-045",
+    "ophthalmic_drug": "Betaxolol",
+    "systemic_drug": "Tadalafil",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-046",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Salmeterol",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-047",
+    "ophthalmic_drug": "Prednisolone",
+    "systemic_drug": "Salbutamol",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_medium",
+    "proposed_gold": "low",
+    "gold_rule": "ddinter_kept: systemic_absorption_medium",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-048",
+    "ophthalmic_drug": "Gatifloxacin",
+    "systemic_drug": "Cilostazol",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-049",
+    "ophthalmic_drug": "Voriconazole",
+    "systemic_drug": "Oxycodone",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-050",
+    "ophthalmic_drug": "Moxifloxacin",
+    "systemic_drug": "Dronedarone",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-051",
+    "ophthalmic_drug": "Moxifloxacin",
+    "systemic_drug": "Flecainide",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-052",
+    "ophthalmic_drug": "Ofloxacin",
+    "systemic_drug": "Dronedarone",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-053",
+    "ophthalmic_drug": "Levofloxacin",
+    "systemic_drug": "Glimepiride",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-054",
+    "ophthalmic_drug": "Gatifloxacin",
+    "systemic_drug": "Saxagliptin",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-055",
+    "ophthalmic_drug": "Gatifloxacin",
+    "systemic_drug": "Quetiapine",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-056",
+    "ophthalmic_drug": "Tacrolimus",
+    "systemic_drug": "Citalopram",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-057",
+    "ophthalmic_drug": "Tacrolimus",
+    "systemic_drug": "Ibuprofen",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-058",
+    "ophthalmic_drug": "Gatifloxacin",
+    "systemic_drug": "Escitalopram",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-059",
+    "ophthalmic_drug": "Azithromycin",
+    "systemic_drug": "Hydroxychloroquine",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-060",
+    "ophthalmic_drug": "Ganciclovir",
+    "systemic_drug": "Carbamazepine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-061",
+    "ophthalmic_drug": "Ciprofloxacin",
+    "systemic_drug": "Aprepitant",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-062",
+    "ophthalmic_drug": "Acyclovir",
+    "systemic_drug": "Remdesivir",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-063",
+    "ophthalmic_drug": "Bromfenac",
+    "systemic_drug": "Enalapril",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-064",
+    "ophthalmic_drug": "Fluconazole",
+    "systemic_drug": "Flecainide",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-065",
+    "ophthalmic_drug": "Ketorolac",
+    "systemic_drug": "Diltiazem",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-066",
+    "ophthalmic_drug": "Voriconazole",
+    "systemic_drug": "Pioglitazone",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-067",
+    "ophthalmic_drug": "Gentamicin",
+    "systemic_drug": "Ibuprofen",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-068",
+    "ophthalmic_drug": "Bromfenac",
+    "systemic_drug": "Desmopressin",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-069",
+    "ophthalmic_drug": "Ketorolac",
+    "systemic_drug": "Venlafaxine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-070",
+    "ophthalmic_drug": "Ciprofloxacin",
+    "systemic_drug": "Capecitabine",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-071",
+    "ophthalmic_drug": "Ciprofloxacin",
+    "systemic_drug": "Diazepam",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-072",
+    "ophthalmic_drug": "Lidocaine",
+    "systemic_drug": "Phenytoin",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-073",
+    "ophthalmic_drug": "Erythromycin",
+    "systemic_drug": "Amoxicillin",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-074",
+    "ophthalmic_drug": "Lidocaine",
+    "systemic_drug": "Carbamazepine",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-075",
+    "ophthalmic_drug": "Neomycin",
+    "systemic_drug": "Digoxin",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-076",
+    "ophthalmic_drug": "Lidocaine",
+    "systemic_drug": "Raloxifene",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-077",
+    "ophthalmic_drug": "Acyclovir",
+    "systemic_drug": "Memantine",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-078",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Ritonavir",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-079",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Ketoconazole",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-080",
+    "ophthalmic_drug": "Aflibercept",
+    "systemic_drug": "Leflunomide",
+    "ddinter_level": "high",
+    "absorption": "none",
+    "proposed_gold": "high",
+    "gold_rule": "ddinter_kept: none",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-081",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Itraconazole",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-082",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Edoxaban",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-083",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Loperamide",
+    "ddinter_level": "high",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-084",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Sildenafil",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-085",
+    "ophthalmic_drug": "Aflibercept",
+    "systemic_drug": "Azathioprine",
+    "ddinter_level": "medium",
+    "absorption": "none",
+    "proposed_gold": "medium",
+    "gold_rule": "ddinter_kept: none",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-086",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Ranolazine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-087",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Hydroxychloroquine",
+    "ddinter_level": "medium",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-088",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Donepezil",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-089",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Escitalopram",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-090",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Sitagliptin",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  },
+  {
+    "case_id": "D3-091",
+    "ophthalmic_drug": "Cyclosporine",
+    "systemic_drug": "Propafenone",
+    "ddinter_level": "low",
+    "absorption": "systemic_absorption_very_low",
+    "proposed_gold": "low",
+    "gold_rule": "absorption_correction: systemic_absorption_very_low -> low",
+    "gold_status": "ddinter_absorption_corrected"
+  }
+]

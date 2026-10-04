@@ -24,10 +24,12 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+from deposit_paths import find, gold_cases, predictions, recomputed  # noqa: E402
 from stats_tests import (bootstrap_kappa, cohens_kappa,  # noqa: E402
                          max_kappa)
 
-ARCHIVE = ROOT / "outputs" / "expert_review" / "expert_responses_archive.json"
+# 归档在两种布局下位置不同：项目内 outputs/expert_review/，公开仓库 data/expert_review/
+ARCHIVE = find("expert_archive")
 CN = {"低": "low", "中": "medium", "高": "high"}
 ORDER = ["low", "medium", "high"]
 

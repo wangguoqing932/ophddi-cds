@@ -23,26 +23,20 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
+from deposit_paths import find, recomputed  # noqa: E402
 from ophthalmic_ddi_cds_agent.kg_layer import PreciseKG  # noqa: E402
 
 K1, B = 1.5, 0.75
 
 
 def load_chunks() -> list:
-    for c in (ROOT / "data" / "seed" / "evidence_chunks.jsonl",
-              ROOT / "data" / "evidence" / "evidence_chunks.jsonl"):
-        if c.exists():
-            return [json.loads(l) for l in c.open(encoding="utf-8") if l.strip()]
-    raise FileNotFoundError("evidence_chunks.jsonl")
+    return [json.loads(l) for l in find("evidence_chunks").open(encoding="utf-8") if l.strip()]
 
 
 def load_design() -> list:
-    for c in (ROOT / "outputs" / "blind_test" / "blind_set_v3_ddinter.json",
-              ROOT / "data" / "gold" / "audit_set_design.json"):
-        if c.exists():
-            return json.loads(c.read_text(encoding="utf-8"))
-    raise FileNotFoundError("blind_set_v3_ddinter.json")
+    return json.loads(find("audit_design").read_text(encoding="utf-8"))
 
 
 def main() -> int:
@@ -119,7 +113,7 @@ def main() -> int:
     print(f"\n  解读：kept 子集的 gold 就是 DDInter 原值；凡命中者，naive_rag 的检索内容")
     print(f"  直接包含该配对的答案，因此其在 kept 子集上的表现不能作为独立证据。")
 
-    out = ROOT / "outputs" / "recomputed" / "naive_rag_leakage.json"
+    out = recomputed("naive_rag_leakage.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n已写出 -> {out}")

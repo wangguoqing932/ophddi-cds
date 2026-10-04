@@ -19,30 +19,23 @@ import numpy as np
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
+from deposit_paths import find, gold_cases, predictions, recomputed  # noqa: E402
 
 from ophthalmic_ddi_cds_agent.kg_layer import PreciseKG  # noqa: E402
 from stats_tests import (bootstrap_kappa, clopper_pearson, cohens_kappa,  # noqa: E402
                          exact_mcnemar, max_kappa, wilson_ci)
 
-OUT = ROOT / "outputs" / "recomputed"
+OUT = find("recomputed_dir")
 OUT.mkdir(parents=True, exist_ok=True)
 kg = PreciseKG()
 
 # 数据集位置在两种布局下不同（项目内 / 公开仓库）
 def gold_path(ds: str) -> pathlib.Path:
-    for c in (ROOT / "data" / "datasets" / ds / "cases.jsonl",
-              ROOT / "data" / "gold" / ds / "cases.jsonl"):
-        if c.exists():
-            return c
-    raise FileNotFoundError(ds)
+    return gold_cases(ds)
 
 
 def pred_path(ds: str, seed: int = 0) -> pathlib.Path:
-    for c in (ROOT / "outputs" / "multiseed_per_dataset" / f"{ds}__seed{seed}.jsonl",
-              ROOT / "data" / "predictions" / f"{ds}__seed{seed}.jsonl"):
-        if c.exists():
-            return c
-    raise FileNotFoundError(ds)
+    return predictions(ds, seed)
 
 
 def load_gold(ds: str) -> dict:
@@ -196,8 +189,7 @@ print(f"  Sens Wilson  : {R['audit.sens_wilson'][0]:.3f}-{R['audit.sens_wilson']
 print(f"  kappa        : {R['audit.kappa']:.4f}")
 
 # 与未更正 DDInter 严重度的同意率（设计文件保存了 ddinter_level）
-design = json.loads((ROOT / "outputs" / "blind_test" /
-                     "blind_set_v3_ddinter.json").read_text(encoding="utf-8"))
+design = json.loads(find("audit_design").read_text(encoding="utf-8"))
 agree_ddinter = sum(1 for d in design
                     if preds3["full_system"].get(d["case_id"]) == d["ddinter_level"])
 R["audit.agreement_uncorrected"] = {"n": len(design), "agree": agree_ddinter,
@@ -239,7 +231,7 @@ print(f"  PPV @1% 患病率: {ppv*100:.2f}%")
 # ── 3. 吸收分级计数 ────────────────────────────────────────────────────
 print("\n=== 3. 吸收分级计数 ===")
 import csv
-rows = list(csv.DictReader((ROOT / "data" / "seed" / "entities_a.csv").open(encoding="utf-8-sig")))
+rows = list(csv.DictReader(find("entities_a").open(encoding="utf-8-sig")))
 tiers = Counter()
 for r in rows:
     for f in (r.get("flags") or "").split("|"):
@@ -252,8 +244,7 @@ for k, v in sorted(tiers.items()):
 
 # ── 4. expert 12 例（按表单实际记录）───────────────────────────────────
 print("\n=== 4. 专家实验（按问卷/档案实际记录）===")
-arch = json.loads((ROOT / "outputs" / "expert_review" /
-                   "expert_responses_archive.json").read_text(encoding="utf-8"))
+arch = json.loads(find("expert_archive").read_text(encoding="utf-8"))
 CN = {"低": "low", "中": "medium", "高": "high"}
 e1 = [CN[r["expert_1"]] for r in arch["responses"]]
 e2 = [CN[r["expert_2"]] for r in arch["responses"]]
