@@ -70,6 +70,7 @@
 ## 引擎版本（SHA-256 前 16 位，LF 归一化；与仓库根 MANIFEST.sha256 一致）
 
 下表是**当前沉积文件**的指纹（LF 归一化哈希，与 MANIFEST.sha256 相同口径）。
+CRLF 检出下的同文件哈希不同：`configs/rules.yaml` 为 2afabaad81161c40、`data/seed/evidence_chunks.jsonl` 为 45f8c9d129627268，后者与 `data/evidence/index_manifest.json` 的 `evidence_chunks_sha256` 一致。
 注意：本目录的预测最初于 2026-08-03 生成；2026-10-04 flurbiprofen 层级勘误后，
 受影响的 6 行 full_system 预测已重新生成并同步（正文 §3.5/§4.4 披露），
 其余预测与 8 月 3 日运行一致。上一次运行时记录的旧指纹

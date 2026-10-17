@@ -183,6 +183,10 @@ def main() -> int:
     # 引擎/配置/gold 的 LF 归一化指纹清单（与正文 §2.7 的指纹口径一致）
     if (ROOT / "MANIFEST.sha256").exists():
         grab("MANIFEST.sha256", "MANIFEST.sha256")
+    # LightRAG 索引构建记录（输入指纹、rules/evidence 哈希、文档计数）
+    idx = ROOT / "data" / "evidence" / "index_manifest.json"
+    if idx.exists():
+        grab("data/evidence/index_manifest.json", "05_data/evidence/index_manifest.json")
     for f in ["multiseed_per_dataset_metrics.json", "REPORT.md", "run_log.txt"]:
         if (ROOT / "outputs" / "multiseed_per_dataset" / f).exists():
             grab(f"outputs/multiseed_per_dataset/{f}",

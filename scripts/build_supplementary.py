@@ -276,7 +276,7 @@ def main() -> int:
               "| Calibration | Not applicable | The output is a three-level grade, not a probability |",
               "| Clinical utility / decision-curve analysis | Not addressed | Prospective, outcome-linked evaluation is identified as required future work (Sections 4.4, 4.5) |",
               "| Fairness / subgroup analysis | Not addressed | No patient-level data; flagged as a limitation |",
-              "| Limitations | Addressed | Sections 3.8 and 4.4 |",
+              "| Limitations | Addressed | Sections 3.9 and 4.4 |",
               "| Data and code availability | Addressed | Availability of data and materials; public repository |",
               "| Registration / protocol | Not applicable | No prospective protocol; no trial registration |", ""]
 

@@ -65,6 +65,11 @@ MAP = [
      "data/gold/l1_gold_provenance.csv"),
     ("07_audits/recomputed/audit_gold_rederived.json",
      "data/gold/audit_gold_rederived.json"),
+    ("07_audits/recomputed/audit_gold_provenance.csv",
+     "data/gold/audit_gold_provenance.csv"),
+    ("07_audits/recomputed/dev_ddinter_gold_provenance.csv",
+     "data/gold/dev_ddinter_gold_provenance.csv"),
+    ("05_data/evidence/index_manifest.json", "data/evidence/index_manifest.json"),
 ]
 
 # 代码文件：以项目为准覆盖仓库副本

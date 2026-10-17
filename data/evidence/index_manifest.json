@@ -1,0 +1,9 @@
+{
+  "build_id": "20260803T055537Z_488dfe8d",
+  "input_fingerprint": "f8ed1b85e6df459bcc2d49fd5ce4f63f0b8f832cee3bdf35ae8a94774bae7a31",
+  "rules_yaml_sha256": "2afabaad81161c402472620841c733310ab3eb548b451b9c70b67f7ce18814b1",
+  "evidence_chunks_sha256": "45f8c9d1296272683e16db3c8ee1ab0aa6c6371e2b9672afd8c56ee6d3846683",
+  "documents_total": 1307,
+  "documents_completed": 1307,
+  "documents_failed": 0
+}
