@@ -120,4 +120,6 @@ If you use this work, cite the manuscript:
 > Wang G, Hu L, Wang S, Yi X. OphDDI-CDS: an absorption-first deterministic
 > cascade for ophthalmic drug–drug interaction screening. (manuscript under review)
 
-A versioned release with a persistent identifier will be deposited on acceptance.
+The release matching the submitted manuscript is tagged `v3.0-frontiers` and archived at
+DOI [10.5281/zenodo.23439606](https://doi.org/10.5281/zenodo.23439606); the concept DOI
+[10.5281/zenodo.23143344](https://doi.org/10.5281/zenodo.23143344) resolves to the newest version.

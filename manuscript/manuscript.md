@@ -74,7 +74,7 @@ Two ophthalmologists reviewed 12 cases under a grade-review protocol (Supplement
 
 The system is a research-grade, mechanism-based second reader. It is not intended to replace clinical or pharmacy judgment, out-of-coverage medications are rejected with an explicit error, and it is not marketed as a medical device.
 
-The implementation is Python 3.11 (`ophthalmic_ddi_cds_agent`). Source code, knowledge base, verification tooling and evaluation scripts are available at https://github.com/wangguoqing932/ophddi-cds (release tag `v3.0-frontiers`), with a synthetic demonstration dataset and a one-command entry point (`python scripts/demo_pipeline.py`, 25 mock pairs). Versions are pinned by SHA-256 fingerprints in the repository-root `MANIFEST.sha256`. The report follows TRIPOD+AI [32] and DECIDE-AI [33] reporting guidance where applicable (Supplementary Text S6); generative AI use is documented in the Declarations and the software section of the manuscript.
+The implementation is Python 3.11 (`ophthalmic_ddi_cds_agent`). Source code, knowledge base, verification tooling and evaluation scripts are available at https://github.com/wangguoqing932/ophddi-cds (release tag `v3.0-frontiers`, archived at DOI 10.5281/zenodo.23439606), with a synthetic demonstration dataset and a one-command entry point (`python scripts/demo_pipeline.py`, 25 mock pairs). Versions are pinned by SHA-256 fingerprints in the repository-root `MANIFEST.sha256`. The report follows TRIPOD+AI [32] and DECIDE-AI [33] reporting guidance where applicable (Supplementary Text S6); generative AI use is documented in the Declarations and the software section of the manuscript.
 
 ## 3. Results
 
@@ -165,7 +165,7 @@ Abbreviations are defined at first use and collected in Supplementary Text S7.
 
 ## Supplementary material
 
-The Supplementary Material for this article is deposited with the manuscript and contains **Supplementary Texts S1–S7 and S9** (evidence-base summary, rule citation verification, evaluation prompts, figure legends, evaluation reproducibility, TRIPOD+AI checklist, abbreviations, and protocol detail) and **Supplementary Tables S1–S8** (L1 disagreements with rationale, audit-set disagreement directions, per-case expert ratings, registry summary, per-agent absorption tiers, rule inventory, per-dataset performance, gold-level distribution). It is also available from the public repository https://github.com/wangguoqing932/ophddi-cds under release tag `v3.0-frontiers`.
+The Supplementary Material for this article is deposited with the manuscript and contains **Supplementary Texts S1–S7 and S9** (evidence-base summary, rule citation verification, evaluation prompts, figure legends, evaluation reproducibility, TRIPOD+AI checklist, abbreviations, and protocol detail) and **Supplementary Tables S1–S8** (L1 disagreements with rationale, audit-set disagreement directions, per-case expert ratings, registry summary, per-agent absorption tiers, rule inventory, per-dataset performance, gold-level distribution). It is also available from the public repository https://github.com/wangguoqing932/ophddi-cds under release tag `v3.0-frontiers`, archived at DOI 10.5281/zenodo.23439606.
 
 ## Declarations
 
