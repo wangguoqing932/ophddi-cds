@@ -57,20 +57,18 @@ SHOWN_SYSTEM = {
     "R09": "medium", "R10": "medium", "R11": "medium", "R12": "medium",
 }
 
-# 专家评分（扫描件转录）。R03 两位专家均勾选"低"，原表误记为 medium。
-EXPERT_1 = {"R01": "low", "R02": "medium", "R03": "low", "R04": "medium",
-            "R05": "medium", "R06": "medium", "R07": "low", "R08": "medium",
-            "R09": "low", "R10": "low", "R11": "low", "R12": "low"}
-# 专家 2 的答卷未提供扫描件；存档记录其答案与专家 1 全同，仅 R08 不同。
-EXPERT_2 = dict(EXPERT_1, R08="high")
+# 专家评分直接从存档读取（expert_responses_archive.json 的 expert_1 / expert_2
+# 字段，2026-08-08 按回收问卷逐例转录）。不在代码中硬编码或由一位专家的答案
+# 推导另一位——两人是独立的评分者，统计必须使用各自的记录值。
+CN_SCALE = {"低": "low", "中": "medium", "高": "high"}
 
 
 def build(archive: dict) -> dict:
-    """按扫描件转录的值构建分析序列（不使用 archive 中可能被更新的 system_v2）。"""
+    """构建分析序列：专家评分取存档记录，展示值取问卷印刷值。"""
     rows = archive["responses"]
     ids = [r["case_id"] for r in rows]
-    e1 = [EXPERT_1[c] for c in ids]
-    e2 = [EXPERT_2[c] for c in ids]
+    e1 = [CN_SCALE[r["expert_1"]] for r in rows]
+    e2 = [CN_SCALE[r["expert_2"]] for r in rows]
     shown = [SHOWN_SYSTEM[c] for c in ids]           # 专家看到的系统评级
     gold_shown = [r["gold_proposed"] for r in rows]  # 专家看到的 gold
     return {"rows": rows, "e1": e1, "e2": e2, "shown": shown, "gold": gold_shown}

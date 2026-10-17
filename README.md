@@ -15,7 +15,7 @@ This project reuses the methodology skeleton of **TongYuan** (FDI screening, *Nu
 | Phase 2 | ✅ complete | Evidence base: 1,307 approved chunks (A=53, B=180, C=187, D=84, E=244) |
 | Phase 3 | ✅ complete | 40 rules + 3 patient factors, citation verification pass (Crossref/OpenAlex/PubMed) |
 | Phase 4 | ✅ complete | LightRAG index (1,307 docs), freshness verified |
-| Phase 5 | ✅ complete | Validation: L1 (118) acc 0.907 (107/118) / κ 0.857; frozen blind-40 39/40 (36/40 under pre-errata labels); DDInter audit (92) 0.674 (34/62 on third-party-only subset); 5-condition × 4-method run (9,600 predictions); 2-expert review (12 cases, inter-rater κ 0.840 — see manuscript §3.8 for provenance caveats) |
+| Phase 5 | ✅ complete | Validation: L1 (118) acc 0.907 (107/118) / κ 0.857; frozen blind-40 39/40 (36/40 under pre-errata labels); DDInter audit (92) 0.674 (34/62 on third-party-only subset); 5-condition × 4-method run (9,600 predictions); 2-expert descriptive survey (12 cases; inter-rater κ 0.840, reported descriptively — see manuscript §3.8) |
 | Phase 6 | ✅ complete | Streamlit app (3 tabs) + demo cases |
 | Writer (7) | 🔄 in progress | Manuscript, 5 figures, 4 tables, references, cover letter, submission package → `outputs/paper/`, `outputs/submission/` |
 
