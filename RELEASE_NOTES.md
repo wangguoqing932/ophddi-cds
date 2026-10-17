@@ -1,3 +1,13 @@
+> **v2.1 (final text pass, October 2026).** Closes the remaining editorial points:
+> the competent ethics committee is named and the absence of a determination is stated;
+> the consent process is described as undocumented rather than asserted; the T1
+> expert-informed provenance of 20 L1 labels is disclosed with its limits; notes about
+> earlier versions of the manuscript, tables and figures are removed; the
+> tier cross-reference in Section 4.4 and the Limitations pointer in the TRIPOD
+> checklist are corrected; the kappa implementation gains a regression test; per-case
+> provenance is added for the audit and development gold sets; the LightRAG index
+> build record is deposited; and the README registry counts are corrected.
+>
 > **Version 2.0 (post-review revision, October 2026).** This release follows the
 > rejection of the third revision by BMC Bioinformatics. Every point raised by the
 > editor and the reviewer in the final round has been implemented as a code or text

@@ -1,6 +1,6 @@
 # 眼科药物相互作用知识库与临床决策支持系统（ophthalmic-ddi-cds）
 
-**眼科药物相互作用知识库与临床决策支持系统** — A pharmacodynamic, pharmacokinetic, systemic_absorption rule-based decision support framework for screening **眼科局部用药与全身系统用药的药物相互作用（DDI）筛查与临床决策支持** in 合并心血管疾病, 合并糖尿病, 合并呼吸系统疾病, 合并精神神经系统疾病, 老年多药联用（≥65岁）, 肝肾功能不全, with a focus on 首个覆盖全科眼科局部用药（100种）与全身系统用药（200种）的全面的DDI知识图谱与CDSS系统，涵盖药效学、药代动力学与全身吸收后效应三类机制，附带全身吸收率分级与证据等级标注.
+**眼科药物相互作用知识库与临床决策支持系统** — A pharmacodynamic, pharmacokinetic, systemic_absorption rule-based decision support framework for screening **眼科局部用药与全身系统用药的药物相互作用（DDI）筛查与临床决策支持** in 合并心血管疾病, 合并糖尿病, 合并呼吸系统疾病, 合并精神神经系统疾病, 老年多药联用（≥65岁）, 肝肾功能不全, with a focus on 覆盖 113 种眼科局部用药与 232 种全身系统用药的全面的DDI知识图谱与CDSS系统，涵盖药效学、药代动力学与全身吸收后效应三类机制，附带全身吸收率分级与证据等级标注.
 
 This project reuses the methodology skeleton of **TongYuan** (FDI screening, *Nutrients* submission) and applies it to a new domain: 眼科局部用药 × 全身系统用药 combinations.
 

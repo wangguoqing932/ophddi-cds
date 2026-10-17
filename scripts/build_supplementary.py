@@ -132,8 +132,7 @@ def main() -> int:
 
     parts = ["# Supplementary Material", "",
              "Two independent numbering series are used. Prose sections are **Supplementary Text S1–S7**; "
-             "tables are **Supplementary Table S1–S8**. Earlier versions shared a single sequence, which "
-             "made cross-references from the manuscript ambiguous; the numbering below is self-consistent.",
+             "tables are **Supplementary Table S1–S8**.",
              ""]
 
     # ── Text S1 ──
@@ -151,8 +150,7 @@ def main() -> int:
               "The 40 rules carry 53 source records in total, of which 41 are DrugBank entries, "
               "7 regulatory label records, 2 DOIs, 2 DDInter pair annotations and 1 a PubMed citation. "
               "DrugBank and label records were **not** independently re-verified against external "
-              "sources, so the earlier description of all 40 rules as \"citation-verified\" was "
-              "overstated and has been corrected in the manuscript.", "",
+              "sources, so \"citation-verified\" should not be read as independent verification of every rule.", "",
               "Other properties of the gate: 43 policy entries (40 rules + 3 patient-factor policies); "
               "0 policy errors; retraction screening identified no retracted references. The report is "
               "bound to a SHA-256 of `configs/rules.yaml`, so any later edit to the rules invalidates it. "
