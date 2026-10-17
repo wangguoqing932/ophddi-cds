@@ -1,6 +1,4 @@
-# table5_audit_strata
-
-| stratum | n | system agreement |
+| Stratum | n | System agreement |
 |---|---|---|
 | All 92 (vs absorption-corrected gold) | 92 | 62 (0.674) |
 | All 92 (vs uncorrected DDInter severity) | 92 | 34 (0.370) |
@@ -17,7 +15,7 @@
 | low->high | 1 |
 | **total disagreements** | **30** |
 
-Note: values reflect the corrected flurbiprofen absorption tier. The four over-alerts
+Note: the system's grades use the corrected flurbiprofen tier, while the gold as applied kept those four pairs at DDInter severity on the lock-time high tier. The four over-alerts
 (system grade above gold) are apraclonidine x midazolam, apraclonidine x loperamide,
 tacrolimus x ibuprofen and bromfenac x enalapril. The 62-case "kept" stratum is the
 subset whose gold is the third-party DDInter severity, so it is the only stratum free
