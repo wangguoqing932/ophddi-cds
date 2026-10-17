@@ -33,12 +33,14 @@ ARCHIVE = find("expert_archive")
 CN = {"低": "low", "中": "medium", "高": "high"}
 ORDER = ["low", "medium", "high"]
 
-# R01–R03：问卷展示的 gold 是刚由 DDInter 原值更正而来的（见 blind_gold_review_CN.csv
-# 的 "gold来源" 列："勘误后(原high)" 等）。
+# R01–R03：问卷展示的 gold 是评审前刚更正过的（见 blind_gold_review_CN.csv 的
+# "gold来源" 列："勘误后(原high)" 等）。更正前的值来自本研究更早一轮的 gold，
+# 不是 DDInter 的评级——DDInter 的评级单列（R02 在 DDInter 中无记录；R03 的
+# DDInter 评级为 medium，而更正前 gold 为 low）。
 ERRATA = {
-    "R01": {"ddinter_original": "high", "shown_gold": "medium"},
-    "R02": {"ddinter_original": "medium", "shown_gold": "high"},
-    "R03": {"ddinter_original": "low", "shown_gold": "medium"},
+    "R01": {"pre_correction_gold": "high", "ddinter": "high", "shown_gold": "medium"},
+    "R02": {"pre_correction_gold": "medium", "ddinter": None, "shown_gold": "high"},
+    "R03": {"pre_correction_gold": "low", "ddinter": "medium", "shown_gold": "medium"},
 }
 
 # 问卷上印给专家的"系统判定"值。
@@ -101,6 +103,16 @@ def output(archive: dict) -> dict:
             "expert_2": sum(1 for x, y in zip(e2, shown) if ORDER.index(x) < ORDER.index(y)),
             "expert_1_higher": sum(1 for x, y in zip(e1, shown) if ORDER.index(x) > ORDER.index(y)),
             "expert_2_higher": sum(1 for x, y in zip(e2, shown) if ORDER.index(x) > ORDER.index(y)),
+            "expert_1_discordant": sum(1 for x, y in zip(e1, shown) if x != y),
+            "expert_2_discordant": sum(1 for x, y in zip(e2, shown) if x != y),
+        },
+        "graded_lower_than_gold": {
+            "expert_1": sum(1 for x, y in zip(e1, gold) if ORDER.index(x) < ORDER.index(y)),
+            "expert_2": sum(1 for x, y in zip(e2, gold) if ORDER.index(x) < ORDER.index(y)),
+            "expert_1_higher": sum(1 for x, y in zip(e1, gold) if ORDER.index(x) > ORDER.index(y)),
+            "expert_2_higher": sum(1 for x, y in zip(e2, gold) if ORDER.index(x) > ORDER.index(y)),
+            "expert_1_discordant": sum(1 for x, y in zip(e1, gold) if x != y),
+            "expert_2_discordant": sum(1 for x, y in zip(e2, gold) if x != y),
         },
         "fully_concordant_cases": [
             {"case_id": r["case_id"], "ophthalmic": r["ophthalmic"], "systemic": r["systemic"]}
@@ -114,7 +126,8 @@ def output(archive: dict) -> dict:
         },
         "errata_cases": [
             {"case_id": r["case_id"],
-             "ddinter_original": ERRATA[r["case_id"]]["ddinter_original"],
+             "pre_correction_gold": ERRATA[r["case_id"]]["pre_correction_gold"],
+             "ddinter": ERRATA[r["case_id"]]["ddinter"],
              "shown_gold": ERRATA[r["case_id"]]["shown_gold"],
              "expert_1": e1[i], "expert_2": e2[i],
              "current_gold": gold[i], "shown_system": shown[i]}
@@ -152,8 +165,11 @@ def main() -> int:
               f"[{v['bootstrap']['ci_low']:+.3f},{v['bootstrap']['ci_high']:+.3f}] "
               f"max={v['max_kappa']:.3f} wq={v['kappa_weighted_quadratic']:+.3f}")
     g = res["graded_lower_than_shown"]
-    print(f"\n  判低于所见系统值: E1 {g['expert_1']}/12, E2 {g['expert_2']}/12")
-    print(f"  判高于所见系统值: E1 {g['expert_1_higher']}/12, E2 {g['expert_2_higher']}/12")
+    gg = res["graded_lower_than_gold"]
+    print(f"\n  判低于所见系统值: E1 {g['expert_1']}/{g['expert_1_discordant']} 不一致, "
+          f"E2 {g['expert_2']}/{g['expert_2_discordant']}")
+    print(f"  判低于展示 gold : E1 {gg['expert_1']}/{gg['expert_1_discordant']} 不一致, "
+          f"E2 {gg['expert_2']}/{gg['expert_2_discordant']}")
     print(f"  四者完全一致的案例: {[c['case_id'] for c in res['fully_concordant_cases']]}")
     print(f"  系统判 high 的案例中，专家判 high 的: "
           f"E1 {res['system_high_rated_high_by_experts']['e1']}/"
@@ -162,8 +178,9 @@ def main() -> int:
           f"{res['system_high_rated_high_by_experts']['n_system_high']}")
     print("\n  勘误案例（gold 在评审前刚被更正）:")
     for e in res["errata_cases"]:
-        print(f"    {e['case_id']}: DDInter 原值={e['ddinter_original']} "
-              f"→ 问卷展示={e['shown_gold']}; 专家判 {e['expert_1']}/{e['expert_2']}")
+        print(f"    {e['case_id']}: 更正前 gold={e['pre_correction_gold']} "
+              f"(DDInter={e['ddinter']}) → 问卷展示={e['shown_gold']}; "
+              f"专家判 {e['expert_1']}/{e['expert_2']}")
 
     p = pathlib.Path(args.json)
     p.parent.mkdir(parents=True, exist_ok=True)

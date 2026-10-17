@@ -17,14 +17,17 @@ SUBM = ROOT / "outputs" / "deliverables"
 FIG = ROOT / "outputs" / "figures"
 
 AUTHORS = [
-    "Wang Guoqing, M.D.\u00b9; Yi Xianglong, M.D., Ph.D.\u00b9\u00b2*",
+    "Wang Guoqing, M.D.\u00b9; Hu Lumei, M.D.\u00b9; Wang Shaocheng, M.D.\u00b3; Yi Xianglong, M.D., Ph.D.\u00b9\u00b2*",
     "",
     "\u00b9 Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China",
     "\u00b2 Xinjiang Medical University, Urumqi, Xinjiang, China",
+    "\u00b3 Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital, Xinjiang, China",
     "",
     "*Correspondence: Yi Xianglong, M.D., Ph.D., Professor of Ophthalmology, Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China",
     "E-mail: yixianglong1010@163.com",
     "Wang Guoqing, M.D., Resident Physician; E-mail: 17690924120@163.com",
+    "Hu Lumei, M.D., Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University; E-mail: 1301161825@qq.com",
+    "Wang Shaocheng, M.D., Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital; E-mail: 13150407698@163.com",
 ]
 FUNDING = ("This study was supported by the Natural Science Foundation of Xinjiang Uygur "
            "Autonomous Region, China (Key Project No. 2022D01D68).")
@@ -59,6 +62,9 @@ def load_legends():
     for i in range(1, len(blocks), 2):
         num = int(blocks[i])
         body = blocks[i + 1].split("\n\n")[0].strip()
+        # 源文件写作 "**Figure 1. …**"，按 "**Figure N." 切分后首部标记已被吃掉，
+        # 但结尾的 ** 会留在 caption 里（PDF 上显示为 "…system.**"）。
+        body = re.sub(r"\*\*\s*$", "", body).strip()
         legends[f"Figure {num}"] = body
     return legends
 
@@ -78,32 +84,79 @@ def set_table_borders(table):
     tblPr.append(borders)
 
 
-def md_table_to_docx(doc, md_path):
-    lines = md_path.read_text(encoding="utf-8").splitlines()
-    rows = []
-    for ln in lines:
+def parse_md_tables(md_path):
+    """把 markdown 文件里的表格解析成若干独立表格。
+
+    一个文件可能含多张表（如 table5 的分层表与分歧方向表），中间用空行分隔。
+    早期实现把所有 "|" 行塞进同一张 docx 表格，导致第二张表的表头变成表体中段，
+    且短行被填充成空单元格——版面上能直接看出来。
+    """
+    groups, cur = [], []
+    for ln in md_path.read_text(encoding="utf-8").splitlines():
         if ln.strip().startswith("|"):
             cells = [c.strip() for c in ln.strip().strip("|").split("|")]
             if all(re.fullmatch(r":?-{2,}:?", c) for c in cells):
-                continue
-            rows.append(cells)
-    if not rows:
-        return None
-    n_rows, n_cols = len(rows), max(len(r) for r in rows)
-    table = doc.add_table(rows=n_rows, cols=n_cols)
-    set_table_borders(table)
-    for i, r in enumerate(rows):
-        for j in range(n_cols):
-            cell = table.cell(i, j)
-            cell.text = r[j] if j < len(r) else ""
-            for p in cell.paragraphs:
-                p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
-                for run in p.runs:
-                    run.font.name = "Times New Roman"
-                    run.font.size = Pt(9)
-                    if i == 0:
-                        run.bold = True
-    return table
+                continue                      # 跳过分隔行 |---|---|
+            cur.append(cells)
+        elif cur:
+            groups.append(cur)
+            cur = []
+    if cur:
+        groups.append(cur)
+    return groups
+
+
+def md_table_note(md_path):
+    """取表格文件末尾的 "Note:" 说明段。
+
+    表3 的说明定义了 10-token / 3000-token 两种预算，表5 的说明交代了更正后的
+    吸收分级——都是读者理解表格所需的信息，需要随表一起排进 docx。
+    """
+    lines = md_path.read_text(encoding="utf-8").splitlines()
+    idx = next((i for i, l in enumerate(lines) if l.strip().startswith("Note:")), None)
+    if idx is None:
+        return ""
+    return " ".join(l.strip() for l in lines[idx:] if l.strip())
+
+
+def strip_md_inline(s):
+    """去掉单元格里的 markdown 标记。
+
+    pandoc 不处理 docx 表格单元格文本，若不剥离，"**total disagreements**" 会原样
+    显示在表里。
+    """
+    s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)
+    s = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"\1", s)
+    s = re.sub(r"`(.+?)`", r"\1", s)
+    return s
+
+
+def md_table_to_docx(doc, md_path):
+    """构造 markdown 中的全部表格，按顺序返回它们的 XML 元素。
+
+    返回列表而非单张表：调用方用 addprevious 把元素搬到文末图表区，若只返回首张，
+    同一文件里的后续表格会留在文档末尾。
+    """
+    out = []
+    for gi, rows in enumerate(parse_md_tables(md_path)):
+        if gi:                                # 同一文件内的后续表格另起一张
+            out.append(doc.add_paragraph()._p)
+        n_rows, n_cols = len(rows), max(len(r) for r in rows)
+        table = doc.add_table(rows=n_rows, cols=n_cols)
+        set_table_borders(table)
+        for i, r in enumerate(rows):
+            for j in range(n_cols):
+                cell = table.cell(i, j)
+                cell.text = strip_md_inline(r[j]) if j < len(r) else ""
+                for p in cell.paragraphs:
+                    p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+                    for run in p.runs:
+                        run.font.name = "Times New Roman"
+                        run.font.size = Pt(9)
+                        if i == 0:
+                            run.bold = True
+        out.append(table._tbl)
+    return out
 
 
 def make_para(doc, text, size=10, bold=False, center=False):
@@ -164,6 +217,7 @@ def build_docx(out_path=None, marked_keys=None):
     """
     pandoc = r"C:\Users\Administrator\AppData\Local\Pandoc\pandoc.exe"
     src_md = ROOT / "outputs" / "paper" / "manuscript.en.md"
+    author_paras = []      # 构建时注入的作者块，标红时需单独处理
     tmpdir = tempfile.TemporaryDirectory()
     tmp = Path(tmpdir.name) / "manuscript_raw.docx"
     subprocess.run([pandoc, str(src_md), "-o", str(tmp), "--standalone"], check=True)
@@ -196,6 +250,9 @@ def build_docx(out_path=None, marked_keys=None):
             p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
             for run in p.runs:
                 run.font.name = "Times New Roman"
+            # 作者块是构建时注入的，不在 markdown 源里，因此段落 diff 看不到它；
+            # 标红版需要显式标记（审稿编辑曾指出"新增作者未在标红版中体现"）。
+            author_paras.append(p)
 
     for p in doc.paragraphs:
         if "[To be completed. If none, state: This research received no specific grant" in p.text:
@@ -211,9 +268,12 @@ def build_docx(out_path=None, marked_keys=None):
     for key in ["Table 1", "Table 2", "Table 3", "Table 4", "Table 5", "Table 6"]:
         md_path, caption_text = TABLES[key]
         cap = make_caption(doc, caption_text)
-        tbl = md_table_to_docx(doc, md_path)
-        anchor.addprevious(cap._p)
-        anchor.addprevious(tbl._tbl)
+        anchor.addprevious(cap._p)            # 先表注，再依序放该文件内的所有表格
+        for el in md_table_to_docx(doc, md_path):
+            anchor.addprevious(el)
+        note = md_table_note(md_path)
+        if note:
+            anchor.addprevious(make_para(doc, strip_md_inline(note), size=9)._p)
     for key in ["Figure 1", "Figure 2", "Figure 3", "Figure 4", "Figure 5"]:
         img_p = doc.add_paragraph()
         run = img_p.add_run()
@@ -226,17 +286,50 @@ def build_docx(out_path=None, marked_keys=None):
 
     # ── 标红改动段落（标红版专用，正文与图表均已就位后再执行）──
     if marked_keys:
+        # 与 build_marked_docx.normalize 保持一致的规范化，否则含弯引号的段落匹配不上。
+        def _norm(s: str) -> str:
+            s = re.sub(r"\s+", " ", s).strip()
+            for a, b in (("\u201c", '"'), ("\u201d", '"'), ("\u2018", "'"),
+                         ("\u2019", "'"), ("\u2013", "-"), ("\u2014", "-")):
+                s = s.replace(a, b)
+            return s
+
+        keys = [_norm(k) for k in marked_keys if k]
         marked = 0
+        # 作者块由构建时注入，段落 diff 看不到它；本轮作者名单有增补，
+        # 必须标红，否则"标红版"与"作者已变更"自相矛盾（编辑曾指出）。
+        for p in author_paras:
+            for r in p.runs:
+                r.font.color.rgb = RGBColor(0xC0, 0x00, 0x00)
+            marked += 1
         for p in doc.paragraphs:
-            flat = re.sub(r"\s+", " ", p.text).strip()
+            flat = _norm(p.text)
             if not flat:
                 continue
-            if any(k and (flat.startswith(k[:80]) or k[:80] in flat) for k in marked_keys):
+            if any(flat.startswith(k[:80]) or k[:80] in flat for k in keys):
                 for r in p.runs:
                     r.font.color.rgb = RGBColor(0xC0, 0x00, 0x00)
                 marked += 1
+        # 正文中的 markdown 表格会被 pandoc 转成 docx 表格对象，段落遍历看不到它们。
+        # docx 行文本不含 "|"，因此需把传入的 markdown 表格行解析成单元格元组后按行比对。
+        row_keys = []
+        for k in keys:
+            if k.startswith("|") and k.endswith("|") and k.count("|") >= 3:
+                cells = tuple(c.strip().lower() for c in k.strip("|").split("|"))
+                if not all(set(c) <= set("-: ") for c in cells):
+                    row_keys.append(cells)
+        for tbl in doc.tables:
+            for row in tbl.rows:
+                cells = tuple(c.text.strip().lower() for c in row.cells)
+                if any(len(rk) == len(cells) and all(a == b for a, b in zip(rk, cells))
+                       for rk in row_keys):
+                    for cell in row.cells:
+                        for p in cell.paragraphs:
+                            for r in p.runs:
+                                r.font.color.rgb = RGBColor(0xC0, 0x00, 0x00)
+                    marked += 1
         # 表注与图注同样可能被改动
-        print(f"标红段落: {marked}")
+        print(f"标红行/段: {marked}")
 
     add_line_numbers(doc)
     add_page_numbers(doc)

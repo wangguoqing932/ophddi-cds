@@ -1,3 +1,18 @@
+> **Version 2.0 (post-review revision, October 2026).** This release follows the
+> rejection of the third revision by BMC Bioinformatics. Every point raised by the
+> editor and the reviewer in the final round has been implemented as a code or text
+> change rather than a letter promise: the ordinal quadratic-weighted kappa bug in
+> `scripts/stats_tests.py` is fixed and the self-test updated; the expert-review
+> statistics are recomputed against both the gold and the displayed grades; the
+> frozen-subset numbers are reported both with the corrected labels (39/40, 107/118)
+> and without them (36/40, 104/118), with the lock/correction timeline and file
+> hashes; the audit-set gold is stated as applied and re-derived under the stated
+> rule (`scripts/rederive_audit_gold.py`); the retrieval-leakage comparison is
+> reported with the leaked cases excluded; the T1 expert-informed provenance of 20
+> L1 gold labels is disclosed; Figures 1 and 3 are regenerated with Matplotlib from
+> deposited data; dependencies are pinned; and per-case gold provenance plus a
+> root `MANIFEST.sha256` are included.
+
 # Release notes — v1.1-revision3
 
 ## Which manuscript version this corresponds to

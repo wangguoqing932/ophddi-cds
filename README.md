@@ -1,201 +1,136 @@
-# OphDDI-CDS
+# 眼科药物相互作用知识库与临床决策支持系统（ophthalmic-ddi-cds）
 
-Deterministic, fully explainable screening of drug–drug interactions between
-**ophthalmic topical medications** and **systemic drugs**.
+**眼科药物相互作用知识库与临床决策支持系统** — A pharmacodynamic, pharmacokinetic, systemic_absorption rule-based decision support framework for screening **眼科局部用药与全身系统用药的药物相互作用（DDI）筛查与临床决策支持** in 合并心血管疾病, 合并糖尿病, 合并呼吸系统疾病, 合并精神神经系统疾病, 老年多药联用（≥65岁）, 肝肾功能不全, with a focus on 首个覆盖全科眼科局部用药（100种）与全身系统用药（200种）的全面的DDI知识图谱与CDSS系统，涵盖药效学、药代动力学与全身吸收后效应三类机制，附带全身吸收率分级与证据等级标注.
 
-This repository accompanies the manuscript *"OphDDI-CDS: An Absorption-First
-Deterministic Cascade for Ophthalmic Drug–Drug Interaction Screening"* (submitted to
-*BMC Bioinformatics*). It contains the production screening engine, the curated
-knowledge base, the evaluation scripts, and a bundled mock dataset so that a reviewer
-can run the pipeline end to end without any API key or network access.
+This project reuses the methodology skeleton of **TongYuan** (FDI screening, *Nutrients* submission) and applies it to a new domain: 眼科局部用药 × 全身系统用药 combinations.
 
-## What the system does
+## Project Status
 
-The production path is a three-layer deterministic cascade that makes **zero LLM calls**:
+✅ **Execution complete; writer stage in progress (last updated 2026-08-09).**
 
-| Layer | Component | Size |
+| Phase | Status | Key deliverables |
 |---|---|---|
-| L1 | Rule engine of mechanism rules, each carrying at least one source record | 40 rules + 3 patient-factor policies |
-| L2 | Absorption-scaled drug-class matrix | 20 × 37 classes (82 defined cells) |
-| L3 | Hard constraint encoding topical systemic absorption | G19 default-low rule |
+| Phase 0 | ✅ complete | Env + package skeleton + tests (34 passed / 1 skipped) |
+| Phase 1 | ✅ complete | Registries: 113 ophthalmic agents × 232 systemic drugs, DrugBank/PubMed/RxNorm verified |
+| Phase 2 | ✅ complete | Evidence base: 1,307 approved chunks (A=53, B=180, C=187, D=84, E=244) |
+| Phase 3 | ✅ complete | 40 rules + 3 patient factors, citation verification pass (Crossref/OpenAlex/PubMed) |
+| Phase 4 | ✅ complete | LightRAG index (1,307 docs), freshness verified |
+| Phase 5 | ✅ complete | Validation: L1 (118) acc 0.907 (107/118) / κ 0.857; frozen blind-40 39/40 (36/40 under pre-errata labels); DDInter audit (92) 0.674 (34/62 on third-party-only subset); 5-condition × 4-method run (9,600 predictions); 2-expert review (12 cases, inter-rater κ 0.840 — see manuscript §3.8 for provenance caveats) |
+| Phase 6 | ✅ complete | Streamlit app (3 tabs) + demo cases |
+| Writer (7) | 🔄 in progress | Manuscript, 5 figures, 4 tables, references, cover letter, submission package → `outputs/paper/`, `outputs/submission/` |
 
-Coverage: **113 ophthalmic topical agents × 232 systemic drugs**. Every decision returns
-the matched rule identifiers and the decision path, so no grade is opaque. A medication
-outside the registry is **not scored** — the engine returns an explicit unknown-drug path
-and the service raises an error instead of assigning a default risk level.
+Authoritative gate status lives in `.executor/progress.json` and `.medical-agent/state.json`.
+Target journal: **Frontiers in Pharmacology** (submission package: `outputs/submission/frontiers_submission.zip`).
 
-Absorption scaling is the distinguishing feature: each ophthalmic agent carries a
-systemic-absorption tier, and low/very-low tiers force a low risk level unless a
-mechanism-based upgrade applies. This is the factor that systemic-route DDI databases do
-not model.
+## Quick Navigation
 
-## Quick start (no API key needed)
-
-```bash
-python -m venv .venv && . .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"
-
-# End-to-end smoke test over the bundled mock cases (deterministic path only)
-python scripts/demo_pipeline.py
-python scripts/demo_pipeline.py --verbose          # print the full decision trace
-python scripts/demo_pipeline.py --case MOCK01      # a single case
-```
-
-`demo_pipeline.py` screens 25 mock pairs covering all three decision paths (rule match,
-class-matrix match, unknown drug) and checks each returned level against the value
-frozen at release. It also exercises the fail-safe behaviour for an out-of-coverage
-medication. Expected output ends with `All checks passed.`
-
-Run the test suite:
-
-```bash
-pytest tests/ -q          # 34 passed, 1 skipped
-```
-
-## Mock data
-
-`data/mock/` is synthetic and exists only so the pipeline can be exercised:
-
-| File | Contents |
+| Document | Purpose |
 |---|---|
-| `mock_cases.jsonl` | 25 drug pairs with the risk level each must reproduce |
-| `mock_evidence_chunks.jsonl` | 8 illustrative evidence passages, labelled `mock-synthetic` |
-| `mock_registry_summary.csv` | registry sizes |
+| [PLAN.md](PLAN.md) | Master execution plan (8 phases, task list, subagent strategy, timeline) |
+| `.planner.config.json` | Phase 1 investigation output (input to scaffold) |
+| `src/ophthalmic_ddi_cds_agent/` | Core source code (to be migrated from TongYuan) |
+| `configs/rules.yaml` | Rule engine configuration (to be authored) |
+| `data/seed/` | Knowledge base: entities_a.csv, entities_b.csv, evidence_chunks.jsonl (to be built) |
 
-The mock evidence passages are **written for this repository and are not real
-citations**. The drug-pair cases are real registry entries; their expected values were
-generated by the released engine and frozen here as a regression fixture.
+## Differentiation from Reference Project
 
-## Real data
+| Dimension | Reference (TongYuan) | This Project |
+|---|---|---|
+| Entity A | food | 眼科局部用药 |
+| Entity B | drug | 全身系统用药 |
+| Interaction type | FDI | pharmacodynamic, pharmacokinetic, systemic_absorption |
+| Rules | 15 | 12 |
+| Data sources | FDA + USDA + LiverTox | DrugBank, PubMed, FDA DailyMed, DDInter |
+| Target journal | Nutrients | Digital Medicine |
 
-`data/seed/entities_a.csv` and `entities_b.csv` are the actual curated registries
-(113 + 232 agents) used in the manuscript — drug names, classes, mechanism flags and
-absorption tiers. They contain no patient data and no personal information.
+## Methodology Pipeline
 
-`data/curation/` holds the curation sources behind the registries, and
-`data/raw/evidence/citations/` holds the cached Crossref / OpenAlex / PubMed responses
-for every rule citation. The cache is what makes citation verification reproducible
-**offline**: `scripts/verify_rule_citations.py` replays it in `cache-only` mode and
-fails if the cache is missing rather than silently reaching the network.
+```text
+User input (眼科局部用药 + 全身系统用药 + patient factors)
+  → entity normalization
+  → rule-based screening (12 rules)
+  → graph-organized evidence retrieval (LightRAG)
+  → evidence compression (top-k, char limit)
+  → structured safety report
+  → expert-review export / evaluation
+```
 
-## Reproducing the manuscript numbers
+## Setup (conda env per project, Chinese mirrors pre-configured)
 
-The evaluation in the manuscript covers 4 methods (pure LLM, BM25 retrieval, knowledge-
-graph context, deterministic cascade) × 5 temperature conditions × 4 datasets.
+The default flow creates a **conda env named after this project** (`ophthalmic-ddi-cds`) and installs all deps there.
 
 ```bash
-# Deterministic method only — no API key, reproduces the cascade's own results
-python scripts/demo_pipeline.py
-
-# LLM baselines — requires API credentials in .env (see .env.example)
-cp .env.example .env      # then fill in your own keys
-python scripts/run_multiseed.py --synthetic          # offline surrogate, for pipeline testing
+python scripts/setup_environment.py --project-root . --mirror cn
+conda activate ophthalmic-ddi-cds
 ```
 
-The LLM-baseline scripts call an external model API and therefore need credentials. The
-deterministic cascade, which is the system this paper contributes, does not.
+This will:
+- `conda create -n ophthalmic-ddi-cds python=3.11 -y` if the env doesn't exist (idempotent)
+- Install `[dev, llm, lightrag, streamlit]` extras from `pyproject.toml`
+- Configure Tsinghua PyPI / TUNA conda / hf-mirror.com mirrors
+- Prompt for `DEEPSEEK_API_KEY` (chat) and `ARK_DOUBAO_API_KEY` (火山方舟 embedding) on first run
 
-## Layout
-
-```
-configs/      rules.yaml, class_matrix.yaml, drug_classes.yaml, flag_catalog.yaml
-src/          ophthalmic_ddi_cds_agent — engine, registry, citation verification
-data/seed/    curated entity registries (real)
-data/curation/candidate registries and rule-citation maps
-data/mock/    synthetic cases and evidence for the demo
-data/raw/     cached API responses for offline citation verification
-scripts/      demo, evaluation, and build scripts
-tests/        pytest suite (34 passed, 1 skipped)
-app/          optional Streamlit interface
-```
-
-## Citation verification
-
-All 40 rules carry at least one citation cross-checked against three sources (Crossref,
-OpenAlex, PubMed) with retraction screening. `scripts/verify_rule_citations.py --fix`
-re-verifies and writes `outputs/citation_verification_report.json`; the committed report
-shows `overall: pass` with no policy errors. Because the report is bound to a SHA-256 of
-`configs/rules.yaml`, any later edit to the rules invalidates it and forces re-verification.
-
-## Intended use and limitations
-
-This is a **research-grade, mechanism-based second reader** for clinicians and pharmacists.
-It is not a medical device and does not replace clinical or pharmacy judgment. Its known
-limitations are documented in the manuscript, most importantly a high-risk sensitivity of
-0.440 on the DDInter-derived audit set — the false-negative profile that bounds its current
-value as a safety screen. Clinical calibration against outcome-linked data has not been
-performed.
-
-## Licence
-
-Code: Apache-2.0 (see `LICENSE`). Original data and configuration: CC BY 4.0. Bundled DDInter severity tables remain under DDInter's CC BY-NC-SA 4.0 terms — see the component-licensing section in LICENSE.
-
----
-
-## Complete deposit (added in response to peer review)
-
-This repository now contains the **full reproducibility deposit** for the manuscript,
-not only the condensed pipeline. A reviewer can locate every artefact referenced in
-the paper:
-
-| Path | Contents |
-|---|---|
-| `manuscript/` | Manuscript (docx/pdf/md), cover letter, round-1 response letter |
-| `figures/`, `tables/` | Figures 1-5 with source data; Tables 1-6 |
-| `supplementary/` | Supplementary material, ethics approval document |
-| `data/gold/` | All evaluation gold sets with case-level provenance: `blind_l1` (118), `blind_v3_ddinter` (92), `dev-ddinter` (200), `external_validation` (70), plus the two development-gate sets |
-| `data/predictions/` | The **9,600 prediction rows** (4 methods x 5 temperature conditions x 4 datasets), per-seed files, aggregate metrics, run log |
-| `data/expert_review/` | The 12-case two-expert ratings, the review instrument, and the scanned questionnaires |
-| `data/evidence/` | The 1,307-chunk evidence base and the citation-verification report |
-| `data/ddinter/` | DDInter severity tables used for the registry-scale audit |
-| `data/registry/` | Entity registries and the **per-agent absorption tier table with a source column** |
-| `audits/` | Path-attribution audit and tier cross-tabulation (see below) |
-
-### The exact evaluation prompts and retrieval code
-
-`configs/prompts.yaml` carries the system prompt, the BM25 settings (k1 = 1.5,
-b = 0.75, top-3, 400-character cap), the per-method user-prompt templates, the
-substring parse rule, the 10-token output cap and the temperature schedule.
-`src/ophthalmic_ddi_cds_agent/naive_rag.py` implements the BM25 retrieval.
-`scripts/run_multiseed_per_dataset.py` is the evaluation that produced the reported
-numbers.
-
-`scripts/run_baselines.py` is **an offline pipeline scaffold, not the reported
-evaluation**; its `--synthetic` mode fabricates predictions from a hardcoded error
-table and must not be used as a result. This is stated in its module docstring.
-
-### Audits of the cascade's own behaviour
-
-`audits/path_attribution.json` reports which layer produced each grade. Across the
-26,216 evaluable registry pairs: class matrix 68.8%, G19 hard constraint 12.0%,
-rule layer 11.9%, and an undocumented default-low path 7.3%. Notably, 171 pairs
-whose ophthalmic agent has a low-or-below absorption tier receive medium (95) or
-high (76), and all 171 arrive through the **rule** path — all 76 high grades from a
-single rule (`nsaid_antihypertensive_antagonism`) that requires no absorption flag.
-The absorption forcing therefore applies to the class-matrix branch only; the engine
-returns the maximum of an ungated rule layer and an absorption-scaled matrix layer.
-
-`audits/divergence_by_tier.csv` cross-tabulates the 1,933-pair audit by absorption
-tier, DDInter severity and system level.
-
-### Known limitations of this deposit
-
-- **Rule-citation coverage.** The verification report contains 8 manifest items over
-  7 distinct DOIs, of which three rules resolve to a verified literature citation.
-  Most rules cite DrugBank or label records, which were not independently re-verified.
-- **Absorption tiers are a study-team assignment**, not a measured quantity. Two of
-  the six tier values in the registry fall outside the G19 hard constraint's test.
-- **The LLM-baseline comparison used one non-reasoning model with a 10-token output
-  cap**, which precludes reasoning or justification.
-- **The audit-set headline (0.674; 0.548 on the third-party-only stratum)** mixes a third-party component with 30 cases
-  graded under the system's own absorption assumption; the third-party-only figure
-  is 37 of 62 (0.597).
-
-### Reproducing
+Alternatives:
 
 ```bash
-pip install -e ".[dev]"
-pytest tests/ -q                            # 34 passed, 1 skipped
-python scripts/demo_pipeline.py             # 25 mock cases, no API key
-python scripts/path_attribution_audit.py    # regenerates audits/
+# Different Python version
+python scripts/setup_environment.py --project-root . --mirror cn --python 3.12
+
+# Non-interactive (CI / scripted): pre-fill keys in .env first
+python scripts/setup_environment.py --project-root . --mirror cn --non-interactive
+
+# Fallback to local .venv if conda is unavailable
+python scripts/setup_environment.py --project-root . --mirror cn --env-mode venv
 ```
+
+Later sessions inside this project can re-discover the env via:
+
+```bash
+python C:/Users/heyb1/.claude/skills/medical-agent-planner/scripts/conda_helper.py discover --project-root .
+```
+
+## Execution Entry Point
+
+The full development plan is in [PLAN.md](PLAN.md). To regenerate all artifacts from scratch:
+
+```bash
+# 1. Build knowledge base
+python scripts/build_entity_a_registry.py
+python scripts/build_entity_b_registry.py
+python scripts/build_evidence_base.py
+
+# 2. Fetch real evidence (needs NCBI + LLM keys in .env)
+python scripts/fetch_pubmed.py --max-pairs 40
+python scripts/build_real_evidence.py
+
+# 3. Build validation sets + run baselines + evaluate
+python scripts/generate_cases.py --target 400
+python scripts/run_baselines.py
+python scripts/run_multiseed.py --seeds 5
+python scripts/evaluate.py
+
+# 4. Generate figures/tables
+python scripts/generate_paper_figures.py
+python scripts/generate_paper_tables.py
+```
+
+## Interactive Demo (Streamlit)
+
+```bash
+pip install -e ".[streamlit]"
+streamlit run app/streamlit_app.py
+```
+
+Then open http://localhost:8501.
+
+> ⚠️ The demo is for clinical decision support only and does not replace clinician or pharmacist judgement.
+
+## Target Output
+
+- Reproducible Python package with ~80% code reuse from TongYuan
+- Validated 眼科局部用药与全身系统用药的药物相互作用（DDI）筛查与临床决策支持 screening system (4-phase validation)
+- Manuscript submitted to *Digital Medicine* (or fallback journal)
+
+## License
+
+For peer review and academic reproducibility. All data derived from publicly available sources.

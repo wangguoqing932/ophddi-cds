@@ -259,6 +259,9 @@ R["expert.agreement_e1_gold"] = cohens_kappa(e1, gold_shown)
 R["expert.agreement_e2_gold"] = cohens_kappa(e2, gold_shown)
 R["expert.weighted_e1_system"] = cohens_kappa(e1, shown, weights="quadratic")
 R["expert.weighted_e2_system"] = cohens_kappa(e2, shown, weights="quadratic")
+R["expert.weighted_e1_e2"] = cohens_kappa(e1, e2, weights="quadratic")
+R["expert.weighted_e1_gold"] = cohens_kappa(e1, gold_shown, weights="quadratic")
+R["expert.weighted_e2_gold"] = cohens_kappa(e2, gold_shown, weights="quadratic")
 R["expert.max_kappa_e1"] = max_kappa(e1, shown)
 R["expert.max_kappa_e2"] = max_kappa(e2, shown)
 R["expert.raw_agreement"] = {
@@ -287,6 +290,85 @@ print(f"  E1 vs gold      kappa={R['expert.agreement_e1_gold']:+.3f}")
 print(f"  E2 vs gold      kappa={R['expert.agreement_e2_gold']:+.3f}")
 print(f"  判低于展示值: E1 {R['expert.graded_lower_than_shown']['e1']}/12, "
       f"E2 {R['expert.graded_lower_than_shown']['e2']}/12")
+ORD = ["low", "medium", "high"]
+R["expert.graded_lower_than_gold"] = {
+    "e1": sum(1 for a, b in zip(e1, gold_shown) if ORD.index(a) < ORD.index(b)),
+    "e1_discordant": sum(1 for a, b in zip(e1, gold_shown) if a != b),
+    "e2": sum(1 for a, b in zip(e2, gold_shown) if ORD.index(a) < ORD.index(b)),
+    "e2_discordant": sum(1 for a, b in zip(e2, gold_shown) if a != b),
+}
+print(f"  判低于展示 gold: E1 {R['expert.graded_lower_than_gold']['e1']}"
+      f"/{R['expert.graded_lower_than_gold']['e1_discordant']} 不一致, "
+      f"E2 {R['expert.graded_lower_than_gold']['e2']}"
+      f"/{R['expert.graded_lower_than_gold']['e2_discordant']}")
+
+# ── 5. L1 双口径（勘误后 / 勘误前）────────────────────────────────────
+print("\n=== 5. L1 与冻结子集双口径 ===")
+PRE_ERRATA = {"B02": "high", "B12": "medium", "C17": "low"}
+g1_pre = dict(g1)
+for cid, g in PRE_ERRATA.items():
+    if cid in g1_pre:
+        g1_pre[cid] = g
+sub_rows_all = [json.loads(l) for l in pred_path("blind_l1").open(encoding="utf-8")
+                if l.strip() and json.loads(l)["method"] == "full_system"]
+frozen_ids = [r["case_id"] for r in sub_rows_all if r.get("subset") == "blind_frozen"]
+for label, gg in [("corrected", g1), ("pre_correction", g1_pre)]:
+    ok = sum(1 for k in g1 if k in preds1["full_system"] and preds1["full_system"][k] == gg[k])
+    ok_f = sum(1 for k in frozen_ids if preds1["full_system"][k] == gg[k])
+    R[f"l1.both_way.{label}"] = {"l1": f"{ok}/{len(g1)}", "frozen": f"{ok_f}/{len(frozen_ids)}"}
+    print(f"  {label:14s} L1 {ok}/{len(g1)}  冻结子集 {ok_f}/{len(frozen_ids)}")
+
+# ── 6. 审计集：泄漏排除对比 + glm53 无平局验证 ────────────────────────
+print("\n=== 6. 审计集泄漏排除对比 ===")
+leak_file = OUT / "naive_rag_leakage.json"
+if leak_file.exists():
+    leak = set(json.loads(leak_file.read_text(encoding="utf-8"))["subsets"][2]["cases"])
+else:
+    leak = set()
+glm_path = ROOT / "outputs" / "glm53_baselines" / "predictions.jsonl"
+alt = ROOT / "data" / "predictions" / "glm53_baselines" / "predictions.jsonl"
+if not glm_path.exists():
+    glm_path = alt
+votes = {}
+for line in glm_path.open(encoding="utf-8"):
+    r = json.loads(line)
+    if r.get("dataset") == "blind_v3_ddinter":
+        votes.setdefault((r["method"], r["case_id"]), []).append(r["pred"])
+tie_free = all(sorted(Counter(v).values())[-1] >= 3 for v in votes.values())
+R["glm53.no_tie_all_cases"] = tie_free
+print(f"  glm53 每例 5 样本最高票 ≥3（无平局）: {tie_free}")
+maj = {m: {cid: Counter(vs).most_common(1)[0][0]
+           for (mm, cid), vs in votes.items() if mm == m} for m in {m for m, _ in votes}}
+for m in ("naive_rag", "pure_llm", "lightrag"):
+    for label, sel in [("leaked", lambda c: c in leak), ("non_leaked", lambda c: c not in leak)]:
+        ids = [c for c in g3 if c in maj.get(m, {}) and sel(c)]
+        ok = sum(1 for c in ids if maj[m][c] == g3[c])
+        hr = [c for c in ids if g3[c] == "high"]
+        sens = sum(1 for c in hr if maj[m][c] == "high")
+        R[f"audit.glm53.{m}.{label}"] = {"n": len(ids), "correct": ok, "acc": round(ok / len(ids), 4) if ids else 0,
+                                         "high_risk_sens": f"{sens}/{len(hr)}"}
+        print(f"  glm53 {m:10s} {label:10s} n={len(ids)} correct={ok} acc={ok/len(ids):.3f} sens={sens}/{len(hr)}")
+for label, sel in [("leaked", lambda c: c in leak), ("non_leaked", lambda c: c not in leak)]:
+    ids = [c for c in g3 if sel(c)]
+    ok = sum(1 for c in ids if preds3["full_system"][c] == g3[c])
+    hr = [c for c in ids if g3[c] == "high"]
+    sens = sum(1 for c in hr if preds3["full_system"][c] == "high")
+    R[f"audit.full_system.{label}"] = {"n": len(ids), "correct": ok, "acc": round(ok / len(ids), 4),
+                                       "high_risk_sens": f"{sens}/{len(hr)}"}
+    print(f"  full_system    {label:10s} n={len(ids)} correct={ok} acc={ok/len(ids):.3f} sens={sens}/{len(hr)}")
+
+# ── 7. 审计集重导 gold 口径 ────────────────────────────────────────────
+print("\n=== 7. 审计集重导 gold（声明规则 + 当前层级）===")
+rd_file = OUT / "audit_gold_rederived.json"
+if rd_file.exists():
+    rd = json.loads(rd_file.read_text(encoding="utf-8"))
+    R["audit.rederived"] = {"n_changed": rd["n_changed"],
+                            "full_system_as_applied": rd["full_system_as_applied"],
+                            "full_system_rederived": rd["full_system_rederived"]}
+    print(f"  变化 {rd['n_changed']}/92 例 | 实际 gold {rd['full_system_as_applied']['accuracy']}/92, "
+          f"重导 gold {rd['full_system_rederived']['accuracy']}/92")
+else:
+    print("  （缺 outputs/recomputed/audit_gold_rederived.json —— 先跑 scripts/rederive_audit_gold.py）")
 
 (OUT / "numbers.json").write_text(json.dumps(R, ensure_ascii=False, indent=1, default=str),
                                   encoding="utf-8")

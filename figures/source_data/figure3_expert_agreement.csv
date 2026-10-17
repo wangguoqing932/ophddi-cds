@@ -1,5 +1,13 @@
-comparison,kappa,agreement,n
-inter_rater (E1 vs E2),0.846,0.917,12
-expert1 vs system,0.125,0.417,12
-expert2 vs system,0.01,0.333,12
-majority vs system,0.125,0.417,12
+case,gold_shown,engine_grade,system_shown,expert_1,expert_2
+R01,medium,medium,medium,low,low
+R02,high,high,high,medium,medium
+R03,medium,medium,medium,low,low
+R04,high,high,high,medium,medium
+R05,high,high,high,medium,medium
+R06,high,high,high,medium,medium
+R07,low,low,low,low,low
+R08,medium,medium,medium,medium,high
+R09,medium,medium,medium,low,low
+R10,low,low,medium,low,low
+R11,low,low,medium,low,low
+R12,medium,medium,medium,low,low

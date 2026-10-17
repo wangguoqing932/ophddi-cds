@@ -1,2 +1,6 @@
-figure_id,dataset_id,x_label,y_label,value,category
-figure3,dev-ddinter,x,y,0,placeholder
+comparison,agreement,kappa_unweighted,kappa_weighted_quadratic
+inter_rater,0.9167,0.84,0.875
+e1_vs_shown,0.1667,-0.1765,0.3548
+e2_vs_shown,0.0833,-0.2571,0.3125
+e1_vs_gold,0.3333,0.0204,0.4725
+e2_vs_gold,0.25,-0.0909,0.4375

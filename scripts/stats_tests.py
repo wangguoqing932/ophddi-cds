@@ -77,10 +77,22 @@ def clopper_pearson(k: int, n: int, alpha: float = 0.05) -> tuple:
 
 
 # ────────────────────────────────  kappa  ──────────────────────────────────
+def _ordered_labels(a: np.ndarray, b: np.ndarray, levels: tuple) -> list:
+    """类别空间 = levels 的序数顺序（low<medium<high），仅追加 levels 之外的意外标签。
+
+    加权 kappa 的权重取决于类别下标，因此顺序必须来自 levels 而不是
+    sorted()——后者按字母序排列（high<low<medium），会算出错误的加权值。
+    """
+    labs = [l for l in levels]
+    extra = sorted((set(a.tolist()) | set(b.tolist())) - set(labs))
+    return labs + extra
+
+
 def _kappa_core(a: np.ndarray, b: np.ndarray, levels: tuple, weights: str | None,
                 labels: list | None = None) -> float:
-    """kappa 计算核心。labels 指定混淆矩阵的取值范围（bootstrap 时需固定）。"""
-    labs = labels if labels is not None else sorted(set(a) | set(b))
+    """kappa 计算核心。labels 指定混淆矩阵的取值范围（bootstrap 时需固定），
+    未指定时用 levels 的序数顺序。"""
+    labs = list(labels) if labels is not None else _ordered_labels(a, b, levels)
     idx = {l: i for i, l in enumerate(labs)}
     K = len(labs)
     O = np.zeros((K, K))
@@ -138,7 +150,7 @@ def bootstrap_kappa(a: list, b: list, n_resamples: int = 2000,
     a = np.asarray(a); b = np.asarray(b)
     rng = np.random.default_rng(seed)
     n = len(a)
-    labs = sorted(set(a) | set(b))
+    labs = _ordered_labels(a, b, LEVELS)
     vals = np.empty(n_resamples, dtype=float)
     for i in range(n_resamples):
         idx = rng.integers(0, n, n)
@@ -162,7 +174,7 @@ def _selftest() -> None:
     print(f"  Clopper-Pearson 39/40: {a:.3f}-{b:.3f}   手稿 0.868-0.999")
     a, b = clopper_pearson(27, 28)
     print(f"  Clopper-Pearson 27/28: {a:.3f}-{b:.3f}   手稿 0.823-0.994 (Wilson)")
-    for (bb, cc, want) in [(54, 2, "3.1e-15"), (60, 4, "9.0e-15"), (20, 1, "1.1e-5"),
+    for (bb, cc, want) in [(54, 2, "4.4e-14"), (60, 4, "7.4e-14"), (20, 1, "2.1e-5"),
                            (8, 1, "0.039"), (27, 17, "0.174"), (18, 15, "0.728")]:
         r = exact_mcnemar(bb, cc)
         print(f"  McNemar {bb} vs {cc:<3d}   : p = {r['p_value']:.4g}   手稿 {want}")

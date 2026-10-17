@@ -67,16 +67,26 @@
 
 解释：G106 抗胆碱×TCA 叠加（expert_consensus cell=high，指南 gold 保守 medium）；G108 weak 激素粒度（Rimexolone IOP 效应中等级，矩阵 coarse）；G113/114 眼用喹诺酮 QT 低吸收设计 low；G124 地塞米松 CYP3A4 诱导 medium（机制真实）；G131-134 CYP3A4 抑制×替格瑞洛/氯雷他定（低吸收设计 vs 指南 gold）；G139 复方激素×华法林（INR 波动 vs 勘误 gold）。均为临床判断边界，非可修错误。
 
-## 引擎版本（SHA-256 前 16 位，留痕）
+## 引擎版本（SHA-256 前 16 位，LF 归一化；与仓库根 MANIFEST.sha256 一致）
 
-| 文件 | SHA |
+下表是**当前沉积文件**的指纹（LF 归一化哈希，与 MANIFEST.sha256 相同口径）。
+注意：本目录的预测最初于 2026-08-03 生成；2026-10-04 flurbiprofen 层级勘误后，
+受影响的 6 行 full_system 预测已重新生成并同步（正文 §3.5/§4.4 披露），
+其余预测与 8 月 3 日运行一致。上一次运行时记录的旧指纹
+（class_matrix a2cda9e19bf62003、entities_a 87ce9d5b1432bc34）对应勘误前的文件，
+仅作历史留痕，不再与沉积文件对应。
+
+| 文件 | SHA（前 16 位） |
 |---|---|
 | src/ophthalmic_ddi_cds_agent/kg_layer.py | cec30e8e75933ec1 |
-| configs/class_matrix.yaml | a2cda9e19bf62003 |
-| configs/rules.yaml | 2afabaad81161c40 |
-| configs/drug_classes.yaml | ab3934c29eb64b2d |
-| data/seed/entities_a.csv | 87ce9d5b1432bc34 |
-| data/seed/entities_b.csv | 0a8b0a2fd2e515fe |
+| src/ophthalmic_ddi_cds_agent/risk_rules.py | b423282e906ca6fe |
+| configs/class_matrix.yaml | 49a425ec74a1986b |
+| configs/rules.yaml | b5c77f6fde8a9f7d |
+| configs/drug_classes.yaml | 6988f117ab759344 |
+| configs/prompts.yaml | c18d2e7d7e3bc529 |
+| data/seed/entities_a.csv | 2de98cccac3479d1 |
+| data/seed/entities_b.csv | 78e2abeaf1646519 |
+| data/seed/evidence_chunks.jsonl | 830c196928ea0c9c |
 
 引擎修复（2026-08-02，全部机制/数据依据，非测试集调参）：
 1. TCA 映射：Clomipramine/Nortriptyline → antidepressant_tca（原被抗胆碱 flag 误归）

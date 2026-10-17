@@ -24,25 +24,6 @@ Transcribed from `scripts/run_multiseed_per_dataset.py`, which is authoritative.
 
 **Model and decoding.** `deepseek-chat`; `max_tokens = 10`; five temperature conditions (0.0, 0.3, 0.6, 0.9, 1.2). The 10-token cap forces a one-word answer and precludes any reasoning or justification; this bound on the comparison is stated in the manuscript (Section 2.4) and in the deposit README.
 
-**Reasoning-model re-run (reported in Section 3.6 and Table 3 of the manuscript).** The three LLM baselines were re-run under an adequate output budget with a reasoning model. All parameters, as requested:
-
-| item | value |
-|---|---|
-| provider / endpoint | Zhipu AI, `https://open.bigmodel.cn/api/coding/paas/v4` (coding-plan endpoint) |
-| model identifier | `glm-5.3-flash` |
-| temperature | 0.0, held fixed |
-| max_tokens | 3000 |
-| reasoning tokens | count against the 3000-token budget (`reasoning_content` is emitted before `content`) |
-| samples per case | 5 |
-| aggregation | majority vote over the 5 samples |
-| parse rule | per sample: exact match, else `high` > `medium`/`moderate` > `low`, else `unknown` |
-| truncated responses | 0 of 3,150 (`completion_tokens` never reached `max_tokens`) |
-| run dates | 23-24 September 2026 |
-| raw responses | deposited in full: `data/predictions/glm53_baselines/predictions.jsonl` |
-| run script | `scripts/rerun_glm53_baselines.py` |
-
-Single-model caveat: this is one commercial reasoning model at one endpoint, and the endpoint exposes no checkpoint revision. The finding that reasoning models adopt a conservative rarely-high-risk policy is therefore a property of this model at this budget, not a claim about reasoning models in general. The deterministic cascade makes no model call and is identical under both settings.
-
 **System prompt (all three LLM methods).**
 
 ```
@@ -81,29 +62,50 @@ Risk level:
 
 **Parsing.** Lowercase the response; `high` if it contains "high"; else `medium` if it contains "medium" or "moderate"; else `low` if it contains "low"; otherwise `unknown`. No non-conforming output occurred on the L1 or audit sets.
 
+**Reasoning-model re-run (reported in Section 3.6 and Table 3 of the manuscript).** The three LLM baselines were re-run under an adequate output budget with a reasoning model. All parameters, as requested:
+
+| item | value |
+|---|---|
+| provider / endpoint | Zhipu coding-plan endpoint `https://open.bigmodel.cn/api/coding/paas/v4` |
+| model identifier | `glm-5.3-flash` |
+| temperature | 0.0 (fixed; five repeated samples per case) |
+| max_tokens | 3000 |
+| reasoning effort | not set — the request carries only `max_tokens` and `temperature`, so the endpoint default applied |
+| reasoning tokens | count against the 3000-token budget (`reasoning_content` is emitted before `content`) |
+| truncated responses | 0 of 3,150 (completion_tokens never reached max_tokens) |
+| vote resolution | majority over the five samples; every case had at least three concordant samples, so no tie arose |
+| per-sample parsing | exact match first, then substring `high` > `medium`/`moderate` > `low`, else `unknown`; no sample returned `unknown` |
+| run dates | 23-24 September 2026 |
+| raw responses | deposited in full: `data/predictions/glm53_baselines/predictions.jsonl` (3,150 rows with token usage) |
+| run script | `scripts/rerun_glm53_baselines.py` |
+
+Single-model caveat: this is one commercial reasoning model at one endpoint, and the endpoint exposes no checkpoint revision. The finding that reasoning models adopt a conservative rarely-high-risk policy is therefore a property of this model at this budget, not a claim about reasoning models in general. The deterministic cascade makes no model call and is identical under both settings.
+
 ## Supplementary Text S4. Figure legends
 
 ---
 
 **Figure 1. System architecture of the ophthalmic drug–drug interaction clinical decision support system.**
 
-The system evaluates drug–drug interaction (DDI) risk between ophthalmic topical drugs (113 agents) and systemic medications (232 agents) through a three-layer deterministic cascade: **(a)** the L1 rule engine (40 mechanism rules plus 3 patient-factor policies, each carrying at least one source record, `configs/rules.yaml`), **(b)** the L2 class-matrix layer (21 ophthalmic row keys and 40 systemic column keys, 34 columns in use, 104 cells with explicit levels and absorption-scaled upgrades, `configs/class_matrix.yaml`), and **(c)** the L3 G19 hard constraint (low/very-low systemic absorption with no rule hit → low), with a traceable default of low risk for known drugs without rule or matrix signals; unknown or ambiguous medications are rejected with an explicit error rather than scored. The evidence store (1,307 verified evidence chunks; LightRAG index) supports retrieval-augmented baselines and the interactive screening interface; the production path (`full_system`) is fully deterministic with zero LLM calls, and every decision returns matched rule IDs and a decision path for clinical auditability.
+The system evaluates drug–drug interaction (DDI) risk between ophthalmic topical drugs (113 agents, each carrying one of six systemic-absorption tiers) and systemic medications (232 agents, with mechanism flags and drug classes) through a three-layer deterministic cascade: **(a)** the L1 rule engine — 40 mechanism rules, each carrying at least one source record, plus 3 patient-factor policies, matched by entity-flag predicates with MAX-MATCH semantics and not gated on absorption (12.0% of registry pairs); **(b)** the L2 class matrix — 21 ophthalmic row keys × 40 systemic column keys (34 columns in use), 104 cells of which 83 carry an actionable grade and 21 are marked "none", with an absorption-scaling step that forces low/very-low tiers to low inside this layer only (68.7%); and **(c)** the L3 G19 hard constraint — low/very-low absorption with no rule or matrix signal → low (12.2%, plus a 7.1% explicit default-low path for pairs with no signal), while unknown medications are rejected with an explicit error rather than scored. The final grade is the maximum of the rule and matrix layers. The knowledge base (1,307 curated evidence chunks; A 53, B 191, C 215, D 584, E 264) supplies rule source records and matrix-cell provenance and supports the retrieval baselines and the interactive interface; the production path (`full_system`) makes zero LLM calls, and every decision returns matched rule IDs and a decision path for clinical auditability. Layer shares are measured over all 26,216 registry pairs (deposited path-attribution audit). The figure is drawn with Matplotlib from the deposited configuration; the source-data file is `outputs/figures/source_data/figure1_source.csv`.
 
-Abbreviations: L1/L2/L3, cascade layers 1–3; G19, gate 19 hard constraint; DDI, drug–drug interaction; KG, knowledge graph.
+Abbreviations: L1/L2/L3, cascade layers 1–3; G19, gate 19 hard constraint; DDI, drug–drug interaction.
 
 ---
 
-**Figure 2. Performance comparison across four methods on the L1 literature-derived gold (118 cases), under two output budgets.**
+**Figure 2. Performance comparison under two output budgets (L1 gold, 118 cases).**
 
-Grouped bars show four metrics — high-risk sensitivity, specificity, high-risk F1 and Cohen's kappa — for the deterministic cascade (`full_system`) and three LLM baselines: `pure_llm` (no retrieved evidence), `naive_rag` (BM25 retrieval) and `lightrag` (knowledge-graph context). **Panel (a)** is the primary comparison: a non-reasoning model with a 10-token output cap, one call per case. **Panel (b)** repeats the three LLM baselines with a reasoning model (glm-5.3-flash), a 3000-token budget, a fixed temperature of 0.0 and the majority vote over five repeated samples; the cascade is unchanged because it makes no model call. In panel (a) the baselines reach sensitivities of 0.757–0.779; in panel (b) sensitivity falls to 0.214–0.536 while specificity rises to 1.000, because the baselines adopt a conservative rarely-high-risk policy that inflates exact accuracy on a gold set dominated by low and medium grades. The cascade returns 0.964 sensitivity, 0.989 specificity and 0.857 kappa in both panels. Exact three-level accuracy was 0.907 (107/118) for the cascade; baseline accuracy was 0.415–0.737 in panel (a) and 0.576–0.737 in panel (b).
+Grouped bars show four metrics — high-risk sensitivity, high-risk specificity, high-risk F1 and Cohen's κ — for the deterministic cascade (`full_system`) and three LLM baselines: `pure_llm` (single LLM call with a domain-general system prompt, no retrieved evidence), `naive_rag` (BM25 evidence retrieval) and `lightrag` (knowledge-graph context). **Panel (a)** is the primary comparison: a non-reasoning model with a 10-token output cap, mean over five temperature conditions. **Panel (b)** repeats the three LLM baselines with a reasoning model (glm-5.3-flash), a 3000-token budget, a fixed temperature of 0.0 and the majority vote over five repeated samples; the cascade is unchanged because it makes no model call. In panel (a) the baselines reach sensitivities of 0.757–0.779; in panel (b) sensitivity falls to 0.214–0.536 while specificity rises to approximately 1.000, because the baselines adopt a conservative rarely-high-risk policy that inflates exact accuracy on a gold set dominated by low and medium grades. The cascade returns 0.964 sensitivity, 0.989 specificity and 0.857 κ in both panels, with exact three-level accuracy 0.907 (107/118; Wilson 95% CI 0.841–0.947); baseline accuracy was 0.415–0.737 in panel (a) and 0.576–0.737 in panel (b).
 
-Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; F1, harmonic mean of precision and recall at the high-risk threshold; kappa, Cohen's kappa.
+Abbreviations: LLM, large language model; BM25, Best Matching 25 retrieval; κ, Cohen's kappa; CI, confidence interval.
 
-**Figure 3. Expert–system agreement and inter-rater reliability (two clinical experts, 12 cases).**
+---
 
-Panel a shows Cohen's κ and raw agreement between the two ophthalmology experts (inter-rater: agreement 91.7%, κ = 0.846) and between each expert and the system (expert 1: agreement 41.7%, κ = 0.125; expert 2: agreement 33.3%, κ = 0.010). Panel b plots agreement against κ for the four pairwise comparisons. The observed expert–system κ values are positive but near zero, and the maximum achievable unweighted κ given the marginal distributions is 0.625; quadratic-weighted κ was 0.500 (expert 1) and 0.461 (expert 2). The disagreement was systematic: expert 1 rated 7 of 12 cases one tier lower and none higher; expert 2 rated 7 lower and 1 higher; neither expert rated any of the four system-high cases as high. Experts judged from clinical practice without mechanism-level assessment (expert feedback). The expert–gold kappas are identical to the expert–system values (0.125 and 0.010) because the system matched its gold on all 12 cases, indicating that the divergence reflects clinical prior versus evidence-graded gold rather than a system-specific artifact. This is reported as a perspective gap, not as evidence of system calibration.
+**Figure 3. Expert agreement and per-case grades (two ophthalmologists, 12 cases).**
 
-Abbreviations: E1/E2, expert 1/2; κ, Cohen's kappa; sys, system.
+**Panel (a)** shows, for five comparisons, Cohen's κ (unweighted), quadratic-weighted κ on the ordinal scale low < medium < high, and raw agreement: inter-rater (expert 1 vs expert 2: agreement 11/12, κ = 0.840, bootstrap CI 0.526–1.000, weighted 0.875); each expert against the grade displayed on the questionnaire (expert 1: 2/12, κ = −0.176, weighted 0.355; expert 2: 1/12, κ = −0.257, weighted 0.313); and each expert against the proposed gold (expert 1: 4/12, κ = 0.020, weighted 0.473; expert 2: 3/12, κ = −0.091, weighted 0.438). **Panel (b)** shows the per-case grades: the proposed gold (which coincides with the deposited deterministic engine grade on all 12 cases), the grade displayed on the questionnaire (which differs from the engine for R10 and R11, where a class-level conservative hint, medium, was displayed instead of the engine's low), and both experts' ratings. The disagreement is one-directional: against the gold, all 8 of expert 1's discordant ratings and 8 of expert 2's 9 discordant ratings are lower than the gold. The weighted kappas are computed with the corrected ordinal implementation of `scripts/stats_tests.py`; an earlier version of this figure reported weighted κ of −0.630 and −0.793, an artefact of sorting the grade labels alphabetically, and the figure, its legend and its source data have all been regenerated (`outputs/figures/source_data/figure3_source.csv`, `figure3_expert_agreement.csv`). The exercise is a grade review between non-independent participants (one expert is a study-team member) and is reported as a perspective comparison, not a validation (Sections 2.5 and 3.8).
+
+Abbreviations: E1/E2, expert 1/2; κ, Cohen's kappa.
 
 ---
 
@@ -166,6 +168,7 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 
 | case | ophthalmic | systemic | gold | system | direction | documented rationale |
 |---|---|---|---|---|---|---|
+| C04 | Flurbiprofen | Warfarin | high | medium | downgrade | NSAID-anticoagulant bleeding risk graded medium after the flurbiprofen tier was corrected to low (0.03% formulation); the frozen gold retains the systemic-route high (additive_nsaid_bleeding, low_abs_anticoagulant) |
 | G106 | Homatropine | Amitriptyline | medium | high | upgrade | Anticholinergic burden with tricyclic antidepressant (expert-consensus matrix cell = high; guideline gold conservative at medium) |
 | G108 | Rimexolone | Prednisone | medium | low | downgrade | Weak-corticosteroid potency granularity (rimexolone intermediate IOP effect; class-matrix cell coarse) |
 | G113 | Ciprofloxacin | Amiodarone | medium | low | downgrade | Ophthalmic fluoroquinolone QT risk: low-absorption design decision vs guideline gold medium |
@@ -177,9 +180,9 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 | G134 | Fluconazole | Loratadine | medium | low | downgrade | Azole CYP3A4 inhibition with low-absorption fluconazole vs guideline gold medium |
 | G139 | Sulfacetamide/Prednisolone | Warfarin | low | medium | upgrade | Combination corticosteroid x warfarin (INR fluctuation risk vs errata-corrected gold) |
 
-All eleven disagreements occur in the guideline-sourced subset (n = 58); the procedurally frozen blind subset (n = 40) and the FDA/Stockley's/BNF mechanism subset (n = 20) were classified with perfect exact accuracy.
+Ten disagreements occur in the guideline-sourced subset (n = 58). The eleventh (C04, flurbiprofen × warfarin) is the single miss in the procedurally frozen blind subset (n = 40, 39 of 40 correct; 36 of 40 under the pre-correction labels, Section 3.8) and follows the flurbiprofen tier correction. The FDA/Stockley's/BNF mechanism subset (n = 20) was classified with perfect exact accuracy.
 
-**Supplementary Table S2. Audit-set disagreements between the system and the absorption-corrected gold, by direction (n = 92; 30 disagreements after the flurbiprofen tier correction).**
+**Supplementary Table S2. Audit-set disagreements between the system and the absorption-corrected gold, by direction (n = 92).**
 
 | disagreement direction | n |
 |---|---|
@@ -195,24 +198,24 @@ The four over-alerts (system grade higher than gold) are apraclonidine x midazol
 
 **Supplementary Table S3. Expert case-level ratings (12 cases, two ophthalmologists).**
 
-| case | ophthalmic | systemic | gold shown | system shown | expert1 | expert2 |
-|---|---|---|---|---|---|---|
-| R01 | Ketorolac | Enoxaparin | medium | medium | low | low |
-| R02 | Brimonidine | Tramadol | high | high | medium | medium |
-| R03 | Dexamethasone | Rifampicin | medium | medium | low | low |
-| R04 | Atropine | Tramadol | high | high | medium | medium |
-| R05 | Scopolamine | Amitriptyline | high | high | medium | medium |
-| R06 | Atropine | Oxycodone | high | high | medium | medium |
-| R07 | Levofloxacin | Sotalol | low | low | low | low |
-| R08 | Betaxolol | Verapamil | medium | medium | medium | high |
-| R09 | Ketorolac | Rivaroxaban | medium | medium | low | low |
-| R10 | Fluorometholone | Prednisone | low | medium | low | low |
-| R11 | Fluorometholone | Glimepiride | low | medium | low | low |
-| R12 | Ketorolac | Warfarin | medium | medium | low | low |
+| case | ophthalmic | systemic | L1 case | gold shown | engine grade | system shown | expert 1 | expert 2 | gold source |
+|---|---|---|---|---|---|---|---|---|---|
+| R01 | Ketorolac | Enoxaparin | B02 | medium | medium | medium | low | low | errata-corrected (earlier-round gold: high; DDInter: high) |
+| R02 | Brimonidine | Tramadol | B12 | high | high | high | medium | medium | errata-corrected (earlier-round gold: medium; DDInter: no record) |
+| R03 | Dexamethasone | Rifampicin | C17 | medium | medium | medium | low | low | errata-corrected (earlier-round gold: low; DDInter: medium) |
+| R04 | Atropine | Tramadol | — | high | high | high | medium | medium | study-team pharmacological calibration |
+| R05 | Scopolamine | Amitriptyline | — | high | high | high | medium | medium | study-team pharmacological calibration |
+| R06 | Atropine | Oxycodone | — | high | high | high | medium | medium | study-team pharmacological calibration |
+| R07 | Levofloxacin | Sotalol | — | low | low | low | low | low | study-team calibration (deliberate downgrade case) |
+| R08 | Betaxolol | Verapamil | — | medium | medium | medium | medium | high | study-team pharmacological calibration |
+| R09 | Ketorolac | Rivaroxaban | — | medium | medium | medium | low | low | study-team pharmacological calibration |
+| R10 | Fluorometholone | Prednisone | B18 | low | low | medium | low | low | study-team calibration (potency-granularity case) |
+| R11 | Fluorometholone | Glimepiride | C20 | low | low | medium | low | low | study-team calibration (potency-granularity case) |
+| R12 | Ketorolac | Warfarin | — | medium | medium | medium | low | low | earlier expert-informed exercise (T1; see Section 2.3 of the manuscript) |
 
-`system shown` is the grade the experts were shown, which is the comparator for expert-system agreement; for R10 and R11 the displayed grade was medium while the current engine returns low. Expert values are transcribed from the returned questionnaires: expert 1's form is deposited as a scan, expert 2's responses were returned in text. R03 is recorded as low/low; an earlier version of this table listed medium/medium in error.
+Note: `engine grade` is the deposited deterministic cascade's grade and equals the grade at review time (no cascade change since 3 August 2026). `system shown` is the value printed on the questionnaire: for R10 and R11 this was a class-level conservative hint (medium) written by the study team, not the engine's output (low). Expert 1 and expert 2 values are transcribed from the returned questionnaires; expert 1's form is deposited as a scan, expert 2's responses were transcribed by the corresponding author and the original form is not deposited. R03's expert ratings are low/low per the scanned forms; an earlier version of this table listed medium/medium in error. The five L1 cases listed (B02, B12, C17, B18, C20) all belong to the 40-case frozen blind subset.
 
-The instrument displayed both the proposed gold grade and the system grade to the reviewers, so this is a grade review rather than a blinded assessment (Section 2.5).
+The instrument displayed the proposed gold grade and a system grade to the reviewers, so this is a grade review rather than a blinded assessment (Sections 2.5 and 3.8); for R10 and R11 the displayed grade was a class-level hint, not the engine's output.
 
 **Supplementary Table S4. Registry summary.**
 
@@ -223,123 +226,123 @@ The instrument displayed both the proposed gold grade and the system grade to th
 
 **Supplementary Table S5. Per-agent systemic-absorption tier, with the source record for each agent (n = 113).**
 
-Tiers are a study-team assignment from the sources listed in the final column, not a measured quantity. Six tier values appear in the registry (`systemic_absorption_high`, `_medium`, `_low`, `_very_low`, `minimal_systemic_absorption`, `systemic_absorption_none`). As implemented in `kg_layer.py`, the L3 hard constraint fires on **two** of them -- `systemic_absorption_low` and `systemic_absorption_very_low` -- and forces those to low risk; the remaining four values preserve the assigned level. (Section 2.2 of the manuscript previously said four tiers were tested; the code tests two. Final grades are unaffected because the other low-exposure values are already mapped to low within the matrix layer.)
+Tiers are a study-team assignment from the sources listed in the final column, not a measured quantity. Six tier values appear in the registry (`systemic_absorption_high`, `_medium`, `_low`, `_very_low`, `minimal_systemic_absorption`, `systemic_absorption_none`); the L3 hard constraint fires on two of them, `systemic_absorption_low` and `systemic_absorption_very_low` (`kg_layer.py`); the remaining four values preserve the assigned level, and the other low-exposure values are already mapped to low risk within the matrix layer, so final grades are unaffected.
 
-| ophthalmic_id | primary_name | category | absorption_tier | evidence_status | evidence_sources |
-|---|---|---|---|---|---|
-| topical_ophthalmic_0001 | Timolol | glaucoma_beta_blocker | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB00373|PubMed |
-| topical_ophthalmic_0002 | Betaxolol | glaucoma_beta_blocker | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00195|PubMed |
-| topical_ophthalmic_0003 | Levobunolol | glaucoma_beta_blocker | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB01210|PubMed |
-| topical_ophthalmic_0004 | Carteolol | glaucoma_beta_blocker | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB00521|PubMed |
-| topical_ophthalmic_0005 | Metipranolol | glaucoma_beta_blocker | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB01214|PubMed |
-| topical_ophthalmic_0006 | Latanoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00654|PubMed |
-| topical_ophthalmic_0007 | Travoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00387|PubMed |
-| topical_ophthalmic_0008 | Bimatoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00905|PubMed |
-| topical_ophthalmic_0009 | Tafluprost | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB08866|PubMed |
-| topical_ophthalmic_0010 | Latanoprostene bunod | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB14882|PubMed |
-| topical_ophthalmic_0011 | Unoprostone | glaucoma_prostaglandin_analog | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB06402|PubMed |
-| topical_ophthalmic_0012 | Brimonidine | glaucoma_alpha2_agonist | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00484|PubMed |
-| topical_ophthalmic_0013 | Apraclonidine | glaucoma_alpha2_agonist | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00935|PubMed |
-| topical_ophthalmic_0014 | Dorzolamide | glaucoma_cai_topical | systemic_absorption_low | accession_only;curation_differs | DrugBank DB00869|PubMed |
-| topical_ophthalmic_0015 | Brinzolamide | glaucoma_cai_topical | systemic_absorption_low | accession_only;curation_differs | DrugBank DB01194|PubMed |
-| topical_ophthalmic_0016 | Netarsudil | glaucoma_rock_inhibitor | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB13931|PubMed |
-| topical_ophthalmic_0017 | Ripasudil | glaucoma_rock_inhibitor | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB16487|PubMed |
-| topical_ophthalmic_0018 | Pilocarpine | glaucoma_miotic | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB01085|PubMed |
-| topical_ophthalmic_0019 | Carbachol | glaucoma_miotic | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00411|PubMed |
-| topical_ophthalmic_0020 | Ecothiopate | glaucoma_miotic | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB01057|PubMed |
-| topical_ophthalmic_0021 | Timolol/Latanoprost | glaucoma_fixed_combination | systemic_absorption_high | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0022 | Timolol/Travoprost | glaucoma_fixed_combination | systemic_absorption_high | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0023 | Timolol/Bimatoprost | glaucoma_fixed_combination | systemic_absorption_high | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0024 | Timolol/Brimonidine | glaucoma_fixed_combination | systemic_absorption_high | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0025 | Timolol/Dorzolamide | glaucoma_fixed_combination | systemic_absorption_high | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0026 | Brimonidine/Brinzolamide | glaucoma_fixed_combination | systemic_absorption_medium | accession_only;curation_agrees | PubMed |
-| topical_ophthalmic_0027 | Brimonidine/Dorzolamide | glaucoma_fixed_combination | systemic_absorption_medium | accession_only;curation_agrees | PubMed |
-| topical_ophthalmic_0028 | Netarsudil/Latanoprost | glaucoma_fixed_combination | systemic_absorption_low | accession_only;curation_agrees | PubMed |
-| topical_ophthalmic_0029 | Ofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01165|PubMed |
-| topical_ophthalmic_0030 | Levofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01137|PubMed |
-| topical_ophthalmic_0031 | Moxifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00218|PubMed |
-| topical_ophthalmic_0032 | Gatifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01044|PubMed |
-| topical_ophthalmic_0033 | Ciprofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00537|PubMed |
-| topical_ophthalmic_0034 | Besifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB06771|PubMed |
-| topical_ophthalmic_0035 | Tobramycin | antibiotic_aminoglycoside | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00684|PubMed |
-| topical_ophthalmic_0036 | Gentamicin | antibiotic_aminoglycoside | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00798|PubMed |
-| topical_ophthalmic_0037 | Neomycin | antibiotic_aminoglycoside | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00994|PubMed |
-| topical_ophthalmic_0038 | Erythromycin | antibiotic_macrolide | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00199|PubMed |
-| topical_ophthalmic_0039 | Azithromycin | antibiotic_macrolide | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00207|PubMed |
-| topical_ophthalmic_0040 | Chloramphenicol | antibiotic_other | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00446|PubMed |
-| topical_ophthalmic_0041 | Fusidic acid | antibiotic_other | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB02703|PubMed |
-| topical_ophthalmic_0042 | Bacitracin | antibiotic_polypeptide | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00626|PubMed |
-| topical_ophthalmic_0043 | Polymyxin B | antibiotic_polypeptide | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00781|PubMed |
-| topical_ophthalmic_0044 | Sulfacetamide | antibiotic_sulfonamide | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00634|PubMed |
-| topical_ophthalmic_0045 | Acyclovir | antiviral | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00787|PubMed |
-| topical_ophthalmic_0046 | Ganciclovir | antiviral | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01004|PubMed |
-| topical_ophthalmic_0047 | Trifluridine | antiviral | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00432|PubMed |
-| topical_ophthalmic_0048 | Natamycin | antifungal | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00826|PubMed |
-| topical_ophthalmic_0049 | Voriconazole | antifungal | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00582|PubMed |
-| topical_ophthalmic_0050 | Fluconazole | antifungal | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00196|PubMed |
-| topical_ophthalmic_0051 | Prednisolone | corticosteroid | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00860|PubMed |
-| topical_ophthalmic_0052 | Dexamethasone | corticosteroid | systemic_absorption_high | accession_only;curation_differs | DrugBank DB01234|PubMed |
-| topical_ophthalmic_0053 | Fluorometholone | corticosteroid | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00324|PubMed |
-| topical_ophthalmic_0054 | Loteprednol | corticosteroid | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01173|PubMed |
-| topical_ophthalmic_0055 | Rimexolone | corticosteroid | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00896|PubMed |
-| topical_ophthalmic_0056 | Ketorolac | nsaid_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00465|PubMed |
-| topical_ophthalmic_0057 | Flurbiprofen | nsaid_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00712|PubMed |
-| topical_ophthalmic_0058 | Diclofenac | nsaid_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00586|PubMed |
-| topical_ophthalmic_0059 | Bromfenac | nsaid_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00963|PubMed |
-| topical_ophthalmic_0060 | Nepafenac | nsaid_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01283|PubMed |
-| topical_ophthalmic_0061 | Cyclosporine | immunosuppressant | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00091|PubMed |
-| topical_ophthalmic_0062 | Tacrolimus | immunosuppressant | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00800|PubMed |
-| topical_ophthalmic_0063 | Olopatadine | antihistamine_dual_action | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00768|PubMed |
-| topical_ophthalmic_0064 | Ketotifen | antihistamine_mast_cell_stabilizer | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00920|PubMed |
-| topical_ophthalmic_0065 | Epinastine | antihistamine_dual_action | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00751|PubMed |
-| topical_ophthalmic_0066 | Azelastine | antihistamine | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00972|PubMed |
-| topical_ophthalmic_0067 | Emedastine | antihistamine | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB01093|PubMed |
-| topical_ophthalmic_0068 | Bepotastine | antihistamine | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB04935|PubMed |
-| topical_ophthalmic_0069 | Alcaftadine | antihistamine | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB08883|PubMed |
-| topical_ophthalmic_0070 | Cromolyn sodium | mast_cell_stabilizer | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00186|PubMed |
-| topical_ophthalmic_0071 | Nedocromil | mast_cell_stabilizer | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00716|PubMed |
-| topical_ophthalmic_0072 | Lodoxamide | mast_cell_stabilizer | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00484|PubMed |
-| topical_ophthalmic_0073 | Atropine | mydriatic_cycloplegic | systemic_absorption_high | accession_only;curation_differs | DrugBank DB00572|PubMed |
-| topical_ophthalmic_0074 | Cyclopentolate | mydriatic_cycloplegic | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00979|PubMed |
-| topical_ophthalmic_0075 | Homatropine | mydriatic_cycloplegic | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00725|PubMed |
-| topical_ophthalmic_0076 | Scopolamine | mydriatic_cycloplegic | systemic_absorption_high | accession_only;curation_agrees | DrugBank DB00747|PubMed |
-| topical_ophthalmic_0077 | Tropicamide | mydriatic_cycloplegic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00809|PubMed |
-| topical_ophthalmic_0078 | Phenylephrine | mydriatic | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00388|PubMed |
-| topical_ophthalmic_0079 | Proparacaine | anesthetic_topical | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00807|PubMed |
-| topical_ophthalmic_0080 | Tetracaine | anesthetic_topical | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00445|PubMed |
-| topical_ophthalmic_0081 | Lidocaine | anesthetic_topical | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00281|PubMed |
-| topical_ophthalmic_0082 | Benoxinate | anesthetic_topical | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00807|PubMed |
-| topical_ophthalmic_0083 | Fluorescein | diagnostic_dye | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00693|PubMed |
-| topical_ophthalmic_0084 | Indocyanine green | diagnostic_dye | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00354|PubMed |
-| topical_ophthalmic_0085 | Rose bengal | diagnostic_dye | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00762|PubMed |
-| topical_ophthalmic_0086 | Ranibizumab | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB01276|PubMed |
-| topical_ophthalmic_0087 | Aflibercept | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB01661|PubMed |
-| topical_ophthalmic_0088 | Bevacizumab | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB00112|PubMed |
-| topical_ophthalmic_0089 | Brolucizumab | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB16546|PubMed |
-| topical_ophthalmic_0090 | Faricimab | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB16647|PubMed |
-| topical_ophthalmic_0091 | Naphazoline | decongestant | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00882|PubMed |
-| topical_ophthalmic_0092 | Tetrahydrozoline | decongestant | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00714|PubMed |
-| topical_ophthalmic_0093 | Dipivefrin | glaucoma_other | systemic_absorption_medium | accession_only;curation_agrees | DrugBank DB00449|PubMed |
-| topical_ophthalmic_0094 | Lifitegrast | dry_eye_anti_inflammatory | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB11674|PubMed |
-| topical_ophthalmic_0095 | Diquafosol | dry_eye_mucin_secretagogue | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB06217|PubMed |
-| topical_ophthalmic_0096 | Rebamipide | dry_eye_mucin_secretagogue | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB11934|PubMed |
-| topical_ophthalmic_0097 | Hydroxypropyl cellulose | dry_eye_lubricant_insert | systemic_absorption_none | accession_only;curation_agrees | DrugBank DB09350|PubMed |
-| topical_ophthalmic_0098 | Sodium hyaluronate | dry_eye_lubricant | systemic_absorption_none | accession_only;curation_agrees | DrugBank DB08818|PubMed |
-| topical_ophthalmic_0099 | Tobramycin/Dexamethasone | antibiotic_corticosteroid_combination | systemic_absorption_high | accession_only;curation_differs | DrugBank DB00684+DB01234|PubMed |
-| topical_ophthalmic_0100 | Neomycin/Polymyxin B/Dexamethasone | antibiotic_corticosteroid_combination | systemic_absorption_high | accession_only;curation_differs | DrugBank DB00994+DB00781+DB01234|PubMed |
-| topical_ophthalmic_0101 | Bacitracin/Polymyxin B | antibiotic_combination | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00626+DB00781|PubMed |
-| topical_ophthalmic_0102 | Sulfacetamide/Prednisolone | antibiotic_corticosteroid_combination | systemic_absorption_medium | accession_only;curation_differs | DrugBank DB00634+DB00860|PubMed |
-| topical_ophthalmic_0103 | Povidone-iodine | antiseptic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB14021|PubMed |
-| topical_ophthalmic_0104 | Chlorhexidine | antiseptic | systemic_absorption_very_low | accession_only;curation_agrees | DrugBank DB00878|PubMed |
-| topical_ophthalmic_0105 | Sodium chloride 5% | hyperosmotic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB14518|PubMed |
-| topical_ophthalmic_0106 | Glycerin ophthalmic | hyperosmotic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB02153|PubMed |
-| topical_ophthalmic_0107 | Mitomycin C | antimetabolite_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00305|PubMed |
-| topical_ophthalmic_0108 | 5-Fluorouracil | antimetabolite_ophthalmic | systemic_absorption_low | accession_only;curation_agrees | DrugBank DB00544|PubMed |
-| topical_ophthalmic_0109 | Acetylcholine intraocular | miotic_intraocular | minimal_systemic_absorption | accession_only;curation_agrees | DrugBank DB03145|PubMed |
-| topical_ophthalmic_0110 | Carboxymethylcellulose | viscoelastic_surgical_aid | systemic_absorption_none | accession_only;curation_agrees | DrugBank DB15897|PubMed |
-| topical_ophthalmic_0111 | Hydroxypropyl methylcellulose | viscoelastic_surgical_aid | systemic_absorption_none | accession_only;curation_agrees | DrugBank DB09345|PubMed |
-| topical_ophthalmic_0112 | Accelidine | glaucoma_miotic | systemic_absorption_low | accession_only;curation_differs | PubMed |
-| topical_ophthalmic_0113 | Conbercept | anti_vegf_intravitreal | minimal_systemic_absorption | accession_only;curation_agrees | PubMed|Chinese FDA |
+| ophthalmic_id | primary_name | category | absorption_tier | evidence_sources |
+|---|---|---|---|---|
+| topical_ophthalmic_0001 | Timolol | glaucoma_beta_blocker | systemic_absorption_high | DrugBank DB00373|PubMed |
+| topical_ophthalmic_0002 | Betaxolol | glaucoma_beta_blocker | systemic_absorption_medium | DrugBank DB00195|PubMed |
+| topical_ophthalmic_0003 | Levobunolol | glaucoma_beta_blocker | systemic_absorption_high | DrugBank DB01210|PubMed |
+| topical_ophthalmic_0004 | Carteolol | glaucoma_beta_blocker | systemic_absorption_high | DrugBank DB00521|PubMed |
+| topical_ophthalmic_0005 | Metipranolol | glaucoma_beta_blocker | systemic_absorption_high | DrugBank DB01214|PubMed |
+| topical_ophthalmic_0006 | Latanoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB00654|PubMed |
+| topical_ophthalmic_0007 | Travoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB00387|PubMed |
+| topical_ophthalmic_0008 | Bimatoprost | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB00905|PubMed |
+| topical_ophthalmic_0009 | Tafluprost | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB08866|PubMed |
+| topical_ophthalmic_0010 | Latanoprostene bunod | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB14882|PubMed |
+| topical_ophthalmic_0011 | Unoprostone | glaucoma_prostaglandin_analog | systemic_absorption_low | DrugBank DB06402|PubMed |
+| topical_ophthalmic_0012 | Brimonidine | glaucoma_alpha2_agonist | systemic_absorption_medium | DrugBank DB00484|PubMed |
+| topical_ophthalmic_0013 | Apraclonidine | glaucoma_alpha2_agonist | systemic_absorption_medium | DrugBank DB00935|PubMed |
+| topical_ophthalmic_0014 | Dorzolamide | glaucoma_cai_topical | systemic_absorption_low | DrugBank DB00869|PubMed |
+| topical_ophthalmic_0015 | Brinzolamide | glaucoma_cai_topical | systemic_absorption_low | DrugBank DB01194|PubMed |
+| topical_ophthalmic_0016 | Netarsudil | glaucoma_rock_inhibitor | systemic_absorption_low | DrugBank DB13931|PubMed |
+| topical_ophthalmic_0017 | Ripasudil | glaucoma_rock_inhibitor | systemic_absorption_low | DrugBank DB16487|PubMed |
+| topical_ophthalmic_0018 | Pilocarpine | glaucoma_miotic | systemic_absorption_medium | DrugBank DB01085|PubMed |
+| topical_ophthalmic_0019 | Carbachol | glaucoma_miotic | systemic_absorption_medium | DrugBank DB00411|PubMed |
+| topical_ophthalmic_0020 | Ecothiopate | glaucoma_miotic | systemic_absorption_high | DrugBank DB01057|PubMed |
+| topical_ophthalmic_0021 | Timolol/Latanoprost | glaucoma_fixed_combination | systemic_absorption_high | PubMed |
+| topical_ophthalmic_0022 | Timolol/Travoprost | glaucoma_fixed_combination | systemic_absorption_high | PubMed |
+| topical_ophthalmic_0023 | Timolol/Bimatoprost | glaucoma_fixed_combination | systemic_absorption_high | PubMed |
+| topical_ophthalmic_0024 | Timolol/Brimonidine | glaucoma_fixed_combination | systemic_absorption_high | PubMed |
+| topical_ophthalmic_0025 | Timolol/Dorzolamide | glaucoma_fixed_combination | systemic_absorption_high | PubMed |
+| topical_ophthalmic_0026 | Brimonidine/Brinzolamide | glaucoma_fixed_combination | systemic_absorption_medium | PubMed |
+| topical_ophthalmic_0027 | Brimonidine/Dorzolamide | glaucoma_fixed_combination | systemic_absorption_medium | PubMed |
+| topical_ophthalmic_0028 | Netarsudil/Latanoprost | glaucoma_fixed_combination | systemic_absorption_low | PubMed |
+| topical_ophthalmic_0029 | Ofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB01165|PubMed |
+| topical_ophthalmic_0030 | Levofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB01137|PubMed |
+| topical_ophthalmic_0031 | Moxifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB00218|PubMed |
+| topical_ophthalmic_0032 | Gatifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB01044|PubMed |
+| topical_ophthalmic_0033 | Ciprofloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB00537|PubMed |
+| topical_ophthalmic_0034 | Besifloxacin | antibiotic_fluoroquinolone | systemic_absorption_low | DrugBank DB06771|PubMed |
+| topical_ophthalmic_0035 | Tobramycin | antibiotic_aminoglycoside | systemic_absorption_low | DrugBank DB00684|PubMed |
+| topical_ophthalmic_0036 | Gentamicin | antibiotic_aminoglycoside | systemic_absorption_low | DrugBank DB00798|PubMed |
+| topical_ophthalmic_0037 | Neomycin | antibiotic_aminoglycoside | systemic_absorption_low | DrugBank DB00994|PubMed |
+| topical_ophthalmic_0038 | Erythromycin | antibiotic_macrolide | systemic_absorption_low | DrugBank DB00199|PubMed |
+| topical_ophthalmic_0039 | Azithromycin | antibiotic_macrolide | systemic_absorption_low | DrugBank DB00207|PubMed |
+| topical_ophthalmic_0040 | Chloramphenicol | antibiotic_other | systemic_absorption_low | DrugBank DB00446|PubMed |
+| topical_ophthalmic_0041 | Fusidic acid | antibiotic_other | systemic_absorption_low | DrugBank DB02703|PubMed |
+| topical_ophthalmic_0042 | Bacitracin | antibiotic_polypeptide | systemic_absorption_very_low | DrugBank DB00626|PubMed |
+| topical_ophthalmic_0043 | Polymyxin B | antibiotic_polypeptide | systemic_absorption_very_low | DrugBank DB00781|PubMed |
+| topical_ophthalmic_0044 | Sulfacetamide | antibiotic_sulfonamide | systemic_absorption_low | DrugBank DB00634|PubMed |
+| topical_ophthalmic_0045 | Acyclovir | antiviral | systemic_absorption_low | DrugBank DB00787|PubMed |
+| topical_ophthalmic_0046 | Ganciclovir | antiviral | systemic_absorption_low | DrugBank DB01004|PubMed |
+| topical_ophthalmic_0047 | Trifluridine | antiviral | systemic_absorption_low | DrugBank DB00432|PubMed |
+| topical_ophthalmic_0048 | Natamycin | antifungal | systemic_absorption_very_low | DrugBank DB00826|PubMed |
+| topical_ophthalmic_0049 | Voriconazole | antifungal | systemic_absorption_low | DrugBank DB00582|PubMed |
+| topical_ophthalmic_0050 | Fluconazole | antifungal | systemic_absorption_low | DrugBank DB00196|PubMed |
+| topical_ophthalmic_0051 | Prednisolone | corticosteroid | systemic_absorption_medium | DrugBank DB00860|PubMed |
+| topical_ophthalmic_0052 | Dexamethasone | corticosteroid | systemic_absorption_high | DrugBank DB01234|PubMed |
+| topical_ophthalmic_0053 | Fluorometholone | corticosteroid | systemic_absorption_medium | DrugBank DB00324|PubMed |
+| topical_ophthalmic_0054 | Loteprednol | corticosteroid | systemic_absorption_low | DrugBank DB01173|PubMed |
+| topical_ophthalmic_0055 | Rimexolone | corticosteroid | systemic_absorption_medium | DrugBank DB00896|PubMed |
+| topical_ophthalmic_0056 | Ketorolac | nsaid_ophthalmic | systemic_absorption_low | DrugBank DB00465|PubMed |
+| topical_ophthalmic_0057 | Flurbiprofen | nsaid_ophthalmic | systemic_absorption_low | DrugBank DB00712|PubMed |
+| topical_ophthalmic_0058 | Diclofenac | nsaid_ophthalmic | systemic_absorption_low | DrugBank DB00586|PubMed |
+| topical_ophthalmic_0059 | Bromfenac | nsaid_ophthalmic | systemic_absorption_low | DrugBank DB00963|PubMed |
+| topical_ophthalmic_0060 | Nepafenac | nsaid_ophthalmic | systemic_absorption_low | DrugBank DB01283|PubMed |
+| topical_ophthalmic_0061 | Cyclosporine | immunosuppressant | systemic_absorption_very_low | DrugBank DB00091|PubMed |
+| topical_ophthalmic_0062 | Tacrolimus | immunosuppressant | systemic_absorption_low | DrugBank DB00800|PubMed |
+| topical_ophthalmic_0063 | Olopatadine | antihistamine_dual_action | systemic_absorption_low | DrugBank DB00768|PubMed |
+| topical_ophthalmic_0064 | Ketotifen | antihistamine_mast_cell_stabilizer | systemic_absorption_low | DrugBank DB00920|PubMed |
+| topical_ophthalmic_0065 | Epinastine | antihistamine_dual_action | systemic_absorption_low | DrugBank DB00751|PubMed |
+| topical_ophthalmic_0066 | Azelastine | antihistamine | systemic_absorption_low | DrugBank DB00972|PubMed |
+| topical_ophthalmic_0067 | Emedastine | antihistamine | systemic_absorption_low | DrugBank DB01093|PubMed |
+| topical_ophthalmic_0068 | Bepotastine | antihistamine | systemic_absorption_low | DrugBank DB04935|PubMed |
+| topical_ophthalmic_0069 | Alcaftadine | antihistamine | systemic_absorption_low | DrugBank DB08883|PubMed |
+| topical_ophthalmic_0070 | Cromolyn sodium | mast_cell_stabilizer | systemic_absorption_low | DrugBank DB00186|PubMed |
+| topical_ophthalmic_0071 | Nedocromil | mast_cell_stabilizer | systemic_absorption_low | DrugBank DB00716|PubMed |
+| topical_ophthalmic_0072 | Lodoxamide | mast_cell_stabilizer | systemic_absorption_low | DrugBank DB00484|PubMed |
+| topical_ophthalmic_0073 | Atropine | mydriatic_cycloplegic | systemic_absorption_high | DrugBank DB00572|PubMed |
+| topical_ophthalmic_0074 | Cyclopentolate | mydriatic_cycloplegic | systemic_absorption_medium | DrugBank DB00979|PubMed |
+| topical_ophthalmic_0075 | Homatropine | mydriatic_cycloplegic | systemic_absorption_medium | DrugBank DB00725|PubMed |
+| topical_ophthalmic_0076 | Scopolamine | mydriatic_cycloplegic | systemic_absorption_high | DrugBank DB00747|PubMed |
+| topical_ophthalmic_0077 | Tropicamide | mydriatic_cycloplegic | systemic_absorption_low | DrugBank DB00809|PubMed |
+| topical_ophthalmic_0078 | Phenylephrine | mydriatic | systemic_absorption_medium | DrugBank DB00388|PubMed |
+| topical_ophthalmic_0079 | Proparacaine | anesthetic_topical | systemic_absorption_low | DrugBank DB00807|PubMed |
+| topical_ophthalmic_0080 | Tetracaine | anesthetic_topical | systemic_absorption_low | DrugBank DB00445|PubMed |
+| topical_ophthalmic_0081 | Lidocaine | anesthetic_topical | systemic_absorption_low | DrugBank DB00281|PubMed |
+| topical_ophthalmic_0082 | Benoxinate | anesthetic_topical | systemic_absorption_low | DrugBank DB00807|PubMed |
+| topical_ophthalmic_0083 | Fluorescein | diagnostic_dye | systemic_absorption_low | DrugBank DB00693|PubMed |
+| topical_ophthalmic_0084 | Indocyanine green | diagnostic_dye | systemic_absorption_very_low | DrugBank DB00354|PubMed |
+| topical_ophthalmic_0085 | Rose bengal | diagnostic_dye | systemic_absorption_very_low | DrugBank DB00762|PubMed |
+| topical_ophthalmic_0086 | Ranibizumab | anti_vegf_intravitreal | minimal_systemic_absorption | DrugBank DB01276|PubMed |
+| topical_ophthalmic_0087 | Aflibercept | anti_vegf_intravitreal | minimal_systemic_absorption | DrugBank DB01661|PubMed |
+| topical_ophthalmic_0088 | Bevacizumab | anti_vegf_intravitreal | minimal_systemic_absorption | DrugBank DB00112|PubMed |
+| topical_ophthalmic_0089 | Brolucizumab | anti_vegf_intravitreal | minimal_systemic_absorption | DrugBank DB16546|PubMed |
+| topical_ophthalmic_0090 | Faricimab | anti_vegf_intravitreal | minimal_systemic_absorption | DrugBank DB16647|PubMed |
+| topical_ophthalmic_0091 | Naphazoline | decongestant | systemic_absorption_medium | DrugBank DB00882|PubMed |
+| topical_ophthalmic_0092 | Tetrahydrozoline | decongestant | systemic_absorption_medium | DrugBank DB00714|PubMed |
+| topical_ophthalmic_0093 | Dipivefrin | glaucoma_other | systemic_absorption_medium | DrugBank DB00449|PubMed |
+| topical_ophthalmic_0094 | Lifitegrast | dry_eye_anti_inflammatory | systemic_absorption_very_low | DrugBank DB11674|PubMed |
+| topical_ophthalmic_0095 | Diquafosol | dry_eye_mucin_secretagogue | systemic_absorption_low | DrugBank DB06217|PubMed |
+| topical_ophthalmic_0096 | Rebamipide | dry_eye_mucin_secretagogue | systemic_absorption_low | DrugBank DB11934|PubMed |
+| topical_ophthalmic_0097 | Hydroxypropyl cellulose | dry_eye_lubricant_insert | systemic_absorption_none | DrugBank DB09350|PubMed |
+| topical_ophthalmic_0098 | Sodium hyaluronate | dry_eye_lubricant | systemic_absorption_none | DrugBank DB08818|PubMed |
+| topical_ophthalmic_0099 | Tobramycin/Dexamethasone | antibiotic_corticosteroid_combination | systemic_absorption_high | DrugBank DB00684+DB01234|PubMed |
+| topical_ophthalmic_0100 | Neomycin/Polymyxin B/Dexamethasone | antibiotic_corticosteroid_combination | systemic_absorption_high | DrugBank DB00994+DB00781+DB01234|PubMed |
+| topical_ophthalmic_0101 | Bacitracin/Polymyxin B | antibiotic_combination | systemic_absorption_very_low | DrugBank DB00626+DB00781|PubMed |
+| topical_ophthalmic_0102 | Sulfacetamide/Prednisolone | antibiotic_corticosteroid_combination | systemic_absorption_medium | DrugBank DB00634+DB00860|PubMed |
+| topical_ophthalmic_0103 | Povidone-iodine | antiseptic | systemic_absorption_low | DrugBank DB14021|PubMed |
+| topical_ophthalmic_0104 | Chlorhexidine | antiseptic | systemic_absorption_very_low | DrugBank DB00878|PubMed |
+| topical_ophthalmic_0105 | Sodium chloride 5% | hyperosmotic | systemic_absorption_low | DrugBank DB14518|PubMed |
+| topical_ophthalmic_0106 | Glycerin ophthalmic | hyperosmotic | systemic_absorption_low | DrugBank DB02153|PubMed |
+| topical_ophthalmic_0107 | Mitomycin C | antimetabolite_ophthalmic | systemic_absorption_low | DrugBank DB00305|PubMed |
+| topical_ophthalmic_0108 | 5-Fluorouracil | antimetabolite_ophthalmic | systemic_absorption_low | DrugBank DB00544|PubMed |
+| topical_ophthalmic_0109 | Acetylcholine intraocular | miotic_intraocular | minimal_systemic_absorption | DrugBank DB03145|PubMed |
+| topical_ophthalmic_0110 | Carboxymethylcellulose | viscoelastic_surgical_aid | systemic_absorption_none | DrugBank DB15897|PubMed |
+| topical_ophthalmic_0111 | Hydroxypropyl methylcellulose | viscoelastic_surgical_aid | systemic_absorption_none | DrugBank DB09345|PubMed |
+| topical_ophthalmic_0112 | Accelidine | glaucoma_miotic | systemic_absorption_low | PubMed |
+| topical_ophthalmic_0113 | Conbercept | anti_vegf_intravitreal | minimal_systemic_absorption | PubMed|Chinese FDA |
 
 **Supplementary Table S6. Rule inventory (40 mechanism rules).**
 
@@ -386,25 +389,9 @@ Tiers are a study-team assignment from the sources listed in the final column, n
 | low_abs_antiplatelet | low | pharmacodynamic_hemorrhagic | systemic_absorption_low | antiplatelet | any |
 | low_abs_anticoagulant | low | pharmacodynamic_hemorrhagic | systemic_absorption_low | anticoagulant | any |
 
-**Supplementary Table S7. Four-method performance by dataset and output budget.**
+**Supplementary Table S7. Four-method performance by dataset.**
 
-| dataset_id | setting | method | n | sensitivity_high | specificity_high | f1_high | accuracy_3level | cohens_kappa |
-|---|---|---|---|---|---|---|---|---|
-| blind_l1 | 10-token | pure_llm | 118 | 0.771 | 0.542 | 0.476 | 0.475 | 0.256 |
-| blind_l1 | 10-token | naive_rag | 118 | 0.757 | 0.462 | 0.434 | 0.415 | 0.182 |
-| blind_l1 | 10-token | lightrag | 118 | 0.779 | 0.936 | 0.785 | 0.737 | 0.603 |
-| blind_l1 | 10-token | full_system | 118 | 0.964 | 0.989 | 0.964 | 0.907 | 0.857 |
-| blind_l1 | 3000-token | pure_llm | 118 | 0.250 | 1.000 | 0.400 | 0.576 | 0.333 |
-| blind_l1 | 3000-token | naive_rag | 118 | 0.214 | 0.989 | 0.343 | 0.585 | 0.341 |
-| blind_l1 | 3000-token | lightrag | 118 | 0.536 | 1.000 | 0.698 | 0.737 | 0.587 |
-| blind_v3_ddinter | 10-token | pure_llm | 92 | 0.848 | 0.704 | 0.642 | 0.630 | 0.396 |
-| blind_v3_ddinter | 10-token | naive_rag | 92 | 0.848 | 0.579 | 0.570 | 0.535 | 0.290 |
-| blind_v3_ddinter | 10-token | lightrag | 92 | 0.264 | 0.949 | 0.377 | 0.591 | 0.220 |
-| blind_v3_ddinter | 10-token | full_system | 92 | 0.320 | 0.955 | 0.444 | 0.674 | 0.428 |
-| blind_v3_ddinter | 3000-token | pure_llm | 92 | 0.080 | 1.000 | 0.148 | 0.609 | 0.317 |
-| blind_v3_ddinter | 3000-token | naive_rag | 92 | 0.400 | 1.000 | 0.571 | 0.728 | 0.553 |
-| blind_v3_ddinter | 3000-token | lightrag | 92 | 0.240 | 1.000 | 0.387 | 0.674 | 0.428 |
-Note: exact accuracy is on the three-level scale; **10-token** denotes the primary comparison (non-reasoning model, 10-token cap, one call per case); **3000-token** denotes the re-run (reasoning model glm-5.3-flash, 3000-token budget, temperature 0.0, majority vote over five repeated samples). `full_system` is deterministic and therefore identical under both settings (SD = 0). Sensitivities are computed against each dataset's gold; the 3000-token baselines assign high risk far more rarely, which raises specificity to ~1.000 while depressing sensitivity.
+
 
 **Supplementary Table S8. Gold-level distribution by dataset.**
 

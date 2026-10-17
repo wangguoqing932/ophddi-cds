@@ -129,11 +129,11 @@
   },
   "kappa": {
    "mean": 0.2558804355533276,
-   "sd": 0.025529695507780267,
+   "sd": 0.025529695507780253,
    "values": [
     0.2529394030750679,
-    0.24024144869215291,
-    0.2228189279562266,
+    0.2402414486921528,
+    0.2228189279562267,
     0.2646848503422209,
     0.2987175477009696
    ]
@@ -174,13 +174,13 @@
    ]
   },
   "kappa": {
-   "mean": 0.1823685607815054,
-   "sd": 0.024853096364739806,
+   "mean": 0.18236856078150543,
+   "sd": 0.024853096364739764,
    "values": [
     0.21536323938070656,
     0.191861042183623,
     0.1862882270637618,
-    0.13894800851322586,
+    0.13894800851322597,
     0.17938228676620982
    ]
   }
@@ -221,10 +221,10 @@
   },
   "kappa": {
    "mean": 0.6034939942975145,
-   "sd": 0.02973058558862703,
+   "sd": 0.029730585588627068,
    "values": [
     0.6142530238640078,
-    0.6541092172402562,
+    0.6541092172402563,
     0.5655657823497564,
     0.5879978177850518,
     0.5955441302485005
@@ -419,11 +419,14 @@
  "expert.agreement_e1_e2": 0.8400000000000001,
  "expert.agreement_e1_e2_raw": 11,
  "expert.agreement_e1_system": -0.17647058823529393,
- "expert.agreement_e2_system": -0.2571428571428569,
- "expert.agreement_e1_gold": 0.020408163265306034,
+ "expert.agreement_e2_system": -0.2571428571428571,
+ "expert.agreement_e1_gold": 0.020408163265305923,
  "expert.agreement_e2_gold": -0.09090909090909105,
- "expert.weighted_e1_system": -0.6296296296296295,
- "expert.weighted_e2_system": -0.7931034482758621,
+ "expert.weighted_e1_system": 0.3548387096774195,
+ "expert.weighted_e2_system": 0.3125000000000001,
+ "expert.weighted_e1_e2": 0.875,
+ "expert.weighted_e1_gold": 0.4725274725274724,
+ "expert.weighted_e2_gold": 0.4375,
  "expert.max_kappa_e1": 0.29411764705882354,
  "expert.max_kappa_e2": 0.3142857142857143,
  "expert.raw_agreement": {
@@ -435,5 +438,83 @@
  "expert.graded_lower_than_shown": {
   "e1": 10,
   "e2": 10
+ },
+ "expert.graded_lower_than_gold": {
+  "e1": 8,
+  "e1_discordant": 8,
+  "e2": 8,
+  "e2_discordant": 9
+ },
+ "l1.both_way.corrected": {
+  "l1": "107/118",
+  "frozen": "39/40"
+ },
+ "l1.both_way.pre_correction": {
+  "l1": "104/118",
+  "frozen": "36/40"
+ },
+ "glm53.no_tie_all_cases": true,
+ "audit.glm53.naive_rag.leaked": {
+  "n": 26,
+  "correct": 24,
+  "acc": 0.9231,
+  "high_risk_sens": "9/10"
+ },
+ "audit.glm53.naive_rag.non_leaked": {
+  "n": 66,
+  "correct": 43,
+  "acc": 0.6515,
+  "high_risk_sens": "1/15"
+ },
+ "audit.glm53.pure_llm.leaked": {
+  "n": 26,
+  "correct": 13,
+  "acc": 0.5,
+  "high_risk_sens": "2/10"
+ },
+ "audit.glm53.pure_llm.non_leaked": {
+  "n": 66,
+  "correct": 43,
+  "acc": 0.6515,
+  "high_risk_sens": "0/15"
+ },
+ "audit.glm53.lightrag.leaked": {
+  "n": 26,
+  "correct": 15,
+  "acc": 0.5769,
+  "high_risk_sens": "4/10"
+ },
+ "audit.glm53.lightrag.non_leaked": {
+  "n": 66,
+  "correct": 47,
+  "acc": 0.7121,
+  "high_risk_sens": "2/15"
+ },
+ "audit.full_system.leaked": {
+  "n": 26,
+  "correct": 15,
+  "acc": 0.5769,
+  "high_risk_sens": "5/10"
+ },
+ "audit.full_system.non_leaked": {
+  "n": 66,
+  "correct": 47,
+  "acc": 0.7121,
+  "high_risk_sens": "3/15"
+ },
+ "audit.rederived": {
+  "n_changed": 10,
+  "full_system_as_applied": {
+   "accuracy": 62,
+   "n": 92,
+   "acc": 0.6739,
+   "high_risk_sens": "8/25"
+  },
+  "full_system_rederived": {
+   "accuracy": 60,
+   "n": 92,
+   "acc": 0.6522,
+   "high_risk_sens": "8/29"
+  }
  }
 }
