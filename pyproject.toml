@@ -3,7 +3,7 @@ name = "ophthalmic_ddi_cds_agent"
 version = "0.1.0"
 description = "眼科药物相互作用知识库与临床决策支持系统: a rule-based decision support framework for 眼科局部用药与全身系统用药的药物相互作用（DDI）筛查与临床决策支持 screening"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [{ name = "眼科药物相互作用知识库与临床决策支持系统 Team" }]
 license = { text = "Apache-2.0" }
 dependencies = [
