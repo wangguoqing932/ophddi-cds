@@ -1,124 +1,67 @@
-> **v2.1 (final text pass, October 2026).** Closes the remaining editorial points:
-> the competent ethics committee is named and the absence of a determination is stated;
-> the consent process is described as undocumented rather than asserted; the T1
-> expert-informed provenance of 20 L1 labels is disclosed with its limits; notes about
-> earlier versions of the manuscript, tables and figures are removed; the
-> tier cross-reference in Section 4.4 and the Limitations pointer in the TRIPOD
-> checklist are corrected; the kappa implementation gains a regression test; per-case
-> provenance is added for the audit and development gold sets; the LightRAG index
-> build record is deposited; and the README registry counts are corrected.
->
-> **Version 2.0 (post-review revision, October 2026).** This release follows the
-> rejection of the third revision by BMC Bioinformatics. Every point raised by the
-> editor and the reviewer in the final round has been implemented as a code or text
-> change rather than a letter promise: the ordinal quadratic-weighted kappa bug in
-> `scripts/stats_tests.py` is fixed and the self-test updated; the expert-review
-> statistics are recomputed against both the gold and the displayed grades; the
-> frozen-subset numbers are reported both with the corrected labels (39/40, 107/118)
-> and without them (36/40, 104/118), with the lock/correction timeline and file
-> hashes; the audit-set gold is stated as applied and re-derived under the stated
-> rule (`scripts/rederive_audit_gold.py`); the retrieval-leakage comparison is
-> reported with the leaked cases excluded; the T1 expert-informed provenance of 20
-> L1 gold labels is disclosed; Figures 1 and 3 are regenerated with Matplotlib from
-> deposited data; dependencies are pinned; and per-case gold provenance plus a
-> root `MANIFEST.sha256` are included.
+# Release notes — v3.0-frontiers (current)
 
-# Release notes — v1.1-revision3
+## Which manuscript this release corresponds to
 
-## Which manuscript version this corresponds to
-
-This release is the deposit for **round 3** of the manuscript:
+This is the deposit for the Frontiers in Pharmacology Original Research submission:
 
 > OphDDI-CDS: An Absorption-First Deterministic Cascade for Ophthalmic Drug-Drug Interaction Screening
-> Submission ID 363ea8da-e16c-45ce-bbf1-39ff3555463b, BMC Bioinformatics, revision v3.0
+> Manuscript ID 2032864, Frontiers in Pharmacology — Drugs Outcomes Research and Policies
 
-**Archived at DOI 10.5281/zenodo.23143345** (https://doi.org/10.5281/zenodo.23143345).
+Archived at DOI **10.5281/zenodo.23439606** (concept DOI 10.5281/zenodo.23143344).
 
-Every number reported in that version can be regenerated from this tree with the scripts
-listed below. The previous tag `v1.0-submission` remains in the history but corresponds to
-an earlier revision that lacks the reasoning-model experiment, the statistical module and
-several corrections; it is no longer cited by the manuscript.
+Every number reported in the current manuscript can be regenerated from this tree with the
+scripts listed below. The repository **does not** describe a BMC Bioinformatics submission;
+the earlier BMC-era files are archived under `outputs/archive/bmc_submission/` and are
+historical only.
+
+## Current results (matching the manuscript)
+
+- **1,933** registry-matched pairs with a graded DDInter severity (Major/Moderate/Minor).
+  **1,502 (77.7%)** were graded lower by absorption-aware assessment; **1,341/1,757 (76.3%)**
+  among assessed pairs; **1,206/1,502 (80.3%)** of downgrades involved low-tier ophthalmic agents.
+- **118-case author-derived reference set:** 101/118 exact agreement under the frozen labels
+  (0.856; kappa 0.779); 104/118 after three post-lock corrections (0.881; kappa 0.818; sensitivity analysis).
+- **40-case frozen blind set:** 36/40 (0.900); the 20 B-only cases were 18/20 frozen and
+  20/20 corrected, descriptive and not development-free.
+- **92-case semi-independent audit:** 62/92 (0.674); high-risk sensitivity 8/25 (0.320),
+  the principal limitation. The re-derived labels give 61/92 (0.663) and 8/29 (0.276).
+- **30 disagreements:** author classification 21 route-consistent / 5 unsupported / 4 over-grades;
+  an independent non-author ophthalmologist agreed with 14/30 (14/28 within the three author
+  classes; kappa 0.271) and classified 14 author route-consistent cases as unsupported.
 
 ## How to reproduce the reported results
 
 ```bash
 pip install -e .          # or: pip install -r requirements.txt
 
-# test suite (passes on a fresh clone, cp1252 and UTF-8 consoles)
 python -m pytest tests/ -q
-
-# every reported figure, regenerated from the deposited data
-python scripts/recompute_all_reported_numbers.py     # -> outputs/recomputed/numbers.json
-
-# statistical procedures used in the paper, with a self-test against the reported values
-python scripts/stats_tests.py
-
-# expert-review statistics, computed against the grades the experts were shown
-python scripts/expert_review_analysis.py
-
-# BM25 gold leakage measurement reported in Section 3.5
-python scripts/naive_rag_leakage_audit.py
-
-# 1,933-pair registry audit, and the alternative-tier scenario
-python scripts/audit_ddinter_disagreement.py
-python scripts/audit_ddinter_disagreement.py --tier-override data/curation/entity_a_candidates.yaml
-
-# deterministic cascade smoke test (no API key, no network)
-python scripts/demo_pipeline.py
+python scripts/recompute_all_reported_numbers.py   # -> outputs/recomputed/numbers.json
+python scripts/revision_r1_stats.py                # -> outputs/recomputed/revision_r1_stats.json
+python scripts/audit_ddinter_denominator.py        # 4,546 / 2,613 / 1,933
+python scripts/path_attribution_audit.py           # 504 / 507 / 746 / 176 on the 1,933 pairs
+python scripts/demo_pipeline.py                    # deterministic smoke test, no API key
 ```
 
 ## What is in this release
 
 | path | contents |
 |---|---|
-| `manuscript/` | the revised manuscript, the marked-changes copy, the round-2 and round-3 response letters |
-| `figures/`, `tables/` | publication figures and tables as deposited |
-| `supplementary/` | supplementary material, including the per-agent tier table (S5) and evaluation prompts (S3) |
-| `data/gold/` | four evaluation gold sets with case-level provenance |
-| `data/predictions/` | 9,600 prediction rows for the primary comparison |
-| `data/predictions/glm53_baselines/` | **the reasoning-model re-run**: 3,150 raw responses with token usage, parsed labels, metrics, run log |
-| `data/registry/`, `data/curation/` | the per-agent absorption tier table and the curation file it is compared against |
-| `data/ddinter/` | DDInter 2.0 severity tables (**CC BY-NC-SA 4.0 — see LICENSE**) |
+| `outputs/deliverables/frontiers/` | the submission package: clean and marked manuscript, supplement, response letters, cover letter, scope statement, Figures 1–6 |
+| `outputs/paper/` | manuscript source of record |
+| `outputs/deliverables/supplementary_files/` | supplement source and build outputs |
+| `data/seed/`, `data/curation/`, `data/ddinter/` | registries, tier evidence, DDInter severity tables |
 | `configs/` | rules, class matrix, drug classes, flag catalog, prompts |
-| `scripts/` | evaluation harness, statistics module, audits, regeneration entry point |
-| `tests/` | test suite |
-| `audits/` | registry audit outputs, path attribution, tier scenarios, leakage audit, recomputed numbers |
-
-## Known limitations recorded in this release
-
-These are stated in the manuscript and repeated here so that a reader of the deposit alone
-sees them:
-
-- **Absorption tiers are a study-team assignment.** The per-agent source column records
-  `DrugBank DBxxxxx|PubMed` for all 113 agents, with "PubMed" as a bare word; individual
-  pharmacokinetic sources are named for timolol, atropine and dexamethasone only. The
-  remaining tiers rest on the curation process, and Table S5 marks each row accordingly.
-- **Thirteen agents differ between the registry and the curation file.** The registry
-  (`data/seed/entities_a.csv`) is authoritative because the engine loads it; the audit
-  re-run under curation-file tiers is deposited as `audits/tier_override_scenario.json`.
-- **The expert review is not an independent validation.** The questionnaire displayed both
-  the proposed gold and the system grade, and the system reproduced its gold on all 12
-  cases, so the expert–gold and expert–system comparisons are not independent. One case
-  was fully concordant among both experts, the shown grade and the gold (R07).
-- **The naive_rag audit-set result is partly confounded.** 500 of the 1,307 evidence chunks
-  are DDInter severity statements, and the top-3 passages contain the pair's own statement
-  for 19 of the 62 third-party-graded audit cases.
-- **Nine of the 113 "ophthalmic topical" agents are not topically administered** (six
-  intravitreal anti-VEGF agents, intraocular acetylcholine, two surgical viscoelastics).
-- **The reasoning-model re-run uses one commercial model at one endpoint**, which exposes
-  no checkpoint revision.
+| `scripts/`, `tests/` | evaluation, audit, regeneration and test code |
+| `outputs/archive/` | superseded versions, including the earlier BMC-era package; not current |
 
 ## Licensing
 
-Code is Apache-2.0. Original data and configuration are CC BY 4.0. **The bundled DDInter
-severity tables are not relicensed and remain under DDInter's CC BY-NC-SA 4.0 terms.**
-See the component-licensing section of `LICENSE`.
+Code is Apache-2.0. Original data and configuration are CC BY 4.0. The bundled DDInter
+severity tables remain under DDInter's **CC BY-NC-SA 4.0** terms and are included for
+research reproducibility only. See the component-licensing section of `LICENSE`.
 
-## Licence
+## Historical note
 
-The archived record carries **CC BY-NC-SA 4.0** at the platform level, and the
-package itself states the component split: our code is Apache-2.0, our original
-data is CC BY 4.0, and the bundled **DDInter 2.0 severity tables remain under
-CC BY-NC-SA 4.0** (included for research reproducibility only). See the
-component-licensing section of `LICENSE` inside the archive and in the
-repository.
+Versions `v1.x` were prepared for an earlier BMC Bioinformatics submission and are retained
+only in the archive/history. They are superseded by `v3.0-frontiers` and must not be cited
+as the current manuscript.
