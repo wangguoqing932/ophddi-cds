@@ -65,18 +65,23 @@ class PreciseKG:
             
             flags_str = ", ".join(e["flags"])
             
-            # Absorption level
-            abs_level = "unknown"
-            abs_desc = ""
-            for f in e["flags"]:
-                if "systemic_absorption_" in f:
-                    abs_level = f.replace("systemic_absorption_", "")
-                    abs_desc = {"high": " >50% bioavailability", "medium": " 10-50% bioavailability", 
-                                "low": " <10% bioavailability"}.get(abs_level, "")
+            # Absorption level (manuscript bands: high >=10% or therapeutic range,
+            # medium 1-10%, low <1% but detectable, very low below quantification,
+            # minimal macromolecular intravitreal, none viscoelastic/tear substitute)
+            abs_map = {
+                "systemic_absorption_high": ("high", ">=10% or plasma within therapeutic range"),
+                "systemic_absorption_medium": ("medium", "1-10%"),
+                "systemic_absorption_low": ("low", "<1% but detectable"),
+                "systemic_absorption_very_low": ("very low", "below assay quantification"),
+                "minimal_systemic_absorption": ("minimal", "macromolecular intravitreal agent"),
+                "systemic_absorption_none": ("none", "viscoelastic or tear substitute"),
+            }
+            abs_level, abs_desc = next(
+                (v for k, v in abs_map.items() if k in e["flags"]), ("unknown", ""))
             
             lines = [
                 f"[{e['name']}] ophthalmic | class: {e['class']}",
-                f"  Systemic absorption from eye drops: {abs_level}{abs_desc}",
+                f"  Systemic absorption from eye drops: {abs_level} {abs_desc}",
                 f"  All flags: {flags_str}",
             ]
             if e["mechanisms"]:
@@ -109,6 +114,9 @@ class PreciseKG:
         
         oph_flags = set(oph["flags"])
         sys_flags = set(sys_["flags"])
+        low_absorption = bool(oph_flags & {
+            "systemic_absorption_low", "systemic_absorption_very_low",
+            "minimal_systemic_absorption", "systemic_absorption_none"})
         
         matched = []
         for rule in self.rules.get("rules", []):
@@ -122,6 +130,10 @@ class PreciseKG:
                 # ANY single flag suffices (OR semantics, default)
                 a_ok = bool(a_f & oph_flags)
                 b_ok = bool(b_f & sys_flags)
+            if a_ok and rule.get("a_class") and self._class_of_a(oph["name"]) != rule["a_class"]:
+                a_ok = False
+            if a_ok and b_ok and rule.get("absorption_gated") and low_absorption:
+                continue
             if a_ok and b_ok:
                 matched.append(
                     f"  [{rule['id']}] severity={rule['severity']}: "
@@ -151,18 +163,24 @@ class PreciseKG:
         L1: exact rule layer (MAX-MATCH over 40 rules; match:all/any semantics)
         L2: class-matrix layer (class pair × absorption scaling + upgrades)  [when use_matrix]
         L3: G19 hard constraint (low/very-low absorption + no rule, no matrix signal)
-        default: low (no known class interaction) — traceable, not a gap
+        default: low, flagged as unassessed (no rule and no matrix cell)
+            — the grade is retained for backward compatibility, but
+            ``info["assessment_status"] == "unassessed"`` tells callers that the pair
+            is outside the model's coverage and must not be read as evidence of safety.
 
         Returns (level, matched_rule_ids, info) where info explains the decision path.
         """
         oph = self.get_ophthalmic(oph_name)
         sys_ = self.get_systemic(sys_name)
         if not oph or not sys_:
-            return None, [], {"path": "unknown_drug"}
+            return None, [], {"path": "unknown_drug", "assessment_status": "unassessed"}
 
         oph_flags = set(oph["flags"])
         sys_flags = set(sys_["flags"])
         sev_rank = {"high": 3, "medium": 2, "low": 1}
+        low_absorption = bool(oph_flags & {
+            "systemic_absorption_low", "systemic_absorption_very_low",
+            "minimal_systemic_absorption", "systemic_absorption_none"})
 
         # ── L1 exact rules (citation-verified precise layer) ──
         best, matched_ids = None, []
@@ -180,6 +198,9 @@ class PreciseKG:
             # class-matrix cells from being overridden by flag-generic rules.
             if a_ok and rule.get("a_class") and self._class_of_a(oph["name"]) != rule["a_class"]:
                 a_ok = False
+            if a_ok and b_ok and rule.get("absorption_gated") and low_absorption:
+                # systemic mechanism at an exposure band too low to support it
+                continue
             if a_ok and b_ok:
                 matched_ids.append(rule["id"])
                 sv = sev_rank[rule["severity"]]
@@ -191,32 +212,45 @@ class PreciseKG:
         matrix_info = {}
         if use_matrix:
             cell = self._class_matrix_lookup(oph, sys_, oph_flags)
-            if cell and cell.get("level") in ("high", "medium", "low"):
-                lvl = cell["level"]
+            if cell:
                 absl = next((f for f in oph_flags if "systemic_absorption_" in f), None)
-                scale = self._matrix_scale.get(absl or "none", "keep")
-                if scale == "force_low":
-                    lvl = "low"
-                elif scale == "keep":
-                    lvl = self._apply_upgrade(oph, sys_, cell["level"], oph_flags)
-                matrix_level = lvl
-                matrix_info = {"cell": cell, "absorption": absl}
+                cell_level = cell.get("level")
+                if cell_level == "none":
+                    # A defined "none" cell is an explicit no-interaction
+                    # finding, not a coverage gap: assess it as low.
+                    matrix_level = "low"
+                    matrix_info = {"cell": cell, "absorption": absl}
+                elif cell_level in ("high", "medium", "low"):
+                    lvl = cell_level
+                    scale = self._matrix_scale.get(absl or "none", "keep")
+                    if scale == "force_low":
+                        lvl = "low"
+                    elif scale == "keep":
+                        lvl = self._apply_upgrade(oph, sys_, cell["level"], oph_flags)
+                    matrix_level = lvl
+                    matrix_info = {"cell": cell, "absorption": absl}
 
         if best is not None and matrix_level is not None:
             lvl = best if sev_rank[best] >= sev_rank[matrix_level] else matrix_level
             path = "rule" if lvl == best else "matrix"
-            return lvl, matched_ids, {"path": path, "rules": matched_ids, **matrix_info}
+            return lvl, matched_ids, {"path": path, "rules": matched_ids,
+                                      "assessment_status": "assessed", **matrix_info}
         if best is not None:
-            return best, matched_ids, {"path": "rule", "rules": matched_ids}
+            return best, matched_ids, {"path": "rule", "rules": matched_ids,
+                                       "assessment_status": "assessed"}
         if matrix_level is not None:
-            return matrix_level, matched_ids, {"path": "matrix", **matrix_info}
+            return matrix_level, matched_ids, {"path": "matrix",
+                                               "assessment_status": "assessed", **matrix_info}
 
         # ── L3 G19 ──
         if "systemic_absorption_low" in oph_flags or "systemic_absorption_very_low" in oph_flags:
-            return "low", matched_ids, {"path": "g19", "absorption": "low_or_very_low"}
+            return "low", matched_ids, {"path": "g19", "absorption": "low_or_very_low",
+                                        "assessment_status": "assessed"}
 
-        # default: no known class interaction -> low (traceable)
-        return "low", matched_ids, {"path": "default_low", "note": "no known class interaction"}
+        # default: no known class interaction -> low, but explicitly unassessed
+        return "low", matched_ids, {"path": "default_low",
+                                    "assessment_status": "unassessed",
+                                    "note": "no matching rule or matrix cell; grade is not evidence of safety"}
 
     # ── v2 helpers ──
     @property
@@ -258,7 +292,7 @@ class PreciseKG:
         bc = self._class_of_b(sys_["name"])
         cell = self._matrix.get("matrix", {}).get(ac, {}).get(bc)
         if cell is None:
-            cell = dict(self._matrix.get("default_cell", {}))
+            return None
         cell = dict(cell)
         cell["a_class"], cell["b_class"] = ac, bc
         return cell
