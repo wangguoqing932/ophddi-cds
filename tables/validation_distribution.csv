@@ -1,0 +1,7 @@
+dataset_id,gold_level,count
+blind_l1,high,28
+blind_l1,medium,51
+blind_l1,low,39
+blind_v3_ddinter,high,25
+blind_v3_ddinter,medium,19
+blind_v3_ddinter,low,48

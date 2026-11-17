@@ -126,5 +126,7 @@
     "f1": 0.136363636364,
     "kappa": 0.131679389313,
     "sd": 0.0
-  }
+  },
+  "_status": "historical_pre_revision",
+  "_note": "Current metrics are in outputs/recomputed/numbers.json and Table 3; this file is retained as a historical scenario recompute."
 }

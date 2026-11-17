@@ -1,0 +1,406 @@
+[
+ {
+  "number": 1,
+  "doi": "10.1016/j.addr.2006.07.027",
+  "status": "verified",
+  "http": 200,
+  "title": "Challenges and obstacles of ocular pharmacokinetics and drug delivery",
+  "container": "Advanced Drug Delivery Reviews",
+  "published": 2006
+ },
+ {
+  "number": 2,
+  "doi": "10.1208/s12248-010-9183-3",
+  "status": "verified",
+  "http": 200,
+  "title": "Ocular Drug Delivery",
+  "container": "The AAPS Journal",
+  "published": 2010
+ },
+ {
+  "number": 3,
+  "doi": "10.1089/jop.1990.6.243",
+  "status": "verified",
+  "http": 200,
+  "title": "Review: Systemic Absorption of Topically Applied Ocular Drugs in Humans",
+  "container": "Journal of Ocular Pharmacology and Therapeutics",
+  "published": 1990
+ },
+ {
+  "number": 4,
+  "doi": "10.3389/fmed.2026.1798521",
+  "status": "verified",
+  "http": 200,
+  "title": "A systemic pharmacovigilance assessment of ophthalmic atropine: signal detection and clinical prioritization from the FAERS database",
+  "container": "Frontiers in Medicine",
+  "published": 2026
+ },
+ {
+  "number": 5,
+  "doi": "10.2165/00003088-198005010-00004",
+  "status": "verified",
+  "http": 200,
+  "title": "Absorption of Ocular Timolol1",
+  "container": "Clinical Pharmacokinetics",
+  "published": 1980
+ },
+ {
+  "number": 6,
+  "doi": "10.1046/j.1440-1606.1999.00145.x",
+  "status": "verified",
+  "http": 200,
+  "title": "Systemic effects of topical ophthalmic β‐adrenoceptor antagonists",
+  "container": "Australian and New Zealand Journal of Ophthalmology",
+  "published": 1999
+ },
+ {
+  "number": 7,
+  "doi": "10.1007/s00417-002-0462-2",
+  "status": "verified",
+  "http": 200,
+  "title": "Systemic bioavailability and cardiopulmonary effects of 0.5% timolol eyedrops",
+  "container": "Graefe's Archive for Clinical and Experimental Ophthalmology",
+  "published": 2002
+ },
+ {
+  "number": 8,
+  "doi": "10.7759/cureus.90018",
+  "status": "verified",
+  "http": 200,
+  "title": "Atrioventricular Block Caused by Carteolol Eye Drops Administered to Unilateral Eye or Bilateral Eyes: A Case Report",
+  "container": "Cureus",
+  "published": 2025
+ },
+ {
+  "number": 9,
+  "doi": "10.2217/pgs-2023-0122",
+  "status": "verified",
+  "http": 200,
+  "title": "Severe systemic Adverse Reactions to Ophthalmic Timolol in a\n            <i>CYP2D6</i>\n            Homozygous\n            <i>*4</i>\n            Allele Carrier: A Case Report",
+  "container": "Pharmacogenomics",
+  "published": 2023
+ },
+ {
+  "number": 10,
+  "doi": "10.1136/bmj.294.6565.155-a",
+  "status": "verified",
+  "http": 200,
+  "title": "Severe bradycardia due to interaction of timolol eye drops and verapamil.",
+  "container": "BMJ",
+  "published": 1987
+ },
+ {
+  "number": 11,
+  "doi": "10.1016/j.ajem.2020.09.030",
+  "status": "verified",
+  "http": 200,
+  "title": "Ocular timolol as the causative agent for symptomatic bradycardia in an 89-year-old female",
+  "container": "The American Journal of Emergency Medicine",
+  "published": 2021
+ },
+ {
+  "number": 12,
+  "doi": "10.7759/cureus.7270",
+  "status": "verified",
+  "http": 200,
+  "title": "Ophthalmic Timolol and Hospitalization for Symptomatic Bradycardia and Syncope: A Case Series",
+  "container": "Cureus",
+  "published": 2020
+ },
+ {
+  "number": 13,
+  "doi": "10.1097/pec.0b013e3182aa1384",
+  "status": "verified",
+  "http": 200,
+  "title": "Can Ophthalmic Drops Cause Central Nervous System Depression and Cardiogenic Shock in Infants?",
+  "container": "Pediatric Emergency Care",
+  "published": 2013
+ },
+ {
+  "number": 14,
+  "doi": "10.1097/pec.0b013e3181668aee",
+  "status": "verified",
+  "http": 200,
+  "title": "Central α-2 Adrenergic Eye Drops",
+  "container": "Pediatric Emergency Care",
+  "published": 2008
+ },
+ {
+  "number": 15,
+  "doi": "10.1097/01.pcc.0000123548.73664.18",
+  "status": "verified",
+  "http": 200,
+  "title": "Adrenoceptor agonist poisoning after accidental oral ingestion of brimonidine eye drops",
+  "container": "Pediatric Critical Care Medicine",
+  "published": 2004
+ },
+ {
+  "number": 16,
+  "doi": "10.1016/j.tjem.2016.02.002",
+  "status": "verified",
+  "http": 200,
+  "title": "Respiratuvar depression after accidental nasal ingestion of brimonidine eye drops in infant",
+  "container": "Turkish Journal of Emergency Medicine",
+  "published": 2016
+ },
+ {
+  "number": 17,
+  "doi": "10.1007/s00417-020-04767-9",
+  "status": "verified",
+  "http": 200,
+  "title": "Medical management of pediatric glaucoma: lessons learned from randomized clinical trials",
+  "container": "Graefe's Archive for Clinical and Experimental Ophthalmology",
+  "published": 2020
+ },
+ {
+  "number": 18,
+  "doi": "10.1002/14651858.cd010520.pub2",
+  "status": "verified",
+  "http": 200,
+  "title": "Topical medication instillation techniques for glaucoma",
+  "container": "Cochrane Database of Systematic Reviews",
+  "published": 2017
+ },
+ {
+  "number": 19,
+  "doi": "10.1111/ceo.13642",
+  "status": "verified",
+  "http": 200,
+  "title": "New technique to reduce systemic side effects of timolol eye drops: The tissue press method—Cross‐over clinical trial",
+  "container": "Clinical &amp; Experimental Ophthalmology",
+  "published": 2019
+ },
+ {
+  "number": 20,
+  "doi": "10.1093/ageing/26.2.63",
+  "status": "verified",
+  "http": 200,
+  "title": "Glaucoma therapy may take your breath away",
+  "container": "Age and Ageing",
+  "published": 1997
+ },
+ {
+  "number": 21,
+  "doi": "10.1186/s12877-017-0621-2",
+  "status": "verified",
+  "http": 200,
+  "title": "What is polypharmacy? A systematic review of definitions",
+  "container": "BMC Geriatrics",
+  "published": 2017
+ },
+ {
+  "number": 22,
+  "doi": "10.1093/nar/gkab880",
+  "status": "verified",
+  "http": 200,
+  "title": "DDInter: an online drug–drug interaction database towards improving clinical decision-making and patient safety",
+  "container": "Nucleic Acids Research",
+  "published": 2021
+ },
+ {
+  "number": 23,
+  "doi": "10.1093/nar/gkae726",
+  "status": "verified",
+  "http": 200,
+  "title": "DDInter 2.0: an enhanced drug interaction resource with expanded data coverage, new interaction types, and improved user interface",
+  "container": "Nucleic Acids Research",
+  "published": 2024
+ },
+ {
+  "number": 24,
+  "doi": "10.1016/j.tips.2013.01.006",
+  "status": "verified",
+  "http": 200,
+  "title": "Informatics confronts drug–drug interactions",
+  "container": "Trends in Pharmacological Sciences",
+  "published": 2013
+ },
+ {
+  "number": 25,
+  "doi": "10.1186/s12916-025-04420-4",
+  "status": "verified",
+  "http": 200,
+  "title": "Gaps in the detection of drug-drug interactions between antipsychotic and cardiometabolic medications: a multisource analysis",
+  "container": "BMC Medicine",
+  "published": 2025
+ },
+ {
+  "number": 26,
+  "doi": "10.1007/s40261-026-01529-z",
+  "status": "verified",
+  "http": 200,
+  "title": "ContraIndicator: A Natural Language Processing-Based Approach to Potential Drug–Drug Interaction Detection in Pediatric Intensive Care",
+  "container": "Clinical Drug Investigation",
+  "published": 2026
+ },
+ {
+  "number": 27,
+  "doi": "10.1093/jamiaopen/ooab023",
+  "status": "verified",
+  "http": 200,
+  "title": "Designing and evaluating contextualized drug–drug interaction algorithms",
+  "container": "JAMIA Open",
+  "published": 2021
+ },
+ {
+  "number": 28,
+  "doi": "10.1038/s41586-026-10687-1",
+  "status": "verified",
+  "http": 200,
+  "title": "Safety and security of large language models in healthcare",
+  "container": "Nature",
+  "published": 2026
+ },
+ {
+  "number": 29,
+  "doi": "10.1038/s41591-026-04601-5",
+  "status": "verified",
+  "http": 200,
+  "title": "Prospective evaluation of a large language model clinical decision support system in the emergency department",
+  "container": "Nature Medicine",
+  "published": 2026
+ },
+ {
+  "number": 30,
+  "doi": "10.1136/bmj.38398.500764.8F",
+  "status": "verified",
+  "http": 200,
+  "title": "Improving clinical practice using clinical decision support systems: a systematic review of trials to identify features critical to success",
+  "container": "BMJ",
+  "published": 2005
+ },
+ {
+  "number": 31,
+  "doi": "10.7326/0003-4819-157-1-201207030-00450",
+  "status": "verified",
+  "http": 200,
+  "title": "Effect of Clinical Decision-Support Systems",
+  "container": "Annals of Internal Medicine",
+  "published": 2012
+ },
+ {
+  "number": 32,
+  "doi": "10.1197/jamia.M1809",
+  "status": "verified",
+  "http": 200,
+  "title": "Overriding of Drug Safety Alerts in Computerized Physician Order Entry",
+  "container": "Journal of the American Medical Informatics Association",
+  "published": 2006
+ },
+ {
+  "number": 33,
+  "doi": "10.1093/jamia/ocaa034",
+  "status": "verified",
+  "http": 200,
+  "title": "High-priority drug-drug interaction clinical decision support overrides in a newly implemented commercial computerized provider order-entry system: Override appropriateness and adverse drug events",
+  "container": "Journal of the American Medical Informatics Association",
+  "published": 2020
+ },
+ {
+  "number": 34,
+  "doi": "10.1093/jamia/ocag064",
+  "status": "verified",
+  "http": 200,
+  "title": "Alert fatigue measurement in clinical decision support: a systematic review",
+  "container": "Journal of the American Medical Informatics Association",
+  "published": 2026
+ },
+ {
+  "number": 35,
+  "doi": "10.18578/bnf.270842008",
+  "status": "verified",
+  "http": 200,
+  "title": "Glaucoma and ocular hypertension",
+  "container": "",
+  "published": null
+ },
+ {
+  "number": 36,
+  "doi": "10.48550/arXiv.2410.05779",
+  "status": "unverifiable",
+  "http": null,
+  "title": "",
+  "error": "arXiv DOI not in Crossref"
+ },
+ {
+  "number": 37,
+  "doi": "10.1561/1500000019",
+  "status": "verified",
+  "http": 200,
+  "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+  "container": "Foundations and Trends® in Information Retrieval",
+  "published": 2009
+ },
+ {
+  "number": 38,
+  "doi": "10.1177/001316446002000104",
+  "status": "verified",
+  "http": 200,
+  "title": "A Coefficient of Agreement for Nominal Scales",
+  "container": "Educational and Psychological Measurement",
+  "published": 1960
+ },
+ {
+  "number": 39,
+  "doi": "10.2307/2529310",
+  "status": "verified",
+  "http": 200,
+  "title": "The Measurement of Observer Agreement for Categorical Data",
+  "container": "Biometrics",
+  "published": 1977
+ },
+ {
+  "number": 40,
+  "doi": "10.1136/bmj-2023-078378",
+  "status": "verified",
+  "http": 200,
+  "title": "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+  "container": "BMJ",
+  "published": 2024
+ },
+ {
+  "number": 41,
+  "doi": "10.1038/s41591-022-01772-9",
+  "status": "verified",
+  "http": 200,
+  "title": "Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI",
+  "container": "Nature Medicine",
+  "published": 2022
+ },
+ {
+  "number": 42,
+  "doi": "10.1073/pnas.1803294115",
+  "status": "verified",
+  "http": 200,
+  "title": "Deep learning improves prediction of drug–drug and drug–food interactions",
+  "container": "Proceedings of the National Academy of Sciences",
+  "published": 2018
+ },
+ {
+  "number": 43,
+  "doi": "10.1021/acs.jcim.6c01086",
+  "status": "verified",
+  "http": 200,
+  "title": "HSAF-DDI: Heterogeneous\nSemantic-Aware Drug–Drug\nInteraction Prediction with Hierarchical Adaptive Fusion",
+  "container": "Journal of Chemical Information\nand Modeling",
+  "published": 2026
+ },
+ {
+  "number": 44,
+  "doi": "10.3390/vision10020018",
+  "status": "verified",
+  "http": 200,
+  "title": "Adverse Events Reported with Standard-Dose and High-Dose Aflibercept: A FAERS Pharmacovigilance Study",
+  "container": "Vision",
+  "published": 2026
+ },
+ {
+  "number": 45,
+  "doi": "10.4324/9781003113423-6",
+  "status": "verified",
+  "http": 200,
+  "title": "Ocular Drug Transfer Following Systemic Drug Administration",
+  "container": "Ophthalmic Drug Delivery Systems",
+  "published": 2021
+ }
+]

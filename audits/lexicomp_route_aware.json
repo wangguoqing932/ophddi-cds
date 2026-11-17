@@ -1,0 +1,293 @@
+{
+  "resource": "Lexicomp Drug Interactions, accessed through the UpToDate interface provided by OpenMed",
+  "url": "http://167.99.184.127/d/di.htm",
+  "version": "UpToDate 2018; application version 1.1",
+  "accessed": "2026-11-11",
+  "n": 42,
+  "ophthalmic_specific_n": 35,
+  "generic_entry_n": 7,
+  "risk_distribution": {
+    "X": 1,
+    "D": 0,
+    "C": 15,
+    "B": 1,
+    "none": 25
+  },
+  "risk_distribution_ophthalmic_specific": {
+    "X": 0,
+    "D": 0,
+    "C": 15,
+    "B": 1,
+    "none": 19
+  },
+  "primary_mapping": "X/D -> high; C -> medium; B/A/no interaction -> low",
+  "all_42_primary": {
+    "n": 42,
+    "confusion": {
+      "high": {
+        "high": 0,
+        "medium": 8,
+        "low": 5
+      },
+      "medium": {
+        "high": 1,
+        "medium": 7,
+        "low": 11
+      },
+      "low": {
+        "high": 0,
+        "medium": 0,
+        "low": 10
+      }
+    },
+    "exact": 17,
+    "exact_rate": 0.40476190476190477,
+    "exact_wilson": [
+      0.27042861147481323,
+      0.5550568724996064
+    ],
+    "high_sensitivity": 0.0,
+    "high_sensitivity_n": [
+      0,
+      13
+    ],
+    "high_specificity": 0.9655172413793104,
+    "high_specificity_n": [
+      28,
+      29
+    ],
+    "kappa": 0.12935323383084577
+  },
+  "all_42_c_to_high": {
+    "n": 42,
+    "confusion": {
+      "high": {
+        "high": 8,
+        "medium": 0,
+        "low": 5
+      },
+      "medium": {
+        "high": 8,
+        "medium": 0,
+        "low": 11
+      },
+      "low": {
+        "high": 0,
+        "medium": 0,
+        "low": 10
+      }
+    },
+    "exact": 18,
+    "exact_rate": 0.42857142857142855,
+    "exact_wilson": [
+      0.2911765117618606,
+      0.5779376012189541
+    ],
+    "high_sensitivity": 0.6153846153846154,
+    "high_sensitivity_n": [
+      8,
+      13
+    ],
+    "high_specificity": 0.7241379310344828,
+    "high_specificity_n": [
+      21,
+      29
+    ],
+    "kappa": 0.22222222222222224
+  },
+  "all_42_binary_actionable": {
+    "n": 42,
+    "actionable": 16,
+    "reference_nonlow": 32,
+    "sensitivity": 0.5,
+    "sensitivity_n": [
+      16,
+      32
+    ],
+    "specificity": 1.0,
+    "specificity_n": [
+      10,
+      10
+    ],
+    "exact": 26,
+    "exact_rate": 0.6190476190476191,
+    "exact_wilson": [
+      0.4681404026715268,
+      0.7500027423604485
+    ],
+    "kappa": 0.3225806451612904
+  },
+  "cascade_vs_lexicomp_primary": {
+    "n": 42,
+    "confusion": {
+      "high": {
+        "high": 0,
+        "medium": 8,
+        "low": 1
+      },
+      "medium": {
+        "high": 0,
+        "medium": 7,
+        "low": 11
+      },
+      "low": {
+        "high": 1,
+        "medium": 0,
+        "low": 14
+      }
+    },
+    "exact": 21,
+    "exact_rate": 0.5,
+    "exact_wilson": [
+      0.3552598959637448,
+      0.6447401040362553
+    ],
+    "high_sensitivity": 0.0,
+    "high_sensitivity_n": [
+      0,
+      9
+    ],
+    "high_specificity": 0.9696969696969697,
+    "high_specificity_n": [
+      32,
+      33
+    ],
+    "kappa": 0.19452054794520543
+  },
+  "ophthalmic_specific_35_primary": {
+    "n": 35,
+    "confusion": {
+      "high": {
+        "high": 0,
+        "medium": 8,
+        "low": 2
+      },
+      "medium": {
+        "high": 0,
+        "medium": 7,
+        "low": 10
+      },
+      "low": {
+        "high": 0,
+        "medium": 0,
+        "low": 8
+      }
+    },
+    "exact": 15,
+    "exact_rate": 0.42857142857142855,
+    "exact_wilson": [
+      0.2798456817718068,
+      0.5914258885602508
+    ],
+    "high_sensitivity": 0.0,
+    "high_sensitivity_n": [
+      0,
+      10
+    ],
+    "high_specificity": 1.0,
+    "high_specificity_n": [
+      25,
+      25
+    ],
+    "kappa": 0.1358024691358025
+  },
+  "ophthalmic_specific_35_c_to_high": {
+    "n": 35,
+    "confusion": {
+      "high": {
+        "high": 8,
+        "medium": 0,
+        "low": 2
+      },
+      "medium": {
+        "high": 7,
+        "medium": 0,
+        "low": 10
+      },
+      "low": {
+        "high": 0,
+        "medium": 0,
+        "low": 8
+      }
+    },
+    "exact": 16,
+    "exact_rate": 0.45714285714285713,
+    "exact_wilson": [
+      0.3046601928840721,
+      0.6181027493151624
+    ],
+    "high_sensitivity": 0.8,
+    "high_sensitivity_n": [
+      8,
+      10
+    ],
+    "high_specificity": 0.72,
+    "high_specificity_n": [
+      18,
+      25
+    ],
+    "kappa": 0.27322404371584696
+  },
+  "ophthalmic_specific_35_binary": {
+    "n": 35,
+    "actionable": 15,
+    "reference_nonlow": 27,
+    "sensitivity": 0.5555555555555556,
+    "sensitivity_n": [
+      15,
+      27
+    ],
+    "specificity": 1.0,
+    "specificity_n": [
+      8,
+      8
+    ],
+    "exact": 23,
+    "exact_rate": 0.6571428571428571,
+    "exact_wilson": [
+      0.4915194951399626,
+      0.7916830501295105
+    ],
+    "kappa": 0.36363636363636365
+  },
+  "route_comparison": {
+    "n_pairs_with_both_entries": 35,
+    "discordant": 21,
+    "all_discordant_lower_for_ophthalmic": true,
+    "ophthalmic_no_interaction_but_systemic_alert": 18,
+    "ophthalmic_C_but_systemic_D": 3,
+    "examples": [
+      {
+        "case": "G08",
+        "ophthalmic_entry": "Ketorolac (Ophthalmic)",
+        "ophthalmic_risk": null,
+        "systemic_entry": "Ketorolac (Systemic)",
+        "systemic_risk": "D"
+      },
+      {
+        "case": "G19",
+        "ophthalmic_entry": "Moxifloxacin (Ophthalmic)",
+        "ophthalmic_risk": null,
+        "systemic_entry": "Moxifloxacin (Systemic)",
+        "systemic_risk": "X"
+      },
+      {
+        "case": "G142",
+        "ophthalmic_entry": "Timolol (Ophthalmic)",
+        "ophthalmic_risk": "C",
+        "systemic_entry": "Timolol (Systemic)",
+        "systemic_risk": "D"
+      }
+    ]
+  },
+  "reference_distribution": {
+    "high": 13,
+    "medium": 19,
+    "low": 10
+  },
+  "cascade_distribution": {
+    "high": 9,
+    "medium": 18,
+    "low": 15
+  }
+}

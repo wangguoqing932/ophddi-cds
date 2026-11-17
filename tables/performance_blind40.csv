@@ -1,0 +1,5 @@
+method,n,accuracy_4level,sensitivity_high,specificity_high,note
+pure_llm,40,0.525,0.909,0.517,no knowledge injection
+naive_rag,40,0.5,0.909,0.448,BM25 keyword retrieval (noise)
+lightrag,40,0.55,0.545,0.966,KG context only (rule gaps undetected)
+full_system,40,0.975,1.0,1.0,cascade v2 (rule + class matrix + G19)

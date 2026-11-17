@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OphDDI-CDS 部分完成项复验台</title>
+<style>
+  :root{
+    --navy:#16324F; --blue:#2F6690; --blue2:#3A7CA5; --ink:#1F2933;
+    --muted:#5B6B7B; --line:#D6E0EA; --bg:#F4F7FA; --card:#FFFFFF;
+    --green:#2E7D5B; --amber:#B7791F; --red:#A63A3A; --soft:#EEF3F8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Microsoft YaHei","Segoe UI",Arial,sans-serif;
+       font-size:15px;line-height:1.65}
+  h1,h2,h3,h4{font-family:"Times New Roman","SimSun",serif;color:var(--navy);margin:0}
+  a{color:var(--blue);text-decoration:none;border-bottom:1px dotted #9DB6CC}
+  a:hover{color:var(--navy);border-bottom-style:solid}
+  header.hero{background:linear-gradient(135deg,#10263D 0%,#1D4568 55%,#2F6690 100%);
+              color:#fff;padding:34px 28px 26px}
+  .wrap{max-width:1120px;margin:0 auto}
+  .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#BFD4E6}
+  header.hero h1{color:#fff;font-size:34px;margin:8px 0 6px;letter-spacing:.02em}
+  header.hero p.sub{margin:0;color:#DCE8F2;max-width:900px;font-size:14.5px}
+  .progress-shell{margin-top:20px;background:rgba(255,255,255,.16);border-radius:20px;
+                  height:10px;overflow:hidden;max-width:620px}
+  .progress-bar{height:100%;width:0;background:#8FD3B6;transition:width .25s ease}
+  .progress-meta{display:flex;gap:14px;align-items:center;margin-top:8px;font-size:12.5px;color:#DCE8F2}
+  main{max-width:1120px;margin:0 auto;padding:26px 20px 60px}
+  section{margin:30px 0}
+  section>h2{font-size:24px;border-bottom:2px solid var(--navy);padding-bottom:7px;margin-bottom:6px}
+  .section-note{color:var(--muted);font-size:13.5px;margin:6px 0 16px}
+  .card{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--amber);
+        border-radius:10px;padding:20px 22px;margin:16px 0 22px;box-shadow:0 1px 2px rgba(22,50,79,.05)}
+  .card.r2{border-left-color:var(--blue2)}
+  .card-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .card-head h3{font-size:21px}
+  .tag{font-family:"Consolas",monospace;font-size:12px;font-weight:700;color:#fff;
+       background:var(--navy);padding:3px 8px;border-radius:4px;letter-spacing:.04em}
+  .chip{font-size:12px;padding:3px 9px;border-radius:999px;font-weight:700;border:1px solid}
+  .chip.partial{color:#7A4E0B;background:#FDF3DF;border-color:#E7C98B}
+  .chip.done{color:#1F5C44;background:#E4F3EC;border-color:#A9D3C1}
+  .chip.limited{color:#1F4E6B;background:#E6F1F8;border-color:#A9C9DE}
+  .chip.residual{color:#4B5563;background:#EEF1F4;border-color:#CBD5DF}
+  blockquote{margin:10px 0 14px;padding:11px 15px;background:var(--soft);
+             border-left:3px solid var(--blue);color:#33475B;font-size:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  h4{font-size:16px;margin:16px 0 6px;color:var(--navy)}
+  h4 .num{color:var(--blue);font-family:"Consolas",monospace;font-size:13px;margin-right:6px}
+  ul,ol{margin:6px 0 6px 20px;padding:0}
+  li{margin:3px 0}
+  .ok li::marker{color:var(--green)}
+  .todo li::marker{color:var(--amber)}
+  table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:13.5px;background:#fff}
+  th,td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
+  th{background:var(--navy);color:#fff;font-weight:600;font-size:13px}
+  tbody tr:nth-child(even){background:#F8FAFC}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  code{font-family:"Consolas","Courier New",monospace;font-size:12.5px;background:#EDF2F7;
+       padding:1px 5px;border-radius:3px;color:#23405C}
+  .checklist{display:grid;gap:7px;margin:8px 0 4px}
+  .checklist label{display:flex;gap:9px;align-items:flex-start;background:#FBFCFE;
+                   border:1px solid var(--line);border-radius:7px;padding:8px 10px;cursor:pointer}
+  .checklist label:hover{border-color:#A9C1D6;background:#F6FAFD}
+  .checklist input{margin-top:3px;width:16px;height:16px;accent-color:var(--blue)}
+  .note-row{margin-top:12px}
+  .note-row label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+  textarea{width:100%;min-height:64px;border:1px solid var(--line);border-radius:7px;
+           padding:8px 10px;font-family:inherit;font-size:13.5px;resize:vertical;background:#fff}
+  .status-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px;
+              padding-top:10px;border-top:1px dashed var(--line)}
+  select{border:1px solid var(--line);border-radius:6px;padding:6px 9px;font-family:inherit;
+         font-size:13.5px;background:#fff;color:var(--ink)}
+  .cmd{background:#0F2234;color:#D7E6F2;padding:10px 12px;border-radius:7px;
+       font-family:"Consolas",monospace;font-size:12.5px;overflow-x:auto;margin:6px 0 10px}
+  .callout{background:#FFF8E8;border:1px solid #EAD3A2;border-radius:8px;padding:11px 14px;
+           font-size:13.5px;color:#6B4A12;margin:12px 0}
+  .callout.blue{background:#EDF5FB;border-color:#BBD4E8;color:#204A6B}
+  .callout.red{background:#FDF0F0;border-color:#E7BDBD;color:#7A2E2E}
+  .small{font-size:12.5px;color:var(--muted)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+  button{border:0;border-radius:7px;padding:9px 15px;font-family:inherit;font-size:14px;
+         cursor:pointer;background:var(--navy);color:#fff}
+  button.secondary{background:#fff;color:var(--navy);border:1px solid #B9CBD9}
+  button.danger{background:#fff;color:var(--red);border:1px solid #E0B4B4}
+  button:hover{filter:brightness(1.06)}
+  pre#preview{background:#0F2234;color:#D7E6F2;padding:14px;border-radius:8px;
+              font-size:12px;line-height:1.5;overflow:auto;max-height:340px;white-space:pre-wrap}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;
+         padding:18px 20px 34px;text-align:center}
+  .anchor-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .anchor-nav a{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);
+                padding:5px 10px;border-radius:999px;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,.25)}
+  @media print{
+    body{background:#fff;font-size:11pt}
+    header.hero{background:#fff;color:#000;border-bottom:2px solid #000}
+    header.hero h1{color:#000}.kicker,.progress-shell,.progress-meta,.anchor-nav{display:none}
+    .toolbar,button,pre#preview{display:none}
+    .card{break-inside:avoid;box-shadow:none}
+    a{color:#000;border-bottom:none}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">OphDDI-CDS · Frontiers in Pharmacology · Article 2032864</div>
+    <h1>部分完成项复验台</h1>
+    <p class="sub">17 条审稿意见均已有回应并完成。R1-5 已于 2026-11-14 由一位非作者眼科医师独立复核：14/30 一致（14/28，κ 0.271），14 例作者 route-consistent 被改判 unsupported；R2-6 按作者 2026-11-13 决定以 2018 UpToDate/OpenMed 版关闭。本页保留准备与复验记录；最新结果见 `outputs/audits/r1_5_independent_review/independent_review_results.json`。</p>
+    <div class="progress-shell"><div class="progress-bar" id="bar"></div></div>
+    <div class="progress-meta"><span id="pct">0%</span><span id="count">0 / 0 项</span><span>·</span><span id="saved">未保存</span></div>
+    <nav class="anchor-nav">
+      <a href="#partials">一、两条部分完成</a>
+      <a href="#residuals">二、残余局限</a>
+      <a href="#numbers">三、数字复验</a>
+      <a href="#all17">四、17 条总表</a>
+      <a href="#export">五、导出记录</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="callout blue">
+    <strong>使用顺序：</strong>先读“已落实 / 尚未完成”，再按“复验步骤”核对稿件与数据，最后按“完成判据”补做外部工作并回写稿件。勾选框只表示“我已核对”，不等于审稿项完成；R1-5 的完成必须有独立第三方签署的复核记录，作者本人复验不能替代独立复核。
+  </div>
+
+  <section id="partials">
+    <div class="callout blue"><strong>2026-11-14 更新：</strong>R1-5 已完成独立复核（一位非作者眼科医师，30/30 返回）。结果 14/30 一致（46.7%）；在作者三类内 14/28（50.0%，κ 0.271）。复核人把 14 例作者 route-consistent 改判 unsupported，5 例作者 unsupported 全部保持，2 例作者 over-grade 改判 supported upgrade。§3.5、Table 5、S2、R1 回复已回写。以下“尚未完成”小节保留为准备阶段记录，不再是当前状态。</div>
+    <h2>一、R1-5 与 R2-6 的处理记录</h2>
+    <p class="section-note">判定口径：<strong>R1-5 部分完成</strong> = 审稿人要求的“独立复核”未做；<strong>R2-6 已回应、版本受限</strong> = 审稿人原话只要求“至少一个路线感知资源”，2018 Lexicomp 已满足，但审计按“当前授权版”的附加标准仍标为 partial。两条都不是文字遗漏：R1-5 需外部复核，R2-6 最低档只需补引用与方法，当前版重查是可选的强化。</p>
+
+    <!-- ===================== R1-5 ===================== -->
+    <article class="card" id="r15">
+      <div class="card-head">
+        <span class="tag">R1-5</span>
+        <h3>外部审计分歧的独立复核</h3>
+        <span class="chip done">已完成（独立复核）</span>
+      </div>
+
+      <blockquote>“The external audit needs a consistent reference standard and a clearer safety analysis… Please provide a <strong>focused, independently reviewed analysis</strong> of these disagreements, separating plausible route-related downgrading from unsupported undergrading. These are reference-label disagreements; without outcome data, they should not be equated directly with missed clinical adverse events.”</blockquote>
+
+      <div class="grid2">
+        <div>
+          <h4><span class="num">01</span>已落实（可在稿件中核对）</h4>
+          <ul class="ok">
+            <li>两套标签全部报告：applied 62/92（0.674；95% CI 0.573–0.761），re-derived 61/92（0.663；0.562–0.751）；敏感性 8/25（0.320）与 8/29（0.276）。</li>
+            <li>62 例 label-independent 子集 34/62（0.548）；26 例 retrieval-overlap 排除单独列出。</li>
+            <li>30 例分歧已分类：21 例 route-consistent（15 medium、4 low、2 minimal）、5 例 unsupported undergrading、4 例 over-grade。</li>
+            <li>12 例 default-path 分歧单列（10 route-consistent、2 unsupported），并点名 4 个 DDInter-high 对：D3-026、D3-029、D3-033、D3-080。</li>
+            <li>§3.5 现已报告独立复核结果；作者分类保留为 descriptive categorization，没有被写成“已独立验证”。</li>
+            <li>R1 回复第 5 条已补 PubMed scoping scan：13 个高风险对中 10 个无眼科病例报道，3 个非零结果是药理/综述/动物研究；作为“临床意义可能有限”的旁证，明确不用于把 5 例 unsupported undergrading 改判，也不当作安全证据。S2 note 同步。</li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="num">02</span>独立复核结果（2026-11-14）</h4>
+          <ul class="ok">
+            <li>一位非作者眼科医师（reviewer code GZQ）盲法复核 30/30；未看作者分类、decision path、matched rules。</li>
+            <li>与作者分类一致 <strong>14/30（46.7%）</strong>；作者三类内 <strong>14/28（50.0%，κ 0.271）</strong>。</li>
+            <li>14 例作者 route-consistent 被改判 unsupported；5 例作者 unsupported 全部保持；2 例作者 over-grade 改判 supported upgrade。</li>
+            <li>独立观点更保守，<strong>不复现 21/5 分类</strong>；§3.5 已写 “reinforces, rather than resolves, the false-negative concern”。Table 5 与 S2 均为 author / independent 双列。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4><span class="num">03</span>完成判据（缺一不可）</h4>
+      <ol>
+        <li>复核人<strong>不是作者</strong>，最好是未参与本研究的眼科医师或临床药师；声明其角色与利益冲突。</li>
+        <li>复核人<strong>看不到引擎分级</strong>，只拿到：药物对、参考标签、吸收 tier、机制类别；不提供 decision path、matched rule ID 或引擎输出，避免被系统答案锚定。逐例判断“route-consistent downgrade / unsupported undergrading / over-grade”，并写理由。</li>
+        <li>30 例全部覆盖；计算作者分类与独立分类的一致数；任何改判都要在 Table S2 的 note 和 §3.5 中报告，不能只改总数。</li>
+        <li>若独立复核推翻某例，需说明对 21/5/4 计数、敏感性讨论和“five unsupported”措辞的影响。</li>
+        <li>回写：§3.5、Table 5 脚注、Table S2 note、R1 回复第 5 条；重建 manuscript/supplement 的 clean 与 marked 版本。</li>
+      </ol>
+      <div class="callout red"><strong>注意：</strong>您本人是作者，您的复验可以核对数字和分类逻辑，但不能把 R1-5 标记为“独立复核完成”。必须由一位未署名的第三方完成第 1–3 步。</div>
+
+      <h4><span class="num">04</span>现在就能做的复验（数字与文本）</h4>
+      <table>
+        <thead><tr><th>核对项</th><th>期望值</th><th>位置 / 命令</th></tr></thead>
+        <tbody>
+          <tr><td>applied 标签总体一致率</td><td class="num">62/92 = 0.674（0.573–0.761）</td><td>Table 5；§3.5</td></tr>
+          <tr><td>re-derived 标签总体一致率</td><td class="num">61/92 = 0.663（0.562–0.751）</td><td>Table 5；§3.5</td></tr>
+          <tr><td>applied high-risk 敏感性</td><td class="num">8/25 = 0.320（0.172–0.516）</td><td>Table 5</td></tr>
+          <tr><td>re-derived high-risk 敏感性</td><td class="num">8/29 = 0.276</td><td>Table 5</td></tr>
+          <tr><td>label-independent 子集</td><td class="num">34/62 = 0.548</td><td>Table 5</td></tr>
+          <tr><td>分歧分类求和</td><td class="num">21 + 5 + 4 = 30</td><td>Supplementary Table S2</td></tr>
+          <tr><td>default-path 分歧</td><td class="num">12 = 10 route-consistent + 2 unsupported</td><td>S2 note；§3.5</td></tr>
+          <tr><td>四个 DDInter-high default 对</td><td class="num">D3-026 / 029 / 033 / 080</td><td>§3.5；S2</td></tr>
+        </tbody>
+      </table>
+      <div class="cmd">python scripts/revision_r1_stats.py
+# → outputs/recomputed/revision_r1_stats.json
+# 核对 audit.applied / audit.rederived / audit.high_risk_sensitivity</div>
+      <p class="small">证据文件：
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/deliverables/tables/table5_audit_strata.md">Table 5</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/deliverables/supplementary_files/Supplementary_Material.md">Supplementary（S2，约 237–272 行）</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/paper/manuscript.en.md">manuscript.en.md §3.5</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/submission/response_to_reviewers_r1.md">R1 回复第 5 条</a>
+      </p>
+
+      <h4><span class="num">05</span>复验清单</h4>
+      <div class="callout blue"><strong>复核已完成：</strong>
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/r1_5_independent_review/README.md">r1_5_independent_review/</a>
+        ——返回 CSV、评分结果（14/30；14/28，κ0.271）、混淆矩阵均已存档；Table 5、S2、R1 回复已回写。</div>
+      <div class="checklist">
+        <label><input type="checkbox" class="track" data-key="r15-1"> S2 确有 30 行，且 21 + 5 + 4 = 30；每行有 tier、path、matched rules、direction</label>
+        <label><input type="checkbox" class="track" data-key="r15-2"> 12 例 default-path 分歧 = 10 route-consistent + 2 unsupported；4 个 DDInter-high 对均在表中</label>
+        <label><input type="checkbox" class="track" data-key="r15-3"> Table 5 的 62/92、61/92、8/25、8/29、34/62 与正文完全一致</label>
+        <label><input type="checkbox" class="track" data-key="r15-4"> §3.5 已写独立复核 14/30、14/28、κ0.271；没有把作者分类写成“被独立验证”</label>
+        <label><input type="checkbox" class="track" data-key="r15-5"> 复核人非作者、盲法；30/30 返回，结果文件已存档</label>
+        <label><input type="checkbox" class="track" data-key="r15-6"> 14 例改判与 5/5、2/4 结果已回写 §3.5、Table 5、S2、R1 回复</label>
+      </div>
+      <div class="note-row"><label for="note-r15">复验备注（数字核对结果、复核人、改判例）</label>
+        <textarea id="note-r15" data-note="r15" placeholder="例如：2026-11-__ 核对 S2 共 30 行；21/5/4 与正文一致。独立复核人：___（非作者，眼科）。"></textarea></div>
+      <div class="status-row">
+        <label>本条状态：
+          <select data-status="r15">
+            <option value="未开始">未开始</option>
+            <option value="核对中">核对中</option>
+            <option value="待独立复核">待独立复核</option>
+            <option value="已完成">已完成</option>
+          </select>
+        </label>
+        <span class="small">只有完成判据 1–5 才选“已完成”。</span>
+      </div>
+    </article>
+
+    <!-- ===================== R2-6 ===================== -->
+    <article class="card r2" id="r26">
+      <div class="card-head">
+        <span class="tag">R2-6</span>
+        <h3>路线感知临床数据库对照（Lexicomp）</h3>
+        <span class="chip done">已完成（2018 版接受）</span>
+      </div>
+
+      <blockquote>“A comparison with at least one route-aware clinical interaction resource would help clarify the added value of OphDDI-CDS.”</blockquote>
+
+      <div class="callout blue"><strong>先回答“2018 够不够”：</strong>按审稿人原话（“at least one route-aware clinical interaction resource”），<strong>够</strong>——2018 Lexicomp 是真实的路线感知商业库，42 例方向一致，稿件也已声明版本限制。审计把它标为“部分完成”，用的是更严格的<strong>附加</strong>标准：当前授权版。因此本条分两档：<strong>最低可接受</strong>（2018 + 披露 + 引用 + 方法）与<strong>强化</strong>（当前版重查）。</div>
+
+      <div class="grid2">
+        <div>
+          <h4><span class="num">01</span>已落实（可在稿件中核对）</h4>
+          <ul class="ok">
+            <li><strong>RA-DDInter</strong>：42 例中 raw DDInter 17/42、RA-DDInter 21/42、cascade 32/42；敏感性 5/13、3/13、9/13；特异性 17/29、28/29、29/29。</li>
+            <li><strong>1,933 对</strong>：RA-DDInter 与 cascade 一致 1,489（77.0%）；cascade 更高 148 对、更低 296 对。</li>
+            <li><strong>Lexicomp</strong>：42 例；35 例有眼科专用条目，7 例仅通用条目（apraclonidine、bromfenac、voriconazole 三药）。</li>
+            <li>评级分布：C 15、B 1、X 1、无相互作用 25；35 例双条目中眼科条目低于全身条目 21 例，其中 18 例眼科无相互作用而全身为 C/D/X。</li>
+            <li>三种映射全部报告：C→medium 精确 17/42、敏感性 0/13；C→high 精确 18/42、敏感性 8/13；二分类 C/D/X 16/42、敏感性 16/32（0.500）、特异性 10/10、精确 26/42、κ 0.323。</li>
+            <li>2018 版限制已写进 §3.9、Table 7、S18b 和 R2 回复；脚本 <code>compare_lexicomp_route_aware.py</code> 与原始 JSON 已存档。</li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="num">02</span>作者决定与版本限制</h4>
+          <ul class="todo">
+            <li><strong>最低档已于 2026-11-13 补齐（不依赖当前版）：</strong>§3.9 已写查询日期、2018 UpToDate interface / application version 1.1、按药名查询、眼科条目优先、未向接口发送分级或参考标签；Table 7 注已补入 PDF（此前该注从未被嵌入，且旧句 “licensed databases were not available” 已删除）；S18b 注同步；R2 回复已改；Discussion §4.2 已加一句整合方向。摘要保留 “three perspectives”，因为路线感知对照是外部校验，不改变三视角主结构。</li>
+            <li><strong>强化档（可选，审计的严格标准）：</strong>实际访问的是 UpToDate 2018（application version 1.1），经第三方 OpenMed 接口 <code>http://167.99.184.127/d/di.htm</code>，访问日期 2026-11-11；不是您机构的当前授权 Lexicomp。</li>
+            <li><strong>结论：</strong>最低档补齐后，按审稿人原话即可关闭 R2-6；只有强化档才需要当前版重查。当前版会改数字，最低档不会。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4><span class="num">03</span>版本说明（A 已完成；B 可选）</h4>
+      <p><strong>A. 最低可接受（推荐先做；可关闭 R2-6）</strong></p>
+      <ol>
+        <li>保留 2018 版对照，但在 §3.9 明确写“2018 UpToDate interface, application version 1.1, accessed 2026-11-11”，并说明它是历史快照、不是当前商业库基准。</li>
+        <li>补引用：Lexicomp Drug Interactions（2018 版、UpToDate, Inc.、访问日期、URL）；若因许可不能给 case-level 数据，说明只报告聚合结果。</li>
+        <li>补方法：谁查询、查询日期、眼科专用条目 vs 通用条目如何选择、是否盲于 cascade 与参考标签、复方与多适应证如何处理。</li>
+        <li>统一口径：摘要/结论若仍写 “three perspectives”，在 §3.9 或 Discussion 明确两组路线感知对照是外部校验，不改变三视角主结构；或加一句“plus two route-aware comparators”。</li>
+        <li>回写 §3.9、Table 7 注、S18b、R2 回复第 6 条；重建 clean/marked 版本，门控重跑。</li>
+      </ol>
+      <p><strong>B. 强化（严格标准；只有要做“当前商业库一致率”时才需要）</strong></p>
+      <ol>
+        <li>用当前机构授权版 Lexicomp（2026 版）重查同一 42 对；记录产品名、版本号、查询日期、入口。</li>
+        <li>逐例记录眼科/全身条目、五级评级、最终采用哪个条目及理由；一人查询、另一人抽查。</li>
+        <li>比较 2018 与当前版：多少例评级变化、方向如何；若变化，重算 17/42、18/42、0/13、8/13、16/32 等全部指标，并回写 §3.9、Table 7、S18b、Discussion。</li>
+      </ol>
+      <div class="callout"><strong>决定：</strong>A 已于 2026-11-13 完成并随稿重建；按作者决定，R2-6 以 2018 版关闭。B（当前版重查）是可选加分项，不再作为待办。</div>
+
+      <h4><span class="num">04</span>现在就能做的复验（数字与文本）</h4>
+      <table>
+        <thead><tr><th>核对项</th><th>期望值</th><th>位置 / 命令</th></tr></thead>
+        <tbody>
+          <tr><td>42 例覆盖率</td><td class="num">35 眼科专用 + 7 通用 = 42</td><td>S18b；lexicomp JSON</td></tr>
+          <tr><td>Lexicomp 评级分布</td><td class="num">X 1 / D 0 / C 15 / B 1 / none 25</td><td>lexicomp report §1</td></tr>
+          <tr><td>眼科条目低于全身条目</td><td class="num">21 / 35（其中 18 例眼科 none、全身 C/D/X）</td><td>S18b；report §3</td></tr>
+          <tr><td>C→medium 映射</td><td class="num">17/42；敏感性 0/13；特异性 28/29</td><td>Table 7；S18b</td></tr>
+          <tr><td>C→high 映射</td><td class="num">18/42；敏感性 8/13；特异性 21/29</td><td>S18b</td></tr>
+          <tr><td>二分类 C/D/X</td><td class="num">16/42；16/32；10/10；26/42；κ 0.323</td><td>S18b</td></tr>
+          <tr><td>RA-DDInter 42 例</td><td class="num">17/42、21/42、32/42；敏感性 5/3/9 of 13</td><td>Table 7；§3.9</td></tr>
+          <tr><td>1,933 对一致</td><td class="num">1,489（77.0%）；higher 148；lower 296</td><td>table7_route_aware_1933.json</td></tr>
+        </tbody>
+      </table>
+      <div class="cmd">python scripts/compare_lexicomp_route_aware.py
+# → outputs/audits/lexicomp_route_aware.json / _report.md
+# 先核对 version、accessed、n=42、ophthalmic_specific_n=35</div>
+      <p class="small">证据文件：
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/lexicomp_route_aware_report.md">Lexicomp 对照报告</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/lexicomp_route_aware.json">原始 JSON</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/deliverables/tables/table7_route_aware.md">Table 7</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/tables/table_s18b_lexicomp.md">Table S18b</a> ·
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/paper/manuscript.en.md">manuscript.en.md §3.9</a>
+      </p>
+
+      <h4><span class="num">05</span>复验清单</h4>
+      <div class="callout blue"><strong>已准备的当前版查询工作簿：</strong>
+        <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/r2_6_current_lexicomp/README.md">r2_6_current_lexicomp/</a>
+        ——42 例查询表、隐藏的 reference/cascade 键、评分脚本（2018 vs 当前版逐例变化 + 全部指标重算）。只差当前授权 Lexicomp 访问。本次已补 §3.9 方法、Table 7 注和 S18b 版本说明，未改任何 42 例数字。</div>
+      <div class="checklist">
+        <div class="small"><strong>A. 最低档（2018 + 披露 + 引用 + 方法）</strong></div>
+        <label><input type="checkbox" class="track" data-key="r26-1"> 42 = 35 + 7；三药（apraclonidine、bromfenac、voriconazole）通用条目已在 S18b 标注</label>
+        <label><input type="checkbox" class="track" data-key="r26-2"> 三种映射的 17/42、18/42、0/13、8/13、16/32、κ 0.323 与 S18b/Table 7 一致</label>
+        <label><input type="checkbox" class="track" data-key="r26-3"> 全文检索 “2018”，确认所有位置都把版本限制写清，没有暗示当前版</label>
+        <label><input type="checkbox" class="track" data-key="r26-4"> 摘要/结论与 §3.9 口径一致：三视角 + 两组路线感知对照，或明确它们是外部校验</label>
+        <label><input type="checkbox" class="track" data-key="r26-7"> 已补 Lexicomp/UpToDate 版本、访问日期、URL 引用，或写明许可限制</label>
+        <label><input type="checkbox" class="track" data-key="r26-8"> 方法段已写查询者、查询日期、条目选择规则、盲法状态、复方处理</label>
+        <div class="small" style="margin-top:8px"><strong>B. 强化档（当前授权版重查）</strong></div>
+        <label><input type="checkbox" class="track" data-key="r26-5"> 已获得当前机构授权 Lexicomp 访问，并确定查询者与抽查者</label>
+        <label><input type="checkbox" class="track" data-key="r26-6"> 42 对当前版重查完成；2018 vs 当前版差异与重算指标已回写 §3.9、Table 7、S18b</label>
+      </div>
+      <div class="note-row"><label for="note-r26">复验备注（版本、查询日期、评级变化例）</label>
+        <textarea id="note-r26" data-note="r26" placeholder="例如：A 档已补引用与方法；若做 B 档：2026-11-__ 用机构 Lexicomp 2026 版重查，42 对中 __ 例评级变化。"></textarea></div>
+      <div class="status-row">
+        <label>本条状态：
+          <select data-status="r26">
+            <option value="未开始">未开始</option>
+            <option value="核对中">核对中</option>
+            <option value="最低档完成">最低档完成</option>
+            <option value="当前版重查完成">当前版重查完成</option>
+          </select>
+        </label>
+        <span class="small">A 档 5 项全勾 = 最低可接受；B 档 3 项全勾 = 当前版完成。</span>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== RESIDUALS ===================== -->
+  <section id="residuals">
+    <h2>二、已披露的残余局限（不是回复缺失，但决定结论强度）</h2>
+    <p class="section-note">这 6 项在稿件中都已如实披露，所以不算“漏答”；但它们中的任何一项被审稿人继续追问，都需要新数据或重跑，不能靠改文字关闭。勾选表示“我已确认该披露位置与措辞”。</p>
+    <table>
+      <thead><tr><th style="width:52px">编号</th><th>残余局限</th><th>稿件位置</th><th style="width:150px">现在能补完吗</th><th style="width:250px">补完需要什么</th><th style="width:66px">已核对</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>L1</strong></td>
+          <td>没有独立裁决、无 development-free 测试集；B02/B12 在引擎复核后改标，B18/B19 参与矩阵设计，20/20 corrected 部分同义反复</td>
+          <td>§2.3、§3.3、§4.4、Table 3 注</td>
+          <td><span class="chip residual">需新数据</span></td>
+          <td>前瞻锁定、非作者独立裁决的新测试集；不能由现有 118 例重分类得到</td>
+          <td><input type="checkbox" class="track" data-key="l1"></td>
+        </tr>
+        <tr>
+          <td><strong>L2</strong></td>
+          <td>30 例审计分歧的分类由作者完成，非独立复核</td>
+          <td>§3.5、Table 5、S2 note</td>
+          <td><span class="chip residual">可补（见 R1-5）</span></td>
+          <td>一位非作者、盲于引擎分级的复核人；逐例记录与一致率</td>
+          <td><input type="checkbox" class="track" data-key="l2"></td>
+        </tr>
+        <tr>
+          <td><strong>L3</strong></td>
+          <td>专家评审 12 例、非盲、非独立，仅描述性，不是 validation；两位专家均低于引擎分级 8/12（frozen 6/12）</td>
+          <td>§2.5、§3.8、§4.1、Table S3</td>
+          <td><span class="chip residual">需新设计</span></td>
+          <td>盲法、独立、样本量足够的专家面板；现有 12 例只能作 perspective comparison</td>
+          <td><input type="checkbox" class="track" data-key="l3"></td>
+        </tr>
+        <tr>
+          <td><strong>L4</strong></td>
+          <td>configuration 2 的 <code>rule_context</code> 用旧 prompt；<code>pure_llm</code>、<code>naive_rag</code> 未在 tier 修正后重跑，baseline 对比不是干净的 retrieval 检验</td>
+          <td>§2.4、§3.6、Figure 2 图注</td>
+          <td><span class="chip residual">可重跑</span></td>
+          <td>用修正后的 prompt/tier 统一重跑三种 baseline 与两种 configuration；会改变 0.419–0.714、0.576–0.737 等数值</td>
+          <td><input type="checkbox" class="track" data-key="l4"></td>
+        </tr>
+        <tr>
+          <td><strong>L5</strong></td>
+          <td>Lexicomp 对照为 2018 版、第三方 OpenMed 接口，不是当前授权版</td>
+          <td>§3.9、Table 7、S18b</td>
+          <td><span class="chip done">已接受（2018）</span></td>
+          <td>最低档：保留 2018 + 补引用/方法即可；强化档：当前机构授权版重查 42 对</td>
+          <td><input type="checkbox" class="track" data-key="l5"></td>
+        </tr>
+        <tr>
+          <td><strong>L6</strong></td>
+          <td>无结局数据；audit high-risk sensitivity 0.320（0.276 re-derived），不能估计对不良事件的预测价值</td>
+          <td>摘要、§4.4、§4.5、结论</td>
+          <td><span class="chip residual">需前瞻研究</span></td>
+          <td>结局关联的前瞻校准；本轮只能把敏感性作为 principal limitation 披露</td>
+          <td><input type="checkbox" class="track" data-key="l6"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout blue"><strong>本次已准备的可执行材料：</strong>
+      L2 → <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/r1_5_independent_review/README.md">30 例独立复核包</a>（只差非作者复核人）；
+      L5 → <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/r2_6_current_lexicomp/README.md">当前版 Lexicomp 查询工作簿</a>（只差当前授权访问）；
+      L4 → <a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/l4_baseline_rerun/README.md">重跑方案与更正 prompt</a>（未执行，因会改主结果）。</div>
+    <div class="callout"><strong>判断规则：</strong>L2 与 L5 是“现在就能补”的两项，分别对应 R1-5 与 R2-6；L1、L3、L6 需要新数据/新设计，L4 需要统一重跑。不要把 L1/L3/L6 写成“已解决”，也不要在未重跑时改 L4 的数字。</div>
+  </section>
+
+  <!-- ===================== NUMBERS ===================== -->
+  <section id="numbers">
+    <h2>三、关键数字复验</h2>
+    <p class="section-note">以下数值是审稿人最可能抽查的；逐项运行并核对。任一不符，先停下查数据，不要改文字迁就数字。</p>
+    <table>
+      <thead><tr><th>指标</th><th class="num" style="width:170px">期望值</th><th>来源 / 命令</th><th style="width:66px">已核对</th></tr></thead>
+      <tbody>
+        <tr><td>一致性门控</td><td class="num">92 PASS / 0 FAIL</td><td><code>python scripts/final_consistency_check.py</code></td><td><input type="checkbox" class="track" data-key="n1"></td></tr>
+        <tr><td>手稿审计</td><td class="num">0 FAIL / 2 WARN</td><td><code>python scripts/audit_manuscript.py</code>（WARN：3.1/3.6/3.7/3.9 未交叉引用；摘要 346/350）</td><td><input type="checkbox" class="track" data-key="n2"></td></tr>
+        <tr><td>DDInter 分母</td><td class="num">4,546 matched / 2,613 Unknown / 1,933 graded</td><td><code>python scripts/audit_ddinter_denominator.py</code></td><td><input type="checkbox" class="track" data-key="n3"></td></tr>
+        <tr><td>总体降级</td><td class="num">1,502 / 1,933 = 77.7%</td><td>§3.4；ddinter_disagreement_audit.json</td><td><input type="checkbox" class="track" data-key="n4"></td></tr>
+        <tr><td>assessed 子集降级</td><td class="num">1,341 / 1,757 = 76.3%</td><td>§3.4；§4.5</td><td><input type="checkbox" class="track" data-key="n5"></td></tr>
+        <tr><td>从 high 降级</td><td class="num">352（34→medium；318→low）</td><td>§3.4</td><td><input type="checkbox" class="track" data-key="n6"></td></tr>
+        <tr><td>medium→low / 升级 / 总差异</td><td class="num">1,150；65（3.4%）；81.1%</td><td>§3.4</td><td><input type="checkbox" class="track" data-key="n7"></td></tr>
+        <tr><td>低 tier 组成统计</td><td class="num">1,206 / 1,502 = 80.3%（involved，非因果）</td><td>§3.4；§4.5</td><td><input type="checkbox" class="track" data-key="n8"></td></tr>
+        <tr><td>未评估 / default path</td><td class="num">176（151 medium、10 high、15 low）；161 个降级</td><td>§3.4；§4.5；S11</td><td><input type="checkbox" class="track" data-key="n9"></td></tr>
+        <tr><td>路径归因</td><td class="num">504 rule / 507 matrix / 746 G19 / 176 default</td><td><code>python scripts/path_attribution_audit.py</code></td><td><input type="checkbox" class="track" data-key="n10"></td></tr>
+        <tr><td>L1 主分析</td><td class="num">101/118 = 0.856；κ 0.779；校正 104/118 = 0.881</td><td>Table 3；§3.3</td><td><input type="checkbox" class="track" data-key="n11"></td></tr>
+        <tr><td>40 例冻结盲集</td><td class="num">36/40 = 0.900；B 18/20、20/20；C 18/20、19/20</td><td>Table 3；§3.3</td><td><input type="checkbox" class="track" data-key="n12"></td></tr>
+        <tr><td>外部审计</td><td class="num">62/92 = 0.674；61/92 = 0.663；8/25 = 0.320；8/29 = 0.276</td><td>Table 5；§3.5</td><td><input type="checkbox" class="track" data-key="n13"></td></tr>
+        <tr><td>专家评审</td><td class="num">11/12 一致；κ 0.840；8/12 低于引擎（frozen 6/12）</td><td>§3.8；Table S3</td><td><input type="checkbox" class="track" data-key="n14"></td></tr>
+        <tr><td>参考文献</td><td class="num">45 条；44 Crossref + 1 DataCite（arXiv）</td><td>reference_verification_table.md</td><td><input type="checkbox" class="track" data-key="n15"></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== ALL 17 ===================== -->
+  <section id="all17">
+    <h2>四、17 条审稿意见总表</h2>
+    <p class="section-note">用于确认严格审计下只有 R1-5、R2-6 未完全关闭。R1-1 标为“完成*”：文本要求已完成，但独立裁决测试集本身未做，已作为残余局限披露；R2-6 标为“版本受限”：按审稿人原话已回应，按当前版标准未完成。</p>
+    <table>
+      <thead><tr><th style="width:60px">编号</th><th>审稿意见主题</th><th style="width:110px">状态</th><th>主要证据</th></tr></thead>
+      <tbody>
+        <tr><td><strong>R1-1</strong></td><td>参考标准独立性 / accuracy→exact agreement</td><td><span class="chip done">完成*</span></td><td>§3.3；Table 3；S1；无独立裁决集（已披露）</td></tr>
+        <tr><td><strong>R1-2</strong></td><td>吸收 tier 证据与 13 处不一致</td><td><span class="chip done">完成</span></td><td>§2.2；§4.4；S5/S5b/S10</td></tr>
+        <tr><td><strong>R1-3</strong></td><td>低风险保障 / unassessed</td><td><span class="chip done">完成</span></td><td>§2.2、§3.4；S11；代码与界面已传播状态</td></tr>
+        <tr><td><strong>R1-4</strong></td><td>仅局部制剂的主分析 / 非局部制剂</td><td><span class="chip done">完成</span></td><td>§3.4；S10/S12；1,930 对</td></tr>
+        <tr><td><strong>R1-5</strong></td><td>外部审计分歧的独立复核</td><td><span class="chip done">已完成</span></td><td>14/30 一致（14/28，κ0.271）；14 例作者 route-consistent 改判 unsupported；见 r1_5_independent_review/</td></tr>
+        <tr><td><strong>R1-6</strong></td><td>LLM 对比 / rule_context 改名 / 检索重叠</td><td><span class="chip done">完成</span></td><td>§2.4、§3.6；S13</td></tr>
+        <tr><td><strong>R1-7</strong></td><td>百分比与区间修正</td><td><span class="chip done">完成</span></td><td>§3.6；2.2%/10.9%/6.5%；6–15</td></tr>
+        <tr><td><strong>R1-8</strong></td><td>删除 PPV / 收窄临床声明</td><td><span class="chip done">完成</span></td><td>§4.1、§4.4、§5</td></tr>
+        <tr><td><strong>R1-9</strong></td><td>医生分歧不作推测性解释</td><td><span class="chip done">完成</span></td><td>§2.5、§3.8、§4.1</td></tr>
+        <tr><td><strong>R1-10</strong></td><td>规则溯源 / 引用 / 伦理 / 编号</td><td><span class="chip done">完成</span></td><td>§2.2、§4.4、Declarations；S9</td></tr>
+        <tr><td><strong>R2-1</strong></td><td>规则与矩阵构建协议</td><td><span class="chip done">完成</span></td><td>§2.2；S10；S9/S14</td></tr>
+        <tr><td><strong>R2-2</strong></td><td>分级定义与临床意义</td><td><span class="chip done">完成</span></td><td>§2.2；Table 6</td></tr>
+        <tr><td><strong>R2-3</strong></td><td>患者因素逐项映射</td><td><span class="chip done">完成</span></td><td>§2.2；S15；§4.4</td></tr>
+        <tr><td><strong>R2-4</strong></td><td>A–E 改为来源层级</td><td><span class="chip done">完成</span></td><td>§2.1；S16</td></tr>
+        <tr><td><strong>R2-5</strong></td><td>暴露降低 ≠ 风险降低</td><td><span class="chip done">完成</span></td><td>§4.3；S17；§3.5</td></tr>
+        <tr><td><strong>R2-6</strong></td><td>路线感知数据库对照</td><td><span class="chip done">已完成*</span></td><td>作者决定以 2018 版关闭；版本限制保留在 §3.9/Table 7/S18b</td></tr>
+        <tr><td><strong>R2-7</strong></td><td>临床工作流图</td><td><span class="chip done">完成</span></td><td>§2.2；Figure 6</td></tr>
+      </tbody>
+    </table>
+    <p class="small">总表依据：<a href="file:///E:/药物与全身agent搭建/ophthalmic-ddi-cds/outputs/audits/final_reviewer_and_reference_audit.md">final_reviewer_and_reference_audit.md</a> 的 post-audit update（15/17 complete，2 partial，0 missing）。</p>
+  </section>
+
+  <!-- ===================== EXPORT ===================== -->
+  <section id="export">
+    <h2>五、导出复验记录</h2>
+    <p class="section-note">勾选、状态和备注自动保存在本机浏览器（localStorage）。导出的 Markdown 可直接作为修订记录或交给我继续回写稿件。</p>
+    <div class="toolbar">
+      <button onclick="exportMd()">导出 Markdown</button>
+      <button class="secondary" onclick="copyMd()">复制到剪贴板</button>
+      <button class="secondary" onclick="window.print()">打印 / 存 PDF</button>
+      <button class="danger" onclick="resetAll()">清空全部勾选与备注</button>
+    </div>
+    <pre id="preview">（导出预览会显示在这里）</pre>
+  </section>
+</main>
+
+<footer>
+  OphDDI-CDS · 部分完成项复验台 · 生成于 2026-11-13 · 数据与稿件均为本地文件，本页不上传任何内容。<br>
+  提交前请以 <code>outputs/deliverables/frontiers/</code> 的最终文件为准；本页只是复验工具。
+</footer>
+
+<script>
+(function(){
+  const KEY = "oddcds_partial_review_v1";
+  const boxes = Array.from(document.querySelectorAll("input.track"));
+  const notes = Array.from(document.querySelectorAll("textarea[data-note]"));
+  const statuses = Array.from(document.querySelectorAll("select[data-status]"));
+  const bar = document.getElementById("bar");
+  const pct = document.getElementById("pct");
+  const count = document.getElementById("count");
+  const saved = document.getElementById("saved");
+
+  function state(){
+    const checks = {};
+    boxes.forEach(b => checks[b.dataset.key] = b.checked);
+    const noteVals = {};
+    notes.forEach(t => noteVals[t.dataset.note] = t.value);
+    const statusVals = {};
+    statuses.forEach(s => statusVals[s.dataset.status] = s.value);
+    return {checks, notes: noteVals, status: statusVals, updated: new Date().toISOString()};
+  }
+
+  function save(){
+    try{
+      localStorage.setItem(KEY, JSON.stringify(state()));
+      saved.textContent = "已保存 " + new Date().toLocaleTimeString();
+    }catch(e){ saved.textContent = "浏览器禁止本地保存，请用导出"; }
+  }
+
+  function progress(){
+    const done = boxes.filter(b => b.checked).length;
+    const total = boxes.length;
+    const p = total ? Math.round(done * 100 / total) : 0;
+    bar.style.width = p + "%";
+    pct.textContent = p + "%";
+    count.textContent = done + " / " + total + " 项";
+  }
+
+  function load(){
+    let data = null;
+    try{ data = JSON.parse(localStorage.getItem(KEY) || "null"); }catch(e){}
+    if(!data) { progress(); return; }
+    if(data.checks) boxes.forEach(b => b.checked = !!data.checks[b.dataset.key]);
+    if(data.notes) notes.forEach(t => { if(data.notes[t.dataset.note] != null) t.value = data.notes[t.dataset.note]; });
+    if(data.status) statuses.forEach(s => { if(data.status[s.dataset.status]) s.value = data.status[s.dataset.status]; });
+    if(data.updated) saved.textContent = "上次保存 " + new Date(data.updated).toLocaleString();
+    progress();
+  }
+
+  boxes.forEach(b => b.addEventListener("change", () => { progress(); save(); }));
+  notes.forEach(t => t.addEventListener("input", save));
+  statuses.forEach(s => s.addEventListener("change", save));
+
+  function md(){
+    const s = state();
+    const d = new Date();
+    const pad = n => String(n).padStart(2,"0");
+    const stamp = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    let out = [];
+    out.push("# OphDDI-CDS 部分完成项复验记录");
+    out.push("");
+    out.push(`- 导出时间：${stamp}`);
+    out.push(`- 总进度：${boxes.filter(b=>b.checked).length} / ${boxes.length}`);
+    out.push("");
+    out.push("## 一、部分完成的审稿意见");
+    out.push("");
+    out.push("### R1-5 外部审计分歧的独立复核");
+    out.push(`- 状态：${s.status.r15 || "未开始"}`);
+    out.push(`- 备注：${s.notes.r15 ? s.notes.r15.replace(/\n/g," ") : "（无）"}`);
+    out.push("- 复验项：");
+    [["r15-1","S2 30 行，21+5+4"],["r15-2","12 例 default-path，4 个 DDInter-high"],
+     ["r15-3","Table 5 数值一致"],["r15-4","未冒充独立复核"],
+     ["r15-5","已定非作者复核人"],["r15-6","独立复核完成并回写"]].forEach(([k,t])=>{
+      out.push(`  - [${s.checks[k]?"x":" "}] ${t}`);
+    });
+    out.push("");
+    out.push("### R2-6 路线感知临床数据库对照");
+    out.push(`- 状态：${s.status.r26 || "未开始"}`);
+    out.push(`- 备注：${s.notes.r26 ? s.notes.r26.replace(/\n/g," ") : "（无）"}`);
+    out.push("- 复验项（A. 最低档）：");
+    [["r26-1","42=35+7，三药通用条目"],["r26-2","三种映射指标一致"],
+     ["r26-3","2018 版限制写清"],["r26-4","摘要/结论与 §3.9 口径一致"],
+     ["r26-7","已补 Lexicomp/UpToDate 引用"],["r26-8","方法段已写查询者/日期/条目选择/盲法"]].forEach(([k,t])=>{
+      out.push(`  - [${s.checks[k]?"x":" "}] ${t}`);
+    });
+    out.push("- 复验项（B. 强化档）：");
+    [["r26-5","已获当前授权版访问"],["r26-6","当前版 42 对重查并回写"]].forEach(([k,t])=>{
+      out.push(`  - [${s.checks[k]?"x":" "}] ${t}`);
+    });
+    out.push("");
+    out.push("## 二、残余局限");
+    out.push("");
+    [["l1","L1 无独立裁决/development-free 测试集"],["l2","L2 审计分歧作者分类"],
+     ["l3","L3 专家评审非盲非独立"],["l4","L4 configuration 2/baselines 未重跑"],
+     ["l5","L5 Lexicomp 2018"],["l6","L6 无结局数据"]].forEach(([k,t])=>{
+      out.push(`- [${s.checks[k]?"x":" "}] ${t}`);
+    });
+    out.push("");
+    out.push("## 三、关键数字复验");
+    out.push("");
+    [["n1","92 PASS / 0 FAIL"],["n2","0 FAIL / 2 WARN"],["n3","4,546 / 2,613 / 1,933"],
+     ["n4","1,502 / 1,933 = 77.7%"],["n5","1,341 / 1,757 = 76.3%"],["n6","352 from high"],
+     ["n7","1,150; 65; 81.1%"],["n8","1,206 / 1,502 = 80.3%"],["n9","176 unassessed; 161 downgrades"],
+     ["n10","504/507/746/176"],["n11","101/118; 104/118"],["n12","36/40; B 18/20,20/20; C 18/20,19/20"],
+     ["n13","62/92; 61/92; 8/25; 8/29"],["n14","11/12; κ0.840; 8/12"],["n15","45 refs; 44 Crossref + 1 DataCite"]
+    ].forEach(([k,t])=>{
+      out.push(`- [${s.checks[k]?"x":" "}] ${t}`);
+    });
+    out.push("");
+    out.push("## 四、结论");
+    out.push("");
+    out.push("（请填写：哪些项已关闭、哪些仍需外部工作、是否达到可提交状态。）");
+    out.push("");
+    return out.join("\n");
+  }
+
+  window.exportMd = function(){
+    const text = md();
+    document.getElementById("preview").textContent = text;
+    const blob = new Blob([text], {type:"text/markdown;charset=utf-8"});
+    const a = document.createElement("a");
+    const d = new Date();
+    const pad = n => String(n).padStart(2,"0");
+    a.href = URL.createObjectURL(blob);
+    a.download = `OphDDI-CDS_partial_review_${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}.md`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  };
+
+  window.copyMd = async function(){
+    const text = md();
+    document.getElementById("preview").textContent = text;
+    try{ await navigator.clipboard.writeText(text); saved.textContent = "已复制到剪贴板"; }
+    catch(e){ saved.textContent = "复制失败，请手动选择预览文本"; }
+  };
+
+  window.resetAll = function(){
+    if(!confirm("确定清空全部勾选、状态和备注？此操作不可撤销。")) return;
+    boxes.forEach(b => b.checked = false);
+    notes.forEach(t => t.value = "");
+    statuses.forEach(s => s.value = s.options[0].value);
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    progress(); saved.textContent = "已清空";
+  };
+
+  load();
+})();
+</script>
+</body>
+</html>

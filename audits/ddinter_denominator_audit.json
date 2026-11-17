@@ -1,0 +1,14 @@
+{
+ "registry_a": 113,
+ "registry_b": 232,
+ "grid": 26216,
+ "matched_pairs": 4546,
+ "unknown_pairs": 2613,
+ "graded_pairs": 1933,
+ "graded_levels": {
+  "moderate": 1456,
+  "major": 364,
+  "minor": 113
+ },
+ "other_pairs": 0
+}

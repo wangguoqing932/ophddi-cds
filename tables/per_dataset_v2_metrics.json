@@ -1,0 +1,45 @@
+{
+  "per_dataset": {
+    "dev-ddinter": {
+      "n": 200,
+      "sens": 0.069,
+      "spec": 0.895,
+      "acc4": 0.205,
+      "tp": 2,
+      "fn": 27,
+      "fp": 18
+    },
+    "int-pubmed": {
+      "n": 100,
+      "sens": 0.643,
+      "spec": 0.756,
+      "acc4": 0.43,
+      "tp": 9,
+      "fn": 5,
+      "fp": 21
+    },
+    "internal_validation": {
+      "n": 78,
+      "sens": 0.667,
+      "spec": 0.982,
+      "acc4": 0.821,
+      "tp": 14,
+      "fn": 7,
+      "fp": 1
+    },
+    "external_validation": {
+      "n": 70,
+      "sens": 0.077,
+      "spec": 0.935,
+      "acc4": 0.443,
+      "tp": 3,
+      "fn": 36,
+      "fp": 2
+    }
+  },
+  "generalization_gap": {
+    "sens": 0.59,
+    "spec": 0.047,
+    "acc4": 0.378
+  }
+}
