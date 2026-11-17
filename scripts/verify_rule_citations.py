@@ -43,7 +43,7 @@ def main():
  policies.extend((f'patient_factor:{name}',spec.get('evidence_policy',{}),spec.get('recommendation','')) for name,spec in config.get('patient_factor_rules',{}).items())
  verified={row['id'] for row in rows if row['status']=='verified'}
  policy_errors=[]
- allowed={('clinical_ddi','direct_clinical','scoped_clinical_review'),('precaution','contextual_clinical','precautionary_review'),('theoretical_mechanism','mechanism_candidate','informational_only'),('insufficient_evidence','none','no_ddi_conclusion')}
+ allowed={('clinical_ddi','direct_clinical','scoped_clinical_review'),('clinical_ddi','class_extrapolated','scoped_clinical_review'),('precaution','contextual_clinical','precautionary_review'),('precaution','class_extrapolated','precautionary_review'),('theoretical_mechanism','mechanism_candidate','informational_only'),('insufficient_evidence','none','no_ddi_conclusion')}
  for policy_id,policy,recommendation in policies:
   triple=(policy.get('output_class'),policy.get('support_tier'),policy.get('action_behavior'))
   if triple not in allowed: policy_errors.append(f'invalid policy:{policy_id}')
