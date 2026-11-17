@@ -158,6 +158,8 @@ class RiskAssessment(BaseModel):
     signals: list[RiskSignal] = Field(default_factory=list)
     confidence: str = "low"
     confidence_score: float = 0.0
+    assessment_status: str = "assessed"
+    assessment_note: str = ""
 
 
 class SafetyReport(BaseModel):
