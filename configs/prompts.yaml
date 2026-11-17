@@ -96,3 +96,8 @@ temperature_schedule:
   condition_2: 0.6
   condition_3: 0.9
   condition_4: 1.2
+
+# Historical note: the shared system prompt used for the deposited pure_llm/naive_rag
+# runs lists dexamethasone as >50% exposure; the tier was later corrected to medium
+# (1-10%). Configuration 1 rule_context was re-run with corrected bands/gate; the
+# other baselines were not re-run. Configuration 2 rule_context uses the old prompt.
