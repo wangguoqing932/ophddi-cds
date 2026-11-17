@@ -24,6 +24,8 @@ def main():
     if "## Authors\n\n## Abstract" in text:
         text = text.replace("## Authors\n\n## Abstract",
                             f"## Authors\n\n{author_block}\n\n## Abstract", 1)
+    elif AUTHORS[0] in text:
+        pass          # the source md already carries the author block
     elif "## Authors" in text:
         raise SystemExit("unsupported Authors section layout — check source md")
 

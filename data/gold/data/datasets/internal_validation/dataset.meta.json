@@ -1,0 +1,14 @@
+{
+  "dataset_id": "internal_validation",
+  "role": "internal_validation",
+  "n_cases": 78,
+  "created": "2026-07-30",
+  "distribution": {
+    "high": 21,
+    "medium": 35,
+    "low": 22
+  },
+  "fixes_applied": [
+    "max_match_severity: 7 cases updated"
+  ]
+}

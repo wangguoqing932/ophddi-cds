@@ -9,21 +9,40 @@ dist/
 .venv/
 venv/
 env/
-.pytest_cache/
-.ruff_cache/
 
-# Secrets
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Env
 .env
 .env.local
 
-# Large/regenerable outputs
-outputs/*.jsonl
+# Data and outputs (large/regenerable)
+data/raw/
+data/processed/
 outputs/figures/*.png
 outputs/figures/*.pdf
+outputs/paper/*.pdf
+outputs/baseline_predictions*.jsonl
+# ...except the canonical file: it is the artifact the medical-agent
+# executor->writer handoff gate requires, so a fresh clone must have it.
+!outputs/baseline_predictions.jsonl
+outputs/figures/*.tiff
+outputs/figures/*.svg
+outputs/figures/*_check.jpg
 *.bak
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Proprietary Lexicomp ratings: retained locally for audit, not redistributed
+outputs/audits/lexicomp_route_aware_raw.json
+
+# Windows reserved device name
 nul
+
+# MS Office lock files
 ~$*

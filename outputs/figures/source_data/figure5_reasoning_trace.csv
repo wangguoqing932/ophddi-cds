@@ -1,0 +1,6 @@
+case_id,step_id,layer,step_label,milliseconds,output_summary
+G01,1,rule_engine,L1 rule matching,1.2,matched additive_beta_blockade (high)
+G01,2,rule_engine,L2 class-matrix upgrade check,0.4,upgrade applied -> keep high
+G01,3,rule_engine,L3 G19 hard constraint,0.2,not triggered (absorption high)
+G01,4,rule_engine,MAX-MATCH decision,0.1,final = high
+G01,5,llm_arbiter,LLM arbitration,0.0,"deterministic path, no LLM"

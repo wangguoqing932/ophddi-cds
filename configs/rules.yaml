@@ -68,24 +68,24 @@ rules:
   entity_b_flags:
   - na_k_atpase_inhibitor
   match: all
-  rationale: High-absorption topical beta-blockers (timolol) with digoxin cause additive
-    AV-node suppression and bradycardia; digoxin is narrow-therapeutic-index so toxicity
-    consequences are severe. DDInter 2.0 rates timolol-digoxin Moderate; systemic
-    beta-blocker+digoxin additive effects are established (see additive_beta_blockade
-    evidence).
+  rationale: High-absorption topical beta-blockers (timolol) with digoxin may cause
+    additive AV-node suppression and bradycardia; digoxin is narrow-therapeutic-index,
+    so toxicity consequences are severe. The pair is recorded by DDInter 2.0 as
+    Moderate. No ophthalmic case report was identified. The rule is a class
+    extrapolation from systemic beta-blocker-digoxin pharmacology. The citation
+    previously attached here (Schuman 2000) supports topical+systemic beta-blockade,
+    not digoxin, and has been removed.
   recommendation: Monitor HR/ECG and digoxin levels; educate on bradycardia symptoms.
   citations:
-  - 'DDInter 2.0: timolol-digoxin Moderate'
-  - Schuman 2000 PMID:10857839 (topical+systemic beta-blocker additive effects)
+  - 'DDInter 2.0: timolol-digoxin Moderate (systemic-route pair record)'
   evidence_policy:
     output_class: clinical_ddi
-    support_tier: direct_clinical
+    support_tier: class_extrapolated
     action_behavior: scoped_clinical_review
-    verified_citation_ids:
-    - additive_beta_blockade
-    claim_scope: 'class_extrapolated (direct_clinical base): high-absorption topical
-      beta-blocker + digoxin (NTI) additive AV-node suppression'
-    tier: 0A
+    verified_citation_ids: []
+    claim_scope: 'class_extrapolated: systemic beta-blocker + digoxin additive AV-node
+      suppression; no ophthalmic pair report identified'
+    tier: 0B
 - id: additive_alpha2_cns_depression
   severity: high
   risk_type: pharmacodynamic_cns
@@ -270,28 +270,30 @@ rules:
     claim_scope: 'class_extrapolated: '
     tier: 0B
 - id: dexamethasone_cyp3a4_induction
-  severity: medium
+  severity: low
   risk_type: pharmacokinetic_cyp3a4
   entity_a_flags:
   - corticosteroid
-  - systemic_absorption_high
+  - systemic_absorption_medium
   entity_b_flags:
   - cyp3a4_substrate
-  rationale: Dexamethasone 50-100% systemic bioavailability from eye drops (FDA label).
-    CYP3A4 induction clinically relevant at ophthalmic doses. (DrugBank DB01234)
-  recommendation: Monitor CYP3A4 substrate drug levels with prolonged dexamethasone
-    ophthalmic use. Consider alternative corticosteroid (fluorometholone, loteprednol).
+  rationale: 'Measured plasma dexamethasone after topical 0.1% four times daily was
+    below 1 ng/mL (TobraDex label, Section 12.3); at this exposure CYP3A4 induction
+    is not established. The earlier claim of 50-100% systemic bioavailability was an
+    oral-route value and has been removed. Retained as a low-severity mechanism flag;
+    the generic topical-corticosteroid rule covers the same pair.'
+  recommendation: No specific action at measured ophthalmic exposure; monitor if
+    systemic exposure is increased by disease or concomitant use.
   citations:
-  - DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234
-  - FDA Dexamethasone https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021562s000lbl.pdf
-    accessed 2026-07-30
+  - 'TobraDex label, Section 12.3: plasma dexamethasone <1 ng/mL after 0.1% four
+    times daily'
   evidence_policy:
-    output_class: clinical_ddi
-    support_tier: direct_clinical
-    action_behavior: scoped_clinical_review
+    output_class: theoretical_mechanism
+    support_tier: mechanism_candidate
+    action_behavior: informational_only
     verified_citation_ids: []
-    claim_scope: 'direct_ophthalmic: Dexamethasone (high systemic absorption) + CYP3A4
-      substrates'
+    claim_scope: 'mechanism only: no direct ophthalmic evidence of CYP3A4 induction
+      at measured exposure'
     tier: 0B
   match: all
 - id: topical_corticosteroid_cyp3a4_induction
@@ -324,14 +326,16 @@ rules:
     no direct ophthalmic DDI evidence (tier excluded). Class-level precaution only.
   recommendation: Use punctal occlusion. Monitor systemic effects.
   citations:
-  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
-  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  - Schuman 2000 PMID:10857839 (topical+systemic beta-blocker additive effects)
+  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373 (timolol monograph)
   evidence_policy:
     output_class: theoretical_mechanism
     support_tier: mechanism_candidate
     action_behavior: informational_only
-    verified_citation_ids: []
-    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    verified_citation_ids:
+    - additive_beta_blockade
+    claim_scope: 'contextual_clinical: high-absorption topical beta-blocker with
+      systemic beta-blocker; low-severity duplicate of additive_beta_blockade'
     tier: exclude
 - id: systemic_absorption_moderate_risk
   severity: low
@@ -512,6 +516,7 @@ rules:
     tier: 0B
 - id: nsaid_antihypertensive_antagonism
   severity: high
+  absorption_gated: true
   risk_type: pharmacodynamic_cardiovascular
   entity_a_flags:
   - nsaid
@@ -565,13 +570,15 @@ rules:
   recommendation: 'Clinical DDI: monitor INR when starting/stopping topical ophthalmic
     antibiotics in patients on warfarin.'
   citations:
-  - DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373
+  - DrugBank:DB00682 https://go.drugbank.com/drugs/DB00682 (warfarin monograph,
+    drug interactions)
   evidence_policy:
     output_class: precaution
-    support_tier: contextual_clinical
+    support_tier: class_extrapolated
     action_behavior: precautionary_review
     verified_citation_ids: []
-    claim_scope: 'class_extrapolated: '
+    claim_scope: 'class_extrapolated: antibiotic effects on gut-flora vitamin K and
+      warfarin; systemic-route evidence only'
     tier: 0B
   match: all
 - id: beta_blocker_cyp2d6_metabolism
@@ -806,13 +813,14 @@ rules:
     fluoroquinolones) have minimal antiplatelet interaction risk.
   recommendation: Generally safe. No special precautions needed.
   citations:
-  - DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654
+  - 'Absorption prior (Section 2.2): no pair-level DDI source; low tier from the
+    per-agent evidence table'
   evidence_policy:
     output_class: theoretical_mechanism
     support_tier: mechanism_candidate
     action_behavior: informational_only
     verified_citation_ids: []
-    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    claim_scope: excluded from Tier 0 — absorption prior, no pair-level DDI evidence
     tier: exclude
 - id: low_abs_anticoagulant
   severity: low
@@ -825,13 +833,14 @@ rules:
     systemic absorption with negligible anticoagulant interaction.
   recommendation: Generally safe.
   citations:
-  - DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654
+  - 'Absorption prior (Section 2.2): no pair-level DDI source; low tier from the
+    per-agent evidence table'
   evidence_policy:
     output_class: theoretical_mechanism
     support_tier: mechanism_candidate
     action_behavior: informational_only
     verified_citation_ids: []
-    claim_scope: excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+    claim_scope: excluded from Tier 0 — absorption prior, no pair-level DDI evidence
     tier: exclude
 patient_factor_rules:
   elderly:

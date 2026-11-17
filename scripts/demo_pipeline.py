@@ -55,7 +55,7 @@ def main() -> int:
             print(f"no mock case with id {args.case!r}")
             return 1
 
-    header = f"{'case':8s} {'ophthalmic':16s} {'systemic':14s} {'expected':9s} {'got':9s} {'path':13s} result"
+    header = f"{'case':8s} {'ophthalmic':16s} {'systemic':14s} {'expected':9s} {'got':9s} {'path':13s} {'status':12s} result"
     print(header)
     print("-" * len(header))
 
@@ -67,6 +67,7 @@ def main() -> int:
             failures.append(c["case_id"])
         print(f"{c['case_id']:8s} {c['ophthalmic_drug']:16s} {c['systemic_drug']:14s} "
               f"{str(c['expected_level']):9s} {str(level):9s} {str(info.get('path')):13s} "
+              f"{str(info.get('assessment_status', 'assessed')):12s} "
               f"{'PASS' if ok else 'FAIL'}")
 
         if args.verbose:

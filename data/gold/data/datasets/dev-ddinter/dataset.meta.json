@@ -1,0 +1,11 @@
+{
+  "id": "dev-ddinter",
+  "role": "development",
+  "source_type": "public_database",
+  "source_ref": "DDInter 2.0 — 500 curated ophthalmic-systemic DDI pairs with interaction severity labels",
+  "expected_size": 200,
+  "ground_truth_method": "database_outcome",
+  "independence_axis": "source",
+  "enabled": true,
+  "notes": "DDInter 2.0 provides drug pair + severity level. Subset to pairs where both drugs are in our registries."
+}

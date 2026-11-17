@@ -1,0 +1,46 @@
+number,doi,zotero_key,title,date,container,volume,pages,found
+1,10.1016/j.addr.2006.07.027,7BND6JS2,Challenges and obstacles of ocular pharmacokinetics and drug delivery,2006-11,Advanced Drug Delivery Reviews,58,1131-1135,True
+2,10.1208/s12248-010-9183-3,HCYR25GX,Ocular Drug Delivery,2010-05-01,The AAPS Journal,12,348-360,True
+3,10.1089/jop.1990.6.243,L6PK4FAX,Review: Systemic Absorption of Topically Applied Ocular Drugs in Humans,1990-01,Journal of Ocular Pharmacology and Therapeutics,6,243-249,True
+4,10.3389/fmed.2026.1798521,MC2TJNU8,A systemic pharmacovigilance assessment of ophthalmic atropine: signal detection and clinical prioritization from the FAERS database,2026-03-18,Frontiers in Medicine,13,,True
+5,10.2165/00003088-198005010-00004,RGCXVP7T,Absorption of Ocular Timolol1,1980,Clinical Pharmacokinetics,5,95-100,True
+6,10.1046/j.1440-1606.1999.00145.x,LEPCMXTN,Systemic effects of topical ophthalmic β‐adrenoceptor antagonists,1999-02,Australian and New Zealand Journal of Ophthalmology,27,57-64,True
+7,10.1007/s00417-002-0462-2,7HRJGE4H,Systemic bioavailability and cardiopulmonary effects of 0.5% timolol eyedrops,2002-04-26,Graefe's Archive for Clinical and Experimental Ophthalmology,240,430-435,True
+8,10.7759/cureus.90018,DITFAY76,Atrioventricular Block Caused by Carteolol Eye Drops Administered to Unilateral Eye or Bilateral Eyes: A Case Report,2025-08-13,Cureus,,,True
+9,10.2217/pgs-2023-0122,ZAAUCHZJ,Severe systemic Adverse Reactions to Ophthalmic Timolol in a CYP2D6 Homozygous *4 Allele Carrier: A Case Report,2023-09,Pharmacogenomics,24,739-746,True
+10,10.1136/bmj.294.6565.155-a,9C48NIUS,Severe bradycardia due to interaction of timolol eye drops and verapamil.,1987-01-17,BMJ,294,155-156,True
+11,10.1016/j.ajem.2020.09.030,4PJRAG2G,Ocular timolol as the causative agent for symptomatic bradycardia in an 89-year-old female,2021-04,The American Journal of Emergency Medicine,42,263.e5-263.e6,True
+12,10.7759/cureus.7270,PMGXUFXW,Ophthalmic Timolol and Hospitalization for Symptomatic Bradycardia and Syncope: A Case Series,2020-03-14,Cureus,,,True
+13,10.1097/pec.0b013e3182aa1384,8NXWLGEI,Can Ophthalmic Drops Cause Central Nervous System Depression and Cardiogenic Shock in Infants?,2013-11,Pediatric Emergency Care,29,1207-1209,True
+14,10.1097/pec.0b013e3181668aee,26HR9KT6,Central α-2 Adrenergic Eye Drops,2008-03,Pediatric Emergency Care,24,167-169,True
+15,10.1097/01.pcc.0000123548.73664.18,RIMMQ87M,Adrenoceptor agonist poisoning after accidental oral ingestion of brimonidine eye drops,2004-05,Pediatric Critical Care Medicine,5,282-285,True
+16,10.1016/j.tjem.2016.02.002,K448TSUF,Respiratuvar depression after accidental nasal ingestion of brimonidine eye drops in infant,2016-12,Turkish Journal of Emergency Medicine,16,169-170,True
+17,10.1007/s00417-020-04767-9,RRK4MDD5,Medical management of pediatric glaucoma: lessons learned from randomized clinical trials,2020-06-02,Graefe's Archive for Clinical and Experimental Ophthalmology,258,1579-1586,True
+18,10.1002/14651858.cd010520.pub2,SY5JFRRV,Topical medication instillation techniques for glaucoma,2017-02-20,Cochrane Database of Systematic Reviews,2017,,True
+19,10.1111/ceo.13642,ZHU8ZKVK,New technique to reduce systemic side effects of timolol eye drops: The tissue press method—Cross‐over clinical trial,2019-10-17,Clinical & Experimental Ophthalmology,48,24-30,True
+20,10.1093/ageing/26.2.63,KJL6B4NC,Glaucoma therapy may take your breath away,1997,Age and Ageing,26,63-67,True
+21,10.1186/s12877-017-0621-2,7UBBU5ZC,What is polypharmacy? A systematic review of definitions,2017-10-10,BMC Geriatrics,17,,True
+22,10.1093/nar/gkab880,WPUYAS7I,DDInter: an online drug–drug interaction database towards improving clinical decision-making and patient safety,2021-10-11,Nucleic Acids Research,50,D1200-D1207,True
+23,10.1093/nar/gkae726,P97MSUDZ,"DDInter 2.0: an enhanced drug interaction resource with expanded data coverage, new interaction types, and improved user interface",2024-08-24,Nucleic Acids Research,53,D1356-D1362,True
+24,10.1016/j.tips.2013.01.006,8ISZBQP3,Informatics confronts drug–drug interactions,2013-03,Trends in Pharmacological Sciences,34,178-184,True
+25,10.1186/s12916-025-04420-4,8TMQ3PA3,Gaps in the detection of drug-drug interactions between antipsychotic and cardiometabolic medications: a multisource analysis,2025-11-07,BMC Medicine,23,,True
+26,10.1007/s40261-026-01529-z,HIEQ6ZPT,ContraIndicator: A Natural Language Processing-Based Approach to Potential Drug–Drug Interaction Detection in Pediatric Intensive Care,2026-02-13,Clinical Drug Investigation,46,331-341,True
+27,10.1093/jamiaopen/ooab023,VVS7JBA9,Designing and evaluating contextualized drug–drug interaction algorithms,2021-01-01,JAMIA Open,4,,True
+28,10.1038/s41586-026-10687-1,C5FJ9Y27,Safety and security of large language models in healthcare,2026-08-19,Nature,656,577-589,True
+29,10.1038/s41591-026-04601-5,7LCTJAF3,Prospective evaluation of a large language model clinical decision support system in the emergency department,2026-08-19,Nature Medicine,32,3741-3747,True
+30,10.1136/bmj.38398.500764.8F,ZFKP758G,Improving clinical practice using clinical decision support systems: a systematic review of trials to identify features critical to success,2005-03-14,BMJ,330,765,True
+31,10.7326/0003-4819-157-1-201207030-00450,XVUSPR5A,Effect of Clinical Decision-Support Systems,2012-07-03,Annals of Internal Medicine,157,29-43,True
+32,10.1197/jamia.M1809,U37TDYCC,Overriding of Drug Safety Alerts in Computerized Physician Order Entry,2006-03-01,Journal of the American Medical Informatics Association,13,138-147,True
+33,10.1093/jamia/ocaa034,XY634VUT,High-priority drug-drug interaction clinical decision support overrides in a newly implemented commercial computerized provider order-entry system: Override appropriateness and adverse drug events,2020-04-26,Journal of the American Medical Informatics Association,27,893-900,True
+34,10.1093/jamia/ocag064,LCEIHHES,Alert fatigue measurement in clinical decision support: a systematic review,2026-05-18,Journal of the American Medical Informatics Association,33,1523-1531,True
+35,10.18578/bnf.270842008,DK6673QZ,Glaucoma and ocular hypertension,,,,,True
+36,10.48550/arXiv.2410.05779,CVCGWDSC,LightRAG: Simple and Fast Retrieval-Augmented Generation,2024-10-08,,,,True
+37,10.1561/1500000019,QVKN57GM,The Probabilistic Relevance Framework: BM25 and Beyond,2009-09-17,Foundations and Trends® in Information Retrieval,4,1-174,True
+38,10.1177/001316446002000104,8VNVJGYI,A Coefficient of Agreement for Nominal Scales,1960-04,Educational and Psychological Measurement,20,37-46,True
+39,10.2307/2529310,Q6669VL6,The Measurement of Observer Agreement for Categorical Data,1977-03,Biometrics,33,159,True
+40,10.1136/bmj-2023-078378,MJATIDCY,TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods,2024-04-16,BMJ,385,e078378,True
+41,10.1038/s41591-022-01772-9,KLA2JIPP,Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI,2022-05,Nature Medicine,28,924-933,True
+42,10.1073/pnas.1803294115,U536C5SJ,Deep learning improves prediction of drug–drug and drug–food interactions,2018-04-16,Proceedings of the National Academy of Sciences,115,,True
+43,10.1021/acs.jcim.6c01086,2FIGMQCZ,HSAF-DDI: Heterogeneous Semantic-Aware Drug–Drug Interaction Prediction with Hierarchical Adaptive Fusion,2026-07-31,Journal of Chemical Information and Modeling,66,10379-10395,True
+44,10.3390/vision10020018,Y65NKGAI,Adverse Events Reported with Standard-Dose and High-Dose Aflibercept: A FAERS Pharmacovigilance Study,2026-03-31,Vision,10,18,True
+45,10.4324/9781003113423-6,4U5TG8CZ,Ocular Drug Transfer Following Systemic Drug Administration,2021-12-03,Ophthalmic Drug Delivery Systems,,109-133,True

@@ -1,0 +1,19 @@
+{
+  "dataset_id": "consensus_validation",
+  "n_cases": 84,
+  "distribution": {
+    "high": 8,
+    "medium": 26,
+    "low": 50
+  },
+  "sources": {
+    "expert": 20,
+    "fda_label": 17,
+    "DDInter=medium \u2229 Rules=medium": 18,
+    "DDInter=high \u2229 Rules=high": 2,
+    "DDInter=low \u2229 Rules=low": 2,
+    "negative_control": 25
+  },
+  "method": "Multi-source consensus: DDInter \u2229 Rules, + Expert + FDA",
+  "conflicts_excluded": 236
+}

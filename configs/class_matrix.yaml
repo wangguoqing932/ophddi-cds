@@ -589,8 +589,3 @@ matrix:
       mechanism: not_established
       advice: manual_review
       evidence: none
-default_cell:
-  level: low
-  mechanism: no_known_class_interaction
-  advice: no_interaction_specific_monitoring
-  evidence: assumed_by_default

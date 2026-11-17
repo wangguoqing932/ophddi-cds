@@ -1,0 +1,33 @@
+{
+  "current_registry": {
+    "n": 1933,
+    "down": 1435,
+    "share": 0.7424,
+    "low_attr": 1122,
+    "low_share": 0.7819,
+    "up": 143
+  },
+  "candidate_file_tiers": {
+    "n": 1933,
+    "down": 1463,
+    "share": 0.7569,
+    "low_attr": 1174,
+    "low_share": 0.8025,
+    "up": 118
+  },
+  "candidate_plus_exclude_non_topical": {
+    "n": 1930,
+    "down": 1460,
+    "share": 0.7565,
+    "low_attr": 1171,
+    "low_share": 0.8021,
+    "up": 118
+  },
+  "published": {
+    "n": 1933,
+    "downgrade": 1450,
+    "share": 0.75,
+    "low_attributable": 1117,
+    "share_of_downgrades": 0.77
+  }
+}

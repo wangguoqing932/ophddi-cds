@@ -1,0 +1,25 @@
+# Cover Letter
+
+Dear Editors,
+
+We submit our manuscript, **"OphDDI-CDS: An Absorption-First Deterministic Cascade for Ophthalmic Drug-Drug Interaction Screening"**, for consideration as an Original Research article in *Frontiers in Pharmacology*. We suggest the section **Drugs Outcomes Research and Policies**, and we would be glad to be placed in whichever section the editors consider most appropriate for clinical decision-support research in pharmacotherapy.
+
+**The problem.** Ophthalmic topical medications are assumed to act locally, yet several reach clinically meaningful systemic exposure: timolol is systemically absorbed and reaches measurable plasma concentrations after topical dosing, and atropine has been associated with systemic safety signals. The DDInter records used here nonetheless provide a single pair-level severity with no route or absorption field, and encode no ophthalmic absorption model. The result is that the same pair can carry an unadjusted database severity rating while the absorption-aware model grades it low because systemic exposure is limited; to our knowledge, no systematic measurement of that mismatch has been reported.
+
+**What we did and found.** We built a deterministic three-layer cascade of 40 mechanism rules, an absorption-scaled drug-class matrix and a hard constraint, covering 113 ophthalmic and 232 systemic agents, and compared three ways of assigning severity grades to the same pairs. Against DDInter severity for the 1,933 registry-matched pairs with a graded severity, absorption-aware assessment graded 77.7% of the 1,933 pairs lower (76.3% among assessed pairs), with 352 pairs moving down from high; 80.3% of those downgrades involved low-tier ophthalmic agents; this is a composition statistic, not a causal decomposition. On a 118-case author-derived reference set, under the 10-token constrained configuration, the cascade reached 0.856 exact agreement under the original frozen labels (kappa 0.779) against 0.419–0.714 for three LLM baselines; this reference set is partly rule-fidelity by construction; after three post-lock label corrections the figures are 0.881 (kappa 0.818), and on the 20 B-only cases 0.900 (18/20 frozen; 20/20 corrected, the latter partly by construction; both halves were reviewed during development). In a second configuration that also changed the model, token allowance and sampling, baseline agreement rose but high-risk sensitivity fell to 0.214–0.536, while the cascade retained a high-risk sensitivity of 0.893 on the corrected labels. A semi-independent 92-case audit against DDInter gave 0.674 exact agreement but a high-risk sensitivity of only 0.320, which we report as the principal limitation of the current system rather than a footnote.
+
+**Why this journal.** *Frontiers in Pharmacology* publishes pharmacotherapy and medication-safety work with a clinical readership, and this manuscript addresses a gap that sits squarely in that readership's practice: eye drops prescribed by ophthalmologists interacting with cardiovascular, antidiabetic, psychotropic and anticoagulant therapy managed by other clinicians. The contribution is mechanistic and auditable rather than model-driven: every decision returns a decision path and, where a rule or matrix cell applies, the matched identifiers and source records, which suits a pharmacology audience more than a computational one.
+
+**Reproducibility.** The complete engine, curated knowledge base, reference sets with per-case provenance and 9,600 prediction rows are deposited at https://github.com/wangguoqing932/ophddi-cds under release tag `v3.0-frontiers`; the version matching the submitted manuscript is archived at DOI 10.5281/zenodo.23439606, and this revision will be deposited as a new version of the same record. The deterministic path makes no model call and requires no credential, so all deterministic-cascade and deposited prediction-file numbers can be regenerated from the deposit; the Lexicomp comparison is deposited as aggregate results, not case-level ratings. A one-command demonstration (`python scripts/demo_pipeline.py`, 25 mock pairs) and a test suite accompany the code.
+
+**Disclosures.** The manuscript is original, is not under consideration elsewhere, and all authors approved the submitted version. The work involved no patients, patient data or clinical intervention, so no formal ethics submission was required. The only human-participant data collection was an anonymous 12-case professional-opinion exercise on constructed vignettes containing no patient data; consent beyond agreeing to take part was not required. The exercise is described in full in the Ethics statement, including the fact that one participant is a member of the study team. Generative AI use is disclosed in the Declarations.
+
+We confirm that we have no conflicts of interest to declare.
+
+Yours sincerely,
+
+Yi Xianglong, M.D., Ph.D. (corresponding author)
+Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China
+E-mail: yixianglong1010@163.com
+
+On behalf of all authors: Wang Guoqing, Hu Lumei, Wang Shaocheng, Yi Xianglong

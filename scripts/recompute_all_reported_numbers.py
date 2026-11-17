@@ -9,6 +9,7 @@ deposited code." 本脚本是唯一入口：所有数字都从 data/ 与 outputs
 """
 from __future__ import annotations
 
+import csv
 import json
 import pathlib
 import sys
@@ -139,6 +140,43 @@ R["l1.acc3_wilson"] = wilson_ci(fs1["exact3"], fs1["n"])
 R["l1.sens_wilson"] = wilson_ci(fs1["tp"], fs1["tp"] + fs1["fn"])
 R["l1.kappa"] = cohens_kappa(gl, fs_pl)
 R["l1.kappa_bootstrap"] = bootstrap_kappa(gl, fs_pl, n_resamples=2000, seed=12345)
+
+# Frozen labels are the primary analysis; keep them alongside the corrected block.
+prov = {r["case_id"]: r for r in csv.DictReader(
+    (ROOT / "outputs/recomputed/l1_gold_provenance.csv").open(encoding="utf-8"))}
+gf = {cid: (prov[cid]["gold_pre_errata"] or prov[cid]["gold_current"]) for cid in g1}
+for m in ["full_system", "pure_llm", "naive_rag", "lightrag"]:
+    multi = load_pred_multi("blind_l1", m)
+    per, ks = [], []
+    for seed in range(5):
+        gs = {cid: gf[cid] for (cid, ss) in multi if ss == seed and cid in gf}
+        ps = {cid: multi[(cid, seed)] for cid in gs}
+        per.append(metrics(gs, ps))
+        ks.append(cohens_kappa([gs[k] for k in sorted(gs)], [ps[k] for k in sorted(gs)]))
+    mean = lambda key: sum(x[key] for x in per) / len(per)
+    R[f"l1.frozen.{m}"] = {"n": per[0]["n"], "acc3": mean("acc3"),
+                           "sens": mean("sens"), "spec": mean("spec"),
+                           "kappa": sum(ks) / len(ks)}
+fsf = metrics(gf, preds1["full_system"])
+R["l1.frozen.acc3_wilson"] = wilson_ci(fsf["exact3"], fsf["n"])
+R["l1.frozen.sens_wilson"] = wilson_ci(fsf["tp"], fsf["tp"] + fsf["fn"])
+glf = [gf[k] for k in gf if k in preds1["full_system"]]
+R["l1.frozen.kappa"] = cohens_kappa(glf, fs_pl)
+R["l1.frozen.kappa_bootstrap"] = bootstrap_kappa(glf, fs_pl, n_resamples=2000, seed=12345)
+sub_map = {}
+for line in (ROOT / "outputs/multiseed_per_dataset/blind_l1__seed0.jsonl").open(encoding="utf-8"):
+    if not line.strip():
+        continue
+    rr = json.loads(line)
+    if rr["method"] == "full_system":
+        sub_map[rr["case_id"]] = rr.get("subset")
+frozen_ids = [cid for cid in preds1["full_system"]
+              if cid in gf and sub_map.get(cid) == "blind_frozen"]
+gf_sub = {cid: gf[cid] for cid in frozen_ids}
+pf_sub = {cid: preds1["full_system"][cid] for cid in frozen_ids}
+R["l1.frozen.subset.blind_frozen"] = metrics(gf_sub, pf_sub)
+print(f"  frozen label metrics: 101/118 target; full acc={fsf['acc3']:.4f} "
+      f"sens={fsf['sens']:.4f} spec={fsf['spec']:.4f}")
 print(f"  Acc3 Wilson      : {R['l1.acc3_wilson'][0]:.3f}-{R['l1.acc3_wilson'][1]:.3f}")
 print(f"  Sens Wilson      : {R['l1.sens_wilson'][0]:.3f}-{R['l1.sens_wilson'][1]:.3f}")
 print(f"  kappa            : {R['l1.kappa']:.4f}")
@@ -154,6 +192,15 @@ for base in ["pure_llm", "naive_rag", "lightrag"]:
     r = exact_mcnemar(bb, cc)
     R[f"l1.mcnemar_vs_{base}"] = r
     print(f"    vs {base:10s}: {bb} vs {cc}   p={r['p_value']:.4g}")
+
+# Frozen-label McNemar（主分析，正文 §3.3 引用的是这一组不一致对）
+for base in ["pure_llm", "naive_rag", "lightrag"]:
+    b = preds1[base]
+    bb = sum(1 for k in gf if k in b and preds1["full_system"][k] == gf[k] and b[k] != gf[k])
+    cc = sum(1 for k in gf if k in b and preds1["full_system"][k] != gf[k] and b[k] == gf[k])
+    r = exact_mcnemar(bb, cc)
+    R[f"l1.frozen.mcnemar_vs_{base}"] = r
+    print(f"    frozen vs {base:10s}: {bb} vs {cc}   p={r['p_value']:.4g}")
 
 # 子集：frozen / mechanism / guideline
 print("  L1 子集:")
@@ -178,6 +225,19 @@ for m, p in preds3.items():
     mt = metrics(g3, p)
     R[f"audit.{m}"] = mt
     print(f"  {m:12s} acc={mt['acc3']:.4f} sens={mt['sens']:.4f} spec={mt['spec']:.4f}")
+
+# Five-condition means for the LLM baselines, matching Table 3.
+print("  audit five-condition means:")
+for m in ["pure_llm", "naive_rag", "lightrag", "full_system"]:
+    multi = load_pred_multi("blind_v3_ddinter", m)
+    per = []
+    for s in range(5):
+        ps = {cid: multi[(cid, s)] for cid in g3 if (cid, s) in multi}
+        per.append(metrics(g3, ps))
+    mean = lambda key: sum(x[key] for x in per) / len(per)
+    R[f"audit.multi.{m}"] = {"acc3": mean("acc3"), "sens": mean("sens"),
+                             "spec": mean("spec"), "n_seeds": len(per)}
+    print(f"    {m:12s} acc={R[f'audit.multi.{m}']['acc3']:.4f}")
 fs3 = metrics(g3, preds3["full_system"])
 R["audit.acc3_wilson"] = wilson_ci(fs3["exact3"], fs3["n"])
 R["audit.sens_wilson"] = wilson_ci(fs3["tp"], fs3["tp"] + fs3["fn"])
@@ -370,6 +430,15 @@ if rd_file.exists():
 else:
     print("  （缺 outputs/recomputed/audit_gold_rederived.json —— 先跑 scripts/rederive_audit_gold.py）")
 
+R["audit.multi.rule_context"] = R["audit.multi.lightrag"]
+R["_metric_conventions"] = {
+    "audit.<method>": "single condition (temperature 0.0, seed 0)",
+    "audit.multi.<method>": "mean over the five temperature conditions; matches Table 3",
+    "l1.<method>": "corrected-label single condition (temperature 0.0, seed 0)",
+    "l1.frozen.<method>": "frozen-label mean over five temperature conditions; matches Table 3 primary",
+    "l1.multi.<method>": "mean over five temperature conditions; matches Table 3",
+    "rule_context": "display name for the method stored as lightrag in the deposited code",
+}
 (OUT / "numbers.json").write_text(json.dumps(R, ensure_ascii=False, indent=1, default=str),
                                   encoding="utf-8")
 print(f"\n已写出 -> {OUT / 'numbers.json'}")

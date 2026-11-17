@@ -154,7 +154,7 @@ def main() -> int:
               "Other properties of the gate: 43 policy entries (40 rules + 3 patient-factor policies); "
               "0 policy errors; retraction screening identified no retracted references. The report is "
               "bound to a SHA-256 of `configs/rules.yaml`, so any later edit to the rules invalidates it. "
-              "The report itself is deposited as `data/evidence/citation_verification_report.json`.", "",
+              "The report itself is deposited as `outputs/citation_verification_report.json`.", "",
               "**Known provenance gap.** `beta_blocker_digoxin_additive` cites a study of additive "
               "topical-plus-systemic beta-blockade (Schuman 2000, PMID 10857839) rather than a "
               "digoxin-specific source, and it grades as high a pair whose DDInter annotation records "
@@ -219,7 +219,7 @@ def main() -> int:
               "| vote resolution | majority over the five samples; every case had at least three concordant samples, so no tie arose |",
               "| per-sample parsing | exact match first, then substring `high` > `medium`/`moderate` > `low`, else `unknown`; no sample returned `unknown` |",
               "| run dates | 23-24 September 2026 |",
-              "| raw responses | deposited in full: `data/predictions/glm53_baselines/predictions.jsonl` (3,150 rows with token usage) |",
+              "| raw responses | deposited in full: `outputs/glm53_baselines/predictions.jsonl` (3,150 rows with token usage) |",
               "| run script | `scripts/rerun_glm53_baselines.py` |", "",
               "Single-model caveat: this is one commercial reasoning model at one endpoint, and the "
               "endpoint exposes no checkpoint revision. The finding that reasoning models adopt a "

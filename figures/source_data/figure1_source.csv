@@ -1,2 +1,5 @@
-figure_id,dataset_id,x_label,y_label,value,category
-figure1,dev-ddinter,x,y,0,placeholder
+component,share_pct,n_pairs,source
+rule_engine,11.74,3079,outputs/audits/path_attribution.json
+class_matrix,25.72,6743,outputs/audits/path_attribution.json
+g19_hard_constraint,42.87,11238,outputs/audits/path_attribution.json
+default_low_path,19.67,5156,outputs/audits/path_attribution.json

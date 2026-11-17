@@ -1,0 +1,592 @@
+[
+  {
+    "id": "G01_PK",
+    "case_id": "G01",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Timolol (eye drops) relative to oral administration?",
+    "gold_answer": "high (60-80%)",
+    "gold_keywords": [
+      "high",
+      "60-80"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Timolol",
+    "systemic": "Atenolol"
+  },
+  {
+    "id": "G01_MECH",
+    "case_id": "G01",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Timolol and systemic Atenolol?",
+    "gold_answer": "Ophthalmic timolol achieves 60-80% systemic bioavailability via nasolacrimal drainage, bypassing hepatic first-pass. Combined with oral atenolol, additive β-blockade causes excessive bradycardia and hypotension.",
+    "gold_keywords": [
+      "additive_beta_blockade"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Timolol",
+    "systemic": "Atenolol",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G02_PK",
+    "case_id": "G02",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Timolol (eye drops) relative to oral administration?",
+    "gold_answer": "high (60-80%)",
+    "gold_keywords": [
+      "high",
+      "60-80"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Timolol",
+    "systemic": "Verapamil"
+  },
+  {
+    "id": "G02_MECH",
+    "case_id": "G02",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Timolol and systemic Verapamil?",
+    "gold_answer": "Both timolol (β-blockade) and verapamil (Ca²⁺ channel blockade) suppress cardiac conduction and contractility. Combined use risks severe bradycardia, AV block, and heart failure.",
+    "gold_keywords": [
+      "additive_cardiodepression",
+      "additive_bradycardia"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Timolol",
+    "systemic": "Verapamil",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G03_PK",
+    "case_id": "G03",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Brimonidine (eye drops) relative to oral administration?",
+    "gold_answer": "medium (30-50%)",
+    "gold_keywords": [
+      "medium",
+      "30-50"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Brimonidine",
+    "systemic": "Fentanyl"
+  },
+  {
+    "id": "G03_MECH",
+    "case_id": "G03",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Brimonidine and systemic Fentanyl?",
+    "gold_answer": "Brimonidine (α2-agonist) causes central sympatholysis and sedation. Fentanyl causes CNS and respiratory depression. Combined: profound sedation, hypotension, respiratory compromise. Documented in children with brimonidine alone.",
+    "gold_keywords": [
+      "additive_CNS_depression",
+      "additive_hypotension"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Brimonidine",
+    "systemic": "Fentanyl",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G04_PK",
+    "case_id": "G04",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Atropine (eye drops) relative to oral administration?",
+    "gold_answer": "high (30-50%)",
+    "gold_keywords": [
+      "high",
+      "30-50"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Atropine",
+    "systemic": "Amitriptyline"
+  },
+  {
+    "id": "G04_MECH",
+    "case_id": "G04",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Atropine and systemic Amitriptyline?",
+    "gold_answer": "Ophthalmic atropine is systemically absorbed (30-50%). Amitriptyline has potent anticholinergic activity. Combined: tachycardia, urinary retention, delirium, hyperthermia. Particularly dangerous in elderly.",
+    "gold_keywords": [
+      "additive_anticholinergic_burden"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Atropine",
+    "systemic": "Amitriptyline",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G05_PK",
+    "case_id": "G05",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Timolol (eye drops) relative to oral administration?",
+    "gold_answer": "high (60-80%)",
+    "gold_keywords": [
+      "high",
+      "60-80"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Timolol",
+    "systemic": "Digoxin"
+  },
+  {
+    "id": "G05_MECH",
+    "case_id": "G05",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Timolol and systemic Digoxin?",
+    "gold_answer": "Both timolol and digoxin slow AV conduction and reduce heart rate. Combined use risks severe bradycardia and heart block.",
+    "gold_keywords": [
+      "additive_bradycardia",
+      "additive_AV_conduction_delay"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Timolol",
+    "systemic": "Digoxin",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G06_PK",
+    "case_id": "G06",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Brimonidine (eye drops) relative to oral administration?",
+    "gold_answer": "medium (30-50%)",
+    "gold_keywords": [
+      "medium",
+      "30-50"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Brimonidine",
+    "systemic": "Clonidine"
+  },
+  {
+    "id": "G06_MECH",
+    "case_id": "G06",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Brimonidine and systemic Clonidine?",
+    "gold_answer": "Both act on α2-receptors causing central sympatholysis. Combined: severe hypotension, bradycardia, sedation. Rebound hypertension risk if clonidine withdrawn.",
+    "gold_keywords": [
+      "additive_hypotension",
+      "additive_CNS_depression",
+      "additive_bradycardia"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Brimonidine",
+    "systemic": "Clonidine",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G07_PK",
+    "case_id": "G07",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Dorzolamide (eye drops) relative to oral administration?",
+    "gold_answer": "low (moderate (accumulates in RBCs))",
+    "gold_keywords": [
+      "low",
+      "moderate (accumulates in RBCs)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Dorzolamide",
+    "systemic": "Hydrochlorothiazide"
+  },
+  {
+    "id": "G07_MECH",
+    "case_id": "G07",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Dorzolamide and systemic Hydrochlorothiazide?",
+    "gold_answer": "Dorzolamide accumulates in RBCs (t1/2 ~4 months) and inhibits systemic CA. HCTZ causes hypokalemia and metabolic alkalosis. Combined: complex acid-base disturbance, hypokalemia potentiation.",
+    "gold_keywords": [
+      "additive_metabolic_acidosis",
+      "additive_electrolyte_disturbance"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Dorzolamide",
+    "systemic": "Hydrochlorothiazide",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G08_PK",
+    "case_id": "G08",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Ketorolac (eye drops) relative to oral administration?",
+    "gold_answer": "low (moderate (~50-90 ng/mL Cmax))",
+    "gold_keywords": [
+      "low",
+      "moderate (~50-90 ng/mL Cmax)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Ketorolac",
+    "systemic": "Warfarin"
+  },
+  {
+    "id": "G08_MECH",
+    "case_id": "G08",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Ketorolac and systemic Warfarin?",
+    "gold_answer": "Ophthalmic ketorolac achieves measurable plasma levels (~50-90 ng/mL). NSAIDs inhibit platelet COX-1 and damage gastric mucosa. Combined with warfarin: increased bleeding risk, particularly GI and surgical site.",
+    "gold_keywords": [
+      "additive_bleeding_risk"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Ketorolac",
+    "systemic": "Warfarin",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G09_PK",
+    "case_id": "G09",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Dexamethasone (eye drops) relative to oral administration?",
+    "gold_answer": "high (30-40%)",
+    "gold_keywords": [
+      "high",
+      "30-40"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Dexamethasone",
+    "systemic": "Prednisone"
+  },
+  {
+    "id": "G09_MECH",
+    "case_id": "G09",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Dexamethasone and systemic Prednisone?",
+    "gold_answer": "With chronic frequent dosing, ophthalmic dexamethasone contributes measurable systemic steroid levels. Combined with oral prednisone: additive adrenal suppression, hyperglycemia, osteoporosis risk.",
+    "gold_keywords": [
+      "additive_corticosteroid_effects"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Dexamethasone",
+    "systemic": "Prednisone",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G10_PK",
+    "case_id": "G10",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Betaxolol (eye drops) relative to oral administration?",
+    "gold_answer": "medium (40-60%)",
+    "gold_keywords": [
+      "medium",
+      "40-60"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Betaxolol",
+    "systemic": "Metoprolol"
+  },
+  {
+    "id": "G10_MECH",
+    "case_id": "G10",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Betaxolol and systemic Metoprolol?",
+    "gold_answer": "Betaxolol is β1-selective with 40-60% ophthalmic bioavailability. Combined with oral metoprolol: additive β1-blockade (bradycardia, hypotension). Less severe than timolol combination due to selectivity.",
+    "gold_keywords": [
+      "additive_beta_blockade"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Betaxolol",
+    "systemic": "Metoprolol",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G11_PK",
+    "case_id": "G11",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Cyclopentolate (eye drops) relative to oral administration?",
+    "gold_answer": "medium (significant)",
+    "gold_keywords": [
+      "medium",
+      "significant"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Cyclopentolate",
+    "systemic": "Oxybutynin"
+  },
+  {
+    "id": "G11_MECH",
+    "case_id": "G11",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Cyclopentolate and systemic Oxybutynin?",
+    "gold_answer": "Cyclopentolate is significantly absorbed systemically (CNS effects documented in children). Oxybutynin has strong anticholinergic activity. Combined: enhanced anticholinergic toxicity (confusion, tachycardia, urinary retention).",
+    "gold_keywords": [
+      "additive_anticholinergic_burden"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Cyclopentolate",
+    "systemic": "Oxybutynin",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G12_PK",
+    "case_id": "G12",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Brinzolamide (eye drops) relative to oral administration?",
+    "gold_answer": "low (moderate (~7 ng/mL))",
+    "gold_keywords": [
+      "low",
+      "moderate (~7 ng/mL)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Brinzolamide",
+    "systemic": "Acetazolamide"
+  },
+  {
+    "id": "G12_MECH",
+    "case_id": "G12",
+    "category": "mechanism",
+    "question": "What is the pharmacological mechanism of interaction between ophthalmic Brinzolamide and systemic Acetazolamide?",
+    "gold_answer": "Both inhibit carbonic anhydrase systemically. Combined: enhanced metabolic acidosis, renal stone risk, electrolyte disturbance. FDA label explicitly warns against concurrent use.",
+    "gold_keywords": [
+      "additive_carbonic_anhydrase_inhibition"
+    ],
+    "source": "gold_mechanisms.json (FDA labels, Stockley's, BNF)",
+    "ophthalmic": "Brinzolamide",
+    "systemic": "Acetazolamide",
+    "requires_no_interaction": false
+  },
+  {
+    "id": "G13_PK",
+    "case_id": "G13",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Latanoprost (eye drops) relative to oral administration?",
+    "gold_answer": "low (<3%)",
+    "gold_keywords": [
+      "low",
+      "<3"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Latanoprost",
+    "systemic": "Warfarin"
+  },
+  {
+    "id": "G13_NEG",
+    "case_id": "G13",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Latanoprost and systemic Warfarin? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction. Latanoprost Cmax is 0.03-0.2 ng/mL with <3% bioavailability. Rapidly hydrolyzed to inactive acid metabolite. No effect on coagulation pathways. No documented interaction in literature.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Latanoprost",
+    "systemic": "Warfarin",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G14_PK",
+    "case_id": "G14",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Travoprost (eye drops) relative to oral administration?",
+    "gold_answer": "low (<3%)",
+    "gold_keywords": [
+      "low",
+      "<3"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Travoprost",
+    "systemic": "Metformin"
+  },
+  {
+    "id": "G14_NEG",
+    "case_id": "G14",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Travoprost and systemic Metformin? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction. Travoprost has negligible systemic exposure (<0.5 ng/mL). Metformin acts locally in gut/liver. No pharmacological overlap. No documented interaction.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Travoprost",
+    "systemic": "Metformin",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G15_PK",
+    "case_id": "G15",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Bimatoprost (eye drops) relative to oral administration?",
+    "gold_answer": "low (<5%)",
+    "gold_keywords": [
+      "low",
+      "<5"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Bimatoprost",
+    "systemic": "Lisinopril"
+  },
+  {
+    "id": "G15_NEG",
+    "case_id": "G15",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Bimatoprost and systemic Lisinopril? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction. Bimatoprost systemic levels <1.5 ng/mL. No effect on RAAS pathway. No pharmacological basis for interaction with ACE inhibitors.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Bimatoprost",
+    "systemic": "Lisinopril",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G16_PK",
+    "case_id": "G16",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Ciprofloxacin (eye drops) relative to oral administration?",
+    "gold_answer": "low (low (<5 ng/mL))",
+    "gold_keywords": [
+      "low",
+      "low (<5 ng/mL)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Ciprofloxacin",
+    "systemic": "Theophylline"
+  },
+  {
+    "id": "G16_NEG",
+    "case_id": "G16",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Ciprofloxacin and systemic Theophylline? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction at ophthalmic doses. SYSTEMIC ciprofloxacin inhibits CYP1A2 and raises theophylline levels. However, ophthalmic ciprofloxacin achieves <5 ng/mL plasma — far below the threshold for CYP1A2 inhibition (requires μg/mL levels).",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Ciprofloxacin",
+    "systemic": "Theophylline",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G17_PK",
+    "case_id": "G17",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Cromolyn sodium (eye drops) relative to oral administration?",
+    "gold_answer": "low (negligible/undetectable)",
+    "gold_keywords": [
+      "low",
+      "negligible/undetectable"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Cromolyn sodium",
+    "systemic": "Aspirin"
+  },
+  {
+    "id": "G17_NEG",
+    "case_id": "G17",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Cromolyn sodium and systemic Aspirin? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction. Cromolyn is not absorbed systemically from ophthalmic administration. No pharmacological activity beyond local mast cell stabilization. No interaction possible.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Cromolyn sodium",
+    "systemic": "Aspirin",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G18_PK",
+    "case_id": "G18",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Olopatadine (eye drops) relative to oral administration?",
+    "gold_answer": "low (very low (<1 ng/mL))",
+    "gold_keywords": [
+      "low",
+      "very low (<1 ng/mL)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Olopatadine",
+    "systemic": "Loratadine"
+  },
+  {
+    "id": "G18_NEG",
+    "case_id": "G18",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Olopatadine and systemic Loratadine? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No clinically meaningful interaction. Olopatadine ophthalmic achieves <1 ng/mL plasma. Even if additive antihistamine effect were theoretical, second-gen antihistamines have wide therapeutic index. No documented interaction.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Olopatadine",
+    "systemic": "Loratadine",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G19_PK",
+    "case_id": "G19",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Moxifloxacin (eye drops) relative to oral administration?",
+    "gold_answer": "low (low (<3 ng/mL))",
+    "gold_keywords": [
+      "low",
+      "low (<3 ng/mL)"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Moxifloxacin",
+    "systemic": "Amiodarone"
+  },
+  {
+    "id": "G19_NEG",
+    "case_id": "G19",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Moxifloxacin and systemic Amiodarone? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction at ophthalmic doses. SYSTEMIC moxifloxacin prolongs QT interval. However, ophthalmic moxifloxacin achieves <3 ng/mL — orders of magnitude below cardiac ion channel effects (requires μg/mL). No QT risk from eye drops.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Moxifloxacin",
+    "systemic": "Amiodarone",
+    "requires_no_interaction": true
+  },
+  {
+    "id": "G20_PK",
+    "case_id": "G20",
+    "category": "pharmacokinetics",
+    "question": "What is the systemic absorption level of ophthalmic Latanoprost (eye drops) relative to oral administration?",
+    "gold_answer": "low (<3%)",
+    "gold_keywords": [
+      "low",
+      "<3"
+    ],
+    "source": "entities_a.csv (Phase 1 registry, manually verified)",
+    "ophthalmic": "Latanoprost",
+    "systemic": "Atorvastatin"
+  },
+  {
+    "id": "G20_NEG",
+    "case_id": "G20",
+    "category": "negative",
+    "question": "Is there a clinically significant drug interaction between ophthalmic Latanoprost and systemic Atorvastatin? Explain why or why not considering ophthalmic pharmacokinetics.",
+    "gold_answer": "No interaction. No pharmacological overlap. Latanoprost acts on FP receptors locally; atorvastatin inhibits hepatic HMG-CoA reductase. No shared metabolic pathway. No documented interaction.",
+    "gold_keywords": [
+      "no interaction",
+      "negligible",
+      "no systemic",
+      "no documented"
+    ],
+    "source": "gold_mechanisms.json (FDA labels)",
+    "ophthalmic": "Latanoprost",
+    "systemic": "Atorvastatin",
+    "requires_no_interaction": true
+  }
+]

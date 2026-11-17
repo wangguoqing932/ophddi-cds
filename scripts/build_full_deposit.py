@@ -264,7 +264,7 @@ def main() -> int:
     audit_dir = ROOT / "outputs" / "audits"
     if audit_dir.exists():
         for f in sorted(audit_dir.glob("*")):
-            if f.is_file():
+            if f.is_file() and f.name != "lexicomp_route_aware_raw.json":
                 grab(f"outputs/audits/{f.name}", f"07_audits/{f.name}")
 
     # ── MANIFEST ──

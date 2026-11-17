@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-18T00:11:19.836222</dc:date>
+    <dc:date>2026-11-11T02:49:30.310196</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -41,12 +41,12 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m97d802a23c" d="M 0 0 
+       <path id="m197a598c0f" d="M 0 0 
 L 0 3.5 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m97d802a23c" x="175.503343" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="175.503343" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
@@ -56,7 +56,7 @@ L 0 3.5
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m97d802a23c" x="213.754186" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="213.754186" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
@@ -66,7 +66,7 @@ L 0 3.5
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m97d802a23c" x="252.005029" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="252.005029" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
@@ -81,12 +81,12 @@ L 0 3.5
     <g id="ytick_1">
      <g id="line2d_4">
       <defs>
-       <path id="m1e30b84779" d="M 0 0 
+       <path id="m6361c57ad3" d="M 0 0 
 L -3.5 0 
 " style="stroke: #000000; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m1e30b84779" x="137.2525" y="125.430872" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="137.2525" y="125.430872" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
@@ -96,7 +96,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m1e30b84779" x="137.2525" y="47.958872" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="137.2525" y="47.958872" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
@@ -120,7 +120,7 @@ L 252.005029 142.862072
 L 252.005029 107.999672 
 L 137.2525 107.999672 
 z
-" clip-path="url(#p403aae08c9)" style="fill: #1f4e79"/>
+" clip-path="url(#p2534340768)" style="fill: #1f4e79"/>
    </g>
    <g id="patch_6">
     <path d="M 137.2525 65.390072 
@@ -128,7 +128,7 @@ L 175.503343 65.390072
 L 175.503343 30.527672 
 L 137.2525 30.527672 
 z
-" clip-path="url(#p403aae08c9)" style="fill: #1f4e79"/>
+" clip-path="url(#p2534340768)" style="fill: #1f4e79"/>
    </g>
    <g id="text_7">
     <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #222222" x="255.065096" y="128.016028" transform="rotate(-0 255.065096 128.016028)">3</text>
@@ -153,7 +153,7 @@ z
     <g id="xtick_4">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m97d802a23c" x="390.517216" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="390.517216" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_10">
@@ -163,7 +163,7 @@ z
     <g id="xtick_5">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m97d802a23c" x="422.883314" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="422.883314" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_11">
@@ -173,7 +173,7 @@ z
     <g id="xtick_6">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m97d802a23c" x="455.249412" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m197a598c0f" x="455.249412" y="152.546072" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_12">
@@ -185,61 +185,67 @@ z
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="32.762685" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="32.762685" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_13">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="35.62581" transform="rotate(-0 351.151118 35.62581)">Timolol x Atenolol</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(325.671118 31.967685)">Timolol</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(316.459868 40.429185)">x Atenolol</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="54.33556" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="54.33556" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_14">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="57.198685" transform="rotate(-0 351.151118 57.198685)">Timolol x Verapamil</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(325.671118 53.54056)">Timolol</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(309.354868 62.00206)">x Verapamil</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="75.908435" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="75.908435" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_15">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="78.77156" transform="rotate(-0 351.151118 78.77156)">Atropine x Amitripty</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(321.356118 75.113435)">Atropine</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(301.803618 83.574935)">x Amitriptyline</text>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="97.481309" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="97.481309" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_16">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="100.344434" transform="rotate(-0 351.151118 100.344434)">Ketorolac x Warfarin</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(317.356118 96.686309)">Ketorolac</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(315.003618 105.147809)">x Warfarin</text>
      </g>
     </g>
     <g id="ytick_7">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="119.054184" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="119.054184" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_17">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="121.917309" transform="rotate(-0 351.151118 121.917309)">Dorzolamid x Furosemid</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(306.247368 118.259184)">Dorzolamide</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(302.693618 126.720684)">x Furosemide</text>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m1e30b84779" x="358.151118" y="140.627059" style="stroke: #000000; stroke-width: 0.8"/>
+       <use xlink:href="#m6361c57ad3" x="358.151118" y="140.627059" style="stroke: #000000; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_18">
-      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="351.151118" y="143.490184" transform="rotate(-0 351.151118 143.490184)">Latanopros x Atorvasta</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(308.901118 139.832059)">Latanoprost</text>
+      <text style="font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(303.128618 148.293559)">x Atorvastatin</text>
      </g>
     </g>
    </g>
@@ -259,7 +265,7 @@ L 455.249412 26.830145
 L 455.249412 38.695226 
 L 358.151118 38.695226 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #1f4e79"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #1f4e79"/>
    </g>
    <g id="patch_11">
     <path d="M 358.151118 48.403019 
@@ -267,7 +273,7 @@ L 455.249412 48.403019
 L 455.249412 60.2681 
 L 358.151118 60.2681 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #1f4e79"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #1f4e79"/>
    </g>
    <g id="patch_12">
     <path d="M 358.151118 69.975894 
@@ -275,7 +281,7 @@ L 455.249412 69.975894
 L 455.249412 81.840975 
 L 358.151118 81.840975 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #1f4e79"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #1f4e79"/>
    </g>
    <g id="patch_13">
     <path d="M 358.151118 91.548769 
@@ -283,7 +289,7 @@ L 422.883314 91.548769
 L 422.883314 103.41385 
 L 358.151118 103.41385 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #4a7fa5"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #4a7fa5"/>
    </g>
    <g id="patch_14">
     <path d="M 358.151118 113.121643 
@@ -291,7 +297,7 @@ L 422.883314 113.121643
 L 422.883314 124.986724 
 L 358.151118 124.986724 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #4a7fa5"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #4a7fa5"/>
    </g>
    <g id="patch_15">
     <path d="M 358.151118 134.694518 
@@ -299,7 +305,7 @@ L 390.517216 134.694518
 L 390.517216 146.559599 
 L 358.151118 146.559599 
 z
-" clip-path="url(#pd0b6f7ba2f)" style="fill: #b9cddc"/>
+" clip-path="url(#pe8b53fd679)" style="fill: #b9cddc"/>
    </g>
    <g id="text_19">
     <text style="font-weight: 700; font-size: 10.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="421.265009" y="14.843672" transform="rotate(-0 421.265009 14.843672)">(b) Final risk of the 6 demo cases</text>
@@ -325,10 +331,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p403aae08c9">
+  <clipPath id="p2534340768">
    <rect x="137.2525" y="20.843672" width="126.227782" height="131.7024"/>
   </clipPath>
-  <clipPath id="pd0b6f7ba2f">
+  <clipPath id="pe8b53fd679">
    <rect x="358.151118" y="20.843672" width="126.227782" height="131.7024"/>
   </clipPath>
  </defs>

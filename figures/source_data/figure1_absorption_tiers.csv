@@ -1,0 +1,7 @@
+tier,n_agents,source
+systemic_absorption_high,12,data/seed/entities_a.csv
+systemic_absorption_medium,20,data/seed/entities_a.csv
+systemic_absorption_low,59,data/seed/entities_a.csv
+systemic_absorption_very_low,11,data/seed/entities_a.csv
+minimal_systemic_absorption,7,data/seed/entities_a.csv
+systemic_absorption_none,4,data/seed/entities_a.csv

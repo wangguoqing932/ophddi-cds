@@ -1,0 +1,92 @@
+{
+  "body_words": [
+    7539,
+    8839
+  ],
+  "added_words": 3509,
+  "deleted_words": 2209,
+  "paragraphs": {
+    "unchanged": 12,
+    "changed": 70,
+    "added": 0,
+    "deleted": 0
+  },
+  "sections": [
+    {
+      "section": "FRONT",
+      "old": 10,
+      "new": 10,
+      "delta": 0
+    },
+    {
+      "section": "Authors",
+      "old": 79,
+      "new": 79,
+      "delta": 0
+    },
+    {
+      "section": "Abstract",
+      "old": 352,
+      "new": 360,
+      "delta": 8
+    },
+    {
+      "section": "1. Introduction",
+      "old": 453,
+      "new": 425,
+      "delta": -28
+    },
+    {
+      "section": "2. Materials and methods",
+      "old": 1892,
+      "new": 2416,
+      "delta": 524
+    },
+    {
+      "section": "3. Results",
+      "old": 2217,
+      "new": 2663,
+      "delta": 446
+    },
+    {
+      "section": "4. Discussion",
+      "old": 1172,
+      "new": 1461,
+      "delta": 289
+    },
+    {
+      "section": "5. Conclusions",
+      "old": 210,
+      "new": 169,
+      "delta": -41
+    },
+    {
+      "section": "Keywords",
+      "old": 28,
+      "new": 28,
+      "delta": 0
+    },
+    {
+      "section": "Supplementary material",
+      "old": 88,
+      "new": 144,
+      "delta": 56
+    },
+    {
+      "section": "Declarations",
+      "old": 1020,
+      "new": 1066,
+      "delta": 46
+    },
+    {
+      "section": "References",
+      "old": 1414,
+      "new": 1491,
+      "delta": 77
+    }
+  ],
+  "abstract": [
+    352,
+    360
+  ]
+}

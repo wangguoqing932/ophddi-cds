@@ -1,0 +1,11 @@
+{
+  "id": "int-pubmed",
+  "role": "internal_validation",
+  "source_type": "literature",
+  "source_ref": "PubMed — verified case reports of ophthalmic drug systemic adverse effects",
+  "expected_size": 100,
+  "ground_truth_method": "label_guideline",
+  "independence_axis": "source",
+  "enabled": true,
+  "notes": "Cases from verified PubMed literature with PMID + clinical outcome. Source-isolated from DDInter."
+}

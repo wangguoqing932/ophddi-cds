@@ -1,0 +1,6 @@
+{
+  "dataset_id": "blind_l1",
+  "role": "external_validation",
+  "n_cases": 118,
+  "source": "independent blind validation (SHA-locked)"
+}

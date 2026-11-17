@@ -209,7 +209,7 @@ entities:
   - carbonic_anhydrase_inhibitor
   flags:
   - cai_topical
-  - systemic_absorption_medium
+  - systemic_absorption_very_low
   - metabolic_acidosis_risk
   evidence_sources:
   - DrugBank DB00869
@@ -225,7 +225,7 @@ entities:
   - carbonic_anhydrase_inhibitor
   flags:
   - cai_topical
-  - systemic_absorption_medium
+  - systemic_absorption_very_low
   - metabolic_acidosis_risk
   evidence_sources:
   - DrugBank DB01194
@@ -321,7 +321,7 @@ entities:
   flags:
   - beta_blocker
   - prostaglandin_analog
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0021
@@ -337,7 +337,7 @@ entities:
   flags:
   - beta_blocker
   - prostaglandin_analog
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0022
@@ -353,7 +353,7 @@ entities:
   flags:
   - beta_blocker
   - prostaglandin_analog
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0023
@@ -369,7 +369,7 @@ entities:
   flags:
   - beta_blocker
   - alpha2_agonist
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0024
@@ -385,7 +385,7 @@ entities:
   flags:
   - beta_blocker
   - cai
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0025
@@ -1141,7 +1141,7 @@ entities:
   flags:
   - anticholinergic
   - mydriatic
-  - systemic_absorption_medium
+  - systemic_absorption_high
   evidence_sources:
   - DrugBank DB00572
   - PubMed
@@ -1566,7 +1566,7 @@ entities:
   - antibiotic
   - aminoglycoside
   - corticosteroid
-  - systemic_absorption_low
+  - systemic_absorption_medium
   evidence_sources:
   - DrugBank DB00684+DB01234
   - PubMed
@@ -1587,7 +1587,7 @@ entities:
   - aminoglycoside
   - polypeptide
   - corticosteroid
-  - systemic_absorption_low
+  - systemic_absorption_medium
   evidence_sources:
   - DrugBank DB00994+DB00781+DB01234
   - PubMed
@@ -1623,7 +1623,7 @@ entities:
   - antibiotic
   - sulfonamide
   - corticosteroid
-  - systemic_absorption_low
+  - systemic_absorption_medium
   evidence_sources:
   - DrugBank DB00634+DB00860
   - PubMed
@@ -1789,7 +1789,7 @@ entities:
   flags:
   - miotic
   - cholinergic
-  - systemic_absorption_medium
+  - systemic_absorption_low
   evidence_sources:
   - PubMed
   entity_a_id: topical_ophthalmic_0112

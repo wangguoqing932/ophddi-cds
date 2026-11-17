@@ -9,6 +9,8 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -59,8 +61,18 @@ def load_rules() -> dict:
 
 
 def load_report() -> dict:
+    """读取引用核验报告；缺失时先运行生成脚本。
+
+    报告是派生产物（不进版本库）。全新克隆上 outputs/ 不存在，直接 open() 会失败，
+    因此这里按需调用 verify_rule_citations.py 生成——该脚本是确定性的、完全离线
+    重放缓存，不需要网络。
+    """
     path = PROJECT_ROOT / "outputs" / "citation_verification_report.json"
-    with open(path) as f:
+    if not path.exists():
+        subprocess.run(
+            [sys.executable, "scripts/verify_rule_citations.py", "--project-root", "."],
+            cwd=PROJECT_ROOT, check=True, capture_output=True, text=True)
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 

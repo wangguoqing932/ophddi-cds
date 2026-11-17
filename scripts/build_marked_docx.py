@@ -175,12 +175,15 @@ def main() -> int:
     ref = sys.argv[1] if len(sys.argv) > 1 else "round2-submitted"
     out_path = Path(sys.argv[2]) if len(sys.argv) > 2 else OUT_DEFAULT
 
-    # 优先用随仓库发布的 round-2 基线文件（审稿人只能看到文件，不共享作者本地
-    # 的 git 历史）；没有该文件时再回退到 git 引用。
-    baseline_md = next(
-        (p for p in (ROOT / "outputs" / "deliverables" / "manuscript_round2_submitted.md",
-                     ROOT / "manuscript" / "manuscript_round2_submitted.md")
-         if p.exists()), None)
+    # 基线选择：显式传入 git 引用（如 HEAD = Frontiers 已投稿版）时必须用 git 基线；
+    # 只有默认的 round2-submitted 才优先用随仓库发布的基线文件（审稿人只能看到
+    # 文件，不共享作者本地的 git 历史）。
+    baseline_md = None
+    if ref == "round2-submitted":
+        baseline_md = next(
+            (p for p in (ROOT / "outputs" / "deliverables" / "manuscript_round2_submitted.md",
+                         ROOT / "manuscript" / "manuscript_round2_submitted.md")
+             if p.exists()), None)
     if baseline_md is not None:
         old = baseline_md.read_text(encoding="utf-8")
         print(f"基线：{baseline_md.name}（随仓库发布的 round-2 提交版）")

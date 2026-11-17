@@ -1,0 +1,41 @@
+rule_id,severity,evidence_grade,route_support,severity_support,source_record,note
+additive_beta_blockade,high,direct_ophthalmic,ophthalmic,direct,DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373,direct_ophthalmic: high-absorption topical beta-blocker + systemic beta-blocker
+beta_blocker_ccb_additive,high,direct_ophthalmic,ophthalmic,direct,BMJ 1987;294:155-a https://doi.org/10.1136/bmj.294.6565.155-a (PMID:3109547),direct_ophthalmic: high-absorption topical beta-blocker + systemic CCB (case reports)
+beta_blocker_digoxin_additive,high,class_extrapolated,systemic_extrapolated,inferred,DDInter 2.0: timolol-digoxin Moderate (pair-level record; no absorption correction),class_extrapolated: systemic beta-blocker + digoxin additive AV-node suppression; no ophthalmic pair report identified
+additive_alpha2_cns_depression,high,contextual_ophthalmic,ophthalmic,inferred,FDA Label Brimonidine https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020490s010lbl.pdf accessed 2026-07-26,direct_ophthalmic_for_pediatric_toxicity: 
+additive_anticholinergic_effects,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00572 https://go.drugbank.com/drugs/DB00572,class_extrapolated: 
+additive_corticosteroid_iop,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00860 https://go.drugbank.com/drugs/DB00860,class_extrapolated: 
+additive_nsaid_bleeding,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465,class_extrapolated: 
+sympathomimetic_alpha_interaction,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388,class_extrapolated: 
+qt_prolongation_risk,low,class_extrapolated,systemic_extrapolated,inferred,FDA Fluoroquinolone https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-updates-warnings-oral-and-injectable-fluoroquinolone-antibiotics accessed 2026-07-26,class_extrapolated: 
+pga_antiplatelet_bleeding,low,mechanism_only,none,provisional,DrugBank:DB00654 https://go.drugbank.com/drugs/DB00654,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+cai_diuretic_metabolic_acidosis,medium,contextual_ophthalmic,ophthalmic,inferred,DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869,direct_ophthalmic_for_cai_monotherapy: 
+cai_topiramate_acidosis,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00273 https://go.drugbank.com/drugs/DB00273,class_extrapolated: 
+dexamethasone_cyp3a4_induction,low,mechanism_only,none,provisional,"TobraDex label, Section 12.3: plasma dexamethasone <1 ng/mL after 0.1% four times daily",mechanism only: no direct ophthalmic evidence of CYP3A4 induction at measured exposure
+topical_corticosteroid_cyp3a4_induction,low,mechanism_only,none,provisional,DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+systemic_absorption_high_risk,low,contextual_ophthalmic,ophthalmic,inferred,Schuman 2000 PMID:10857839 (topical+systemic beta-blocker additive effects),contextual_clinical: high-absorption topical beta-blocker with systemic beta-blocker; low-severity duplicate of additive_beta_blockade
+systemic_absorption_moderate_risk,low,mechanism_only,none,provisional,DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+p_gp_mediated_absorption,low,mechanism_only,none,provisional,DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+calcineurin_inhibitor_cyp3a4,low,mechanism_only,none,provisional,DrugBank:DB00091 https://go.drugbank.com/drugs/DB00091,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+macrolide_cyp3a4_inhibition,low,mechanism_only,none,provisional,DrugBank:DB00199 https://go.drugbank.com/drugs/DB00199,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+azole_cyp3a4_inhibition,low,mechanism_only,none,provisional,DrugBank:DB00196 https://go.drugbank.com/drugs/DB00196,excluded from Tier 0 — theoretical or no ophthalmic DDI evidence
+sympathomimetic_maoi_hypertension,high,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388,class_extrapolated: 
+beta_blocker_beta2_agonist_antagonism,high,contextual_ophthalmic,ophthalmic,inferred,DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373,direct_ophthalmic_for_monotherapy_contraindication: 
+immunosuppressant_nsaid_nephrotoxicity,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00091 https://go.drugbank.com/drugs/DB00091,class_extrapolated: 
+fluoroquinolone_corticosteroid_tendon,low,class_extrapolated,systemic_extrapolated,inferred,FDA Safety Communication https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-updates-warnings-oral-and-injectable-fluoroquinolone-antibiotics accessed 2026-07-27,class_extrapolated: 
+nsaid_antihypertensive_antagonism,high,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465,class_extrapolated: 
+nsaid_diuretic_antagonism,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465,class_extrapolated: 
+antibiotic_warfarin_enhancement,low,class_extrapolated,systemic_extrapolated,inferred,"DrugBank:DB00682 https://go.drugbank.com/drugs/DB00682 (warfarin monograph, drug interactions)",class_extrapolated: antibiotic effects on gut-flora vitamin K and warfarin; systemic-route evidence only
+beta_blocker_cyp2d6_metabolism,medium,contextual_ophthalmic,ophthalmic,inferred,DrugBank:DB00373 https://go.drugbank.com/drugs/DB00373,direct_ophthalmic: Timolol (ophthalmic) + paroxetine/fluoxetine (strong CYP2D6 inhibitors)
+nsaid_acei_arb_antagonism,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00465 https://go.drugbank.com/drugs/DB00465,class_extrapolated: 
+corticosteroid_nti_interaction,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB01234 https://go.drugbank.com/drugs/DB01234,class_extrapolated: 
+sympathomimetic_tca_hypertension,high,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00388 https://go.drugbank.com/drugs/DB00388,class_extrapolated: 
+anticholinergic_qt_prolongation,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00572 https://go.drugbank.com/drugs/DB00572,class_extrapolated: 
+moderate_abs_antiplatelet,low,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484,class_extrapolated: 
+moderate_abs_beta_blocker,medium,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00195 https://go.drugbank.com/drugs/DB00195,direct_ophthalmic: 
+moderate_abs_anticoagulant,low,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00484 https://go.drugbank.com/drugs/DB00484,class_extrapolated: 
+moderate_abs_cyp2d6,low,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00195 https://go.drugbank.com/drugs/DB00195,class_extrapolated: 
+moderate_abs_diuretic,low,class_extrapolated,systemic_extrapolated,inferred,DrugBank:DB00869 https://go.drugbank.com/drugs/DB00869,class_extrapolated: 
+alpha2_agonist_antiplatelet,low,class_extrapolated,systemic_extrapolated,inferred,FDA Label Brimonidine https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020490s010lbl.pdf [Drug Interactions] accessed 2026-07-27,class_extrapolated: 
+low_abs_antiplatelet,low,mechanism_only,none,provisional,Absorption prior (Section 2.2): no pair-level DDI source; low tier from the per-agent evidence table,"excluded from Tier 0 — absorption prior, no pair-level DDI evidence"
+low_abs_anticoagulant,low,mechanism_only,none,provisional,Absorption prior (Section 2.2): no pair-level DDI source; low tier from the per-agent evidence table,"excluded from Tier 0 — absorption prior, no pair-level DDI evidence"

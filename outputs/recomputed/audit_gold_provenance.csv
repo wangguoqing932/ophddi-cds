@@ -1,0 +1,93 @@
+case_id,ophthalmic,systemic,registry_absorption_tier,ddinter_level,gold_as_applied,gold_rederived,engine_path,provenance
+D3-000,Dexamethasone,Leflunomide,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_high
+D3-001,Timolol,Theophylline,systemic_absorption_high,high,high,high,matrix,ddinter_kept: systemic_absorption_high
+D3-002,Flurbiprofen,Methotrexate,systemic_absorption_low,high,high,low,matrix,ddinter_kept: systemic_absorption_high
+D3-003,Timolol,Verapamil,systemic_absorption_high,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-004,Timolol,Epinephrine,systemic_absorption_high,high,high,high,matrix,ddinter_kept: systemic_absorption_high
+D3-005,Flurbiprofen,Rivaroxaban,systemic_absorption_low,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-006,Scopolamine,Topiramate,systemic_absorption_high,high,high,high,default_low,ddinter_kept: systemic_absorption_high
+D3-007,Carteolol,Diltiazem,systemic_absorption_high,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-008,Timolol,Diltiazem,systemic_absorption_high,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-009,Timolol,Salmeterol,systemic_absorption_high,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-010,Flurbiprofen,Apixaban,systemic_absorption_low,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-011,Flurbiprofen,Prasugrel,systemic_absorption_low,high,high,high,rule,ddinter_kept: systemic_absorption_high
+D3-012,Dexamethasone,Empagliflozin,systemic_absorption_medium,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_high
+D3-013,Dexamethasone,Perindopril,systemic_absorption_medium,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_high
+D3-014,Timolol,Spironolactone,systemic_absorption_high,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_high
+D3-015,Dexamethasone,Bumetanide,systemic_absorption_medium,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_high
+D3-016,Timolol,Valsartan,systemic_absorption_high,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_high
+D3-017,Atropine,Donepezil,systemic_absorption_high,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_high
+D3-018,Carteolol,Diazepam,systemic_absorption_high,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_high
+D3-019,Dexamethasone,Fluvoxamine,systemic_absorption_medium,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_high
+D3-020,Atropine,Nitrofurantoin,systemic_absorption_high,low,low,low,default_low,ddinter_kept: systemic_absorption_high
+D3-021,Carteolol,Tadalafil,systemic_absorption_high,low,low,low,matrix,ddinter_kept: systemic_absorption_high
+D3-022,Prednisolone,Leflunomide,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-023,Phenylephrine,Clomipramine,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-024,Phenylephrine,Nortriptyline,systemic_absorption_medium,high,high,high,rule,ddinter_kept: systemic_absorption_medium
+D3-025,Betaxolol,Verapamil,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-026,Apraclonidine,Linezolid,systemic_absorption_medium,high,high,high,default_low,ddinter_kept: systemic_absorption_medium
+D3-027,Betaxolol,Diltiazem,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-028,Prednisolone,Desmopressin,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-029,Betaxolol,Clonidine,systemic_absorption_medium,high,high,high,default_low,ddinter_kept: systemic_absorption_medium
+D3-030,Betaxolol,Theophylline,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-031,Phenylephrine,Amitriptyline,systemic_absorption_medium,high,high,high,matrix,ddinter_kept: systemic_absorption_medium
+D3-032,Phenylephrine,Linezolid,systemic_absorption_medium,high,high,high,rule,ddinter_kept: systemic_absorption_medium
+D3-033,Homatropine,Topiramate,systemic_absorption_medium,high,high,high,default_low,ddinter_kept: systemic_absorption_medium
+D3-034,Prednisolone,Captopril,systemic_absorption_medium,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_medium
+D3-035,Apraclonidine,Midazolam,systemic_absorption_medium,medium,medium,medium,rule,ddinter_kept: systemic_absorption_medium
+D3-036,Betaxolol,Amiodarone,systemic_absorption_medium,medium,medium,medium,rule,ddinter_kept: systemic_absorption_medium
+D3-037,Prednisolone,Doxazosin,systemic_absorption_medium,medium,medium,medium,rule,ddinter_kept: systemic_absorption_medium
+D3-038,Apraclonidine,Loperamide,systemic_absorption_medium,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_medium
+D3-039,Prednisolone,Methotrexate,systemic_absorption_medium,medium,medium,medium,rule,ddinter_kept: systemic_absorption_medium
+D3-040,Phenylephrine,Levothyroxine,systemic_absorption_medium,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_medium
+D3-041,Betaxolol,Canagliflozin,systemic_absorption_medium,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_medium
+D3-042,Prednisolone,Telmisartan,systemic_absorption_medium,medium,medium,medium,default_low,ddinter_kept: systemic_absorption_medium
+D3-043,Betaxolol,Norepinephrine,systemic_absorption_medium,medium,medium,medium,matrix,ddinter_kept: systemic_absorption_medium
+D3-044,Prednisolone,Midazolam,systemic_absorption_medium,low,low,low,rule,ddinter_kept: systemic_absorption_medium
+D3-045,Betaxolol,Tadalafil,systemic_absorption_medium,low,low,low,matrix,ddinter_kept: systemic_absorption_medium
+D3-046,Prednisolone,Salmeterol,systemic_absorption_medium,low,low,low,rule,ddinter_kept: systemic_absorption_medium
+D3-047,Prednisolone,Salbutamol,systemic_absorption_medium,low,low,low,default_low,ddinter_kept: systemic_absorption_medium
+D3-048,Gatifloxacin,Cilostazol,systemic_absorption_low,high,low,high,rule,absorption_correction: systemic_absorption_low -> low
+D3-049,Voriconazole,Oxycodone,systemic_absorption_low,high,low,high,rule,absorption_correction: systemic_absorption_low -> low
+D3-050,Moxifloxacin,Dronedarone,systemic_absorption_low,high,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-051,Moxifloxacin,Flecainide,systemic_absorption_low,high,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-052,Ofloxacin,Dronedarone,systemic_absorption_low,high,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-053,Levofloxacin,Glimepiride,systemic_absorption_low,high,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-054,Gatifloxacin,Saxagliptin,systemic_absorption_low,high,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-055,Gatifloxacin,Quetiapine,systemic_absorption_low,high,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-056,Tacrolimus,Citalopram,systemic_absorption_low,high,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-057,Tacrolimus,Ibuprofen,systemic_absorption_low,high,low,high,rule,absorption_correction: systemic_absorption_low -> low
+D3-058,Gatifloxacin,Escitalopram,systemic_absorption_low,high,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-059,Azithromycin,Hydroxychloroquine,systemic_absorption_low,high,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-060,Ganciclovir,Carbamazepine,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-061,Ciprofloxacin,Aprepitant,systemic_absorption_low,medium,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-062,Acyclovir,Remdesivir,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-063,Bromfenac,Enalapril,systemic_absorption_low,medium,low,medium,rule,absorption_correction: systemic_absorption_low -> low
+D3-064,Fluconazole,Flecainide,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-065,Ketorolac,Diltiazem,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-066,Voriconazole,Pioglitazone,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-067,Gentamicin,Ibuprofen,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-068,Bromfenac,Desmopressin,systemic_absorption_low,medium,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-069,Ketorolac,Venlafaxine,systemic_absorption_low,medium,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-070,Ciprofloxacin,Capecitabine,systemic_absorption_low,low,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-071,Ciprofloxacin,Diazepam,systemic_absorption_low,low,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-072,Lidocaine,Phenytoin,systemic_absorption_low,low,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-073,Erythromycin,Amoxicillin,systemic_absorption_low,low,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-074,Lidocaine,Carbamazepine,systemic_absorption_low,low,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-075,Neomycin,Digoxin,systemic_absorption_low,low,low,low,g19,absorption_correction: systemic_absorption_low -> low
+D3-076,Lidocaine,Raloxifene,systemic_absorption_low,low,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-077,Acyclovir,Memantine,systemic_absorption_low,low,low,low,matrix,absorption_correction: systemic_absorption_low -> low
+D3-078,Cyclosporine,Ritonavir,systemic_absorption_very_low,high,low,high,rule,absorption_correction: systemic_absorption_very_low -> low
+D3-079,Cyclosporine,Ketoconazole,systemic_absorption_very_low,high,low,high,rule,absorption_correction: systemic_absorption_very_low -> low
+D3-080,Aflibercept,Leflunomide,minimal_systemic_absorption,high,high,low,default_low,ddinter_kept: none
+D3-081,Cyclosporine,Itraconazole,systemic_absorption_very_low,high,low,high,rule,absorption_correction: systemic_absorption_very_low -> low
+D3-082,Cyclosporine,Edoxaban,systemic_absorption_very_low,high,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-083,Cyclosporine,Loperamide,systemic_absorption_very_low,high,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-084,Cyclosporine,Sildenafil,systemic_absorption_very_low,medium,low,low,matrix,absorption_correction: systemic_absorption_very_low -> low
+D3-085,Aflibercept,Azathioprine,minimal_systemic_absorption,medium,medium,low,default_low,ddinter_kept: none
+D3-086,Cyclosporine,Ranolazine,systemic_absorption_very_low,medium,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-087,Cyclosporine,Hydroxychloroquine,systemic_absorption_very_low,medium,low,low,matrix,absorption_correction: systemic_absorption_very_low -> low
+D3-088,Cyclosporine,Donepezil,systemic_absorption_very_low,low,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-089,Cyclosporine,Escitalopram,systemic_absorption_very_low,low,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-090,Cyclosporine,Sitagliptin,systemic_absorption_very_low,low,low,low,g19,absorption_correction: systemic_absorption_very_low -> low
+D3-091,Cyclosporine,Propafenone,systemic_absorption_very_low,low,low,low,g19,absorption_correction: systemic_absorption_very_low -> low

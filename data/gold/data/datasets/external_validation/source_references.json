@@ -1,0 +1,205 @@
+{
+  "n_references": 20,
+  "references": [
+    {
+      "pmid": "38806396",
+      "title": "Ophthalmic complication of pityriasis rubra pilaris.",
+      "journal": "BMJ case reports",
+      "pubdate": "2024",
+      "doi": "10.1136/bcr-2023-256445",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-000"
+    },
+    {
+      "pmid": "22471694",
+      "title": "Topical timolol for small hemangiomas of infancy.",
+      "journal": "Pediatric dermatology",
+      "pubdate": "2013",
+      "doi": "10.1111/j.1525-1470.2012.01723.x",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-001"
+    },
+    {
+      "pmid": "38985892",
+      "title": "Open-angle glaucoma and Fuchs dystrophy.",
+      "journal": "Journal of cataract and refractive surgery",
+      "pubdate": "2024",
+      "doi": "10.1097/j.jcrs.0000000000001498",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-002"
+    },
+    {
+      "pmid": "20677168",
+      "title": "Pulmonary edema following instillation of topical phenylephrine eyedrops in a child under general anesthesia.",
+      "journal": "European journal of ophthalmology",
+      "pubdate": "2011",
+      "doi": "10.5301/ejo.2010.561",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-004"
+    },
+    {
+      "pmid": "23162406",
+      "title": "Severe hypertension and pulmonary edema associated with systemic absorption of topical phenylephrine in a child during retinal surgery.",
+      "journal": "Saudi journal of anaesthesia",
+      "pubdate": "2012",
+      "doi": "10.4103/1658-354X.101224",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-005"
+    },
+    {
+      "pmid": "8001214",
+      "title": "Intraoperative pulmonary oedema in a young cocaine smoker.",
+      "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+      "pubdate": "1994",
+      "doi": "10.1007/BF03010938",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-006"
+    },
+    {
+      "pmid": "23337008",
+      "title": "Cerebral vasoconstriction triggered by sympathomimetic drugs during intra-atrerial chemotherapy.",
+      "journal": "Pediatric neurology",
+      "pubdate": "2013",
+      "doi": "10.1016/j.pediatrneurol.2012.10.005",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-008"
+    },
+    {
+      "pmid": "36107850",
+      "title": "Oleander-Associated Keratitis and Uveitis.",
+      "journal": "Cornea",
+      "pubdate": "2022",
+      "doi": "10.1097/ICO.0000000000003032",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-010"
+    },
+    {
+      "pmid": "34015953",
+      "title": "Moraxella nonliquefaciens superinfecting herpes simplex keratitis.",
+      "journal": "European journal of ophthalmology",
+      "pubdate": "2022",
+      "doi": "10.1177/11206721211019565",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-012"
+    },
+    {
+      "pmid": "35849047",
+      "title": "Case Report: Treatment of Severe Neuroretinitis and other Sequelae Associated with Cat Scratch Disease.",
+      "journal": "Optometry and vision science : official publication of the American Academy of Optometry",
+      "pubdate": "2022",
+      "doi": "10.1097/OPX.0000000000001922",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-014"
+    },
+    {
+      "pmid": "42292706",
+      "title": "Bromfenac with Sodium Bisulfite Inducing Contact Dermatitis and Corneal Ring Infiltrate: A Case Report.",
+      "journal": "Case reports in ophthalmology",
+      "pubdate": "2026",
+      "doi": "10.1159/000551524",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-017"
+    },
+    {
+      "pmid": "35060151",
+      "title": "The effect of systemic and topical ophthalmic medications on choroidal thickness: A review.",
+      "journal": "British journal of clinical pharmacology",
+      "pubdate": "2022",
+      "doi": "10.1111/bcp.15237",
+      "source": "pubmed",
+      "evidence_type": "review",
+      "cases_used_in": "EXT-018"
+    },
+    {
+      "pmid": "3306268",
+      "title": "Systemic reactions to ophthalmic drug preparations.",
+      "journal": "Medical toxicology and adverse drug experience",
+      "pubdate": "1987",
+      "doi": "10.1007/BF03259870",
+      "source": "pubmed",
+      "evidence_type": "review",
+      "cases_used_in": "EXT-020"
+    },
+    {
+      "pmid": "30574928",
+      "title": "Shewanella algae keratitis.",
+      "journal": "Indian journal of ophthalmology",
+      "pubdate": "2019",
+      "doi": "10.4103/ijo.IJO_617_18",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-022"
+    },
+    {
+      "pmid": "34310228",
+      "title": "Case 292: Lyme Neuroborreliosis.",
+      "journal": "Radiology",
+      "pubdate": "2021",
+      "doi": "10.1148/radiol.2021201715",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-024"
+    },
+    {
+      "pmid": "32148986",
+      "title": "Commercial Cannabinoid Oil-Induced Stevens-Johnson Syndrome.",
+      "journal": "Case reports in ophthalmological medicine",
+      "pubdate": "2020",
+      "doi": "10.1155/2020/6760272",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-026"
+    },
+    {
+      "pmid": "37515576",
+      "title": "Primary pyomyositis and uveitis in a cat.",
+      "journal": "Veterinary medicine and science",
+      "pubdate": "2023",
+      "doi": "10.1002/vms3.1224",
+      "source": "pubmed",
+      "evidence_type": "case_report",
+      "cases_used_in": "EXT-027"
+    },
+    {
+      "pmid": "30767238",
+      "title": "Current management of glaucoma.",
+      "journal": "The Medical journal of Australia",
+      "pubdate": "2019",
+      "doi": "10.5694/mja2.50020",
+      "source": "pubmed",
+      "evidence_type": "review",
+      "cases_used_in": "EXT-029"
+    },
+    {
+      "pmid": "6397176",
+      "title": "Ocular toxicology update.",
+      "journal": "Australian journal of ophthalmology",
+      "pubdate": "1984",
+      "doi": "10.1111/j.1442-9071.1984.tb01186.x",
+      "source": "pubmed",
+      "evidence_type": "review",
+      "cases_used_in": "EXT-031"
+    },
+    {
+      "pmid": "11940242",
+      "title": "Advances in topical glaucoma therapy.",
+      "journal": "Veterinary ophthalmology",
+      "pubdate": "2002",
+      "doi": "10.1046/j.1463-5216.2001.00202.x",
+      "source": "pubmed",
+      "evidence_type": "review",
+      "cases_used_in": "EXT-035"
+    }
+  ]
+}

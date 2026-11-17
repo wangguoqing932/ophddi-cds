@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-26T05:42:16.022863+00:00",
+  "source_mode": "cache-only",
+  "candidate_input": "data\\curation\\entity_b_candidates.yaml",
+  "candidate_sha256": "b5b83fd5f45fb0dff117d1a78119f112033e98990b0cba09d657a09c1ee300cd",
+  "output": "data\\seed\\entities_b.csv",
+  "output_sha256": "2cd2f5cdafb98efc691090620a26f771a7cc76cc4e76dafad03298a63e3f46bd",
+  "entity_count": 229,
+  "source_record_count": 458,
+  "warning_count": 229,
+  "warnings": [
+    {
+      "entity": "sys_med_0001",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Atenolol"
+    },
+    {
+      "entity": "sys_med_0002",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Metoprolol"
+    },
+    {
+      "entity": "sys_med_0003",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Propranolol"
+    },
+    {
+      "entity": "sys_med_0004",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bisoprolol"
+    },
+    {
+      "entity": "sys_med_0005",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Carvedilol"
+    },
+    {
+      "entity": "sys_med_0006",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nebivolol"
+    },
+    {
+      "entity": "sys_med_0007",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sotalol"
+    },
+    {
+      "entity": "sys_med_0008",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Labetalol"
+    },
+    {
+      "entity": "sys_med_0009",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Amlodipine"
+    },
+    {
+      "entity": "sys_med_0010",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nifedipine"
+    },
+    {
+      "entity": "sys_med_0011",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Felodipine"
+    },
+    {
+      "entity": "sys_med_0012",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diltiazem"
+    },
+    {
+      "entity": "sys_med_0013",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Verapamil"
+    },
+    {
+      "entity": "sys_med_0014",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lisinopril"
+    },
+    {
+      "entity": "sys_med_0015",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Enalapril"
+    },
+    {
+      "entity": "sys_med_0016",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ramipril"
+    },
+    {
+      "entity": "sys_med_0017",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Captopril"
+    },
+    {
+      "entity": "sys_med_0018",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Losartan"
+    },
+    {
+      "entity": "sys_med_0019",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Valsartan"
+    },
+    {
+      "entity": "sys_med_0020",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Irbesartan"
+    },
+    {
+      "entity": "sys_med_0021",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Candesartan"
+    },
+    {
+      "entity": "sys_med_0022",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Hydrochlorothiazide"
+    },
+    {
+      "entity": "sys_med_0023",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Furosemide"
+    },
+    {
+      "entity": "sys_med_0024",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Spironolactone"
+    },
+    {
+      "entity": "sys_med_0025",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bumetanide"
+    },
+    {
+      "entity": "sys_med_0026",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Eplerenone"
+    },
+    {
+      "entity": "sys_med_0027",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Warfarin"
+    },
+    {
+      "entity": "sys_med_0028",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Apixaban"
+    },
+    {
+      "entity": "sys_med_0029",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rivaroxaban"
+    },
+    {
+      "entity": "sys_med_0030",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dabigatran"
+    },
+    {
+      "entity": "sys_med_0031",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Aspirin"
+    },
+    {
+      "entity": "sys_med_0032",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clopidogrel"
+    },
+    {
+      "entity": "sys_med_0033",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ticagrelor"
+    },
+    {
+      "entity": "sys_med_0034",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Metformin"
+    },
+    {
+      "entity": "sys_med_0035",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Gliclazide"
+    },
+    {
+      "entity": "sys_med_0036",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Glimepiride"
+    },
+    {
+      "entity": "sys_med_0037",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sitagliptin"
+    },
+    {
+      "entity": "sys_med_0038",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Empagliflozin"
+    },
+    {
+      "entity": "sys_med_0039",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dapagliflozin"
+    },
+    {
+      "entity": "sys_med_0040",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Semaglutide"
+    },
+    {
+      "entity": "sys_med_0041",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Atorvastatin"
+    },
+    {
+      "entity": "sys_med_0042",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rosuvastatin"
+    },
+    {
+      "entity": "sys_med_0043",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Simvastatin"
+    },
+    {
+      "entity": "sys_med_0044",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Amiodarone"
+    },
+    {
+      "entity": "sys_med_0045",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Digoxin"
+    },
+    {
+      "entity": "sys_med_0046",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluoxetine"
+    },
+    {
+      "entity": "sys_med_0047",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sertraline"
+    },
+    {
+      "entity": "sys_med_0048",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Citalopram"
+    },
+    {
+      "entity": "sys_med_0049",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Carbamazepine"
+    },
+    {
+      "entity": "sys_med_0050",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Valproic acid"
+    },
+    {
+      "entity": "sys_med_0051",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Phenytoin"
+    },
+    {
+      "entity": "sys_med_0052",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ibuprofen"
+    },
+    {
+      "entity": "sys_med_0053",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Naproxen"
+    },
+    {
+      "entity": "sys_med_0054",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Celecoxib"
+    },
+    {
+      "entity": "sys_med_0055",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Prednisone"
+    },
+    {
+      "entity": "sys_med_0056",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Methylprednisolone"
+    },
+    {
+      "entity": "sys_med_0057",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dexamethasone systemic"
+    },
+    {
+      "entity": "sys_med_0058",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Methotrexate"
+    },
+    {
+      "entity": "sys_med_0059",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cyclosporine systemic"
+    },
+    {
+      "entity": "sys_med_0060",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tacrolimus systemic"
+    },
+    {
+      "entity": "sys_med_0061",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clarithromycin"
+    },
+    {
+      "entity": "sys_med_0062",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rifampicin"
+    },
+    {
+      "entity": "sys_med_0063",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluconazole systemic"
+    },
+    {
+      "entity": "sys_med_0064",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Itraconazole"
+    },
+    {
+      "entity": "sys_med_0065",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Omeprazole"
+    },
+    {
+      "entity": "sys_med_0066",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levothyroxine"
+    },
+    {
+      "entity": "sys_med_0067",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Salbutamol"
+    },
+    {
+      "entity": "sys_med_0068",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluticasone"
+    },
+    {
+      "entity": "sys_med_0069",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diphenhydramine"
+    },
+    {
+      "entity": "sys_med_0070",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fentanyl"
+    },
+    {
+      "entity": "sys_med_0071",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Morphine"
+    },
+    {
+      "entity": "sys_med_0072",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Oxycodone"
+    },
+    {
+      "entity": "sys_med_0073",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Colchicine"
+    },
+    {
+      "entity": "sys_med_0074",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Allopurinol"
+    },
+    {
+      "entity": "sys_med_0075",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lithium"
+    },
+    {
+      "entity": "sys_med_0076",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Metronidazole"
+    },
+    {
+      "entity": "sys_med_0077",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Vancomycin"
+    },
+    {
+      "entity": "sys_med_0078",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Doxycycline"
+    },
+    {
+      "entity": "sys_med_0079",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sildenafil"
+    },
+    {
+      "entity": "sys_med_0080",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Acetaminophen"
+    },
+    {
+      "entity": "sys_med_0081",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levetiracetam"
+    },
+    {
+      "entity": "sys_med_0082",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lamotrigine"
+    },
+    {
+      "entity": "sys_med_0083",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Olanzapine"
+    },
+    {
+      "entity": "sys_med_0084",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Risperidone"
+    },
+    {
+      "entity": "sys_med_0085",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Quetiapine"
+    },
+    {
+      "entity": "sys_med_0086",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Aripiprazole"
+    },
+    {
+      "entity": "sys_med_0087",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Loratadine"
+    },
+    {
+      "entity": "sys_med_0088",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cetirizine"
+    },
+    {
+      "entity": "sys_med_0089",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Midazolam"
+    },
+    {
+      "entity": "sys_med_0090",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diazepam"
+    },
+    {
+      "entity": "sys_med_0091",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clonazepam"
+    },
+    {
+      "entity": "sys_med_0092",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pregabalin"
+    },
+    {
+      "entity": "sys_med_0093",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Amitriptyline"
+    },
+    {
+      "entity": "sys_med_0094",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Venlafaxine"
+    },
+    {
+      "entity": "sys_med_0095",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Duloxetine"
+    },
+    {
+      "entity": "sys_med_0096",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pioglitazone"
+    },
+    {
+      "entity": "sys_med_0097",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Linagliptin"
+    },
+    {
+      "entity": "sys_med_0098",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Canagliflozin"
+    },
+    {
+      "entity": "sys_med_0099",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Liraglutide"
+    },
+    {
+      "entity": "sys_med_0100",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pravastatin"
+    },
+    {
+      "entity": "sys_med_0101",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pitavastatin"
+    },
+    {
+      "entity": "sys_med_0102",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Doxazosin"
+    },
+    {
+      "entity": "sys_med_0103",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tamsulosin"
+    },
+    {
+      "entity": "sys_med_0104",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dronedarone"
+    },
+    {
+      "entity": "sys_med_0105",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lidocaine IV"
+    },
+    {
+      "entity": "sys_med_0106",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Flecainide"
+    },
+    {
+      "entity": "sys_med_0107",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Propafenone"
+    },
+    {
+      "entity": "sys_med_0108",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tranexamic acid"
+    },
+    {
+      "entity": "sys_med_0109",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Alendronic acid"
+    },
+    {
+      "entity": "sys_med_0110",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Baclofen"
+    },
+    {
+      "entity": "sys_med_0111",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Zolpidem"
+    },
+    {
+      "entity": "sys_med_0112",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Methylphenidate"
+    },
+    {
+      "entity": "sys_med_0113",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ondansetron"
+    },
+    {
+      "entity": "sys_med_0114",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Acyclovir systemic"
+    },
+    {
+      "entity": "sys_med_0115",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Insulin glargine"
+    },
+    {
+      "entity": "sys_med_0116",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Edoxaban"
+    },
+    {
+      "entity": "sys_med_0117",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Prasugrel"
+    },
+    {
+      "entity": "sys_med_0118",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nitroglycerin"
+    },
+    {
+      "entity": "sys_med_0119",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Desmopressin"
+    },
+    {
+      "entity": "sys_med_0120",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Hydroxychloroquine"
+    },
+    {
+      "entity": "sys_med_0121",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Mycophenolate"
+    },
+    {
+      "entity": "sys_med_0122",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Azathioprine"
+    },
+    {
+      "entity": "sys_med_0123",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sulfasalazine"
+    },
+    {
+      "entity": "sys_med_0124",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Leflunomide"
+    },
+    {
+      "entity": "sys_med_0125",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tadalafil"
+    },
+    {
+      "entity": "sys_med_0126",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Finasteride"
+    },
+    {
+      "entity": "sys_med_0127",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Loperamide"
+    },
+    {
+      "entity": "sys_med_0128",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Metoclopramide"
+    },
+    {
+      "entity": "sys_med_0129",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Buspirone"
+    },
+    {
+      "entity": "sys_med_0130",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Azithromycin systemic"
+    },
+    {
+      "entity": "sys_med_0131",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ciprofloxacin systemic"
+    },
+    {
+      "entity": "sys_med_0132",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levofloxacin systemic"
+    },
+    {
+      "entity": "sys_med_0133",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diclofenac systemic"
+    },
+    {
+      "entity": "sys_med_0134",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Indomethacin systemic"
+    },
+    {
+      "entity": "sys_med_0135",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tiotropium"
+    },
+    {
+      "entity": "sys_med_0136",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Salmeterol"
+    },
+    {
+      "entity": "sys_med_0137",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Budesonide"
+    },
+    {
+      "entity": "sys_med_0138",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Haloperidol"
+    },
+    {
+      "entity": "sys_med_0139",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clozapine"
+    },
+    {
+      "entity": "sys_med_0140",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nortriptyline"
+    },
+    {
+      "entity": "sys_med_0141",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Paroxetine"
+    },
+    {
+      "entity": "sys_med_0142",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Escitalopram"
+    },
+    {
+      "entity": "sys_med_0143",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluvoxamine"
+    },
+    {
+      "entity": "sys_med_0144",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Gabapentin"
+    },
+    {
+      "entity": "sys_med_0145",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Topiramate"
+    },
+    {
+      "entity": "sys_med_0146",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pantoprazole"
+    },
+    {
+      "entity": "sys_med_0147",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Esomeprazole"
+    },
+    {
+      "entity": "sys_med_0148",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lansoprazole"
+    },
+    {
+      "entity": "sys_med_0149",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Erythromycin systemic"
+    },
+    {
+      "entity": "sys_med_0150",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Voriconazole systemic"
+    },
+    {
+      "entity": "sys_med_0151",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ketoconazole"
+    },
+    {
+      "entity": "sys_med_0152",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tamoxifen"
+    },
+    {
+      "entity": "sys_med_0153",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Imatinib"
+    },
+    {
+      "entity": "sys_med_0154",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Methotrexate systemic"
+    },
+    {
+      "entity": "sys_med_0155",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cyclophosphamide"
+    },
+    {
+      "entity": "sys_med_0156",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Capecitabine"
+    },
+    {
+      "entity": "sys_med_0157",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clindamycin"
+    },
+    {
+      "entity": "sys_med_0158",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Linezolid"
+    },
+    {
+      "entity": "sys_med_0159",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tramadol"
+    },
+    {
+      "entity": "sys_med_0160",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rosiglitazone"
+    },
+    {
+      "entity": "sys_med_0161",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Vildagliptin"
+    },
+    {
+      "entity": "sys_med_0162",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Saxagliptin"
+    },
+    {
+      "entity": "sys_med_0163",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Glibenclamide"
+    },
+    {
+      "entity": "sys_med_0164",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Insulin aspart"
+    },
+    {
+      "entity": "sys_med_0165",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dulaglutide"
+    },
+    {
+      "entity": "sys_med_0166",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Clomipramine"
+    },
+    {
+      "entity": "sys_med_0167",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Desvenlafaxine"
+    },
+    {
+      "entity": "sys_med_0168",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Zoledronic acid"
+    },
+    {
+      "entity": "sys_med_0169",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Febuxostat"
+    },
+    {
+      "entity": "sys_med_0170",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dipyridamole"
+    },
+    {
+      "entity": "sys_med_0171",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cilostazol"
+    },
+    {
+      "entity": "sys_med_0172",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Heparin"
+    },
+    {
+      "entity": "sys_med_0173",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Enoxaparin"
+    },
+    {
+      "entity": "sys_med_0174",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fondaparinux"
+    },
+    {
+      "entity": "sys_med_0175",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Amoxicillin"
+    },
+    {
+      "entity": "sys_med_0176",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Hydrocortisone"
+    },
+    {
+      "entity": "sys_med_0177",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Perindopril"
+    },
+    {
+      "entity": "sys_med_0178",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Telmisartan"
+    },
+    {
+      "entity": "sys_med_0179",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Indapamide"
+    },
+    {
+      "entity": "sys_med_0180",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ivabradine"
+    },
+    {
+      "entity": "sys_med_0181",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ranolazine"
+    },
+    {
+      "entity": "sys_med_0182",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Isosorbide mononitrate"
+    },
+    {
+      "entity": "sys_med_0183",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluvastatin"
+    },
+    {
+      "entity": "sys_med_0184",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Propofol"
+    },
+    {
+      "entity": "sys_med_0185",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dexmedetomidine"
+    },
+    {
+      "entity": "sys_med_0186",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Epinephrine"
+    },
+    {
+      "entity": "sys_med_0187",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Norepinephrine"
+    },
+    {
+      "entity": "sys_med_0188",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Vasopressin"
+    },
+    {
+      "entity": "sys_med_0189",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Oseltamivir"
+    },
+    {
+      "entity": "sys_med_0190",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Remdesivir"
+    },
+    {
+      "entity": "sys_med_0191",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tenofovir"
+    },
+    {
+      "entity": "sys_med_0192",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ritonavir"
+    },
+    {
+      "entity": "sys_med_0193",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Letrozole"
+    },
+    {
+      "entity": "sys_med_0194",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Aprepitant"
+    },
+    {
+      "entity": "sys_med_0195",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Terazosin"
+    },
+    {
+      "entity": "sys_med_0196",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dutasteride"
+    },
+    {
+      "entity": "sys_med_0197",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levodopa/Carbidopa"
+    },
+    {
+      "entity": "sys_med_0198",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pramipexole"
+    },
+    {
+      "entity": "sys_med_0199",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Octreotide"
+    },
+    {
+      "entity": "sys_med_0200",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Methimazole"
+    },
+    {
+      "entity": "sys_med_0201",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Montelukast"
+    },
+    {
+      "entity": "sys_med_0202",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Theophylline"
+    },
+    {
+      "entity": "sys_med_0203",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Acarbose"
+    },
+    {
+      "entity": "sys_med_0204",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Repaglinide"
+    },
+    {
+      "entity": "sys_med_0205",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nateglinide"
+    },
+    {
+      "entity": "sys_med_0206",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ezetimibe"
+    },
+    {
+      "entity": "sys_med_0207",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fenofibrate"
+    },
+    {
+      "entity": "sys_med_0208",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Gemfibrozil"
+    },
+    {
+      "entity": "sys_med_0209",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Donepezil"
+    },
+    {
+      "entity": "sys_med_0210",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rivastigmine"
+    },
+    {
+      "entity": "sys_med_0211",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Memantine"
+    },
+    {
+      "entity": "sys_med_0212",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ropinirole"
+    },
+    {
+      "entity": "sys_med_0213",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Codeine"
+    },
+    {
+      "entity": "sys_med_0214",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tapentadol"
+    },
+    {
+      "entity": "sys_med_0215",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Mesalamine"
+    },
+    {
+      "entity": "sys_med_0216",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ursodeoxycholic acid"
+    },
+    {
+      "entity": "sys_med_0217",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lactulose"
+    },
+    {
+      "entity": "sys_med_0218",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cefalexin"
+    },
+    {
+      "entity": "sys_med_0219",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ceftriaxone"
+    },
+    {
+      "entity": "sys_med_0220",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cefixime"
+    },
+    {
+      "entity": "sys_med_0221",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nitrofurantoin"
+    },
+    {
+      "entity": "sys_med_0222",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Estradiol"
+    },
+    {
+      "entity": "sys_med_0223",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Testosterone"
+    },
+    {
+      "entity": "sys_med_0224",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Raloxifene"
+    },
+    {
+      "entity": "sys_med_0225",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Domperidone"
+    },
+    {
+      "entity": "sys_med_0227",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Probenecid"
+    },
+    {
+      "entity": "sys_med_0228",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Abciximab"
+    },
+    {
+      "entity": "sys_med_0229",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tirofiban"
+    },
+    {
+      "entity": "sys_med_0230",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Alfuzosin"
+    }
+  ],
+  "qa_status": "pass"
+}

@@ -91,9 +91,11 @@ def check_crossrefs(text: str, supp: str, legends: str, a: Audit) -> None:
         a.warn(check, f"方法/结果小节从未被交叉引用: {substantive}")
 
     # Table / Figure
-    for label, pat in [("Table", r"Table\s+(\d)"), ("Figure", r"Figure\s+(\d)")]:
+    for label, pat in [("Table", r"Table\s+(\d+)"), ("Figure", r"Figure\s+(\d+)")]:
         found = sorted(set(re.findall(pat, text)))
-        expected = [str(i) for i in range(1, (7 if label == "Table" else 6))]
+        # main text now carries Tables 1-5 and Figures 1-5; the expert case table
+        # lives in the supplement as Supplementary Table S3
+        expected = [str(i) for i in range(1, (8 if label == "Table" else 7))]
         missing = [e for e in expected if e not in found]
         if missing:
             a.fail(check, f"{label} {missing} 在正文中从未被引用（图/表存在但正文不提）")
@@ -101,16 +103,16 @@ def check_crossrefs(text: str, supp: str, legends: str, a: Audit) -> None:
             a.ok(check, f"{label} 1-{expected[-1]} 均已在正文引用")
 
     # 补充材料：表必须都被引用；文本章节 S4（图注）/S7（缩略语）可不引用
-    supp_tables = sorted(set(re.findall(r"Supplementary Table\s+S(\d)", supp)))
-    cited_tables = sorted(set(re.findall(r"Supplementary Table\s+S(\d)", text)))
+    supp_tables = sorted(set(re.findall(r"Supplementary Table\s+S(\d+)", supp)), key=int)
+    cited_tables = sorted(set(re.findall(r"Supplementary Table\s+S(\d+)", text)))
     uncited = [t for t in supp_tables if t not in cited_tables]
     if uncited:
         a.fail(check, f"补充表 S{', S'.join(uncited)} 已定义但正文从未引用")
     else:
         a.ok(check, f"补充表 S{supp_tables[0]}-S{supp_tables[-1]} 均已在正文引用")
 
-    supp_texts = sorted(set(re.findall(r"Supplementary Text\s+S(\d)", supp)))
-    cited_texts = sorted(set(re.findall(r"Supplementary Text\s+S(\d)", text)))
+    supp_texts = sorted(set(re.findall(r"Supplementary Text\s+S(\d+)", supp)), key=int)
+    cited_texts = sorted(set(re.findall(r"Supplementary Text\s+S(\d+)", text)))
     # S4 是图注、S7 是缩略语，正文不引用属正常
     optional = {"4", "7"}
     unref = [t for t in supp_texts if t not in cited_texts and t not in optional]
@@ -123,45 +125,63 @@ def check_crossrefs(text: str, supp: str, legends: str, a: Audit) -> None:
 # ──────────────────────────────  B. 参考文献  ──────────────────────────────
 def check_references(text: str, a: Audit) -> None:
     check = "B.references"
-    refs = re.findall(r"^\[(\d+)\]\s+\S", text, re.M)
-    if not refs:
+    body, _, reflist = text.partition("## References")
+
+    numbered = re.findall(r"^\[(\d+)\]\s+\S", reflist, re.M)
+    if numbered:
+        nums = sorted(int(x) for x in numbered)
+        expected = list(range(1, len(nums) + 1))
+        if nums != expected:
+            gaps = sorted(set(expected) - set(nums))
+            dups = [n for n in set(nums) if nums.count(n) > 1]
+            msg = []
+            if gaps:
+                msg.append(f"缺号 {gaps}")
+            if dups:
+                msg.append(f"重复 {dups}")
+            a.fail(check, f"参考文献编号不连续: {'; '.join(msg)}")
+        else:
+            a.ok(check, f"参考文献编号连续 1-{len(nums)}")
+        return
+
+    # ── Harvard / author-year ────────────────────────────────────────────
+    entries = [ln.strip() for ln in reflist.splitlines()
+               if re.match(r"^[A-Za-z][^()]{0,160}?\((19|20)\d{2}[a-z]?\)", ln.strip())]
+    if not entries:
         a.fail(check, "未找到参考文献列表")
         return
-    nums = sorted(int(x) for x in refs)
-    expected = list(range(1, len(nums) + 1))
-    if nums != expected:
-        gaps = sorted(set(expected) - set(nums))
-        dups = [n for n in set(nums) if nums.count(n) > 1]
-        msg = []
-        if gaps:
-            msg.append(f"缺号 {gaps}")
-        if dups:
-            msg.append(f"重复 {dups}")
-        a.fail(check, f"参考文献编号不连续: {'; '.join(msg)}")
-    else:
-        a.ok(check, f"参考文献编号连续 1-{len(nums)}")
 
-    listed = set(str(n) for n in nums)
-    body = text[:text.find("## References")] if "## References" in text else text
-    cited = set(re.findall(r"\[(\d+(?:[,\-–]\s*\d+)*)\]", body))
-    cited_flat = set()
-    for grp in cited:
-        for part in re.split(r",", grp):
+    def first_surname(entry: str) -> str:
+        head = entry.split("(")[0]
+        head = re.sub(r",\s*(and\s+)?et al\.?", "", head)
+        # surnames may contain a particle ("van der Sijs", "Meyer zu Schwabedissen")
+        return head.split(", ")[0].strip().lower() if ", " in head else head.split(",")[0].strip().lower()
+
+    listed = {(first_surname(e), re.search(r"\((19|20)\d{2}", e).group(0)[1:])
+              for e in entries}
+
+    body_no_refs = body
+    cited = set()
+    for grp in re.findall(r"\(([^()]*?(?:19|20)\d{2}[^()]*?)\)", body_no_refs):
+        for part in grp.split(";"):
             part = part.strip()
-            if re.fullmatch(r"\d+", part):
-                cited_flat.add(part)
-            else:
-                m = re.match(r"(\d+)\s*[-–]\s*(\d+)", part)
-                if m:
-                    cited_flat.update(str(i) for i in range(int(m.group(1)), int(m.group(2)) + 1))
-    dangling = sorted(int(x) for x in cited_flat - listed)
+            m = re.match(r"^(.*?),?\s*((?:19|20)\d{2})[a-z]?$", part)
+            if not m:
+                continue
+            who, yr = m.group(1).strip().lower(), m.group(2)
+            who = re.sub(r"\s+et al\.?$", "", who)
+            who = re.sub(r"\s+and\s+.*$", "", who)
+            cited.add((who.strip(",. "), yr))
+
+    listed_keys = {(surname, yr) for surname, yr in listed}
+    dangling = sorted(k for k in cited if k not in listed_keys)
+    uncited = sorted(k for k in listed_keys if k not in cited)
     if dangling:
-        a.fail(check, f"正文引用了不存在的文献编号: {dangling}")
-    uncited = sorted(int(x) for x in listed - cited_flat)
+        a.fail(check, f"正文引用的作者-年份不在参考表中: {dangling[:6]}")
     if uncited:
-        a.warn(check, f"文献列表中有未被正文引用的条目: {uncited}")
+        a.fail(check, f"参考表条目未被正文引用: {uncited[:6]}")
     if not dangling and not uncited:
-        a.ok(check, "所有引用与列表条目一一对应")
+        a.ok(check, f"Harvard 体例：{len(entries)} 条参考文献，正文引用与列表一一对应")
 
 
 # ──────────────────────────────  C. 占位符  ──────────────────────────────
@@ -205,16 +225,16 @@ def check_doi_present(text: str, a: Audit) -> None:
 # ───────────────────────────  D. 数字一致性  ───────────────────────────
 # (正则, numbers.json 的键, 取值路径, 说明) —— 手稿中出现该数值即视为必须匹配
 NUMBER_CHECKS = [
-    (r"0\.907\b",            "l1.full_system",                  "acc3",  "L1 Acc3"),
-    (r"0\.857\b",            "l1.kappa",                        None,    "L1 kappa"),
-    (r"0\.964\b",            "l1.full_system",                  "sens",  "L1 sensitivity"),
-    (r"0\.989\b",            "l1.full_system",                  "spec",  "L1 specificity"),
-    (r"0\.674\b",            "audit.full_system",               "acc3",  "审计集 Acc3"),
-    (r"0\.428\b",            "audit.kappa",                     None,    "审计集 kappa"),
-    (r"0\.320\b",            "audit.full_system",               "sens",  "审计集 sensitivity"),
-    (r"0\.955\b",            "audit.full_system",               "spec",  "审计集 specificity"),
-    (r"0\.370\b",            "audit.agreement_uncorrected",     "rate",  "对未更正 DDInter 的一致率"),
-    (r"0\.548\b",            "audit.stratum.kept(third-party)", "rate",  "第三方分级子集一致率"),
+    (r"0\.881",           "l1.full_system",                  "acc3",  "L1 corrected Acc3"),
+    (r"0\.818",     "l1.kappa",                        None,    "L1 corrected kappa"),
+    (r"0\.893",           "l1.full_system",                  "sens",  "L1 corrected sensitivity"),
+    (r"0\.989",           "l1.full_system",                  "spec",  "L1 corrected specificity"),
+    (r"0\.674",           "audit.full_system",               "acc3",  "audit Acc3"),
+    (r"0\.428",     "audit.kappa",                     None,    "audit kappa"),
+    (r"0\.320",           "audit.full_system",               "sens",  "audit sensitivity"),
+    (r"0\.970",           "audit.full_system",               "spec",  "audit specificity"),
+    (r"0\.380",           "audit.agreement_uncorrected",     "rate",  "uncorrected DDInter"),
+    (r"0\.548",           "audit.stratum.kept(third-party)", "rate",  "kept subset"),
 ]
 
 # 这些数值由专门脚本产出，单独核对（numbers.json 之外）

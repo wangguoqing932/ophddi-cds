@@ -1,42 +1,58 @@
 {
- "n_cases": 118,
- "baseline": {
-  "correct": 107,
-  "accuracy": 0.9067796610169492,
-  "n": 118
- },
- "gate_single": {
-  "rules": [
-   "nsaid_antihypertensive_antagonism"
-  ],
-  "n_gated": 1,
-  "correct": 105,
-  "accuracy": 0.8898305084745762
- },
- "gate_all_nsaid": {
-  "rules": [
-   "nsaid_antihypertensive_antagonism",
-   "nsaid_acei_arb_antagonism",
-   "nsaid_diuretic_antagonism",
-   "additive_nsaid_bleeding"
-  ],
-  "n_gated": 4,
-  "correct": 100,
-  "accuracy": 0.847457627118644
- },
- "low_tier_rule_hits": {
-  "by_level": {
-   "medium": 14,
-   "high": 2
+  "gated": {
+    "l1": {
+      "frozen": {
+        "correct": 101,
+        "n": 118,
+        "agreement": 0.8559,
+        "sensitivity": 0.8571,
+        "tp": 24,
+        "high_n": 28
+      },
+      "corrected": {
+        "correct": 104,
+        "n": 118,
+        "agreement": 0.8814,
+        "sensitivity": 0.8929,
+        "tp": 25,
+        "high_n": 28
+      }
+    },
+    "grid": {
+      "n": 1933,
+      "downgrade": 1502,
+      "upgrade": 65,
+      "downgrade_share": 0.777,
+      "low_absorption_downgrades": 1206,
+      "share_of_downgrades": 0.8029
+    }
   },
-  "by_rule": {
-   "cai_diuretic_metabolic_acidosis": 5,
-   "additive_nsaid_bleeding": 6,
-   "low_abs_anticoagulant": 6,
-   "cai_topiramate_acidosis": 2,
-   "nsaid_antihypertensive_antagonism": 2,
-   "nsaid_acei_arb_antagonism": 1,
-   "anticholinergic_qt_prolongation": 1
+  "ungated": {
+    "l1": {
+      "frozen": {
+        "correct": 103,
+        "n": 118,
+        "agreement": 0.8729,
+        "sensitivity": 0.9286,
+        "tp": 26,
+        "high_n": 28
+      },
+      "corrected": {
+        "correct": 106,
+        "n": 118,
+        "agreement": 0.8983,
+        "sensitivity": 0.9643,
+        "tp": 27,
+        "high_n": 28
+      }
+    },
+    "grid": {
+      "n": 1933,
+      "downgrade": 1470,
+      "upgrade": 133,
+      "downgrade_share": 0.7605,
+      "low_absorption_downgrades": 1174,
+      "share_of_downgrades": 0.7986
+    }
   }
- }
 }

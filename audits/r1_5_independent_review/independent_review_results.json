@@ -1,0 +1,29 @@
+{
+ "n_cases": 30,
+ "n_scored_three_class": 28,
+ "n_exact": 14,
+ "exact_agreement": 0.5,
+ "cohen_kappa": 0.2714,
+ "confusion_author_rows_reviewer_cols": {
+  "route_consistent_downgrade": {
+   "route_consistent_downgrade": 7,
+   "unsupported_undergrading": 14
+  },
+  "unsupported_undergrading": {
+   "unsupported_undergrading": 5
+  },
+  "system_overgrading": {
+   "system_overgrading": 2
+  }
+ },
+ "outside_three_class_key": {
+  "D3-035": "supported_upgrade",
+  "D3-038": "supported_upgrade"
+ },
+ "reviewer_class_counts": {
+  "route_consistent_downgrade": 7,
+  "unsupported_undergrading": 19,
+  "supported_upgrade": 2,
+  "system_overgrading": 2
+ }
+}

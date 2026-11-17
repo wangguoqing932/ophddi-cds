@@ -1,0 +1,17 @@
+{
+  "dataset_id": "comprehensive_validation",
+  "role": "external_validation",
+  "n_cases": 283,
+  "distribution": {
+    "high": 43,
+    "medium": 187,
+    "low": 53
+  },
+  "sources": {
+    "guideline": 61,
+    "database": 222
+  },
+  "rule_coverage": "36/38",
+  "class_diversity": "21\u00d757",
+  "created": "2026-07-30"
+}

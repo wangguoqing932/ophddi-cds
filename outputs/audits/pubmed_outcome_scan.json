@@ -1,0 +1,709 @@
+[
+ {
+  "case": "D3-001",
+  "pair": [
+   "Timolol",
+   "Theophylline"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "ophthalmic",
+  "term": "(Timolol[tiab] AND Theophylline[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-001",
+  "pair": [
+   "Timolol",
+   "Theophylline"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "pair_only",
+  "term": "(Timolol[tiab] AND Theophylline[tiab])",
+  "count": 6,
+  "items": [
+   {
+    "pmid": "22645091",
+    "title": "A novel relay method for determining low-clearance values.",
+    "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+    "year": "2012"
+   },
+   {
+    "pmid": "19118133",
+    "title": "Vascular perfused segments of human intestine as a tool for drug absorption.",
+    "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+    "year": "2009"
+   },
+   {
+    "pmid": "1822542",
+    "title": "A potassium current evoked by growth hormone-releasing hormone in follicular oocytes of Xenopus laevis.",
+    "journal": "The Journal of physiology",
+    "year": "1991"
+   },
+   {
+    "pmid": "8875334",
+    "title": "Cyclic AMP modulation of active ion transport in the pigmented rabbit conjunctiva.",
+    "journal": "Journal of ocular pharmacology and therapeutics : the official journal of the Association for Ocular Pharmacology and Therapeutics",
+    "year": "1996"
+   },
+   {
+    "pmid": "6251857",
+    "title": "Differences in the lipolytic and cyclic AMP accumulative action of noradrenaline-theophylline and norephedrine-theophylline.",
+    "journal": "Arzneimittel-Forschung",
+    "year": "1980"
+   },
+   {
+    "pmid": "2166800",
+    "title": "Evidence against ATP being the inhibitory transmitter released by nonadrenergic noncholinergic nerves in the canine ileocolonic junction.",
+    "journal": "The Journal of pharmacology and experimental therapeutics",
+    "year": "1990"
+   }
+  ]
+ },
+ {
+  "case": "D3-004",
+  "pair": [
+   "Timolol",
+   "Epinephrine"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "ophthalmic",
+  "term": "(Timolol[tiab] AND Epinephrine[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 104,
+  "items": [
+   {
+    "pmid": "23640687",
+    "title": "Drug-induced macular edema.",
+    "journal": "Drugs",
+    "year": "2013"
+   },
+   {
+    "pmid": "6397176",
+    "title": "Ocular toxicology update.",
+    "journal": "Australian journal of ophthalmology",
+    "year": "1984"
+   },
+   {
+    "pmid": "2255514",
+    "title": "Effects of topical glaucoma drugs on fistulized rabbit conjunctiva.",
+    "journal": "Ophthalmology",
+    "year": "1990"
+   },
+   {
+    "pmid": "21524649",
+    "title": "Update on the role of alpha-agonists in glaucoma management.",
+    "journal": "Experimental eye research",
+    "year": "2011"
+   },
+   {
+    "pmid": "37605",
+    "title": "The beta-adrenergic blocking agents and the treatment of glaucoma.",
+    "journal": "Survey of ophthalmology",
+    "year": "1979"
+   },
+   {
+    "pmid": "1973158",
+    "title": "Central cholinergic stimulation affects ocular functions through sympathetic pathways.",
+    "journal": "Investigative ophthalmology & visual science",
+    "year": "1990"
+   },
+   {
+    "pmid": "3038473",
+    "title": "Alpha-2 adrenergic modulation of norepinephrine secretion in the perfused rabbit iris-ciliary body.",
+    "journal": "Current eye research",
+    "year": "1987"
+   },
+   {
+    "pmid": "6130618",
+    "title": "Ocular effects of beta-adrenergic agents. XII Jules Stein Lecture.",
+    "journal": "Survey of ophthalmology",
+    "year": "1982"
+   },
+   {
+    "pmid": "7259595",
+    "title": "Fluorophotometric study of epinephrine and timolol in human subjects.",
+    "journal": "Archives of ophthalmology (Chicago, Ill. : 1960)",
+    "year": "1981"
+   },
+   {
+    "pmid": "8032178",
+    "title": "Nasolacrimal occlusion improves the therapeutic index of antiglaucoma medications.",
+    "journal": "Journal of the Association for Academic Minority Physicians : the official publication of the Association for Academic Minority Physicians",
+    "year": "1994"
+   }
+  ]
+ },
+ {
+  "case": "D3-004",
+  "pair": [
+   "Timolol",
+   "Epinephrine"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "pair_only",
+  "term": "(Timolol[tiab] AND Epinephrine[tiab])",
+  "count": 184,
+  "items": [
+   {
+    "pmid": "6426371",
+    "title": "Treatment of glaucoma.",
+    "journal": "Annual review of medicine",
+    "year": "1984"
+   },
+   {
+    "pmid": "23640687",
+    "title": "Drug-induced macular edema.",
+    "journal": "Drugs",
+    "year": "2013"
+   },
+   {
+    "pmid": "7316333",
+    "title": "Epinephrine and timolol: how do these drugs lower intraocular pressure?",
+    "journal": "Annals of ophthalmology",
+    "year": "1981"
+   },
+   {
+    "pmid": "7044351",
+    "title": "Timolol and epinephrine: long-term evaluation of concurrent administration.",
+    "journal": "Archives of ophthalmology (Chicago, Ill. : 1960)",
+    "year": "1982"
+   },
+   {
+    "pmid": "7259595",
+    "title": "Fluorophotometric study of epinephrine and timolol in human subjects.",
+    "journal": "Archives of ophthalmology (Chicago, Ill. : 1960)",
+    "year": "1981"
+   },
+   {
+    "pmid": "7362504",
+    "title": "Timolol and epinephrine: a clinical study of ocular interactions.",
+    "journal": "Archives of ophthalmology (Chicago, Ill. : 1960)",
+    "year": "1980"
+   },
+   {
+    "pmid": "31643457",
+    "title": "Beta Adrenergic Blocking Agents.",
+    "journal": "",
+    "year": "2012"
+   },
+   {
+    "pmid": "360846",
+    "title": "A comparison of the effects of timolol and epinephrine on intraocular pressure.",
+    "journal": "American journal of ophthalmology",
+    "year": "1978"
+   },
+   {
+    "pmid": "6397176",
+    "title": "Ocular toxicology update.",
+    "journal": "Australian journal of ophthalmology",
+    "year": "1984"
+   },
+   {
+    "pmid": "7006581",
+    "title": "Timolol and epinephrine in primary open angle glaucoma. Transient additive effect.",
+    "journal": "Archives of ophthalmology (Chicago, Ill. : 1960)",
+    "year": "1981"
+   }
+  ]
+ },
+ {
+  "case": "D3-006",
+  "pair": [
+   "Scopolamine",
+   "Topiramate"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "ophthalmic",
+  "term": "(Scopolamine[tiab] AND Topiramate[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-006",
+  "pair": [
+   "Scopolamine",
+   "Topiramate"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "pair_only",
+  "term": "(Scopolamine[tiab] AND Topiramate[tiab])",
+  "count": 8,
+  "items": [
+   {
+    "pmid": "14677399",
+    "title": "Pharmacology of TMS.",
+    "journal": "Supplements to Clinical neurophysiology",
+    "year": "2003"
+   },
+   {
+    "pmid": "21715413",
+    "title": "Pharmacological treatment of insomnia in alcohol recovery: a systematic review.",
+    "journal": "Alcohol and alcoholism (Oxford, Oxfordshire)",
+    "year": "2011"
+   },
+   {
+    "pmid": "21142898",
+    "title": "Which medication do I need to manage dizzy patients?",
+    "journal": "Acta oto-laryngologica",
+    "year": "2011"
+   },
+   {
+    "pmid": "24905515",
+    "title": "Orphenadrine-induced convulsive status epilepticus in rats responds to the NMDA antagonist dizocilpine.",
+    "journal": "Pharmacological reports : PR",
+    "year": "2014"
+   },
+   {
+    "pmid": "15582833",
+    "title": "Effects of antiepileptic drugs on working memory as assessed by spatial alternation performance in rats.",
+    "journal": "Epilepsy & behavior : E&B",
+    "year": "2004"
+   },
+   {
+    "pmid": "16253568",
+    "title": "Effects of antiepileptic drugs on attention as assessed by a five-choice serial reaction time task in rats.",
+    "journal": "Epilepsy & behavior : E&B",
+    "year": "2005"
+   },
+   {
+    "pmid": "17174158",
+    "title": "Effects of antiepileptic drugs on learning as assessed by a repeated acquisition of response sequences task in rats.",
+    "journal": "Epilepsy & behavior : E&B",
+    "year": "2007"
+   },
+   {
+    "pmid": "27329284",
+    "title": "Evaluation of acetylcholine, seizure activity and neuropathology following high-dose nerve agent exposure and delayed neuroprotective treatment drugs in freely moving rats.",
+    "journal": "Toxicology mechanisms and methods",
+    "year": "2016"
+   }
+  ]
+ },
+ {
+  "case": "D3-014",
+  "pair": [
+   "Timolol",
+   "Spironolactone"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "ophthalmic",
+  "term": "(Timolol[tiab] AND Spironolactone[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-014",
+  "pair": [
+   "Timolol",
+   "Spironolactone"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "pair_only",
+  "term": "(Timolol[tiab] AND Spironolactone[tiab])",
+  "count": 2,
+  "items": [
+   {
+    "pmid": "32555118",
+    "title": "Drugs for hypertension.",
+    "journal": "The Medical letter on drugs and therapeutics",
+    "year": "2020"
+   },
+   {
+    "pmid": "38771738",
+    "title": "Drugs for hypertension.",
+    "journal": "The Medical letter on drugs and therapeutics",
+    "year": "2024"
+   }
+  ]
+ },
+ {
+  "case": "D3-018",
+  "pair": [
+   "Carteolol",
+   "Diazepam"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "ophthalmic",
+  "term": "(Carteolol[tiab] AND Diazepam[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-018",
+  "pair": [
+   "Carteolol",
+   "Diazepam"
+  ],
+  "class": "unsupported_undergrading",
+  "query": "pair_only",
+  "term": "(Carteolol[tiab] AND Diazepam[tiab])",
+  "count": 1,
+  "items": [
+   {
+    "pmid": "1683486",
+    "title": "The effects of beta-blockers and diazepam on heart rate of conscious conditioned rats.",
+    "journal": "Progress in neuro-psychopharmacology & biological psychiatry",
+    "year": "1991"
+   }
+  ]
+ },
+ {
+  "case": "D3-026",
+  "pair": [
+   "Apraclonidine",
+   "Linezolid"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "ophthalmic",
+  "term": "(Apraclonidine[tiab] AND Linezolid[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-026",
+  "pair": [
+   "Apraclonidine",
+   "Linezolid"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "pair_only",
+  "term": "(Apraclonidine[tiab] AND Linezolid[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-029",
+  "pair": [
+   "Betaxolol",
+   "Clonidine"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "ophthalmic",
+  "term": "(Betaxolol[tiab] AND Clonidine[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 5,
+  "items": [
+   {
+    "pmid": "3350077",
+    "title": "Pharmacological characterization of human ciliary muscle adrenoceptors in vitro.",
+    "journal": "Experimental eye research",
+    "year": "1988"
+   },
+   {
+    "pmid": "9164420",
+    "title": "Effects of antiglaucoma drugs on ocular hemodynamics in healthy volunteers.",
+    "journal": "Clinical pharmacology and therapeutics",
+    "year": "1997"
+   },
+   {
+    "pmid": "8096537",
+    "title": "Effects of antiglaucoma drugs on ocular blood flow in ocular hypertensive rabbits.",
+    "journal": "Journal of ocular pharmacology",
+    "year": "1993"
+   },
+   {
+    "pmid": "1711957",
+    "title": "New developments in the drug treatment of glaucoma.",
+    "journal": "Drugs",
+    "year": "1991"
+   },
+   {
+    "pmid": "2569022",
+    "title": "Effects of adrenergic agents on alpha-chymotrypsin-induced ocular hypertension in albino and pigmented rabbits: a comparative study.",
+    "journal": "Journal of ocular pharmacology",
+    "year": "1989"
+   }
+  ]
+ },
+ {
+  "case": "D3-029",
+  "pair": [
+   "Betaxolol",
+   "Clonidine"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "pair_only",
+  "term": "(Betaxolol[tiab] AND Clonidine[tiab])",
+  "count": 21,
+  "items": [
+   {
+    "pmid": "38771738",
+    "title": "Drugs for hypertension.",
+    "journal": "The Medical letter on drugs and therapeutics",
+    "year": "2024"
+   },
+   {
+    "pmid": "32555118",
+    "title": "Drugs for hypertension.",
+    "journal": "The Medical letter on drugs and therapeutics",
+    "year": "2020"
+   },
+   {
+    "pmid": "2693002",
+    "title": "Pharmacokinetics of antihypertensive drugs in the neonatal period.",
+    "journal": "Developmental pharmacology and therapeutics",
+    "year": "1989"
+   },
+   {
+    "pmid": "1711957",
+    "title": "New developments in the drug treatment of glaucoma.",
+    "journal": "Drugs",
+    "year": "1991"
+   },
+   {
+    "pmid": "25284732",
+    "title": "[Clonidine poisoning in a child: a case report].",
+    "journal": "Archives de pediatrie : organe officiel de la Societe francaise de pediatrie",
+    "year": "2014"
+   },
+   {
+    "pmid": "23787819",
+    "title": "Locus coeruleus kappa-opioid receptors modulate reinstatement of cocaine place preference through a noradrenergic mechanism.",
+    "journal": "Neuropsychopharmacology : official publication of the American College of Neuropsychopharmacology",
+    "year": "2013"
+   },
+   {
+    "pmid": "3350077",
+    "title": "Pharmacological characterization of human ciliary muscle adrenoceptors in vitro.",
+    "journal": "Experimental eye research",
+    "year": "1988"
+   },
+   {
+    "pmid": "16496599",
+    "title": "[Contemporary possibilities and perspectives in the treatment of glaucoma].",
+    "journal": "Annales Academiae Medicae Stetinensis",
+    "year": "2005"
+   },
+   {
+    "pmid": "8495077",
+    "title": "Statistical study of 5473 results of nine pharmacological stimulation tests: a proposed weighting index.",
+    "journal": "Acta paediatrica (Oslo, Norway : 1992)",
+    "year": "1993"
+   },
+   {
+    "pmid": "20613718",
+    "title": "Involvement of noradrenergic neurotransmission in the stress- but not cocaine-induced reinstatement of extinguished cocaine-induced conditioned place preference in mice: role for β-2 adrenergic receptors.",
+    "journal": "Neuropsychopharmacology : official publication of the American College of Neuropsychopharmacology",
+    "year": "2010"
+   }
+  ]
+ },
+ {
+  "case": "D3-033",
+  "pair": [
+   "Homatropine",
+   "Topiramate"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "ophthalmic",
+  "term": "(Homatropine[tiab] AND Topiramate[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-033",
+  "pair": [
+   "Homatropine",
+   "Topiramate"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "pair_only",
+  "term": "(Homatropine[tiab] AND Topiramate[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-080",
+  "pair": [
+   "Aflibercept",
+   "Leflunomide"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "ophthalmic",
+  "term": "(Aflibercept[tiab] AND Leflunomide[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-080",
+  "pair": [
+   "Aflibercept",
+   "Leflunomide"
+  ],
+  "class": "ddinter_high_default_path",
+  "query": "pair_only",
+  "term": "(Aflibercept[tiab] AND Leflunomide[tiab])",
+  "count": 1,
+  "items": [
+   {
+    "pmid": "41236290",
+    "title": "Targeted Therapies and Pharmacologic Advances in Mucous Membrane Pemphigoid: A Comprehensive Review.",
+    "journal": "Dermatology practical & conceptual",
+    "year": "2025"
+   }
+  ]
+ },
+ {
+  "case": "D3-035",
+  "pair": [
+   "Apraclonidine",
+   "Midazolam"
+  ],
+  "class": "system_overgrading",
+  "query": "ophthalmic",
+  "term": "(Apraclonidine[tiab] AND Midazolam[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-035",
+  "pair": [
+   "Apraclonidine",
+   "Midazolam"
+  ],
+  "class": "system_overgrading",
+  "query": "pair_only",
+  "term": "(Apraclonidine[tiab] AND Midazolam[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-038",
+  "pair": [
+   "Apraclonidine",
+   "Loperamide"
+  ],
+  "class": "system_overgrading",
+  "query": "ophthalmic",
+  "term": "(Apraclonidine[tiab] AND Loperamide[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-038",
+  "pair": [
+   "Apraclonidine",
+   "Loperamide"
+  ],
+  "class": "system_overgrading",
+  "query": "pair_only",
+  "term": "(Apraclonidine[tiab] AND Loperamide[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-057",
+  "pair": [
+   "Tacrolimus",
+   "Ibuprofen"
+  ],
+  "class": "system_overgrading",
+  "query": "ophthalmic",
+  "term": "(Tacrolimus[tiab] AND Ibuprofen[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 1,
+  "items": [
+   {
+    "pmid": "38750379",
+    "title": "Erythema dyschromicum perstans-like eruptions induced by epidermal growth factor receptor inhibitors in patients with lung cancer.",
+    "journal": "Supportive care in cancer : official journal of the Multinational Association of Supportive Care in Cancer",
+    "year": "2024"
+   }
+  ]
+ },
+ {
+  "case": "D3-057",
+  "pair": [
+   "Tacrolimus",
+   "Ibuprofen"
+  ],
+  "class": "system_overgrading",
+  "query": "pair_only",
+  "term": "(Tacrolimus[tiab] AND Ibuprofen[tiab])",
+  "count": 10,
+  "items": [
+   {
+    "pmid": "19719333",
+    "title": "Interactions between herbal medicines and prescribed drugs: an updated systematic review.",
+    "journal": "Drugs",
+    "year": "2009"
+   },
+   {
+    "pmid": "12087878",
+    "title": "Gateways to Clinical Trials.",
+    "journal": "Methods and findings in experimental and clinical pharmacology",
+    "year": "2002"
+   },
+   {
+    "pmid": "12168506",
+    "title": "Gateways to Clinical Trials. June 2002.",
+    "journal": "Methods and findings in experimental and clinical pharmacology",
+    "year": "2002"
+   },
+   {
+    "pmid": "25220611",
+    "title": "Improving peripheral nerve regeneration: from molecular mechanisms to potential therapeutic targets.",
+    "journal": "Experimental neurology",
+    "year": "2014"
+   },
+   {
+    "pmid": "29332199",
+    "title": "Analysis of the data on pregnancy and lactation provided by patient information leaflets of anti-rheumatic drugs in Argentina.",
+    "journal": "Rheumatology international",
+    "year": "2018"
+   },
+   {
+    "pmid": "28223247",
+    "title": "In situ determination of the saturation solubility of nanocrystals of poorly soluble drugs for dermal application.",
+    "journal": "International journal of pharmaceutics",
+    "year": "2017"
+   },
+   {
+    "pmid": "18673195",
+    "title": "Clinical drugs that interact with St. John's wort and implication in drug development.",
+    "journal": "Current pharmaceutical design",
+    "year": "2008"
+   },
+   {
+    "pmid": "37857794",
+    "title": "Signal Detection and Assessment of Herb-Drug Interactions: Saudi Food and Drug Authority Experience.",
+    "journal": "Drugs - real world outcomes",
+    "year": "2023"
+   },
+   {
+    "pmid": "9721172",
+    "title": "Drug-associated acute-onset vanishing bile duct and Stevens-Johnson syndromes in a child.",
+    "journal": "Gastroenterology",
+    "year": "1998"
+   },
+   {
+    "pmid": "38750379",
+    "title": "Erythema dyschromicum perstans-like eruptions induced by epidermal growth factor receptor inhibitors in patients with lung cancer.",
+    "journal": "Supportive care in cancer : official journal of the Multinational Association of Supportive Care in Cancer",
+    "year": "2024"
+   }
+  ]
+ },
+ {
+  "case": "D3-063",
+  "pair": [
+   "Bromfenac",
+   "Enalapril"
+  ],
+  "class": "system_overgrading",
+  "query": "ophthalmic",
+  "term": "(Bromfenac[tiab] AND Enalapril[tiab]) AND (ophthalmic[tiab] OR topical[tiab] OR \"eye drops\"[tiab] OR eye[tiab] OR ocular[tiab] OR intravitreal[tiab])",
+  "count": 0,
+  "items": []
+ },
+ {
+  "case": "D3-063",
+  "pair": [
+   "Bromfenac",
+   "Enalapril"
+  ],
+  "class": "system_overgrading",
+  "query": "pair_only",
+  "term": "(Bromfenac[tiab] AND Enalapril[tiab])",
+  "count": 0,
+  "items": []
+ }
+]

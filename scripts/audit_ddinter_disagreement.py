@@ -110,20 +110,23 @@ def main() -> None:
                 diffs.append({"ophthalmic": an, "systemic": bn, "ddinter": dl,
                               "system": lvl, "kind": "downgrade",
                               "a_absorption": next((f for f in ae["flags"]
-                                                    if "systemic_absorption_" in f), "none")})
+                                                    if f.startswith("systemic_absorption_")
+                                                    or f == "minimal_systemic_absorption"), "none")})
             else:
                 stats["upgrade"] += 1
                 diff_detail[f"{dl}->{lvl}"] += 1
                 diffs.append({"ophthalmic": an, "systemic": bn, "ddinter": dl,
                               "system": lvl, "kind": "upgrade",
                               "a_absorption": next((f for f in ae["flags"]
-                                                    if "systemic_absorption_" in f), "none")})
+                                                    if f.startswith("systemic_absorption_")
+                                                    or f == "minimal_systemic_absorption"), "none")})
 
     n = stats["recorded"]
     low_abs_down = sum(1 for d in diffs if d["kind"] == "downgrade"
                        and d["a_absorption"] in ("systemic_absorption_low",
                                                  "systemic_absorption_very_low",
-                                                 "minimal_systemic_absorption"))
+                                                 "minimal_systemic_absorption",
+                                                 "systemic_absorption_none"))
     high_abs_up = sum(1 for d in diffs if d["kind"] == "upgrade"
                       and d["a_absorption"] == "systemic_absorption_high")
 

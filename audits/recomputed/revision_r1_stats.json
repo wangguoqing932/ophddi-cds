@@ -1,0 +1,2315 @@
+{
+  "R1_1_l1": {
+    "errata": [
+      {
+        "case_id": "B02",
+        "current": "medium",
+        "frozen": "high"
+      },
+      {
+        "case_id": "B12",
+        "current": "high",
+        "frozen": "medium"
+      },
+      {
+        "case_id": "C17",
+        "current": "medium",
+        "frozen": "low"
+      }
+    ],
+    "corrected": {
+      "full_system": {
+        "n": 118,
+        "correct": 104,
+        "agreement": 0.8814,
+        "agreement_ci": [
+          0.811,
+          0.928
+        ],
+        "high_n": 28,
+        "high_tp": 25,
+        "sensitivity": 0.8929,
+        "nonhigh_n": 90,
+        "specificity": 0.9889,
+        "kappa": 0.8181,
+        "quadratic_weighted_kappa": 0.8758,
+        "temperature_mean_agreement": 0.8814,
+        "temperature_mean_sensitivity": 0.8929,
+        "temperature_mean_specificity": 0.9889,
+        "temperature_mean_kappa": 0.8181
+      },
+      "pure_llm": {
+        "n": 118,
+        "correct": 56,
+        "agreement": 0.4746,
+        "agreement_ci": [
+          0.387,
+          0.564
+        ],
+        "high_n": 28,
+        "high_tp": 23,
+        "sensitivity": 0.8214,
+        "nonhigh_n": 90,
+        "specificity": 0.5222,
+        "kappa": 0.2631,
+        "quadratic_weighted_kappa": 0.4707,
+        "temperature_mean_agreement": 0.4746,
+        "temperature_mean_sensitivity": 0.7714,
+        "temperature_mean_specificity": 0.5422,
+        "temperature_mean_kappa": 0.2559
+      },
+      "naive_rag": {
+        "n": 118,
+        "correct": 51,
+        "agreement": 0.4322,
+        "agreement_ci": [
+          0.346,
+          0.522
+        ],
+        "high_n": 28,
+        "high_tp": 23,
+        "sensitivity": 0.8214,
+        "nonhigh_n": 90,
+        "specificity": 0.4444,
+        "kappa": 0.2126,
+        "quadratic_weighted_kappa": 0.3605,
+        "temperature_mean_agreement": 0.4153,
+        "temperature_mean_sensitivity": 0.7571,
+        "temperature_mean_specificity": 0.4622,
+        "temperature_mean_kappa": 0.1824
+      },
+      "lightrag": {
+        "n": 118,
+        "correct": 85,
+        "agreement": 0.7203,
+        "agreement_ci": [
+          0.633,
+          0.793
+        ],
+        "high_n": 28,
+        "high_tp": 18,
+        "sensitivity": 0.6429,
+        "nonhigh_n": 90,
+        "specificity": 1.0,
+        "kappa": 0.5732,
+        "quadratic_weighted_kappa": 0.664,
+        "temperature_mean_agreement": 0.7186,
+        "temperature_mean_sensitivity": 0.6215,
+        "temperature_mean_specificity": 0.9978,
+        "temperature_mean_kappa": 0.5699
+      }
+    },
+    "frozen": {
+      "full_system": {
+        "n": 118,
+        "correct": 101,
+        "agreement": 0.8559,
+        "agreement_ci": [
+          0.781,
+          0.908
+        ],
+        "high_n": 28,
+        "high_tp": 24,
+        "sensitivity": 0.8571,
+        "nonhigh_n": 90,
+        "specificity": 0.9778,
+        "kappa": 0.779,
+        "quadratic_weighted_kappa": 0.8546,
+        "temperature_mean_agreement": 0.8559,
+        "temperature_mean_sensitivity": 0.8571,
+        "temperature_mean_specificity": 0.9778,
+        "temperature_mean_kappa": 0.779
+      },
+      "pure_llm": {
+        "n": 118,
+        "correct": 56,
+        "agreement": 0.4746,
+        "agreement_ci": [
+          0.387,
+          0.564
+        ],
+        "high_n": 28,
+        "high_tp": 23,
+        "sensitivity": 0.8214,
+        "nonhigh_n": 90,
+        "specificity": 0.5222,
+        "kappa": 0.2607,
+        "quadratic_weighted_kappa": 0.4582,
+        "temperature_mean_agreement": 0.478,
+        "temperature_mean_sensitivity": 0.7786,
+        "temperature_mean_specificity": 0.5444,
+        "temperature_mean_kappa": 0.2588
+      },
+      "naive_rag": {
+        "n": 118,
+        "correct": 51,
+        "agreement": 0.4322,
+        "agreement_ci": [
+          0.346,
+          0.522
+        ],
+        "high_n": 28,
+        "high_tp": 23,
+        "sensitivity": 0.8214,
+        "nonhigh_n": 90,
+        "specificity": 0.4444,
+        "kappa": 0.2102,
+        "quadratic_weighted_kappa": 0.3499,
+        "temperature_mean_agreement": 0.4187,
+        "temperature_mean_sensitivity": 0.7643,
+        "temperature_mean_specificity": 0.4644,
+        "temperature_mean_kappa": 0.185
+      },
+      "lightrag": {
+        "n": 118,
+        "correct": 84,
+        "agreement": 0.7119,
+        "agreement_ci": [
+          0.624,
+          0.786
+        ],
+        "high_n": 28,
+        "high_tp": 17,
+        "sensitivity": 0.6071,
+        "nonhigh_n": 90,
+        "specificity": 0.9889,
+        "kappa": 0.5586,
+        "quadratic_weighted_kappa": 0.6574,
+        "temperature_mean_agreement": 0.7136,
+        "temperature_mean_sensitivity": 0.5928,
+        "temperature_mean_specificity": 0.9889,
+        "temperature_mean_kappa": 0.5606
+      }
+    },
+    "frozen_blind40": {
+      "n": 40,
+      "correct": 36,
+      "agreement": 0.9,
+      "agreement_ci": [
+        0.769,
+        0.96
+      ],
+      "high_n": 11,
+      "high_tp": 9,
+      "sensitivity": 0.8182,
+      "nonhigh_n": 29,
+      "specificity": 0.9655,
+      "kappa": 0.8481,
+      "quadratic_weighted_kappa": 0.9159,
+      "temperature_mean_agreement": 0.9,
+      "temperature_mean_sensitivity": 0.8182,
+      "temperature_mean_specificity": 0.9655,
+      "temperature_mean_kappa": 0.8481
+    },
+    "frozen_guideline58": {
+      "n": 58,
+      "correct": 45,
+      "agreement": 0.7759,
+      "agreement_ci": [
+        0.653,
+        0.864
+      ],
+      "high_n": 11,
+      "high_tp": 9,
+      "sensitivity": 0.8182,
+      "nonhigh_n": 47,
+      "specificity": 0.9787,
+      "kappa": 0.6508,
+      "quadratic_weighted_kappa": 0.7415,
+      "temperature_mean_agreement": 0.7759,
+      "temperature_mean_sensitivity": 0.8182,
+      "temperature_mean_specificity": 0.9787,
+      "temperature_mean_kappa": 0.6508
+    },
+    "frozen_T1_20": {
+      "n": 20,
+      "correct": 20,
+      "agreement": 1.0,
+      "agreement_ci": [
+        0.839,
+        1.0
+      ],
+      "high_n": 6,
+      "high_tp": 6,
+      "sensitivity": 1.0,
+      "nonhigh_n": 14,
+      "specificity": 1.0,
+      "kappa": 1.0,
+      "quadratic_weighted_kappa": 1.0,
+      "temperature_mean_agreement": 1.0,
+      "temperature_mean_sensitivity": 1.0,
+      "temperature_mean_specificity": 1.0,
+      "temperature_mean_kappa": 1.0
+    },
+    "corrected_blind40": {
+      "n": 40,
+      "correct": 39,
+      "agreement": 0.975,
+      "agreement_ci": [
+        0.871,
+        0.996
+      ],
+      "high_n": 11,
+      "high_tp": 10,
+      "sensitivity": 0.9091,
+      "nonhigh_n": 29,
+      "specificity": 1.0,
+      "kappa": 0.9619,
+      "quadratic_weighted_kappa": 0.9786,
+      "temperature_mean_agreement": 0.975,
+      "temperature_mean_sensitivity": 0.9091,
+      "temperature_mean_specificity": 1.0,
+      "temperature_mean_kappa": 0.9619
+    }
+  },
+  "R1_3_paths_1933": {
+    "all": {
+      "n": 1933,
+      "agree": 366,
+      "downgrade": 1502,
+      "upgrade": 65,
+      "downgrade_share": 0.777,
+      "low_absorption_downgrades": 1206,
+      "share_of_downgrades": 0.8029,
+      "from_high": 352
+    },
+    "by_path": {
+      "rule": 504,
+      "matrix": 507,
+      "default_low": 176,
+      "g19": 746
+    },
+    "by_path_level": {
+      "rule|high": 31,
+      "matrix|medium": 138,
+      "matrix|low": 326,
+      "default_low|low": 176,
+      "rule|medium": 143,
+      "rule|low": 330,
+      "matrix|high": 43,
+      "g19|low": 746
+    },
+    "default_low_pairs": [
+      {
+        "a": "timolol",
+        "b": "warfarin",
+        "ddinter": "low"
+      },
+      {
+        "a": "timolol",
+        "b": "ticagrelor",
+        "ddinter": "low"
+      },
+      {
+        "a": "timolol",
+        "b": "prednisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "methylprednisolone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "rifampicin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "fentanyl",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "morphine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "oxycodone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "olanzapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "risperidone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "quetiapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "aripiprazole",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "diazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "clonazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "doxazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "buspirone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "budesonide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "haloperidol",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "clozapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "linezolid",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "hydrocortisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "ritonavir",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "donepezil",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "rivastigmine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "codeine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "alfuzosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "timolol",
+        "b": "clonidine",
+        "ddinter": "high"
+      },
+      {
+        "a": "timolol",
+        "b": "oxybutynin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "prednisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "methylprednisolone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "fentanyl",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "morphine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "olanzapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "quetiapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "diazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "clonazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "doxazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "buspirone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "budesonide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "clozapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "linezolid",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "hydrocortisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "ritonavir",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "rivastigmine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "alfuzosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "betaxolol",
+        "b": "clonidine",
+        "ddinter": "high"
+      },
+      {
+        "a": "betaxolol",
+        "b": "oxybutynin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "ticagrelor",
+        "ddinter": "low"
+      },
+      {
+        "a": "carteolol",
+        "b": "prednisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "methylprednisolone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "olanzapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "risperidone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "quetiapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "aripiprazole",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "midazolam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "diazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "clonazepam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "doxazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "buspirone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "budesonide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "haloperidol",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "clozapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "linezolid",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "hydrocortisone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "donepezil",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "rivastigmine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "alfuzosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "carteolol",
+        "b": "clonidine",
+        "ddinter": "high"
+      },
+      {
+        "a": "carteolol",
+        "b": "oxybutynin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "amlodipine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "nifedipine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "felodipine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "diltiazem",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "verapamil",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "lisinopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "enalapril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "ramipril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "captopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "losartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "valsartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "irbesartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "carbamazepine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "valproic acid",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "levetiracetam",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "lamotrigine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "cetirizine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "pregabalin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "doxazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "nitroglycerin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "gabapentin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "topiramate",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "linezolid",
+        "ddinter": "high"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "perindopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "telmisartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "isosorbide mononitrate",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "apraclonidine",
+        "b": "alfuzosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "pilocarpine",
+        "b": "clozapine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "pilocarpine",
+        "b": "ivabradine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "diltiazem",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "lisinopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "enalapril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "ramipril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "captopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "losartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "valsartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "irbesartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "carbamazepine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "salbutamol",
+        "ddinter": "low"
+      },
+      {
+        "a": "prednisolone",
+        "b": "fluvoxamine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "perindopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "telmisartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "ritonavir",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "prednisolone",
+        "b": "clonidine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "diltiazem",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "lisinopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "enalapril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "ramipril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "captopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "losartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "valsartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "irbesartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "amiodarone",
+        "ddinter": "high"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "carbamazepine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "salbutamol",
+        "ddinter": "low"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "dronedarone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "fluvoxamine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "perindopril",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "telmisartan",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "ritonavir",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "terazosin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "dexamethasone",
+        "b": "clonidine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "atropine",
+        "b": "hydrochlorothiazide",
+        "ddinter": "low"
+      },
+      {
+        "a": "atropine",
+        "b": "digoxin",
+        "ddinter": "low"
+      },
+      {
+        "a": "atropine",
+        "b": "nitroglycerin",
+        "ddinter": "low"
+      },
+      {
+        "a": "atropine",
+        "b": "topiramate",
+        "ddinter": "high"
+      },
+      {
+        "a": "atropine",
+        "b": "ketoconazole",
+        "ddinter": "medium"
+      },
+      {
+        "a": "atropine",
+        "b": "indapamide",
+        "ddinter": "low"
+      },
+      {
+        "a": "atropine",
+        "b": "nitrofurantoin",
+        "ddinter": "low"
+      },
+      {
+        "a": "homatropine",
+        "b": "topiramate",
+        "ddinter": "high"
+      },
+      {
+        "a": "scopolamine",
+        "b": "hydrochlorothiazide",
+        "ddinter": "low"
+      },
+      {
+        "a": "scopolamine",
+        "b": "digoxin",
+        "ddinter": "low"
+      },
+      {
+        "a": "scopolamine",
+        "b": "nitroglycerin",
+        "ddinter": "low"
+      },
+      {
+        "a": "scopolamine",
+        "b": "topiramate",
+        "ddinter": "high"
+      },
+      {
+        "a": "scopolamine",
+        "b": "ketoconazole",
+        "ddinter": "medium"
+      },
+      {
+        "a": "scopolamine",
+        "b": "indapamide",
+        "ddinter": "low"
+      },
+      {
+        "a": "scopolamine",
+        "b": "nitrofurantoin",
+        "ddinter": "low"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "metformin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "glimepiride",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "sitagliptin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "empagliflozin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "dapagliflozin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "semaglutide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "levothyroxine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "salbutamol",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "pioglitazone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "linagliptin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "canagliflozin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "liraglutide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "insulin glargine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "salmeterol",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "rosiglitazone",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "saxagliptin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "dulaglutide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "acarbose",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "repaglinide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "nateglinide",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "tapentadol",
+        "ddinter": "medium"
+      },
+      {
+        "a": "phenylephrine",
+        "b": "oxybutynin",
+        "ddinter": "medium"
+      },
+      {
+        "a": "aflibercept",
+        "b": "azathioprine",
+        "ddinter": "medium"
+      },
+      {
+        "a": "aflibercept",
+        "b": "leflunomide",
+        "ddinter": "high"
+      },
+      {
+        "a": "aflibercept",
+        "b": "clozapine",
+        "ddinter": "high"
+      }
+    ],
+    "assessed_only": {
+      "n": 1757,
+      "agree": 351,
+      "downgrade": 1341,
+      "upgrade": 65,
+      "downgrade_share": 0.7632,
+      "low_absorption_downgrades": 1203,
+      "share_of_downgrades": 0.8971,
+      "from_high": 342
+    }
+  },
+  "R1_3_low_tier_overrides": {
+    "n": 83,
+    "by_level": {
+      "medium": 83
+    },
+    "by_rule": {
+      "nsaid_acei_arb_antagonism": 36,
+      "additive_nsaid_bleeding": 28,
+      "low_abs_anticoagulant": 28,
+      "nsaid_diuretic_antagonism": 16,
+      "immunosuppressant_nsaid_nephrotoxicity": 3
+    }
+  },
+  "R1_4_route": {
+    "topical": {
+      "n": 1930,
+      "agree": 366,
+      "downgrade": 1499,
+      "upgrade": 65,
+      "downgrade_share": 0.7767,
+      "low_absorption_downgrades": 1203,
+      "share_of_downgrades": 0.8025,
+      "from_high": 350
+    },
+    "non_topical": {
+      "n": 3,
+      "agree": 0,
+      "downgrade": 3,
+      "upgrade": 0,
+      "downgrade_share": 1.0,
+      "low_absorption_downgrades": 3,
+      "share_of_downgrades": 1.0,
+      "from_high": 2
+    },
+    "non_topical_agents": [
+      "aflibercept"
+    ],
+    "combination_products_in_pairs": [],
+    "combination_products_registry": {
+      "timolol/latanoprost": "",
+      "timolol/travoprost": "",
+      "timolol/bimatoprost": "",
+      "timolol/brimonidine": "",
+      "timolol/dorzolamide": "",
+      "brimonidine/brinzolamide": "",
+      "brimonidine/dorzolamide": "",
+      "netarsudil/latanoprost": "",
+      "tobramycin/dexamethasone": "",
+      "neomycin/polymyxin b/dexamethasone": "",
+      "bacitracin/polymyxin b": "",
+      "sulfacetamide/prednisolone": ""
+    }
+  },
+  "R1_5_audit": {
+    "applied": {
+      "full_system": {
+        "n": 92,
+        "correct": 62,
+        "agreement": 0.6739,
+        "agreement_ci": [
+          0.573,
+          0.761
+        ],
+        "high_n": 25,
+        "high_tp": 8,
+        "sensitivity": 0.32,
+        "nonhigh_n": 67,
+        "specificity": 0.9701,
+        "kappa": 0.4285,
+        "quadratic_weighted_kappa": 0.5481,
+        "temperature_mean_agreement": 0.6739,
+        "temperature_mean_sensitivity": 0.32,
+        "temperature_mean_specificity": 0.9701,
+        "temperature_mean_kappa": 0.4285
+      },
+      "pure_llm": {
+        "n": 92,
+        "correct": 59,
+        "agreement": 0.6413,
+        "agreement_ci": [
+          0.539,
+          0.732
+        ],
+        "high_n": 25,
+        "high_tp": 22,
+        "sensitivity": 0.88,
+        "nonhigh_n": 67,
+        "specificity": 0.6866,
+        "kappa": 0.4075,
+        "quadratic_weighted_kappa": 0.5888,
+        "temperature_mean_agreement": 0.6304,
+        "temperature_mean_sensitivity": 0.848,
+        "temperature_mean_specificity": 0.7045,
+        "temperature_mean_kappa": 0.3961
+      },
+      "naive_rag": {
+        "n": 92,
+        "correct": 51,
+        "agreement": 0.5543,
+        "agreement_ci": [
+          0.453,
+          0.652
+        ],
+        "high_n": 25,
+        "high_tp": 23,
+        "sensitivity": 0.92,
+        "nonhigh_n": 67,
+        "specificity": 0.5224,
+        "kappa": 0.3162,
+        "quadratic_weighted_kappa": 0.3196,
+        "temperature_mean_agreement": 0.5348,
+        "temperature_mean_sensitivity": 0.848,
+        "temperature_mean_specificity": 0.5791,
+        "temperature_mean_kappa": 0.2902
+      },
+      "lightrag": {
+        "n": 92,
+        "correct": 56,
+        "agreement": 0.6087,
+        "agreement_ci": [
+          0.507,
+          0.702
+        ],
+        "high_n": 25,
+        "high_tp": 7,
+        "sensitivity": 0.28,
+        "nonhigh_n": 67,
+        "specificity": 0.9851,
+        "kappa": 0.2532,
+        "quadratic_weighted_kappa": 0.417,
+        "temperature_mean_agreement": 0.6022,
+        "temperature_mean_sensitivity": 0.264,
+        "temperature_mean_specificity": 0.9791,
+        "temperature_mean_kappa": 0.2367
+      }
+    },
+    "rederived": {
+      "full_system": {
+        "n": 92,
+        "correct": 61,
+        "agreement": 0.663,
+        "agreement_ci": [
+          0.562,
+          0.751
+        ],
+        "high_n": 29,
+        "high_tp": 8,
+        "sensitivity": 0.2759,
+        "nonhigh_n": 63,
+        "specificity": 0.9683,
+        "kappa": 0.4342,
+        "quadratic_weighted_kappa": 0.5028,
+        "temperature_mean_agreement": 0.663,
+        "temperature_mean_sensitivity": 0.2759,
+        "temperature_mean_specificity": 0.9683,
+        "temperature_mean_kappa": 0.4342
+      },
+      "pure_llm": {
+        "n": 92,
+        "correct": 59,
+        "agreement": 0.6413,
+        "agreement_ci": [
+          0.539,
+          0.732
+        ],
+        "high_n": 29,
+        "high_tp": 24,
+        "sensitivity": 0.8276,
+        "nonhigh_n": 63,
+        "specificity": 0.6984,
+        "kappa": 0.4089,
+        "quadratic_weighted_kappa": 0.5901,
+        "temperature_mean_agreement": 0.6304,
+        "temperature_mean_sensitivity": 0.7862,
+        "temperature_mean_specificity": 0.7111,
+        "temperature_mean_kappa": 0.3977
+      },
+      "naive_rag": {
+        "n": 92,
+        "correct": 54,
+        "agreement": 0.587,
+        "agreement_ci": [
+          0.485,
+          0.682
+        ],
+        "high_n": 29,
+        "high_tp": 26,
+        "sensitivity": 0.8966,
+        "nonhigh_n": 63,
+        "specificity": 0.5397,
+        "kappa": 0.3545,
+        "quadratic_weighted_kappa": 0.3741,
+        "temperature_mean_agreement": 0.5717,
+        "temperature_mean_sensitivity": 0.8345,
+        "temperature_mean_specificity": 0.6,
+        "temperature_mean_kappa": 0.3377
+      },
+      "lightrag": {
+        "n": 92,
+        "correct": 52,
+        "agreement": 0.5652,
+        "agreement_ci": [
+          0.463,
+          0.662
+        ],
+        "high_n": 29,
+        "high_tp": 7,
+        "sensitivity": 0.2414,
+        "nonhigh_n": 63,
+        "specificity": 0.9841,
+        "kappa": 0.2188,
+        "quadratic_weighted_kappa": 0.3506,
+        "temperature_mean_agreement": 0.5587,
+        "temperature_mean_sensitivity": 0.2276,
+        "temperature_mean_specificity": 0.9778,
+        "temperature_mean_kappa": 0.2037
+      }
+    },
+    "kept62_applied": {
+      "full_system": {
+        "n": 62,
+        "correct": 34,
+        "agreement": 0.5484,
+        "agreement_ci": [
+          0.425,
+          0.666
+        ],
+        "high_n": 25,
+        "high_tp": 8,
+        "sensitivity": 0.32,
+        "nonhigh_n": 37,
+        "specificity": 0.9459,
+        "kappa": 0.3427,
+        "quadratic_weighted_kappa": 0.4447,
+        "temperature_mean_agreement": 0.5484,
+        "temperature_mean_sensitivity": 0.32,
+        "temperature_mean_specificity": 0.9459,
+        "temperature_mean_kappa": 0.3427
+      },
+      "pure_llm": {
+        "n": 62,
+        "correct": 35,
+        "agreement": 0.5645,
+        "agreement_ci": [
+          0.441,
+          0.681
+        ],
+        "high_n": 25,
+        "high_tp": 22,
+        "sensitivity": 0.88,
+        "nonhigh_n": 37,
+        "specificity": 0.5676,
+        "kappa": 0.3195,
+        "quadratic_weighted_kappa": 0.5472,
+        "temperature_mean_agreement": 0.5677,
+        "temperature_mean_sensitivity": 0.848,
+        "temperature_mean_specificity": 0.6,
+        "temperature_mean_kappa": 0.3278
+      },
+      "naive_rag": {
+        "n": 62,
+        "correct": 38,
+        "agreement": 0.6129,
+        "agreement_ci": [
+          0.488,
+          0.724
+        ],
+        "high_n": 25,
+        "high_tp": 23,
+        "sensitivity": 0.92,
+        "nonhigh_n": 37,
+        "specificity": 0.5405,
+        "kappa": 0.3909,
+        "quadratic_weighted_kappa": 0.4304,
+        "temperature_mean_agreement": 0.5935,
+        "temperature_mean_sensitivity": 0.848,
+        "temperature_mean_specificity": 0.6162,
+        "temperature_mean_kappa": 0.368
+      },
+      "lightrag": {
+        "n": 62,
+        "correct": 26,
+        "agreement": 0.4194,
+        "agreement_ci": [
+          0.305,
+          0.543
+        ],
+        "high_n": 25,
+        "high_tp": 7,
+        "sensitivity": 0.28,
+        "nonhigh_n": 37,
+        "specificity": 0.973,
+        "kappa": 0.1625,
+        "quadratic_weighted_kappa": 0.3259,
+        "temperature_mean_agreement": 0.4097,
+        "temperature_mean_sensitivity": 0.264,
+        "temperature_mean_specificity": 0.9622,
+        "temperature_mean_kappa": 0.1488
+      }
+    },
+    "kept62_rederived": {
+      "full_system": {
+        "n": 62,
+        "correct": 37,
+        "agreement": 0.5968,
+        "agreement_ci": [
+          0.473,
+          0.71
+        ],
+        "high_n": 23,
+        "high_tp": 8,
+        "sensitivity": 0.3478,
+        "nonhigh_n": 39,
+        "specificity": 0.9487,
+        "kappa": 0.3976,
+        "quadratic_weighted_kappa": 0.5255,
+        "temperature_mean_agreement": 0.5968,
+        "temperature_mean_sensitivity": 0.3478,
+        "temperature_mean_specificity": 0.9487,
+        "temperature_mean_kappa": 0.3976
+      },
+      "pure_llm": {
+        "n": 62,
+        "correct": 36,
+        "agreement": 0.5806,
+        "agreement_ci": [
+          0.457,
+          0.695
+        ],
+        "high_n": 23,
+        "high_tp": 21,
+        "sensitivity": 0.913,
+        "nonhigh_n": 39,
+        "specificity": 0.5641,
+        "kappa": 0.3479,
+        "quadratic_weighted_kappa": 0.5727,
+        "temperature_mean_agreement": 0.5871,
+        "temperature_mean_sensitivity": 0.887,
+        "temperature_mean_specificity": 0.6,
+        "temperature_mean_kappa": 0.3607
+      },
+      "naive_rag": {
+        "n": 62,
+        "correct": 39,
+        "agreement": 0.629,
+        "agreement_ci": [
+          0.505,
+          0.738
+        ],
+        "high_n": 23,
+        "high_tp": 22,
+        "sensitivity": 0.9565,
+        "nonhigh_n": 39,
+        "specificity": 0.5385,
+        "kappa": 0.4243,
+        "quadratic_weighted_kappa": 0.4674,
+        "temperature_mean_agreement": 0.6129,
+        "temperature_mean_sensitivity": 0.887,
+        "temperature_mean_specificity": 0.6154,
+        "temperature_mean_kappa": 0.4042
+      },
+      "lightrag": {
+        "n": 62,
+        "correct": 29,
+        "agreement": 0.4677,
+        "agreement_ci": [
+          0.349,
+          0.59
+        ],
+        "high_n": 23,
+        "high_tp": 7,
+        "sensitivity": 0.3043,
+        "nonhigh_n": 39,
+        "specificity": 0.9744,
+        "kappa": 0.1967,
+        "quadratic_weighted_kappa": 0.3794,
+        "temperature_mean_agreement": 0.458,
+        "temperature_mean_sensitivity": 0.2869,
+        "temperature_mean_specificity": 0.9641,
+        "temperature_mean_kappa": 0.1813
+      }
+    },
+    "excl26_applied": {
+      "full_system": {
+        "n": 66,
+        "correct": 47,
+        "agreement": 0.7121,
+        "agreement_ci": [
+          0.594,
+          0.807
+        ],
+        "high_n": 15,
+        "high_tp": 3,
+        "sensitivity": 0.2,
+        "nonhigh_n": 51,
+        "specificity": 0.9608,
+        "kappa": 0.391,
+        "quadratic_weighted_kappa": 0.434,
+        "temperature_mean_agreement": 0.7121,
+        "temperature_mean_sensitivity": 0.2,
+        "temperature_mean_specificity": 0.9608,
+        "temperature_mean_kappa": 0.391
+      },
+      "pure_llm": {
+        "n": 66,
+        "correct": 45,
+        "agreement": 0.6818,
+        "agreement_ci": [
+          0.562,
+          0.782
+        ],
+        "high_n": 15,
+        "high_tp": 13,
+        "sensitivity": 0.8667,
+        "nonhigh_n": 51,
+        "specificity": 0.7255,
+        "kappa": 0.4258,
+        "quadratic_weighted_kappa": 0.5719,
+        "temperature_mean_agreement": 0.6606,
+        "temperature_mean_sensitivity": 0.8133,
+        "temperature_mean_specificity": 0.7333,
+        "temperature_mean_kappa": 0.3998
+      },
+      "naive_rag": {
+        "n": 66,
+        "correct": 36,
+        "agreement": 0.5455,
+        "agreement_ci": [
+          0.426,
+          0.66
+        ],
+        "high_n": 15,
+        "high_tp": 13,
+        "sensitivity": 0.8667,
+        "nonhigh_n": 51,
+        "specificity": 0.5686,
+        "kappa": 0.2358,
+        "quadratic_weighted_kappa": 0.3037,
+        "temperature_mean_agreement": 0.5243,
+        "temperature_mean_sensitivity": 0.76,
+        "temperature_mean_specificity": 0.6471,
+        "temperature_mean_kappa": 0.2073
+      },
+      "lightrag": {
+        "n": 66,
+        "correct": 44,
+        "agreement": 0.6667,
+        "agreement_ci": [
+          0.547,
+          0.768
+        ],
+        "high_n": 15,
+        "high_tp": 2,
+        "sensitivity": 0.1333,
+        "nonhigh_n": 51,
+        "specificity": 0.9804,
+        "kappa": 0.2289,
+        "quadratic_weighted_kappa": 0.3348,
+        "temperature_mean_agreement": 0.6637,
+        "temperature_mean_sensitivity": 0.1333,
+        "temperature_mean_specificity": 0.9726,
+        "temperature_mean_kappa": 0.2183
+      }
+    },
+    "excl26_rederived": {
+      "full_system": {
+        "n": 66,
+        "correct": 46,
+        "agreement": 0.697,
+        "agreement_ci": [
+          0.578,
+          0.794
+        ],
+        "high_n": 18,
+        "high_tp": 3,
+        "sensitivity": 0.1667,
+        "nonhigh_n": 48,
+        "specificity": 0.9583,
+        "kappa": 0.4,
+        "quadratic_weighted_kappa": 0.3729,
+        "temperature_mean_agreement": 0.697,
+        "temperature_mean_sensitivity": 0.1667,
+        "temperature_mean_specificity": 0.9583,
+        "temperature_mean_kappa": 0.4
+      },
+      "pure_llm": {
+        "n": 66,
+        "correct": 44,
+        "agreement": 0.6667,
+        "agreement_ci": [
+          0.547,
+          0.768
+        ],
+        "high_n": 18,
+        "high_tp": 14,
+        "sensitivity": 0.7778,
+        "nonhigh_n": 48,
+        "specificity": 0.7292,
+        "kappa": 0.4059,
+        "quadratic_weighted_kappa": 0.5436,
+        "temperature_mean_agreement": 0.6515,
+        "temperature_mean_sensitivity": 0.7333,
+        "temperature_mean_specificity": 0.7375,
+        "temperature_mean_kappa": 0.3907
+      },
+      "naive_rag": {
+        "n": 66,
+        "correct": 38,
+        "agreement": 0.5758,
+        "agreement_ci": [
+          0.456,
+          0.688
+        ],
+        "high_n": 18,
+        "high_tp": 15,
+        "sensitivity": 0.8333,
+        "nonhigh_n": 48,
+        "specificity": 0.5833,
+        "kappa": 0.2826,
+        "quadratic_weighted_kappa": 0.3631,
+        "temperature_mean_agreement": 0.5606,
+        "temperature_mean_sensitivity": 0.7445,
+        "temperature_mean_specificity": 0.6667,
+        "temperature_mean_kappa": 0.2694
+      },
+      "lightrag": {
+        "n": 66,
+        "correct": 41,
+        "agreement": 0.6212,
+        "agreement_ci": [
+          0.501,
+          0.729
+        ],
+        "high_n": 18,
+        "high_tp": 2,
+        "sensitivity": 0.1111,
+        "nonhigh_n": 48,
+        "specificity": 0.9792,
+        "kappa": 0.1943,
+        "quadratic_weighted_kappa": 0.2709,
+        "temperature_mean_agreement": 0.6182,
+        "temperature_mean_sensitivity": 0.1111,
+        "temperature_mean_specificity": 0.9708,
+        "temperature_mean_kappa": 0.1842
+      }
+    },
+    "leakage": {
+      "k": 3,
+      "n_chunks": 1307,
+      "n_ddinter_chunks": 500,
+      "k1": 1.5,
+      "b": 0.75,
+      "subsets": [
+        {
+          "subset": "kept at DDInter severity (gold source)",
+          "n": 62,
+          "leaked": 19,
+          "rate": 0.3064516129032258,
+          "cases": [
+            "D3-003",
+            "D3-004",
+            "D3-009",
+            "D3-012",
+            "D3-014",
+            "D3-018",
+            "D3-022",
+            "D3-023",
+            "D3-024",
+            "D3-025",
+            "D3-027",
+            "D3-030",
+            "D3-032",
+            "D3-034",
+            "D3-036",
+            "D3-040",
+            "D3-041",
+            "D3-042",
+            "D3-043"
+          ]
+        },
+        {
+          "subset": "absorption-corrected (gold is low)",
+          "n": 30,
+          "leaked": 7,
+          "rate": 0.23333333333333334,
+          "cases": [
+            "D3-050",
+            "D3-051",
+            "D3-052",
+            "D3-057",
+            "D3-064",
+            "D3-067",
+            "D3-086"
+          ]
+        },
+        {
+          "subset": "all audit cases",
+          "n": 92,
+          "leaked": 26,
+          "rate": 0.2826086956521739,
+          "cases": [
+            "D3-003",
+            "D3-004",
+            "D3-009",
+            "D3-012",
+            "D3-014",
+            "D3-018",
+            "D3-022",
+            "D3-023",
+            "D3-024",
+            "D3-025",
+            "D3-027",
+            "D3-030",
+            "D3-032",
+            "D3-034",
+            "D3-036",
+            "D3-040",
+            "D3-041",
+            "D3-042",
+            "D3-043",
+            "D3-050",
+            "D3-051",
+            "D3-052",
+            "D3-057",
+            "D3-064",
+            "D3-067",
+            "D3-086"
+          ]
+        }
+      ]
+    },
+    "n_kept62": 62
+  },
+  "R1_5_disagreements": {
+    "n": 30,
+    "by_class": {
+      "route_consistent_downgrade": 21,
+      "unsupported_undergrading": 5,
+      "system_overgrading": 4
+    },
+    "cases": [
+      {
+        "case_id": "D3-000",
+        "a": "Dexamethasone",
+        "b": "Leflunomide",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-001",
+        "a": "Timolol",
+        "b": "Theophylline",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_high",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "unsupported_undergrading"
+      },
+      {
+        "case_id": "D3-002",
+        "a": "Flurbiprofen",
+        "b": "Methotrexate",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_low",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-004",
+        "a": "Timolol",
+        "b": "Epinephrine",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_high",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "unsupported_undergrading"
+      },
+      {
+        "case_id": "D3-005",
+        "a": "Flurbiprofen",
+        "b": "Rivaroxaban",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_low",
+        "path": "rule",
+        "rules": [
+          "additive_nsaid_bleeding",
+          "low_abs_anticoagulant"
+        ],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-006",
+        "a": "Scopolamine",
+        "b": "Topiramate",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_high",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "unsupported_undergrading"
+      },
+      {
+        "case_id": "D3-010",
+        "a": "Flurbiprofen",
+        "b": "Apixaban",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_low",
+        "path": "rule",
+        "rules": [
+          "additive_nsaid_bleeding",
+          "low_abs_anticoagulant"
+        ],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-011",
+        "a": "Flurbiprofen",
+        "b": "Prasugrel",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_low",
+        "path": "rule",
+        "rules": [
+          "low_abs_antiplatelet"
+        ],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-013",
+        "a": "Dexamethasone",
+        "b": "Perindopril",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-014",
+        "a": "Timolol",
+        "b": "Spironolactone",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_high",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "unsupported_undergrading"
+      },
+      {
+        "case_id": "D3-018",
+        "a": "Carteolol",
+        "b": "Diazepam",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_high",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "unsupported_undergrading"
+      },
+      {
+        "case_id": "D3-019",
+        "a": "Dexamethasone",
+        "b": "Fluvoxamine",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-022",
+        "a": "Prednisolone",
+        "b": "Leflunomide",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-025",
+        "a": "Betaxolol",
+        "b": "Verapamil",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-026",
+        "a": "Apraclonidine",
+        "b": "Linezolid",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-027",
+        "a": "Betaxolol",
+        "b": "Diltiazem",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-028",
+        "a": "Prednisolone",
+        "b": "Desmopressin",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-029",
+        "a": "Betaxolol",
+        "b": "Clonidine",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-030",
+        "a": "Betaxolol",
+        "b": "Theophylline",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "medium",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [
+          "systemic_absorption_moderate_risk"
+        ],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-033",
+        "a": "Homatropine",
+        "b": "Topiramate",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-034",
+        "a": "Prednisolone",
+        "b": "Captopril",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-035",
+        "a": "Apraclonidine",
+        "b": "Midazolam",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "high",
+        "tier": "systemic_absorption_medium",
+        "path": "rule",
+        "rules": [
+          "additive_alpha2_cns_depression"
+        ],
+        "direction": "upgrade",
+        "class": "system_overgrading"
+      },
+      {
+        "case_id": "D3-037",
+        "a": "Prednisolone",
+        "b": "Doxazosin",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "rule",
+        "rules": [
+          "dexamethasone_cyp3a4_induction",
+          "topical_corticosteroid_cyp3a4_induction"
+        ],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-038",
+        "a": "Apraclonidine",
+        "b": "Loperamide",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "high",
+        "tier": "systemic_absorption_medium",
+        "path": "matrix",
+        "rules": [],
+        "direction": "upgrade",
+        "class": "system_overgrading"
+      },
+      {
+        "case_id": "D3-040",
+        "a": "Phenylephrine",
+        "b": "Levothyroxine",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-042",
+        "a": "Prednisolone",
+        "b": "Telmisartan",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "systemic_absorption_medium",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-057",
+        "a": "Tacrolimus",
+        "b": "Ibuprofen",
+        "ddinter": "high",
+        "gold": "low",
+        "system": "medium",
+        "tier": "systemic_absorption_low",
+        "path": "rule",
+        "rules": [
+          "immunosuppressant_nsaid_nephrotoxicity"
+        ],
+        "direction": "upgrade",
+        "class": "system_overgrading"
+      },
+      {
+        "case_id": "D3-063",
+        "a": "Bromfenac",
+        "b": "Enalapril",
+        "ddinter": "medium",
+        "gold": "low",
+        "system": "medium",
+        "tier": "systemic_absorption_low",
+        "path": "rule",
+        "rules": [
+          "nsaid_acei_arb_antagonism"
+        ],
+        "direction": "upgrade",
+        "class": "system_overgrading"
+      },
+      {
+        "case_id": "D3-080",
+        "a": "Aflibercept",
+        "b": "Leflunomide",
+        "ddinter": "high",
+        "gold": "high",
+        "system": "low",
+        "tier": "minimal_systemic_absorption",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      },
+      {
+        "case_id": "D3-085",
+        "a": "Aflibercept",
+        "b": "Azathioprine",
+        "ddinter": "medium",
+        "gold": "medium",
+        "system": "low",
+        "tier": "minimal_systemic_absorption",
+        "path": "default_low",
+        "rules": [],
+        "direction": "downgrade",
+        "class": "route_consistent_downgrade"
+      }
+    ]
+  },
+  "R1_6_7_adequate_budget": {
+    "blind_l1": {
+      "pure_llm": {
+        "n_cases": 118,
+        "high_gold": 28,
+        "high_predicted_majority": 7,
+        "high_predicted_pct": 5.9,
+        "tp_majority": 7,
+        "sensitivity_majority": 0.25,
+        "tp_range_per_rep": [
+          5,
+          8
+        ]
+      },
+      "naive_rag": {
+        "n_cases": 118,
+        "high_gold": 28,
+        "high_predicted_majority": 7,
+        "high_predicted_pct": 5.9,
+        "tp_majority": 6,
+        "sensitivity_majority": 0.214,
+        "tp_range_per_rep": [
+          4,
+          9
+        ]
+      },
+      "lightrag": {
+        "n_cases": 118,
+        "high_gold": 28,
+        "high_predicted_majority": 15,
+        "high_predicted_pct": 12.7,
+        "tp_majority": 15,
+        "sensitivity_majority": 0.536,
+        "tp_range_per_rep": [
+          14,
+          15
+        ]
+      }
+    },
+    "blind_v3_ddinter": {
+      "pure_llm": {
+        "n_cases": 92,
+        "high_gold": 25,
+        "high_predicted_majority": 2,
+        "high_predicted_pct": 2.2,
+        "tp_majority": 2,
+        "sensitivity_majority": 0.08,
+        "tp_range_per_rep": [
+          2,
+          5
+        ]
+      },
+      "naive_rag": {
+        "n_cases": 92,
+        "high_gold": 25,
+        "high_predicted_majority": 10,
+        "high_predicted_pct": 10.9,
+        "tp_majority": 10,
+        "sensitivity_majority": 0.4,
+        "tp_range_per_rep": [
+          7,
+          12
+        ]
+      },
+      "lightrag": {
+        "n_cases": 92,
+        "high_gold": 25,
+        "high_predicted_majority": 6,
+        "high_predicted_pct": 6.5,
+        "tp_majority": 6,
+        "sensitivity_majority": 0.24,
+        "tp_range_per_rep": [
+          6,
+          7
+        ]
+      }
+    }
+  }
+}

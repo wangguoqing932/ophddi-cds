@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-26T05:46:47.691859+00:00",
+  "source_mode": "cache-only",
+  "candidate_input": "data\\curation\\entity_a_candidates.yaml",
+  "candidate_sha256": "75226090e5087b2bb39d851a4500ffe8c3b21b4091b7079bf82456f0a8b2a70a",
+  "output": "data\\seed\\entities_a.csv",
+  "output_sha256": "833daea93c9333c58fb0ac2b5f52ee4bb60408559f1a25d7c7c5b3306a5db6c5",
+  "entity_count": 113,
+  "source_record_count": 226,
+  "warning_count": 113,
+  "warnings": [
+    {
+      "entity": "topical_ophthalmic_0001",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol"
+    },
+    {
+      "entity": "topical_ophthalmic_0002",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Betaxolol"
+    },
+    {
+      "entity": "topical_ophthalmic_0003",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levobunolol"
+    },
+    {
+      "entity": "topical_ophthalmic_0004",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Carteolol"
+    },
+    {
+      "entity": "topical_ophthalmic_0005",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Metipranolol"
+    },
+    {
+      "entity": "topical_ophthalmic_0006",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Latanoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0007",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Travoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0008",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bimatoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0009",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tafluprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0010",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Latanoprostene bunod"
+    },
+    {
+      "entity": "topical_ophthalmic_0011",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Unoprostone"
+    },
+    {
+      "entity": "topical_ophthalmic_0012",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Brimonidine"
+    },
+    {
+      "entity": "topical_ophthalmic_0013",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Apraclonidine"
+    },
+    {
+      "entity": "topical_ophthalmic_0014",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dorzolamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0015",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Brinzolamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0016",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Netarsudil"
+    },
+    {
+      "entity": "topical_ophthalmic_0017",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ripasudil"
+    },
+    {
+      "entity": "topical_ophthalmic_0018",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Pilocarpine"
+    },
+    {
+      "entity": "topical_ophthalmic_0019",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Carbachol"
+    },
+    {
+      "entity": "topical_ophthalmic_0020",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ecothiopate"
+    },
+    {
+      "entity": "topical_ophthalmic_0021",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol/Latanoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0022",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol/Travoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0023",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol/Bimatoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0024",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol/Brimonidine"
+    },
+    {
+      "entity": "topical_ophthalmic_0025",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Timolol/Dorzolamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0026",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Brimonidine/Brinzolamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0027",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Brimonidine/Dorzolamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0028",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Netarsudil/Latanoprost"
+    },
+    {
+      "entity": "topical_ophthalmic_0029",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ofloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0030",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Levofloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0031",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Moxifloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0032",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Gatifloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0033",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ciprofloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0034",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Besifloxacin"
+    },
+    {
+      "entity": "topical_ophthalmic_0035",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tobramycin"
+    },
+    {
+      "entity": "topical_ophthalmic_0036",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Gentamicin"
+    },
+    {
+      "entity": "topical_ophthalmic_0037",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Neomycin"
+    },
+    {
+      "entity": "topical_ophthalmic_0038",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Erythromycin"
+    },
+    {
+      "entity": "topical_ophthalmic_0039",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Azithromycin"
+    },
+    {
+      "entity": "topical_ophthalmic_0040",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Chloramphenicol"
+    },
+    {
+      "entity": "topical_ophthalmic_0041",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fusidic acid"
+    },
+    {
+      "entity": "topical_ophthalmic_0042",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bacitracin"
+    },
+    {
+      "entity": "topical_ophthalmic_0043",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Polymyxin B"
+    },
+    {
+      "entity": "topical_ophthalmic_0044",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sulfacetamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0045",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Acyclovir"
+    },
+    {
+      "entity": "topical_ophthalmic_0046",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ganciclovir"
+    },
+    {
+      "entity": "topical_ophthalmic_0047",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Trifluridine"
+    },
+    {
+      "entity": "topical_ophthalmic_0048",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Natamycin"
+    },
+    {
+      "entity": "topical_ophthalmic_0049",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Voriconazole"
+    },
+    {
+      "entity": "topical_ophthalmic_0050",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluconazole"
+    },
+    {
+      "entity": "topical_ophthalmic_0051",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Prednisolone"
+    },
+    {
+      "entity": "topical_ophthalmic_0052",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dexamethasone"
+    },
+    {
+      "entity": "topical_ophthalmic_0053",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluorometholone"
+    },
+    {
+      "entity": "topical_ophthalmic_0054",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Loteprednol"
+    },
+    {
+      "entity": "topical_ophthalmic_0055",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rimexolone"
+    },
+    {
+      "entity": "topical_ophthalmic_0056",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ketorolac"
+    },
+    {
+      "entity": "topical_ophthalmic_0057",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Flurbiprofen"
+    },
+    {
+      "entity": "topical_ophthalmic_0058",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diclofenac"
+    },
+    {
+      "entity": "topical_ophthalmic_0059",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bromfenac"
+    },
+    {
+      "entity": "topical_ophthalmic_0060",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nepafenac"
+    },
+    {
+      "entity": "topical_ophthalmic_0061",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cyclosporine"
+    },
+    {
+      "entity": "topical_ophthalmic_0062",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tacrolimus"
+    },
+    {
+      "entity": "topical_ophthalmic_0063",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Olopatadine"
+    },
+    {
+      "entity": "topical_ophthalmic_0064",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ketotifen"
+    },
+    {
+      "entity": "topical_ophthalmic_0065",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Epinastine"
+    },
+    {
+      "entity": "topical_ophthalmic_0066",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Azelastine"
+    },
+    {
+      "entity": "topical_ophthalmic_0067",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Emedastine"
+    },
+    {
+      "entity": "topical_ophthalmic_0068",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bepotastine"
+    },
+    {
+      "entity": "topical_ophthalmic_0069",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Alcaftadine"
+    },
+    {
+      "entity": "topical_ophthalmic_0070",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cromolyn sodium"
+    },
+    {
+      "entity": "topical_ophthalmic_0071",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Nedocromil"
+    },
+    {
+      "entity": "topical_ophthalmic_0072",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lodoxamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0073",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Atropine"
+    },
+    {
+      "entity": "topical_ophthalmic_0074",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Cyclopentolate"
+    },
+    {
+      "entity": "topical_ophthalmic_0075",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Homatropine"
+    },
+    {
+      "entity": "topical_ophthalmic_0076",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Scopolamine"
+    },
+    {
+      "entity": "topical_ophthalmic_0077",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tropicamide"
+    },
+    {
+      "entity": "topical_ophthalmic_0078",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Phenylephrine"
+    },
+    {
+      "entity": "topical_ophthalmic_0079",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Proparacaine"
+    },
+    {
+      "entity": "topical_ophthalmic_0080",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tetracaine"
+    },
+    {
+      "entity": "topical_ophthalmic_0081",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lidocaine"
+    },
+    {
+      "entity": "topical_ophthalmic_0082",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Benoxinate"
+    },
+    {
+      "entity": "topical_ophthalmic_0083",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Fluorescein"
+    },
+    {
+      "entity": "topical_ophthalmic_0084",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Indocyanine green"
+    },
+    {
+      "entity": "topical_ophthalmic_0085",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rose bengal"
+    },
+    {
+      "entity": "topical_ophthalmic_0086",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Ranibizumab"
+    },
+    {
+      "entity": "topical_ophthalmic_0087",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Aflibercept"
+    },
+    {
+      "entity": "topical_ophthalmic_0088",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bevacizumab"
+    },
+    {
+      "entity": "topical_ophthalmic_0089",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Brolucizumab"
+    },
+    {
+      "entity": "topical_ophthalmic_0090",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Faricimab"
+    },
+    {
+      "entity": "topical_ophthalmic_0091",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Naphazoline"
+    },
+    {
+      "entity": "topical_ophthalmic_0092",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tetrahydrozoline"
+    },
+    {
+      "entity": "topical_ophthalmic_0093",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Dipivefrin"
+    },
+    {
+      "entity": "topical_ophthalmic_0094",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Lifitegrast"
+    },
+    {
+      "entity": "topical_ophthalmic_0095",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Diquafosol"
+    },
+    {
+      "entity": "topical_ophthalmic_0096",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Rebamipide"
+    },
+    {
+      "entity": "topical_ophthalmic_0097",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Hydroxypropyl cellulose"
+    },
+    {
+      "entity": "topical_ophthalmic_0098",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sodium hyaluronate"
+    },
+    {
+      "entity": "topical_ophthalmic_0099",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Tobramycin/Dexamethasone"
+    },
+    {
+      "entity": "topical_ophthalmic_0100",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Neomycin/Polymyxin B/Dexamethasone"
+    },
+    {
+      "entity": "topical_ophthalmic_0101",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Bacitracin/Polymyxin B"
+    },
+    {
+      "entity": "topical_ophthalmic_0102",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sulfacetamide/Prednisolone"
+    },
+    {
+      "entity": "topical_ophthalmic_0103",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Povidone-iodine"
+    },
+    {
+      "entity": "topical_ophthalmic_0104",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Chlorhexidine"
+    },
+    {
+      "entity": "topical_ophthalmic_0105",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Sodium chloride 5%"
+    },
+    {
+      "entity": "topical_ophthalmic_0106",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Glycerin ophthalmic"
+    },
+    {
+      "entity": "topical_ophthalmic_0107",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Mitomycin C"
+    },
+    {
+      "entity": "topical_ophthalmic_0108",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for 5-Fluorouracil"
+    },
+    {
+      "entity": "topical_ophthalmic_0109",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Acetylcholine intraocular"
+    },
+    {
+      "entity": "topical_ophthalmic_0110",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Carboxymethylcellulose"
+    },
+    {
+      "entity": "topical_ophthalmic_0111",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Hydroxypropyl methylcellulose"
+    },
+    {
+      "entity": "topical_ophthalmic_0112",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Accelidine"
+    },
+    {
+      "entity": "topical_ophthalmic_0113",
+      "provider": "pubchem",
+      "message": "No cached pubchem response for Conbercept"
+    }
+  ],
+  "qa_status": "pass"
+}

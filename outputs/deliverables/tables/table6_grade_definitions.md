@@ -1,0 +1,8 @@
+| Grade | Operational definition | Clinical significance | Expected management | Illustrative pair |
+|---|---|---|---|---|
+| **High** | A mechanism with potential for severe harm at plausible ophthalmic exposure, or a narrow-therapeutic-index victim drug with a substantial exposure change. | Could cause hospitalisation or death if unrecognised. | Do not start without prescriber or pharmacist review. If already combined, monitor the relevant parameter (HR/BP/ECG, drug level) and consider an alternative. | Timolol + verapamil |
+| **Medium** | A mechanism likely to produce a measurable but usually non-severe effect, or a severe mechanism at low exposure. | May require monitoring or dose adjustment; harm is plausible but uncommon. | Review the combination, monitor the relevant parameter, and consider an alternative if monitoring is not feasible. | Ketorolac + warfarin |
+| **Low** | No mechanism expected to be clinically significant at ophthalmic exposure, or a mechanism with a wide therapeutic index and low exposure. | Unlikely to require action beyond usual care. | No specific action; document the review if the pair is retained. | Latanoprost + atorvastatin |
+| **Unassessed** | No rule and no matrix cell covers the pair. | Unknown; **not** evidence of safety. | Do not interpret as low. Refer for manual medication review or specialist consultation. | Timolol + warfarin (default path) |
+
+Grades are screening categories, not probabilities of harm. They describe the expected clinical consequence of a mechanism at the modelled exposure, not the probability that an event will occur in a given patient. The management column is the action the engine's rule or matrix advice supports; it is not a prescription.

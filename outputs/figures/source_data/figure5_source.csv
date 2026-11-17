@@ -1,0 +1,6 @@
+step,latency_ms,note
+L1 rule matching,1.2,"single-case trace, timolol x atenolol"
+L2 matrix upgrade check,0.4,single-case trace
+L3 G19 hard constraint,0.2,single-case trace
+MAX-MATCH decision,0.1,single-case trace
+LLM arbitration,0.0,not used in the deterministic path
