@@ -21,9 +21,11 @@ class SafetyAgent:
   if not ar.canonical_name or not br.canonical_name: raise ValueError('Unknown or ambiguous medication')
   a=next(x for x in self.a if x.canonical_name==ar.canonical_name);b=next(x for x in self.b if x.canonical_name==br.canonical_name)
   assessment=self.engine.evaluate(a,b,patient_factors or [])
-  v2_level,_,_=self.kg.deterministic_level_v2(entity_a,entity_b)
+  v2_level,_,v2_info=self.kg.deterministic_level_v2(entity_a,entity_b)
   if v2_level and RISK_ORDER[RiskLevel(v2_level)]>RISK_ORDER[assessment.risk_level]:
    assessment=RiskAssessment(risk_level=RiskLevel(v2_level),risk_types=assessment.risk_types,signals=assessment.signals,confidence='cascade_v2',confidence_score=1.0)
+  assessment.assessment_status=v2_info.get('assessment_status','assessed')
+  assessment.assessment_note=v2_info.get('note','')
   evidence=[]
   for signal in assessment.signals:
    if signal.rule_id.startswith('patient_factor:'):continue
