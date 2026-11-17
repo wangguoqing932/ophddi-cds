@@ -147,7 +147,7 @@ for p in marked.paragraphs:
         part += 1
     else:
         black += 1
-check("redline 56 full / 88 partial / 51 black", (full, part, black) == (56, 88, 51), f"{full}/{part}/{black}")
+check("redline 57 full / 87 partial / 51 black", (full, part, black) == (57, 87, 51), f"{full}/{part}/{black}")
 
 # 10. Source vs frontiers hashes
 for name in ["manuscript.md", "manuscript.docx", "manuscript.pdf",
