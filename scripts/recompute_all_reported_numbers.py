@@ -20,7 +20,8 @@ import numpy as np
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
-from deposit_paths import find, gold_cases, predictions, recomputed  # noqa: E402
+from deposit_paths import (find, glm53_predictions, gold_cases, predictions,  # noqa: E402
+                           recomputed)
 
 from ophthalmic_ddi_cds_agent.kg_layer import PreciseKG  # noqa: E402
 from stats_tests import (bootstrap_kappa, clopper_pearson, cohens_kappa,  # noqa: E402
@@ -143,7 +144,7 @@ R["l1.kappa_bootstrap"] = bootstrap_kappa(gl, fs_pl, n_resamples=2000, seed=1234
 
 # Frozen labels are the primary analysis; keep them alongside the corrected block.
 prov = {r["case_id"]: r for r in csv.DictReader(
-    (ROOT / "outputs/recomputed/l1_gold_provenance.csv").open(encoding="utf-8"))}
+    recomputed("l1_gold_provenance.csv").open(encoding="utf-8"))}
 gf = {cid: (prov[cid]["gold_pre_errata"] or prov[cid]["gold_current"]) for cid in g1}
 for m in ["full_system", "pure_llm", "naive_rag", "lightrag"]:
     multi = load_pred_multi("blind_l1", m)
@@ -164,7 +165,7 @@ glf = [gf[k] for k in gf if k in preds1["full_system"]]
 R["l1.frozen.kappa"] = cohens_kappa(glf, fs_pl)
 R["l1.frozen.kappa_bootstrap"] = bootstrap_kappa(glf, fs_pl, n_resamples=2000, seed=12345)
 sub_map = {}
-for line in (ROOT / "outputs/multiseed_per_dataset/blind_l1__seed0.jsonl").open(encoding="utf-8"):
+for line in pred_path("blind_l1", 0).open(encoding="utf-8"):
     if not line.strip():
         continue
     rr = json.loads(line)
@@ -385,7 +386,7 @@ if leak_file.exists():
     leak = set(json.loads(leak_file.read_text(encoding="utf-8"))["subsets"][2]["cases"])
 else:
     leak = set()
-glm_path = ROOT / "outputs" / "glm53_baselines" / "predictions.jsonl"
+glm_path = glm53_predictions()
 alt = ROOT / "data" / "predictions" / "glm53_baselines" / "predictions.jsonl"
 if not glm_path.exists():
     glm_path = alt
