@@ -1,25 +1,36 @@
-# 专家评审结果（2 位眼科专家，12 例复核）
+# Expert review results (2 ophthalmologists, 12 cases)
 
-## 数据
-- 日期: 2026-08-03 | 专家数: 2 | 案例: 12（R01-R12）
-- 专家1 判断: 低 中 低 中 中 中 低 中 低 低 低 低
-- 专家2 判断: 低 中 低 中 中 中 低 高 低 低 低 低
-- 系统 v2:   低 低 低 低 低 低 低 低 低 低 低 低
+**Date:** 2026-08-03  
+**Cases:** R01–R12  
+**Source:** transcribed returned questionnaires; expert 1's scan checked; S3 is the deposited per-case record.
 
-## 一致性指标
-| 对比 | 一致率 | Cohen κ |
-|---|---|---|
-| 专家1 vs 专家2 | 0.9166666666666666 | 0.84 |
-| 专家1 vs 系统 | 0.583 | 0.0 |
-| 专家2 vs 系统 | 0.583 | 0.0 |
-| 专家多数 vs 系统 | 0.583 | 0.0 |
+## Ratings
 
-## 分歧模式
-experts systematically rate 1 tier lower (4 high->medium, 6 medium->low); only R07 (levofloxacin x sotalol = low) agreed
+| Case | Gold shown | Engine | System shown | Expert 1 | Expert 2 |
+|---|---|---|---|---|---|
+| R01 | medium | medium | medium | low | low |
+| R02 | high | high | high | medium | medium |
+| R03 | medium | medium | medium | low | low |
+| R04 | high | high | high | medium | medium |
+| R05 | high | high | high | medium | medium |
+| R06 | high | high | high | medium | medium |
+| R07 | low | low | low | low | low |
+| R08 | medium | medium | medium | medium | high |
+| R09 | medium | medium | medium | low | low |
+| R10 | low | low | medium | low | low |
+| R11 | low | low | medium | low | low |
+| R12 | medium | medium | medium | low | low |
 
-## 专家反馈（用户转述）
-clinical practice: eye drops have mild systemic impact; experts do not typically track ophthalmic-systemic DDI; judgment based on clinical prior, not per-case mechanism review
+## Agreement
 
-## 解读与决策
-kappa negative reflects clinical-prior vs evidence-based judgment gap, NOT conclusive evidence of system miscalibration (experts did not perform mechanism-level assessment)
-- 决策: use these 2 experts; no system calibration applied; reported honestly as perspective gap
+| Comparison | Agreement | Cohen's κ |
+|---|---:|---:|
+| Expert 1 vs Expert 2 | 0.9167 | 0.8400 |
+| Expert 1 vs displayed grade | 0.1667 | -0.1765 |
+| Expert 2 vs displayed grade | 0.0833 | -0.2571 |
+| Expert 1 vs reference grade | 0.3333 | 0.0204 |
+| Expert 2 vs reference grade | 0.2500 | -0.0909 |
+
+R03 was rated low by both experts (confirmed against the scan); R10 and R11 were displayed as medium on the questionnaire although the engine returns low. The exercise is descriptive and non-independent; it is not a validation.
+
+> This file supersedes an earlier 3 August summary that recorded R03 as medium and used a system_v2 vector that did not match the questionnaire.

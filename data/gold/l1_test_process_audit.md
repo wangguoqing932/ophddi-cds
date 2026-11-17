@@ -1,3 +1,5 @@
+> **Historical note:** this audit predates the final revision. Current L1 metrics are in Table 3 and `outputs/recomputed/numbers.json` (full_system 0.856 frozen, 0.881 corrected). The 0.992/0.602 values quoted below are from the pre-revision run and are retained only as an audit trail.
+
 # L1 对比测试过程审计报告（"系统是否真的比纯 LLM 好"）
 
 日期：2026-07-31

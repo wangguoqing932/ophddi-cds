@@ -1,84 +1,108 @@
 {
-  "date": "2026-08-03",
-  "n_experts": 2,
-  "n_cases": 12,
-  "expert_1": [
-    "low",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "low",
-    "medium",
-    "low",
-    "low",
-    "low",
-    "low"
-  ],
-  "expert_2": [
-    "low",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "low",
-    "high",
-    "low",
-    "low",
-    "low",
-    "low"
-  ],
-  "system_v2": [
-    "medium",
-    "high",
-    "medium",
-    "high",
-    "high",
-    "high",
-    "low",
-    "medium",
-    "medium",
-    "low",
-    "low",
-    "medium"
-  ],
-  "majority": [
-    "low",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "medium",
-    "low",
-    "medium",
-    "low",
-    "low",
-    "low",
-    "low"
-  ],
-  "inter_rater": {
-    "agreement": 0.917,
-    "kappa": 0.846
+ "date": "2026-08-03",
+ "n_experts": 2,
+ "n_cases": 12,
+ "expert_1": [
+  "low",
+  "medium",
+  "low",
+  "medium",
+  "medium",
+  "medium",
+  "low",
+  "medium",
+  "low",
+  "low",
+  "low",
+  "low"
+ ],
+ "expert_2": [
+  "low",
+  "medium",
+  "low",
+  "medium",
+  "medium",
+  "medium",
+  "low",
+  "high",
+  "low",
+  "low",
+  "low",
+  "low"
+ ],
+ "system_v2": [
+  "medium",
+  "high",
+  "medium",
+  "high",
+  "high",
+  "high",
+  "low",
+  "medium",
+  "medium",
+  "medium",
+  "medium",
+  "medium"
+ ],
+ "gold_shown": [
+  "medium",
+  "high",
+  "medium",
+  "high",
+  "high",
+  "high",
+  "low",
+  "medium",
+  "medium",
+  "low",
+  "low",
+  "medium"
+ ],
+ "majority": [
+  "low",
+  "medium",
+  "low",
+  "medium",
+  "medium",
+  "medium",
+  "low",
+  "medium",
+  "low",
+  "low",
+  "low",
+  "low"
+ ],
+ "inter_rater": {
+  "agreement": 0.9167,
+  "kappa": 0.84
+ },
+ "expert_vs_system": {
+  "expert1": {
+   "agreement": 0.1667,
+   "kappa": -0.1765
   },
-  "expert_vs_system": {
-    "expert1": {
-      "agreement": 0.417,
-      "kappa": 0.125
-    },
-    "expert2": {
-      "agreement": 0.333,
-      "kappa": 0.01
-    },
-    "majority": {
-      "agreement": 0.417,
-      "kappa": 0.125
-    }
+  "expert2": {
+   "agreement": 0.0833,
+   "kappa": -0.2571
   },
-  "disagreement_pattern": "experts systematically rate 1 tier lower (4 high->medium, 6 medium->low in system terms); only R07 (levofloxacin x sotalol = low) fully agreed",
-  "expert_feedback": "clinical practice: eye drops have mild systemic impact; experts do not typically track ophthalmic-systemic DDI; judgment based on clinical prior, not per-case mechanism review",
-  "interpretation": "kappa negative reflects clinical-prior vs evidence-based judgment gap, NOT conclusive evidence of system miscalibration (experts did not perform mechanism-level assessment)",
-  "decision": "use these 2 experts; no system calibration applied; reported honestly as perspective gap",
-  "note": "expert1 verified against scanned PDF (vision, R03 低->中); expert2 identical to expert1 except R08=高 (per author)"
+  "majority": {
+   "agreement": 0.1667,
+   "kappa": -0.1765
+  }
+ },
+ "expert_vs_gold": {
+  "expert1": {
+   "agreement": 0.3333,
+   "kappa": 0.0204
+  },
+  "expert2": {
+   "agreement": 0.25,
+   "kappa": -0.0909
+  }
+ },
+ "disagreement_pattern": "Experts rate most cases one tier below the displayed grade; E1/E2 differ only on R08 (E2 high vs E1 medium).",
+ "expert_feedback": "Eye drops have mild systemic impact; experts do not typically track ophthalmic-systemic DDI; judgment based on clinical prior rather than per-case mechanism review.",
+ "interpretation": "The negative kappa against the displayed grade reflects a clinical-prior vs evidence-based perspective gap, not evidence of system miscalibration.",
+ "decision": "Two experts retained as a descriptive perspective comparison; no system calibration applied.",
+ "note": "Regenerated from the transcribed S3 table, which was checked against the scanned questionnaire. R03 is low/low (scan); R10 and R11 were displayed as medium on the questionnaire although the engine returns low. Majority ties (R08) are broken by expert 1."
 }

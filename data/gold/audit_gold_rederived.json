@@ -1,1042 +1,1042 @@
 {
- "rule": "correct to low iff tier<=low AND path!=rule AND no matrix upgrade",
- "tier_source": "current registry (data/seed/entities_a.csv)",
- "n_cases": 92,
- "n_changed": 10,
- "changed_cases": [
-  {
-   "case_id": "D3-002",
-   "ophthalmic": "Flurbiprofen",
-   "systemic": "Methotrexate",
-   "gold_as_applied": "high",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-048",
-   "ophthalmic": "Gatifloxacin",
-   "systemic": "Cilostazol",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-049",
-   "ophthalmic": "Voriconazole",
-   "systemic": "Oxycodone",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-057",
-   "ophthalmic": "Tacrolimus",
-   "systemic": "Ibuprofen",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-063",
-   "ophthalmic": "Bromfenac",
-   "systemic": "Enalapril",
-   "gold_as_applied": "low",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-078",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Ritonavir",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-079",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Ketoconazole",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-080",
-   "ophthalmic": "Aflibercept",
-   "systemic": "Leflunomide",
-   "gold_as_applied": "high",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "minimal_systemic_absorption",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-081",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Itraconazole",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-085",
-   "ophthalmic": "Aflibercept",
-   "systemic": "Azathioprine",
-   "gold_as_applied": "medium",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "minimal_systemic_absorption",
-   "path": "matrix"
-  }
- ],
- "full_system_as_applied": {
-  "accuracy": 62,
-  "n": 92,
-  "acc": 0.6739,
-  "high_risk_sens": "8/25"
- },
- "full_system_rederived": {
-  "accuracy": 60,
-  "n": 92,
-  "acc": 0.6522,
-  "high_risk_sens": "8/29"
- },
- "per_case": [
-  {
-   "case_id": "D3-000",
-   "ophthalmic": "Dexamethasone",
-   "systemic": "Leflunomide",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-001",
-   "ophthalmic": "Timolol",
-   "systemic": "Theophylline",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-002",
-   "ophthalmic": "Flurbiprofen",
-   "systemic": "Methotrexate",
-   "gold_as_applied": "high",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-003",
-   "ophthalmic": "Timolol",
-   "systemic": "Verapamil",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-004",
-   "ophthalmic": "Timolol",
-   "systemic": "Epinephrine",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-005",
-   "ophthalmic": "Flurbiprofen",
-   "systemic": "Rivaroxaban",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-006",
-   "ophthalmic": "Scopolamine",
-   "systemic": "Topiramate",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-007",
-   "ophthalmic": "Carteolol",
-   "systemic": "Diltiazem",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-008",
-   "ophthalmic": "Timolol",
-   "systemic": "Diltiazem",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-009",
-   "ophthalmic": "Timolol",
-   "systemic": "Salmeterol",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_high",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-010",
-   "ophthalmic": "Flurbiprofen",
-   "systemic": "Apixaban",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-011",
-   "ophthalmic": "Flurbiprofen",
-   "systemic": "Prasugrel",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-012",
-   "ophthalmic": "Dexamethasone",
-   "systemic": "Empagliflozin",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-013",
-   "ophthalmic": "Dexamethasone",
-   "systemic": "Perindopril",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-014",
-   "ophthalmic": "Timolol",
-   "systemic": "Spironolactone",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-015",
-   "ophthalmic": "Dexamethasone",
-   "systemic": "Bumetanide",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-016",
-   "ophthalmic": "Timolol",
-   "systemic": "Valsartan",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-017",
-   "ophthalmic": "Atropine",
-   "systemic": "Donepezil",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-018",
-   "ophthalmic": "Carteolol",
-   "systemic": "Diazepam",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-019",
-   "ophthalmic": "Dexamethasone",
-   "systemic": "Fluvoxamine",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-020",
-   "ophthalmic": "Atropine",
-   "systemic": "Nitrofurantoin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_high",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-021",
-   "ophthalmic": "Carteolol",
-   "systemic": "Tadalafil",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_high",
-   "path": "default_low"
-  },
-  {
-   "case_id": "D3-022",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Leflunomide",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-023",
-   "ophthalmic": "Phenylephrine",
-   "systemic": "Clomipramine",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-024",
-   "ophthalmic": "Phenylephrine",
-   "systemic": "Nortriptyline",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-025",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Verapamil",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-026",
-   "ophthalmic": "Apraclonidine",
-   "systemic": "Linezolid",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-027",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Diltiazem",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-028",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Desmopressin",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "default_low"
-  },
-  {
-   "case_id": "D3-029",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Clonidine",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-030",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Theophylline",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-031",
-   "ophthalmic": "Phenylephrine",
-   "systemic": "Amitriptyline",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-032",
-   "ophthalmic": "Phenylephrine",
-   "systemic": "Linezolid",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-033",
-   "ophthalmic": "Homatropine",
-   "systemic": "Topiramate",
-   "gold_as_applied": "high",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-034",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Captopril",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-035",
-   "ophthalmic": "Apraclonidine",
-   "systemic": "Midazolam",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-036",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Amiodarone",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-037",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Doxazosin",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-038",
-   "ophthalmic": "Apraclonidine",
-   "systemic": "Loperamide",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-039",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Methotrexate",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-040",
-   "ophthalmic": "Phenylephrine",
-   "systemic": "Levothyroxine",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-041",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Canagliflozin",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-042",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Telmisartan",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-043",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Norepinephrine",
-   "gold_as_applied": "medium",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-044",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Midazolam",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-045",
-   "ophthalmic": "Betaxolol",
-   "systemic": "Tadalafil",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_medium",
-   "path": "default_low"
-  },
-  {
-   "case_id": "D3-046",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Salmeterol",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_medium",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-047",
-   "ophthalmic": "Prednisolone",
-   "systemic": "Salbutamol",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_medium",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-048",
-   "ophthalmic": "Gatifloxacin",
-   "systemic": "Cilostazol",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-049",
-   "ophthalmic": "Voriconazole",
-   "systemic": "Oxycodone",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-050",
-   "ophthalmic": "Moxifloxacin",
-   "systemic": "Dronedarone",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-051",
-   "ophthalmic": "Moxifloxacin",
-   "systemic": "Flecainide",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-052",
-   "ophthalmic": "Ofloxacin",
-   "systemic": "Dronedarone",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-053",
-   "ophthalmic": "Levofloxacin",
-   "systemic": "Glimepiride",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-054",
-   "ophthalmic": "Gatifloxacin",
-   "systemic": "Saxagliptin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-055",
-   "ophthalmic": "Gatifloxacin",
-   "systemic": "Quetiapine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-056",
-   "ophthalmic": "Tacrolimus",
-   "systemic": "Citalopram",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-057",
-   "ophthalmic": "Tacrolimus",
-   "systemic": "Ibuprofen",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-058",
-   "ophthalmic": "Gatifloxacin",
-   "systemic": "Escitalopram",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-059",
-   "ophthalmic": "Azithromycin",
-   "systemic": "Hydroxychloroquine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-060",
-   "ophthalmic": "Ganciclovir",
-   "systemic": "Carbamazepine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-061",
-   "ophthalmic": "Ciprofloxacin",
-   "systemic": "Aprepitant",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-062",
-   "ophthalmic": "Acyclovir",
-   "systemic": "Remdesivir",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-063",
-   "ophthalmic": "Bromfenac",
-   "systemic": "Enalapril",
-   "gold_as_applied": "low",
-   "gold_rederived": "medium",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-064",
-   "ophthalmic": "Fluconazole",
-   "systemic": "Flecainide",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-065",
-   "ophthalmic": "Ketorolac",
-   "systemic": "Diltiazem",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-066",
-   "ophthalmic": "Voriconazole",
-   "systemic": "Pioglitazone",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-067",
-   "ophthalmic": "Gentamicin",
-   "systemic": "Ibuprofen",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-068",
-   "ophthalmic": "Bromfenac",
-   "systemic": "Desmopressin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-069",
-   "ophthalmic": "Ketorolac",
-   "systemic": "Venlafaxine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-070",
-   "ophthalmic": "Ciprofloxacin",
-   "systemic": "Capecitabine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-071",
-   "ophthalmic": "Ciprofloxacin",
-   "systemic": "Diazepam",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-072",
-   "ophthalmic": "Lidocaine",
-   "systemic": "Phenytoin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-073",
-   "ophthalmic": "Erythromycin",
-   "systemic": "Amoxicillin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-074",
-   "ophthalmic": "Lidocaine",
-   "systemic": "Carbamazepine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-075",
-   "ophthalmic": "Neomycin",
-   "systemic": "Digoxin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-076",
-   "ophthalmic": "Lidocaine",
-   "systemic": "Raloxifene",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-077",
-   "ophthalmic": "Acyclovir",
-   "systemic": "Memantine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-078",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Ritonavir",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-079",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Ketoconazole",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-080",
-   "ophthalmic": "Aflibercept",
-   "systemic": "Leflunomide",
-   "gold_as_applied": "high",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "minimal_systemic_absorption",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-081",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Itraconazole",
-   "gold_as_applied": "low",
-   "gold_rederived": "high",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "rule"
-  },
-  {
-   "case_id": "D3-082",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Edoxaban",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-083",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Loperamide",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "high",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-084",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Sildenafil",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_very_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-085",
-   "ophthalmic": "Aflibercept",
-   "systemic": "Azathioprine",
-   "gold_as_applied": "medium",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "minimal_systemic_absorption",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-086",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Ranolazine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-087",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Hydroxychloroquine",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "medium",
-   "tier": "systemic_absorption_very_low",
-   "path": "g19"
-  },
-  {
-   "case_id": "D3-088",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Donepezil",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-089",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Escitalopram",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-090",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Sitagliptin",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  },
-  {
-   "case_id": "D3-091",
-   "ophthalmic": "Cyclosporine",
-   "systemic": "Propafenone",
-   "gold_as_applied": "low",
-   "gold_rederived": "low",
-   "ddinter": "low",
-   "tier": "systemic_absorption_very_low",
-   "path": "matrix"
-  }
- ]
+  "rule": "correct to low iff tier<=low AND path!=rule AND no matrix upgrade",
+  "tier_source": "current registry (data/seed/entities_a.csv)",
+  "n_cases": 92,
+  "n_changed": 10,
+  "changed_cases": [
+    {
+      "case_id": "D3-002",
+      "ophthalmic": "Flurbiprofen",
+      "systemic": "Methotrexate",
+      "gold_as_applied": "high",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-048",
+      "ophthalmic": "Gatifloxacin",
+      "systemic": "Cilostazol",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-049",
+      "ophthalmic": "Voriconazole",
+      "systemic": "Oxycodone",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-057",
+      "ophthalmic": "Tacrolimus",
+      "systemic": "Ibuprofen",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-063",
+      "ophthalmic": "Bromfenac",
+      "systemic": "Enalapril",
+      "gold_as_applied": "low",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-078",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Ritonavir",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-079",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Ketoconazole",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-080",
+      "ophthalmic": "Aflibercept",
+      "systemic": "Leflunomide",
+      "gold_as_applied": "high",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "minimal_systemic_absorption",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-081",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Itraconazole",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-085",
+      "ophthalmic": "Aflibercept",
+      "systemic": "Azathioprine",
+      "gold_as_applied": "medium",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "minimal_systemic_absorption",
+      "path": "default_low"
+    }
+  ],
+  "full_system_as_applied": {
+    "accuracy": 62,
+    "n": 92,
+    "acc": 0.6739,
+    "high_risk_sens": "8/25"
+  },
+  "full_system_rederived": {
+    "accuracy": 61,
+    "n": 92,
+    "acc": 0.663,
+    "high_risk_sens": "8/29"
+  },
+  "per_case": [
+    {
+      "case_id": "D3-000",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Leflunomide",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-001",
+      "ophthalmic": "Timolol",
+      "systemic": "Theophylline",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-002",
+      "ophthalmic": "Flurbiprofen",
+      "systemic": "Methotrexate",
+      "gold_as_applied": "high",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-003",
+      "ophthalmic": "Timolol",
+      "systemic": "Verapamil",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-004",
+      "ophthalmic": "Timolol",
+      "systemic": "Epinephrine",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-005",
+      "ophthalmic": "Flurbiprofen",
+      "systemic": "Rivaroxaban",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-006",
+      "ophthalmic": "Scopolamine",
+      "systemic": "Topiramate",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-007",
+      "ophthalmic": "Carteolol",
+      "systemic": "Diltiazem",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-008",
+      "ophthalmic": "Timolol",
+      "systemic": "Diltiazem",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-009",
+      "ophthalmic": "Timolol",
+      "systemic": "Salmeterol",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_high",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-010",
+      "ophthalmic": "Flurbiprofen",
+      "systemic": "Apixaban",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-011",
+      "ophthalmic": "Flurbiprofen",
+      "systemic": "Prasugrel",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-012",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Empagliflozin",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-013",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Perindopril",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-014",
+      "ophthalmic": "Timolol",
+      "systemic": "Spironolactone",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-015",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Bumetanide",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-016",
+      "ophthalmic": "Timolol",
+      "systemic": "Valsartan",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-017",
+      "ophthalmic": "Atropine",
+      "systemic": "Donepezil",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-018",
+      "ophthalmic": "Carteolol",
+      "systemic": "Diazepam",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_high",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-019",
+      "ophthalmic": "Dexamethasone",
+      "systemic": "Fluvoxamine",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-020",
+      "ophthalmic": "Atropine",
+      "systemic": "Nitrofurantoin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_high",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-021",
+      "ophthalmic": "Carteolol",
+      "systemic": "Tadalafil",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_high",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-022",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Leflunomide",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-023",
+      "ophthalmic": "Phenylephrine",
+      "systemic": "Clomipramine",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-024",
+      "ophthalmic": "Phenylephrine",
+      "systemic": "Nortriptyline",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-025",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Verapamil",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-026",
+      "ophthalmic": "Apraclonidine",
+      "systemic": "Linezolid",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-027",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Diltiazem",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-028",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Desmopressin",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-029",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Clonidine",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-030",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Theophylline",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-031",
+      "ophthalmic": "Phenylephrine",
+      "systemic": "Amitriptyline",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-032",
+      "ophthalmic": "Phenylephrine",
+      "systemic": "Linezolid",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-033",
+      "ophthalmic": "Homatropine",
+      "systemic": "Topiramate",
+      "gold_as_applied": "high",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-034",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Captopril",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-035",
+      "ophthalmic": "Apraclonidine",
+      "systemic": "Midazolam",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-036",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Amiodarone",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-037",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Doxazosin",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-038",
+      "ophthalmic": "Apraclonidine",
+      "systemic": "Loperamide",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-039",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Methotrexate",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-040",
+      "ophthalmic": "Phenylephrine",
+      "systemic": "Levothyroxine",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-041",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Canagliflozin",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-042",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Telmisartan",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-043",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Norepinephrine",
+      "gold_as_applied": "medium",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-044",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Midazolam",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-045",
+      "ophthalmic": "Betaxolol",
+      "systemic": "Tadalafil",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_medium",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-046",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Salmeterol",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_medium",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-047",
+      "ophthalmic": "Prednisolone",
+      "systemic": "Salbutamol",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_medium",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-048",
+      "ophthalmic": "Gatifloxacin",
+      "systemic": "Cilostazol",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-049",
+      "ophthalmic": "Voriconazole",
+      "systemic": "Oxycodone",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-050",
+      "ophthalmic": "Moxifloxacin",
+      "systemic": "Dronedarone",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-051",
+      "ophthalmic": "Moxifloxacin",
+      "systemic": "Flecainide",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-052",
+      "ophthalmic": "Ofloxacin",
+      "systemic": "Dronedarone",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-053",
+      "ophthalmic": "Levofloxacin",
+      "systemic": "Glimepiride",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-054",
+      "ophthalmic": "Gatifloxacin",
+      "systemic": "Saxagliptin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-055",
+      "ophthalmic": "Gatifloxacin",
+      "systemic": "Quetiapine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-056",
+      "ophthalmic": "Tacrolimus",
+      "systemic": "Citalopram",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-057",
+      "ophthalmic": "Tacrolimus",
+      "systemic": "Ibuprofen",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-058",
+      "ophthalmic": "Gatifloxacin",
+      "systemic": "Escitalopram",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-059",
+      "ophthalmic": "Azithromycin",
+      "systemic": "Hydroxychloroquine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-060",
+      "ophthalmic": "Ganciclovir",
+      "systemic": "Carbamazepine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-061",
+      "ophthalmic": "Ciprofloxacin",
+      "systemic": "Aprepitant",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-062",
+      "ophthalmic": "Acyclovir",
+      "systemic": "Remdesivir",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-063",
+      "ophthalmic": "Bromfenac",
+      "systemic": "Enalapril",
+      "gold_as_applied": "low",
+      "gold_rederived": "medium",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-064",
+      "ophthalmic": "Fluconazole",
+      "systemic": "Flecainide",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-065",
+      "ophthalmic": "Ketorolac",
+      "systemic": "Diltiazem",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-066",
+      "ophthalmic": "Voriconazole",
+      "systemic": "Pioglitazone",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-067",
+      "ophthalmic": "Gentamicin",
+      "systemic": "Ibuprofen",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-068",
+      "ophthalmic": "Bromfenac",
+      "systemic": "Desmopressin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-069",
+      "ophthalmic": "Ketorolac",
+      "systemic": "Venlafaxine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-070",
+      "ophthalmic": "Ciprofloxacin",
+      "systemic": "Capecitabine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-071",
+      "ophthalmic": "Ciprofloxacin",
+      "systemic": "Diazepam",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-072",
+      "ophthalmic": "Lidocaine",
+      "systemic": "Phenytoin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-073",
+      "ophthalmic": "Erythromycin",
+      "systemic": "Amoxicillin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-074",
+      "ophthalmic": "Lidocaine",
+      "systemic": "Carbamazepine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-075",
+      "ophthalmic": "Neomycin",
+      "systemic": "Digoxin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-076",
+      "ophthalmic": "Lidocaine",
+      "systemic": "Raloxifene",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-077",
+      "ophthalmic": "Acyclovir",
+      "systemic": "Memantine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-078",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Ritonavir",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-079",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Ketoconazole",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-080",
+      "ophthalmic": "Aflibercept",
+      "systemic": "Leflunomide",
+      "gold_as_applied": "high",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "minimal_systemic_absorption",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-081",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Itraconazole",
+      "gold_as_applied": "low",
+      "gold_rederived": "high",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "rule"
+    },
+    {
+      "case_id": "D3-082",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Edoxaban",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-083",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Loperamide",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "high",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-084",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Sildenafil",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_very_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-085",
+      "ophthalmic": "Aflibercept",
+      "systemic": "Azathioprine",
+      "gold_as_applied": "medium",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "minimal_systemic_absorption",
+      "path": "default_low"
+    },
+    {
+      "case_id": "D3-086",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Ranolazine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-087",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Hydroxychloroquine",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "medium",
+      "tier": "systemic_absorption_very_low",
+      "path": "matrix"
+    },
+    {
+      "case_id": "D3-088",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Donepezil",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-089",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Escitalopram",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-090",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Sitagliptin",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    },
+    {
+      "case_id": "D3-091",
+      "ophthalmic": "Cyclosporine",
+      "systemic": "Propafenone",
+      "gold_as_applied": "low",
+      "gold_rederived": "low",
+      "ddinter": "low",
+      "tier": "systemic_absorption_very_low",
+      "path": "g19"
+    }
+  ]
 }
