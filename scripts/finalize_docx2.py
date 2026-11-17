@@ -20,7 +20,7 @@ SUBM = ROOT / "outputs" / "deliverables"
 FIG = ROOT / "outputs" / "figures"
 
 AUTHORS = [
-    "Wang Guoqing, M.D.¹; Hu Lumei, M.D.¹; Wang Shaocheng, M.D.²; Yi Xianglong, M.D., Ph.D.¹³*",
+    "Wang Guoqing, M.D.¹; Hu Lumei, M.M.¹; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*",
     "",
     "¹ Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China",
     "² Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital, Xinjiang, China",
@@ -29,7 +29,7 @@ AUTHORS = [
     "*Correspondence: Yi Xianglong, M.D., Ph.D., Professor of Ophthalmology, Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China",
     "E-mail: yixianglong1010@163.com",
     "Wang Guoqing, M.D., Resident Physician; E-mail: 17690924120@163.com",
-    "Hu Lumei, M.D., Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University; E-mail: 1301161825@qq.com",
+    "Hu Lumei, M.M., Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University; E-mail: 1301161825@qq.com",
 ]
 FUNDING = ("This study was supported by the Natural Science Foundation of Xinjiang Uygur "
            "Autonomous Region, China (Key Project No. 2022D01D68).")

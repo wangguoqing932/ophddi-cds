@@ -9,7 +9,7 @@
   1. 不生成 submission_pkg.zip。作者明确要求交付物只含正文、补充材料、图、表，
      不要投稿压缩包；本脚本因此只落地 7_9 的文档产物，不打包。
   2. 不套用模板重写 cover letter，而是复制 outputs/deliverables/cover_letter.md
-     （已针对 BMC Bioinformatics 撰写并核校），避免模板覆盖真实内容。
+     （已针对 Frontiers in Pharmacology 撰写并核校），避免模板覆盖真实内容。
 """
 import re
 import shutil
@@ -23,7 +23,7 @@ DELIV = ROOT / "outputs" / "deliverables"
 SUBM = ROOT / "outputs" / "submission"
 MANUSCRIPT = DELIV / "manuscript.md"
 
-TARGET_JOURNAL = "BMC Bioinformatics"
+TARGET_JOURNAL = "Frontiers in Pharmacology"
 ACCESS_DATE = date.today().isoformat()
 VERIFIED_SOURCES = [
     "https://link.springer.com/journal/12859/submission-guidelines",
@@ -249,7 +249,7 @@ def main():
         f"Target journal: **{TARGET_JOURNAL}**.\n\n"
         "| File | Content |\n|---|---|\n"
         "| `manuscript.md` | Assembled manuscript (copy of the deliverable) |\n"
-        "| `cover_letter.md` | Cover letter, written for BMC Bioinformatics |\n"
+        "| `cover_letter.md` | Cover letter, written for Frontiers in Pharmacology |\n"
         "| `data_availability.md` | Availability of data and materials statement |\n"
         "| `declarations.md` | Declarations reordered to the journal's mandatory subheadings |\n"
         "| `highlights.md` | 5 highlight bullets |\n"

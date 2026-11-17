@@ -119,7 +119,7 @@ Re-running the LLM baselines requires model-API credentials in `.env`
 | L1 literature-derived reference | 118 | 0.856 under the frozen labels (101/118; κ 0.779); 0.881 after three post-lock corrections (104/118; κ 0.818) |
 | Frozen blind subset | 40 | 36/40 under the frozen labels (0.900); 39/40 after corrections |
 | DDInter audit set | 92 | 0.674 exact agreement; 0.548 on the 62 cases free of the system's absorption assumption |
-| Registry-scale audit | 1,933 pairs | 77.7% graded lower than DDInter severity; 80.3% of downgrades attributable to low absorption |
+| Registry-scale audit | 1,933 pairs | 77.7% graded lower than DDInter severity; 80.3% of downgrades involved low-tier ophthalmic agents |
 
 The system's principal limitation is high-risk sensitivity on the audit set
 (0.320, 8 of 25). The reference sets, the audit-set correction rule and every

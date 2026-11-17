@@ -144,8 +144,7 @@ def main() -> int:
          "04_supplementary/Supplementary_Material.docx")
     grab("outputs/deliverables/supplementary_files/Supplementary_Material.md",
          "04_supplementary/Supplementary_Material.md")
-    grab("outputs/submission/ethics/Ethics_Approval_K202509-29.pdf",
-         "04_supplementary/ethics/Ethics_Approval_K202509-29.pdf")
+    # K202509-29 covers a different study and is not part of this submission.
     grab("outputs/submission/highlights.md", "04_supplementary/highlights.md")
 
     # ── 05 原始数据 ──

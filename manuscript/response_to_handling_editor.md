@@ -26,7 +26,7 @@ The repository README and release notes have been rewritten for the current Fron
 - **77.7%** downgrading and **80.3%** low-tier association — not 75.3% or 80.5%;
 - the current deposit as **v3.0-frontiers** (DOI 10.5281/zenodo.23439606), with the earlier BMC-era package explicitly archived under `outputs/archive/bmc_submission/` and marked historical.
 
-The corrected `README.md` and `RELEASE_NOTES.md` are provided as separate files in `repository_docs/` with this revision; the public repository will be synchronized to this release before publication. The manuscript and package values already correspond to the final results; the public repository update is the remaining external step.
+The corrected `README.md` and `RELEASE_NOTES.md` are provided as separate files in `repository_docs/` with this revision. The public repository has been synchronized to this release and verified file-by-file: all 690 final files matched the repository tree, with no missing or mismatched file. The manuscript and package values therefore correspond to the public release.
 
 ## 3. Inconsistency in the description of LLM comparisons
 
@@ -50,7 +50,7 @@ The author-affiliation numbering has been unified as:
 - **²** Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital — Wang Shaocheng;
 - **³** Xinjiang Medical University — Yi Xianglong.
 
-The author line is now Wang¹; Hu¹; Wang²; Yi¹³*. The manuscript title page and the local submission status table have been aligned to this numbering; the submission record will be updated to the same numbering before upload. The repository no longer describes the project as a BMC Bioinformatics submission; the BMC-era files are archived and marked historical.
+The author line is now Wang Guoqing, M.D.¹; Hu Lumei, M.M.¹; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*. The manuscript title page and the local submission status table have been aligned to this numbering and these degrees; the submission record will be updated to the same numbering and degrees before upload. The repository no longer describes the project as a BMC Bioinformatics submission; the BMC-era files are archived and marked historical.
 
 We hope these corrections resolve the remaining editorial points. We would be glad to make any further consistency correction if needed.
 

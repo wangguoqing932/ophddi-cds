@@ -22,6 +22,11 @@ reference audit (45/45 Zotero, 44/44 Crossref-verified non-arXiv entries).
 | `figures_qa/` | 67 ad-hoc page/figure check screenshots (`_audit_*`, `_check_*`, `_fig6*`, `_final_*`, `figure2_check.jpg`) plus three text-size crops | Only evidence of the visual checks; not referenced by the manuscript |
 | `scratch_audits/` | One-off audit scripts and outputs (`_independent_core.py`, `_diff_manuscript.py`, `_di_script.js`, head extracts, `_pagecheck/`) | Working notes from the audit rounds |
 
+`bmc_submission/ethics/Ethics_Approval_K202509-29.pdf` is a scanned approval for an unrelated
+refractive-error study; it does not cover this work and is retained only as provenance. The
+current submission reports no human-subjects research and no formal ethics determination, so
+no approval document is included in the Frontiers package.
+
 Restore rule: if an archived file is ever needed, copy it out — do not edit in place,
 and do not add archive paths to build scripts. The build and gate scripts read only
 `outputs/paper/`, `outputs/deliverables/`, `outputs/submission/`, `outputs/audits/`,
