@@ -48,9 +48,9 @@ The author-affiliation numbering has been unified as:
 
 - **¹** Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University — Wang Guoqing, Hu Lumei, Yi Xianglong;
 - **²** Department of Gastroenterology, Xinjiang Production and Construction Corps Third Division General Hospital — Wang Shaocheng;
-- **³** Xinjiang Medical University — Yi Xianglong.
+- **³** Xinjiang Medical University — Wang Guoqing, Hu Lumei, Yi Xianglong.
 
-The author line is now Wang Guoqing, M.D.¹; Hu Lumei, M.M.¹; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*. The manuscript title page and the local submission status table have been aligned to this numbering and these degrees; the submission record will be updated to the same numbering and degrees before upload. The repository no longer describes the project as a BMC Bioinformatics submission; the BMC-era files are archived and marked historical.
+The author line is now Wang Guoqing, M.D.¹³; Hu Lumei, M.M.¹³; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*. The manuscript title page and the local submission status table have been aligned to this numbering and these degrees; the submission record will be updated to the same numbering and degrees before upload. The repository no longer describes the project as a BMC Bioinformatics submission; the BMC-era files are archived and marked historical.
 
 We hope these corrections resolve the remaining editorial points. We would be glad to make any further consistency correction if needed.
 

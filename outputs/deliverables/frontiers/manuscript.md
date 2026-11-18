@@ -2,7 +2,7 @@
 
 ## Authors
 
-Wang Guoqing, M.D.¹; Hu Lumei, M.M.¹; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*
+Wang Guoqing, M.D.¹³; Hu Lumei, M.M.¹³; Wang Shaocheng, B.M.²; Yi Xianglong, M.D., Ph.D.¹³*
 
 ¹ Department of Ophthalmology, The First Affiliated Hospital of Xinjiang Medical University, Urumqi, Xinjiang, China
 
