@@ -29,13 +29,11 @@ DrugBank entry and now cites the warfarin monograph. `low_abs_antiplatelet` and
 `low_abs_anticoagulant` cited latanoprost, a prostaglandin analogue; they are relabelled as
 absorption priors rather than pair-level DDI evidence.
 
-The report is bound to a SHA-256 of `configs/rules.yaml`, so any later edit invalidates it. The
-verification report is deposited as `outputs/citation_verification_report.json`; the
-rule-level audit is deposited as `data/curation/rule_provenance_audit.csv`.
+The report is bound to a SHA-256 of the rule configuration, so any later edit invalidates it. The verification report and the rule-level audit are deposited with the manuscript.
 
 ## Supplementary Text S3. Evaluation prompts
 
-Transcribed from `scripts/run_multiseed_per_dataset.py`, which is authoritative. The same file is deposited as `configs/prompts.yaml`.
+Transcribed from the deposited evaluation script, which is authoritative. The prompt configuration is deposited with the manuscript.
 
 **Model and decoding.** `deepseek-chat`; `max_tokens = 10`; five temperature conditions (0.0, 0.3, 0.6, 0.9, 1.2). The 10-token cap forces a one-word answer and precludes any reasoning or justification; this bound on the comparison is stated in the manuscript (Section 2.4) and in the deposit README.
 
@@ -56,7 +54,7 @@ but some drugs like timolol, atropine, dexamethasone reach >50%).
 Reply with EXACTLY ONE WORD: low, medium, or high. No explanation.
 ```
 
-**Prompt caveat.** The configuration-1 `rule_context` baseline was re-run with corrected exposure bands (high >=10%, medium 1-10%, low <1%) and the absorption gate; its deposited predictions are in `outputs/multiseed_per_dataset_rulecontext_fix/`. `pure_llm` and `naive_rag` were not re-run and share the original system prompt, which lists dexamethasone as >50% after the tier was corrected to medium (1-10%, peak plasma <1 ng/mL; Tables S5b and S10). Configuration 2 `rule_context` uses the pre-correction prompt and is not directly comparable to the corrected configuration-1 value. The deterministic cascade is unaffected.
+**Prompt caveat.** The configuration-1 `rule_context` baseline was re-run with corrected exposure bands (high >=10%, medium 1-10%, low <1%) and the absorption gate; its deposited predictions are in the corrected rule-context run. `pure_llm` and `naive_rag` were not re-run and share the original system prompt, which lists dexamethasone as >50% after the tier was corrected to medium (1-10%, peak plasma <1 ng/mL; Tables S5b and S10). Configuration 2 `rule_context` uses the pre-correction prompt and is not directly comparable to the corrected configuration-1 value. The deterministic cascade is unaffected.
 
 **User prompt — `pure_llm`** (no retrieved evidence):
 
@@ -93,8 +91,8 @@ Risk level:
 | vote resolution | majority over the five samples; every case had at least three concordant samples, so no tie arose |
 | per-sample parsing | exact match first, then substring `high` > `medium`/`moderate` > `low`, else `unknown`; no sample returned `unknown` |
 | run dates | 23-24 September 2026 |
-| raw responses | deposited in full: `data/predictions/glm53_baselines/predictions.jsonl` (3,150 rows with token usage) |
-| run script | `scripts/rerun_glm53_baselines.py` |
+| raw responses | deposited in full (3,150 rows with token usage) |
+| run script | deposited with the manuscript |
 
 Single-model caveat: this is one commercial reasoning model at one endpoint, and the endpoint exposes no checkpoint revision. The finding that reasoning models adopt a conservative rarely-high-risk policy is therefore a property of this model at this budget, not a claim about reasoning models in general. The deterministic cascade makes no model call and is identical under both settings.
 
@@ -102,7 +100,7 @@ Single-model caveat: this is one commercial reasoning model at one endpoint, and
 
 **Figure 1. Absorption-first cascade for ophthalmic–systemic drug–drug interaction screening.**
 
-Ophthalmic agents (113, each with one of six systemic-absorption tiers) and systemic medications (232, with mechanism flags and classes) pass through three layers: **01**, the L1 rule engine — 40 mechanism rules plus 3 patient-factor policies, matched by entity-flag predicates with MAX-MATCH semantics (11.7% of registry pairs); **02**, the L2 class matrix — 21 ophthalmic row keys × 33 columns with defined cells (34 declared), 104 defined cells (83 graded, 21 marked "none"), with absorption scaling applied inside this layer (25.7%); and **03**, the L3 G19 hard constraint (42.9%, plus a 19.7% explicit default-low path). The final grade is the maximum of the three layers. The right column shows the six-tier distribution across the 113 agents (12 high, 20 medium, 59 low, 11 very low, 7 minimal, 4 none) and the released matrix cell by cell. Layer shares are measured over all 26,216 registry pairs; the production path makes no LLM call and returns matched rule IDs with every grade. Source data: `outputs/figures/source_data/figure1_source.csv`; matrix cells from `configs/class_matrix.yaml`.
+Ophthalmic agents (113, each with one of six systemic-absorption tiers) and systemic medications (232, with mechanism flags and classes) pass through three layers: **01**, the L1 rule engine — 40 mechanism rules plus 3 patient-factor policies, matched by entity-flag predicates with MAX-MATCH semantics (11.7% of registry pairs); **02**, the L2 class matrix — 21 ophthalmic row keys × 33 columns with defined cells (34 declared), 104 defined cells (83 graded, 21 marked "none"), with absorption scaling applied inside this layer (25.7%); and **03**, the L3 G19 hard constraint (42.9%, plus a 19.7% explicit default-low path). The final grade is the maximum of the three layers. The right column shows the six-tier distribution across the 113 agents (12 high, 20 medium, 59 low, 11 very low, 7 minimal, 4 none) and the released matrix cell by cell. Layer shares are measured over all 26,216 registry pairs; the production path makes no LLM call and returns matched rule IDs with every grade.
 
 **Figure 2. Performance comparison under two configurations (118-case author-derived reference set).**
 
@@ -110,7 +108,7 @@ Grouped bars show high-risk sensitivity, specificity, F1 and Cohen's κ for the 
 
 **Figure 3. Expert grade review and per-case grades (two ophthalmologists, 12 cases).**
 
-**Panel (a)** shows Cohen's κ (unweighted), quadratic-weighted κ on the ordinal scale low < medium < high, and raw agreement for five comparisons: inter-rater (11/12; κ = 0.840, weighted 0.875), each expert against the displayed grade (expert 1: 2/12, κ = −0.176, weighted 0.355; expert 2: 1/12, κ = −0.257, weighted 0.313), and each expert against the proposed reference grade (expert 1: 4/12, κ = 0.020, weighted 0.473; expert 2: 3/12, κ = −0.091, weighted 0.438). **Panel (b)** gives the per-case grades for the reference grade (identical to the deposited engine grade on all 12 cases), the grade displayed on the questionnaire (which differs from the engine for R10 and R11, where a class-level hint of medium was shown instead of the engine's low), and both experts' ratings. Against the reference grade, all eight of expert 1's discordant ratings and eight of expert 2's nine are lower than the reference grade. The exercise is a grade review between non-independent participants and is reported as a perspective comparison, not a validation (Sections 2.5 and 3.8). Source data: `outputs/figures/source_data/figure3_source.csv`.
+**Panel (a)** shows Cohen's κ (unweighted), quadratic-weighted κ on the ordinal scale low < medium < high, and raw agreement for five comparisons: inter-rater (11/12; κ = 0.840, weighted 0.875), each expert against the displayed grade (expert 1: 2/12, κ = −0.176, weighted 0.355; expert 2: 1/12, κ = −0.257, weighted 0.313), and each expert against the proposed reference grade (expert 1: 4/12, κ = 0.020, weighted 0.473; expert 2: 3/12, κ = −0.091, weighted 0.438). **Panel (b)** gives the per-case grades for the reference grade (identical to the deposited engine grade on all 12 cases), the grade displayed on the questionnaire (which differs from the engine for R10 and R11, where a class-level hint of medium was shown instead of the engine's low), and both experts' ratings. Against the reference grade, all eight of expert 1's discordant ratings and eight of expert 2's nine are lower than the reference grade. The exercise is a grade review between non-independent participants and is reported as a perspective comparison, not a validation (Sections 2.5 and 3.8).
 
 **Figure 4. Worked demonstration cases.**
 
@@ -128,9 +126,9 @@ Latency of the five cascade steps on a single case: L1 rule matching (matched `a
 
 - Five temperature conditions: 0.0, 0.3, 0.6, 0.9, 1.2
 - Prediction rows: 9,600; API failures: 0
-- SHA-256 fingerprints are defined over **LF-normalised content**; convert CRLF to LF before hashing or Windows and Linux checkouts will differ. Evaluated rules version: the current `configs/rules.yaml` (hash in `MANIFEST.sha256`).
+- SHA-256 fingerprints are defined over **LF-normalised content**; convert CRLF to LF before hashing or Windows and Linux checkouts will differ. Evaluated rules version: the current rule configuration (hash in the repository manifest).
 - Statistical tests: exact McNemar, Wilson 95% CI, bootstrap CI for kappa, Clopper-Pearson for proportions
-- Revision statistics: `scripts/revision_r1_stats.py` writes `outputs/recomputed/revision_r1_stats.json`, from which every number in Sections 3.3-3.6 and Tables 3 and 5 can be regenerated.
+- Revision statistics are deposited as a machine-readable file from which every number in Sections 3.3-3.6 and Tables 3 and 5 can be regenerated.
 
 **Retrieval-scope audit (prospective, all methods).** Of the 1,307 evidence chunks, 500 are DDInter
 2.0 severity statements, and the audit reference labels for the 62 third-party cases *are* the DDInter
@@ -176,7 +174,7 @@ DDI, drug-drug interaction; LLM, large language model; BM25, Best Matching 25; C
 
 This section carries the parameter-level detail that Section 2 of the manuscript summarises.
 
-**Audit-set correction deviations.** The stated correction rule was applied with three deviations. (i) Seven corrected cases (D3-048, D3-049, D3-057, D3-063, D3-078, D3-079, D3-081) are in fact reached by the engine through a mechanism rule and therefore fail the stated no-rule condition. (ii) The two aflibercept pairs, whose registry tier is `minimal_systemic_absorption` (recorded as `none` in the audit design file), were kept at DDInter severity although the stated rule would correct them. (iii) The four flurbiprofen pairs were kept on the basis of the superseded high absorption tier recorded in the design file at the 31 July 2026 lock (SHA-256 `8956cfe6…`), which predates the tier correction. Re-deriving the reference labels under the stated rule with the current registry tiers changes 10 of the 92 labels (`scripts/rederive_audit_gold.py`; result in `outputs/recomputed/audit_gold_rederived.json`); under those reference labels the cascade scores 61 of 92 (0.663) with high-risk sensitivity 8 of 29.
+**Audit-set correction deviations.** The stated correction rule was applied with three deviations. (i) Seven corrected cases (D3-048, D3-049, D3-057, D3-063, D3-078, D3-079, D3-081) are in fact reached by the engine through a mechanism rule and therefore fail the stated no-rule condition. (ii) The two aflibercept pairs, whose registry tier is `minimal_systemic_absorption` (recorded as `none` in the audit design file), were kept at DDInter severity although the stated rule would correct them. (iii) The four flurbiprofen pairs were kept on the basis of the superseded high absorption tier recorded in the design file at the 31 July 2026 lock (SHA-256 `8956cfe6…`), which predates the tier correction. Re-deriving the reference labels under the stated rule with the current registry tiers changes 10 of the 92 labels (see the deposited re-derived reference labels); under those reference labels the cascade scores 61 of 92 (0.663) with high-risk sensitivity 8 of 29.
 
 **LLM baseline parameters.** Ten-token setting: model identifier `deepseek-chat` via the OpenAI-compatible endpoint, `max_tokens` 10, no chain-of-thought prompt, temperatures 0.0, 0.3, 0.6, 0.9, 1.2 for conditions 0–4, one call per case, 118 + 92 + 200 + 70 cases per condition and method. The endpoint exposes neither parameter count nor checkpoint revision. Reasonable-budget re-run: `glm-5.3-flash` through the Zhipu coding-plan endpoint `https://open.bigmodel.cn/api/coding/paas/v4`, `max_tokens` 3000, temperature 0.0, five repeated samples per case, majority vote; reasoning tokens count against the budget because the model emits `reasoning_content` before `content`; reasoning effort was not set, so the endpoint default applied. No response was truncated (maximum completion 1,858 tokens) and no split vote arose (minimum modal agreement 3 of 5). The run produced 3,150 raw responses on 23–24 September 2026.
 
@@ -583,7 +581,7 @@ Note: `nsaid_antihypertensive_antagonism` is gated on absorption in the primary 
 | Configuration 2, audit (applied) | 92 | naive_rag | 92 | 0.400 | 1.000 | 0.571 | 0.728 | 0.553 |
 | Configuration 2, audit (applied) | 92 | rule_context | 92 | 0.240 | 1.000 | 0.387 | 0.674 | 0.428 |
 
-Note: 10-token rows (L1 and audit) are means over the five temperature conditions; full_system is deterministic (SD = 0). Configuration 2 rows use the majority vote over five repeats at temperature 0.0 with the reasoning model (glm-5.3-flash, max_tokens 3000). The frozen-label rows are the primary analysis; corrected-label rows are the sensitivity analysis (frozen labels: `gold_pre_errata` in `outputs/recomputed/l1_gold_provenance.csv`, falling back to `gold_current` when empty; the `gold_risk` field in the prediction files stores the corrected labels). The frozen blind row is the 40-case subset; both B01-B20 and C01-C20 were reviewed during development (C entered the class-matrix loop in v2.1-v2.3; B informed rule-gap diagnosis and matrix design), so neither half is development-free. `rule_context` is the method stored as `lightrag` in the deposited code. Configuration 1 rule_context was re-run with corrected exposure bands and absorption gate; pure_llm and naive_rag were not re-run and share the original system prompt, which lists dexamethasone as >50%. Configuration 2 rule_context uses the pre-correction prompt and is not directly comparable to the corrected configuration-1 rule_context.
+Note: 10-token rows (L1 and audit) are means over the five temperature conditions; full_system is deterministic (SD = 0). Configuration 2 rows use the majority vote over five repeats at temperature 0.0 with the reasoning model (glm-5.3-flash, max_tokens 3000). The frozen-label rows are the primary analysis; corrected-label rows are the sensitivity analysis (frozen labels: the `gold_pre_errata` field in the deposited per-case provenance file, falling back to `gold_current` when empty; the deposited prediction files store the corrected labels in `gold_risk`). The frozen blind row is the 40-case subset; both B01-B20 and C01-C20 were reviewed during development (C entered the class-matrix loop in v2.1-v2.3; B informed rule-gap diagnosis and matrix design), so neither half is development-free. `rule_context` is the method stored as `lightrag` in the deposited code. Configuration 1 rule_context was re-run with corrected exposure bands and absorption gate; pure_llm and naive_rag were not re-run and share the original system prompt, which lists dexamethasone as >50%. Configuration 2 rule_context uses the pre-correction prompt and is not directly comparable to the corrected configuration-1 rule_context.
 **Supplementary Table S8. Reference-label distribution of the two validation sets.**
 
 | dataset_id | labels | reference level | count | percentage |
@@ -607,7 +605,7 @@ Note: the primary L1 analysis uses the frozen labels (28 high / 50 medium / 40 l
 
 ## Supplementary Text S9. Revision provenance audit
 
-This revision resolves the 13 registry-versus-curation-file absorption-tier discrepancies, replaces the prior per-agent source column with a certainty-graded evidence table, audits all 40 rules on pair, route and severity support, and adds a distinction between an assessed low grade and the unassessed default path. Table S9 reports the rule audit; Table S10 reports the tier resolution and the component-wise assignment of fixed combinations; Table S11 reports the decision-path distribution and lists the unassessed pairs; Table S12 reports the route-restricted analysis; Table S13 reports the retrieval-overlap audit. The scripts that generate these tables are `scripts/build_absorption_evidence_table.py`, `scripts/build_revision_tables.py` and `scripts/revision_r1_stats.py`.
+This revision resolves the 13 registry-versus-curation-file absorption-tier discrepancies, replaces the prior per-agent source column with a certainty-graded evidence table, audits all 40 rules on pair, route and severity support, and adds a distinction between an assessed low grade and the unassessed default path. Table S9 reports the rule audit; Table S10 reports the tier resolution and the component-wise assignment of fixed combinations; Table S11 reports the decision-path distribution and lists the unassessed pairs; Table S12 reports the route-restricted analysis; Table S13 reports the retrieval-overlap audit. The scripts that generate these tables are deposited with the manuscript.
 
 ## Supplementary Text S10. Rule and matrix construction protocol
 
@@ -619,7 +617,7 @@ This revision resolves the 13 registry-versus-curation-file absorption-tier disc
 
 **Class matrix.** The 21 ophthalmic row keys and 34 systemic column keys (33 with defined cells, drawn from the 40 systemic classes) were defined from the registry classes. 83 actionable cells were defined from the rule set, class extrapolation, expert consensus or pharmacological inference; 21 additional cells are explicitly marked none. Each cell records a level, mechanism, advice and evidence type (Table S14). Four upgrade rules require a class match plus a high-absorption or selectivity flag. Cell levels were reviewed with the rule set by the study team and were not independently adjudicated.
 
-**Reproducibility.** The rule file, matrix file and their SHA-256 fingerprints are deposited. The rule-level audit is `data/curation/rule_provenance_audit.csv`; the matrix is `configs/class_matrix.yaml`.
+**Reproducibility.** The rule file, matrix file and their SHA-256 fingerprints are deposited. The rule-level audit and the matrix are deposited with the manuscript.
 
 ## Supplementary Tables S9-S19
 
